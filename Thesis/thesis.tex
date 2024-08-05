@@ -134,7 +134,7 @@ The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/classicalsvm.png}
-    \caption{SVM decision boundary and margin border, fitted on a 2 feature mock dataset of 100 istances.}
+    \caption{SVM decision boundary and margin border, fitted on a 2 feature mock dataset of 200 istances.}
     \label{fig:classical svm mock}
 \end{figure}
 
@@ -142,7 +142,7 @@ We now need to address the issue of dealing with a highly non-linearly separable
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/circles.png}
-    \caption{Higly non-linear 2 feature mock dataset with 100 istances.}
+    \caption{Higly non-linear 2 feature mock dataset with 200 istances.}
     \label{fig:classical svm circles}
 \end{figure}
 It is clear that in this case we cannot use the SVM alghoritm in its basic form, not even with a soft margin. We must introduce the idea of kernelization. 
@@ -160,7 +160,7 @@ $$    \phi:\mathbb{R}^2\rightarrow\mathbb{R}^3,$$
         \begin{pmatrix}
         x_0^2 \\
         x_1^2\\
-        x_0^2+x_1^2
+        \sqrt{2}x_0x_1
         \end{pmatrix} .
 \end{equation}
 The data of Figure (\ref{fig:classical svm circles}) after the application of the feature map $\phi$ are represented in Figure (\ref{fig:classical svm circle 3d}). 
@@ -194,12 +194,39 @@ $$K:\mathbb{R}^d\times \mathbb{R}^d\rightarrow \mathbb{R},$$
     \label{kernel prodiction K}
 \end{equation}
 We see explicitly that the only quantity that matters is the kernel $K$. In our specific example the value of the kernel is 
-
-
-
-
-
-
+\begin{equation}
+    K(\mathbf{x}, \mathbf{y})= \begin{pmatrix}
+        x_0^2 & x_1^2 & \sqrt{2}x_0x_1 \\
+        \end{pmatrix}\cdot       \begin{pmatrix}
+            y_0^2 \\
+            y_1^2\\
+            \sqrt{2}y_0y_1
+            \end{pmatrix}=(\mathbf{x}^T\cdot\mathbf{y})^2.   
+            \label{polykernel ex}   
+\end{equation}
+Therefore once we are given a dataset it is sufficient for us to choose an appropriate kernel, and forget about the feature map. Once the kernel has been chosen the SVM can be trained using eq. (\ref{kernel max K}), and we can use it to predict a new class using eq. (\ref{kernel prodiction K}). There are some properties that the kernel must satisfy:
+\begin{itemize}
+    \item The kernel must be symmetric, that is $$\forall\, \mathbf{x},\mathbf{y}\in \mathbb{R}^d,\,K(\mathbf{x},\mathbf{y})=K(\mathbf{y},\mathbf{x}.)$$
+    \item The kernel must be positive definite, that is $$\forall\, \mathbf{x},\mathbf{y}\in \mathbb{R}^d,\,K(\mathbf{x},\mathbf{y})\geq 0.$$
+\end{itemize}
+Common choices of kernels are
+\begin{itemize}
+    \item Linear kernel: $$K(\mathbf{x},\mathbf{y})=\mathbf{x}^T\cdot\mathbf{y}.$$ This goes back to the standard SVM we used in Figure (\ref{fig:classical svm mock}). It is suitable only for linearly separable (or close to, using soft margin) datasets.
+    \item Polynomial kernel: $$K(\mathbf{x},\mathbf{y})=(\gamma\mathbf{x}^T\cdot\mathbf{y}+c)^\delta.$$ For $c=0$, $\gamma=1$ and $\delta=2$ we obtain the kernel of eq. (\ref{polykernel ex}). 
+    \item Gaussian kernel: $$K(\mathbf{x},\mathbf{y})=\exp(-\gamma||\mathbf{x}-\mathbf{y}||).$$ This is also known as Radial Basis Function (RBF) kernel. 
+    \item Sigmoid kernel: $$K(\mathbf{x},\mathbf{y})=\tanh(\mathbf{x}^T\cdot\mathbf{y}+c).$$
+\end{itemize}
+scikit learn offers an easy way to easily implement all these common kernels. For example the kernel in eq. (\ref{polykernel ex}) can be implemented as 
+\begin{lstlisting}
+    svm = SVC(kernel='poly', degree=2, gamma=1, coef0=0)
+\end{lstlisting}\
+One can also create a custom kernel, passing as an argument a callable function to be used to calculate the kernel. Fitting this SVC function to the non-linear dataset of Figure (\ref{fig:classical svm circles}) yields the result shown in Figure (\ref{fig:classical svm circle decision boundary}). 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/circlesclassicaldecisionboundary.png}
+    \caption{Higly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref{polykernel ex}). The white and black areas are the two predicted classes. We observe how using the kernel we obtained a non-linear decision boundary.}
+    \label{fig:classical svm circle decision boundary}
+\end{figure}
 
 
 
