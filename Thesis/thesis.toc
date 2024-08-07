@@ -3,3 +3,5 @@
 \contentsline {section}{\numberline {2}Theoretical Background}{2}{}%
 \contentsline {subsection}{\numberline {2.1}Classical machine learning}{2}{}%
 \contentsline {subsubsection}{\numberline {2.1.1}Support vector machine}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Quantum machine learning}{10}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Quantum Support Vector Machine}{10}{}%

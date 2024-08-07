@@ -26,7 +26,7 @@
 
 \linespread{1.7}
 %\usepackage{fullpage}
-\title{Genetic alghoritm for Quantum Support Vector Machine}
+\title{Genetic algorithm for Quantum Support Vector Machines}
 \author{Lorenzo Tasca}
 \date{October 2024}
 
@@ -150,7 +150,7 @@ Let's introduce a function, called feature map, which projects the data in a hig
 \begin{equation}
     \phi:\mathbb{R}^d\rightarrow\mathbb{R}^D,
 \end{equation}
-with $D>d$. If we choose a suitable feature map we can hope to obtain a linearly separable dataset in the higher dimensional space. The choice of the feature map is completely arbitrary, as long as it is a bijective function. Therefore, in principle, each time we are given a dataset we must choose an appropriate feature map for this strategy to work. For our example let's consider the feature map
+with $D>d$. The codomain of the feature map is called feature space. If we choose a suitable feature map we can hope to obtain a linearly separable dataset in the feature space. The choice of the feature map is completely arbitrary, as long as it is a bijective function. Therefore, in principle, each time we are given a dataset we must choose an appropriate feature map for this strategy to work. For our example let's consider the feature map
 $$    \phi:\mathbb{R}^2\rightarrow\mathbb{R}^3,$$
 \begin{equation}
     \begin{pmatrix}
@@ -167,10 +167,10 @@ The data of Figure (\ref{fig:classical svm circles}) after the application of th
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/circles3d.png}
-    \caption{Higly non-linear mock dataset after the application of the feature map $\phi$. We observe now that the dataset is linearly separable.}
+    \caption{Higly non-linear mock dataset in the feature space after the application of the feature map $\phi$. We observe now that the dataset is linearly separable.}
     \label{fig:classical svm circle 3d}
 \end{figure}
-The dataset is now linearly separable in the higher dimensional space, so the strategy worked. We can now apply the SVM alghoritm in this space Consider the two central equations of the algorithm: equation (\ref{dual problem SVM}), which provides the expression to maximize in order to find the margin, and equation (\ref{decision boundary svm}), which gives the rule for predicting the class of a new instance. This two equations are now modified into 
+The dataset is now linearly separable in the feature space, so the strategy worked. We can now apply the SVM alghoritm in this space Consider the two central equations of the algorithm: equation (\ref{dual problem SVM}), which provides the expression to maximize in order to find the margin, and equation (\ref{decision boundary svm}), which gives the rule for predicting the class of a new instance. This two equations are now modified into 
 \begin{equation}
     f(\alpha_0,\cdots,\alpha_{N-1})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_j(\phi(\mathbf{x}_i,)\phi(\mathbf{x}_j)),
     \label{kernel max}
@@ -182,7 +182,7 @@ The dataset is now linearly separable in the higher dimensional space, so the st
 A crucial observation is that in these two expressions only the scalar product of the feature map values appears. Therefore we can conclude that the specific form of the feature map is not important, but rather the scalar product it produces. We can define the kernel $K$ as 
 $$K:\mathbb{R}^d\times \mathbb{R}^d\rightarrow \mathbb{R},$$
 \begin{equation}
-    (\mathbf{x}, \mathbf{y})\mapsto(\phi(\mathbf{x}), \phi(\mathbf{y})),
+    \mathbf{x}, \mathbf{y}\mapsto(\phi(\mathbf{x}), \phi(\mathbf{y})),
 \end{equation}
  where $(\phi(\mathbf{x}), \phi(\mathbf{y}))=\phi(\mathbf{x})^T\cdot \phi(\mathbf{y})$ is the standard scalar product of $\mathbb{R}^D$. Eq. (\ref{kernel max}) and eq. (\ref{kernel prodiction}) now become 
  \begin{equation}
@@ -206,7 +206,7 @@ We see explicitly that the only quantity that matters is the kernel $K$. In our 
 \end{equation}
 Therefore once we are given a dataset it is sufficient for us to choose an appropriate kernel, and forget about the feature map. Once the kernel has been chosen the SVM can be trained using eq. (\ref{kernel max K}), and we can use it to predict a new class using eq. (\ref{kernel prodiction K}). There are some properties that the kernel must satisfy:
 \begin{itemize}
-    \item The kernel must be symmetric, that is $$\forall\, \mathbf{x},\mathbf{y}\in \mathbb{R}^d,\,K(\mathbf{x},\mathbf{y})=K(\mathbf{y},\mathbf{x}.)$$
+    \item The kernel must be symmetric, that is $$\forall\, \mathbf{x},\mathbf{y}\in \mathbb{R}^d,\,K(\mathbf{x},\mathbf{y})=K(\mathbf{y},\mathbf{x}).$$
     \item The kernel must be positive definite, that is $$\forall\, \mathbf{x},\mathbf{y}\in \mathbb{R}^d,\,K(\mathbf{x},\mathbf{y})\geq 0.$$
 \end{itemize}
 Common choices of kernels are
@@ -224,9 +224,64 @@ One can also create a custom kernel, passing as an argument a callable function 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/circlesclassicaldecisionboundary.png}
-    \caption{Higly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref{polykernel ex}). The white and black areas are the two predicted classes. We observe how using the kernel we obtained a non-linear decision boundary.}
+    \caption{Higly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref{polykernel ex}). The white and black areas are the two predicted classes. We observe how, using the kernel, we obtained a non-linear decision boundary.}
     \label{fig:classical svm circle decision boundary}
 \end{figure}
+\newpage
+
+\subsection{Quantum machine learning}
+Introduction bla bla
+
+\subsubsection{Quantum Support Vector Machine}
+The SVM alghoritm faces some important limitations when the feature space becomes large, as estimating kernel functions becomes computationally intensive. Quantum computing could enhance the algorithm's performace by providing access to exponentially large Hilbert feature spaces. The idea is to construct a feature map which maps classical data into a quantum state which lives in an exponentially large Hilbert feature space. Therefore in this context a feature map is a function 
+\begin{equation}
+    \phi: \mathbb{R}^d \rightarrow \mathcal{H},
+\end{equation}
+$$\mathbf{x}\mapsto \phi(\mathbf{x})\equiv |\phi(\mathbf{x})\rangle.$$
+In the framework of quantum computing $\mathcal{H}$ is a $n$-qubit Hilbert space, that is a space of the form
+\begin{equation}
+    \mathcal{H}=\bigotimes_{i=0}^n \mathcal{H}_{qubit},
+\end{equation}
+where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is $2^n$. The feature map will implemented by the means of a parametrised quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})$ such that 
+\begin{equation}
+    |\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}.
+\end{equation}
+This circuit is called quantum encoding circuit, because it encodes classical data into a quantum state. The classical data is passed to the circuit as a parameter.
+Once we have the feature map the kernel is constructed as 
+\begin{equation}
+    K(\mathbf{x}, \mathbf{y})=\left | \langle \phi(\mathbf{x})|\phi(\mathbf{y})\rangle \right |^2.
+\end{equation}
+Here $\langle\,\,, \,\rangle$ denotes the standard internal scalar product between vectors in $\mathcal{H}$. This definition clearly yields a kernel that satisfies the two kernel properties. How do we calculate the kernel in practice? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
