@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage[braket, qm]{qcircuit} % Importa il pacchetto qcircuit
 \lstdefinestyle{python}{
     language=Python,
     basicstyle=\ttfamily\small,
@@ -242,22 +243,62 @@ In the framework of quantum computing $\mathcal{H}$ is a $n$-qubit Hilbert space
 \begin{equation}
     \mathcal{H}=\bigotimes_{i=0}^n \mathcal{H}_{qubit},
 \end{equation}
-where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is $2^n$. The feature map will implemented by the means of a parametrised quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})$ such that 
+where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is $2^n$. The feature map will implemented by the means of a parametrised quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})=U(x_0,\cdots, x_{d-1})$ such that 
 \begin{equation}
     |\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}.
 \end{equation}
-This circuit is called quantum encoding circuit, because it encodes classical data into a quantum state. The classical data is passed to the circuit as a parameter.
+This circuit is called quantum encoding circuit, because it encodes classical data into a quantum state. The classical data is passed to the circuit as a parameter. We will later make examples of frequently used encoding circuits. 
 Once we have the feature map the kernel is constructed as 
 \begin{equation}
     K(\mathbf{x}, \mathbf{y})=\left | \langle \phi(\mathbf{x})|\phi(\mathbf{y})\rangle \right |^2.
 \end{equation}
-Here $\langle\,\,, \,\rangle$ denotes the standard internal scalar product between vectors in $\mathcal{H}$. This definition clearly yields a kernel that satisfies the two kernel properties. How do we calculate the kernel in practice? 
+Here $\langle\,\,, \,\rangle$ denotes the standard internal scalar product between vectors in $\mathcal{H}$. This definition clearly yields a kernel that satisfies the two kernel properties. How do we calculate the kernel in practice? Suppose we want to calculate the kernel $K(\mathbf{x}, \mathbf{y})$ and consider the following circuit. 
 
+\begin{equation}
+\Qcircuit @C=1em @R=1em {
+   \lstick{|0\rangle} & \multigate{4}{U(\mathbf{x})} & \multigate{4}{U^\dagger(\mathbf{y})} & \meter\\
+   \lstick{|0\rangle} & \ghost{U(\mathbf{x})}        & \ghost{U^\dagger(\mathbf{y})}        & \meter  \\
+   \lstick{\vdots}    & \ghost{U(\mathbf{x})}        & \ghost{U^\dagger(\mathbf{y})}        & \vdots \\
+   \lstick{|0\rangle} & \ghost{U(\mathbf{x})}        & \ghost{U^\dagger(\mathbf{y})}        & \meter  \\
+   \lstick{|0\rangle} & \ghost{U(\mathbf{x})}        & \ghost{U^\dagger(\mathbf{y})}        & \meter  \\
+} 
+\label{circuit}
+\end{equation}
+\\
+\noindent Suppose we run this circuit $R$ times, and we call $A$ the number of times that we measure the bit string $000\cdots 0$. We state that 
+\begin{equation}
+    \lim_{R\rightarrow +\infty}\frac{A}{R}=K(\mathbf{x}, \mathbf{y}).
+    \label{frequency}
+\end{equation}
+The proof is straightforward. The LHS of eq. (\ref{frequency}) is the probability of measuring $000\cdots 0$, which according to quantum mechanics can be calculated as 
+$$
+    |^{\otimes n}\textrm{$\langle$}0|U(\mathbf{x})U^\dagger(\mathbf{y})|0\rangle^{\otimes n}|^2=|^{\otimes n}\textrm{$\langle$}0|U^\dagger(\mathbf{y})U(\mathbf{x})|0\rangle^{\otimes n}|^2=$$$$=|\langle \phi(\mathbf{y})|\phi(\mathbf{x})\rangle|^2=K(\mathbf{x}, \mathbf{y}).
+$$
+\hfill $\square$
 
+\noindent Therefore, to evaluate the kernel, it suffices to construct the quantum circuit (\ref{circuit}) and measure the frequency with which the string $000\cdots 00$ occurs. We have to perform this operation for each pair of instances, and construct the matrix 
+\begin{equation}
+    K_{ij}=K(\mathbf{x}_i, \mathbf{x}_j).
+\end{equation}
+This kernel matrix is then plugged into eq. (\ref{kernel max K}) to train a classical SVM. 
 
-
-
-
+Let's now discuss some common choices of quantum encoding circuits:
+\begin{itemize}
+    \item Basis encoding: this can be applied if the istances live in a finite dimensional space, whose dimension $2^n$, where $n$ is the number of qubits. If the dimensione is smaller that $2^n$ we can still apply this encoding by using padding. The istances can be mapped into bit strings of lenght $n$ and the feature map corresponds to
+    \begin{equation}
+        \phi:\{0,1\}^n \rightarrow \mathcal{H},
+    \end{equation}
+    $$x=(x_0\cdots x_{n-1})\mapsto |x_0\rangle \otimes \cdots \otimes |x_{n-1}\rangle\equiv|x_0\cdots x_{n-1}\rangle=|x\rangle.$$ Here $|x\rangle$ is a state of the so called computational basis. For example the bit string $01001$ is mapped to the quantum state $$|0\rangle \otimes |1\rangle \otimes |0\rangle \otimes |0\rangle \otimes |1\rangle=|01001\rangle.$$ The kernel that originates from this feature map is 
+    \begin{equation}
+        K(x,y)=|\langle x|y\rangle|^2=|\delta_{x,y}|^2=\delta_{x,y}
+    \end{equation}
+    since vectors in the computational basis are orthogonal. 
+    \item Amplitude encoding: this can be applied with istances that are normalized vector, that is vectors of the form 
+    \begin{equation}
+        \mathbf{x}=(x_0, \cdots, x_{d-1})\in \mathbb{R}^d,
+    \end{equation}
+    such that $$\sum_{i=0}^{d-1}x$$
+\end{itemize}
 
 
 
