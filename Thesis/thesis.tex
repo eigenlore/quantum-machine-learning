@@ -43,16 +43,15 @@
 \section{Introduction}
 
 
-\section{Theoretical Background}
-
-\subsection{Classical machine learning}
+\section{Classical machine learning}
 baa
-\subsubsection{Support vector machine}
+\subsection{Support vector machine}
 
 
 
 The Support Vector Machine (SVM) is a binary classification alghoritm, whose goal is to build the maximum margin separator between the two classes, that is the separator that maximizes the distance of the closest point from each class. The standard SVM alghoritm is a linear alghoritm, so in particular it will try and build the separating margin as a hyperplane in a $d$-dimensional space (so a $(d-1)$-dimensional plane), where $d$ is the number of features. The points that touch the margin, or that are on the wrong side of it, are called support vectors. The distance between the decision boundary and the support vectors is called margin. The alghoritm will find the biggest possible margin. 
 
+\subsubsection{Linear SVM}
 Let's start assuming that the classes are linearly separable. We are provided with a dataset with $N$ $d$-dimensional istances $\{\mathbf{x}_i\}_{i=0,\cdots, N-1}$. The two classes will be labelled with $$y\in \{-1,1\}.$$ The margin will be the the set of points 
 \begin{equation}
     \{\mathbf{x}\in\mathbb{R}^d: w_0+\mathbf{w}^T\cdot \mathbf{x}=0\},
@@ -139,6 +138,7 @@ The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can 
     \label{fig:classical svm mock}
 \end{figure}
 
+\subsubsection{Kernel SVM}
 We now need to address the issue of dealing with a highly non-linearly separable dataset. Let's consider as an example another mock dataset, shown in Figure (\ref{fig:classical svm circles}). 
 \begin{figure}[h!]
     \centering
@@ -230,10 +230,11 @@ One can also create a custom kernel, passing as an argument a callable function 
 \end{figure}
 \newpage
 
-\subsection{Quantum machine learning}
+\section{Quantum machine learning}
 Introduction bla bla
 
-\subsubsection{Quantum Support Vector Machine}
+\subsection{Quantum Support Vector Machine}
+\subsubsection{Quantum feature map and Quantum Kernels}
 The SVM alghoritm faces some important limitations when the feature space becomes large, as estimating kernel functions becomes computationally intensive. Quantum computing could enhance the algorithm's performace by providing access to exponentially large Hilbert feature spaces. The idea is to construct a feature map which maps classical data into a quantum state which lives in an exponentially large Hilbert feature space. Therefore in this context a feature map is a function 
 \begin{equation}
     \phi: \mathbb{R}^d \rightarrow \mathcal{H},
@@ -255,7 +256,7 @@ Once we have the feature map the kernel is constructed as
 Here $\langle\,\,, \,\rangle$ denotes the standard internal scalar product between vectors in $\mathcal{H}$. This definition clearly yields a kernel that satisfies the two kernel properties. How do we calculate the kernel in practice? Suppose we want to calculate the kernel $K(\mathbf{x}, \mathbf{y})$ and consider the following circuit. 
 
 \begin{equation}
-\Qcircuit @C=1em @R=1em {
+\Qcircuit @C=2em @R=2em {
    \lstick{|0\rangle} & \multigate{4}{U(\mathbf{x})} & \multigate{4}{U^\dagger(\mathbf{y})} & \meter\\
    \lstick{|0\rangle} & \ghost{U(\mathbf{x})}        & \ghost{U^\dagger(\mathbf{y})}        & \meter  \\
    \lstick{\vdots}    & \ghost{U(\mathbf{x})}        & \ghost{U^\dagger(\mathbf{y})}        & \vdots \\
@@ -282,7 +283,8 @@ $$
 \end{equation}
 This kernel matrix is then plugged into eq. (\ref{kernel max K}) to train a classical SVM. 
 
-Let's now discuss some common choices of quantum encoding circuits:
+\subsubsection{Quantum encoding circuits}
+Let's now discuss some possible choices of quantum encoding circuits:
 \begin{itemize}
     \item Basis encoding: this can be applied if the istances live in a finite dimensional space, whose dimension $2^n$, where $n$ is the number of qubits. If the dimensione is smaller that $2^n$ we can still apply this encoding by using padding. The istances can be mapped into bit strings of lenght $n$ and the feature map corresponds to
     \begin{equation}
@@ -295,9 +297,99 @@ Let's now discuss some common choices of quantum encoding circuits:
     since vectors in the computational basis are orthogonal. 
     \item Amplitude encoding: this can be applied with istances that are normalized vector, that is vectors of the form 
     \begin{equation}
-        \mathbf{x}=(x_0, \cdots, x_{d-1})\in \mathbb{R}^d,
+        \mathbf{x}=(x_0, \cdots, x_{d-1})^T\in \mathbb{R}^d,
     \end{equation}
-    such that $$\sum_{i=0}^{d-1}x$$
+    such that $$\sum_{i=0}^{d-1}x_i^2=1.$$
+    In this case the encoding consists in sending
+    \begin{equation}
+        \mathbf{x}=(x_0, \cdots, x_{d-1})^T \mapsto |\phi(\mathbf{x})\rangle=\sum_{i=0}^{d-1}x_i|i\rangle,
+    \end{equation}
+    where $|i\rangle$ is the i-th vector of the computational basis. The fact that $\mathbf{x}$ is normalized ensures that the feature vector is normalized as well, and therefore represents a physical state. The kernel generated by this feature map is 
+    \begin{equation}
+        K(x,y)=\left|\sum_{i,j}x_iy_j\langle i|j\rangle\right|^2=\left|\sum_{i,j}x_iy_j\delta_{i,j}\right|^2=(\mathbf{x}^T \cdot \mathbf{y})^2.
+    \end{equation}
+    We went back to a polynomial kernel. 
+    \item By creating more copies of the feature vector of amplitude encoding we can create higher order polynomial kernels. 
+    \item Product encoding: in this case each feature of the input is encoded in the amplitudes of one separate qubit. For example we can send
+    \begin{equation}
+        \mathbf{x}=(x_0, \cdots, x_{d-1})^T \mapsto  \begin{pmatrix}
+            \cos x_0\\\sin x_0
+           \end{pmatrix} \otimes \cdots \otimes \begin{pmatrix}
+            \cos x_{d-1}\\\sin x_{d-1}
+           \end{pmatrix},
+    \end{equation}
+    therefore the i-th qubit will be in the state 
+    \begin{equation}
+        \cos x_i|0\rangle +\sin x_i |1\rangle. 
+    \end{equation}
+    This generates the kernel 
+    \begin{equation}
+        K(x,y)=\prod_{i=0}^{d-1}\cos(x_i-y_i).
+    \end{equation}
+    \item ZZ feature map: The previously discussed encoding maps where quantum maps that in the end generated a kernel which is easy to calculate with classical tools, for example a polynomial kernel or a cosine kernel. It is important now to discuss quantum encoding circuits that creates a kernel which is not possible to write as an easy classical kernel, otherwise there is no advantage in using quantum computing for this task if the kernel could have been easily calculated with classical tools. The hope is that by using a purely quantum kernel we obtain better performance that by using a classical kernel. Since general quantum circuits are not expected to be classicaly simulable, there are many choices one can make. One example is generated by the following circuit 
+
+    \[
+        \Qcircuit @C=3em @R=2em {
+        \lstick{|0\rangle} & \gate{H} & \multigate{4}{\,\,\,\,\mathcal{U}(\mathbf{x})\,\,\,\,} & \qw \\
+        \lstick{|0\rangle} & \gate{H} & \ghost{\,\,\,\,\mathcal{U}(\mathbf{x})\,\,\,\,}        & \qw \\
+        \lstick{\vdots}    & \vdots   & \ghost{\,\,\,\,\mathcal{U}(\mathbf{x})\,\,\,\,}                    & \vdots \\
+        \lstick{|0\rangle} & \gate{H} & \ghost{\,\,\,\,\mathcal{U}(\mathbf{x})\,\,\,\,}        & \qw \\
+        \lstick{|0\rangle} & \gate{H} & \ghost{\,\,\,\,\mathcal{U}(\mathbf{x})\,\,\,\,}        & \qw \\
+        }
+    \]  
+    \\
+    where $H$ is the standard Hadamard gate and 
+    \begin{equation}
+        \mathcal{U}(\mathbf{x})=\exp\left[i\sum_{S\subseteq [n]}\phi_S(\mathbf{x})\prod_{i\in S}Z_i\right].
+        \label{ZZ}
+    \end{equation}
+    Here $[n]=\{0,\cdots, n-1\}$, $Z_i$ is the third Pauli matrix acting on the i-th qubit and $\phi_S(\mathbf{x})$ are arbitrary coefficients, which are the ones that actually encode the classical data. $S$ runs over all possibile subsets of $[n]$, and can be thought as an index that describes connectivities between different qubits or datapoints. We have $2^n$ possible choices of the coefficients. It is convenient to choose them in a way such that only the terms with $|S|\leq d$ contribute, in order to obtain a circuit that can be easily implemented on a quantum computer. This is done by asking that
+    \begin{equation}
+        \phi_S=0\,\,\,\,\,\textup{if}\,\,\,\,\,|S|>d.
+    \end{equation}
+    Let's focus on a simple case where $n=d=2$. There are two default choices for the coefficients in this case. The first one is to set 
+    \begin{equation}
+        \phi_{\{i\}}(\mathbf{x})=x_i,
+    \end{equation}
+    \begin{equation}
+        \phi_{\{i,j\}}(\mathbf{x})=0.
+    \end{equation}
+    The feature maps becomes 
+    \begin{equation}
+        {U}(\mathbf{x})=e^{ix_0Z_0}\,e^{ix_1Z_1}H^{\otimes n}.
+    \end{equation}
+    This is called Z feature map. The circuit decomposed in elementary quantum gates is shown in Figure . The other possible choice is  
+    \begin{equation}
+        \phi_{\{i\}}(\mathbf{x})=x_i,
+    \end{equation}
+    \begin{equation}
+        \phi_{\{i,j\}}(\mathbf{x})=(\pi-x_i)(\pi-x_j).
+    \end{equation}
+    In this case the feature maps becomes 
+    \begin{equation}
+        {U}(\mathbf{x})=e^{i(\pi-x_0)(\pi-x_1)Z_0Z_1}\,e^{ix_0Z_0}\,e^{ix_1Z_1}H^{\otimes n}.
+    \end{equation}
+    This is called ZZ feature map, and it is an encoding circuit thought to be hard to simulate classically. It is shown in Figure . We will see how it behaves later on. Those two are standard choices, but there are many more circuits that can be built starting from the general structure of eq. (\ref{ZZ}), especially if we consider a greater number of qubits, and so we allow connectivities of three and more qubits. 
+    \item Pauli feature map: Eq. (\ref{ZZ}) can be generalised to include not only Z gates, but all of the Pauli gates. We can have
+    \begin{equation}
+        \mathcal{U}(\mathbf{x})=\exp\left[i\sum_{S\subseteq [n]}\phi_S(\mathbf{x})\prod_{i\in S}P_i\right],
+        \label{pauli}
+    \end{equation}
+    where $P\in\{1,X,Y,Z\}$. This allows us to generate not only interaction of the $ZZ$ type, but also for example $YY$ type or $ZY$ type. 
+    \item We will now show an example of a feature map which is hard to simulate classically but which yields a classical kernel. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{itemize}
 
 

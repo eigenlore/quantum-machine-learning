@@ -1,7 +1,10 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Introduction}{2}{}%
-\contentsline {section}{\numberline {2}Theoretical Background}{2}{}%
-\contentsline {subsection}{\numberline {2.1}Classical machine learning}{2}{}%
-\contentsline {subsubsection}{\numberline {2.1.1}Support vector machine}{2}{}%
-\contentsline {subsection}{\numberline {2.2}Quantum machine learning}{10}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}Quantum Support Vector Machine}{10}{}%
+\contentsline {section}{\numberline {2}Classical machine learning}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Support vector machine}{2}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Linear SVM}{2}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Kernel SVM}{5}{}%
+\contentsline {section}{\numberline {3}Quantum machine learning}{10}{}%
+\contentsline {subsection}{\numberline {3.1}Quantum Support Vector Machine}{10}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Quantum feature map and Quantum Kernels}{10}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Quantum encoding circuits}{12}{}%
