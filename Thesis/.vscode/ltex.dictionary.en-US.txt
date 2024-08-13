@@ -1,0 +1,9 @@
+Qiskit
+qubits
+eq
+ZZ
+connectivities
+i-th
+qubit
+simulable
+codomain

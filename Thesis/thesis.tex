@@ -23,7 +23,7 @@
 \lstset{style=python}
 
 %\newtheorem{theorem}{Theorem}
-\usepackage{amsmath, amssymb, graphicx}
+\usepackage{amsmath, amssymb, graphicx, algorithm, algpseudocode}
 
 \linespread{1.7}
 %\usepackage{fullpage}
@@ -168,10 +168,10 @@ The data of Figure (\ref{fig:classical svm circles}) after the application of th
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/circles3d.png}
-    \caption{Higly non-linear mock dataset in the feature space after the application of the feature map $\phi$. We observe now that the dataset is linearly separable.}
+    \caption{Highly non-linear mock dataset in the feature space after the application of the feature map $\phi$. We observe now that the dataset is linearly separable.}
     \label{fig:classical svm circle 3d}
 \end{figure}
-The dataset is now linearly separable in the feature space, so the strategy worked. We can now apply the SVM alghoritm in this space Consider the two central equations of the algorithm: equation (\ref{dual problem SVM}), which provides the expression to maximize in order to find the margin, and equation (\ref{decision boundary svm}), which gives the rule for predicting the class of a new instance. This two equations are now modified into 
+The dataset is now linearly separable in the feature space, so the strategy worked. We can now apply the SVM algorithm in this space Consider the two central equations of the algorithm: equation (\ref{dual problem SVM}), which provides the expression to maximize in order to find the margin, and equation (\ref{decision boundary svm}), which gives the rule for predicting the class of a new instance. These two equations are now modified into 
 \begin{equation}
     f(\alpha_0,\cdots,\alpha_{N-1})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_j(\phi(\mathbf{x}_i,)\phi(\mathbf{x}_j)),
     \label{kernel max}
@@ -180,7 +180,7 @@ The dataset is now linearly separable in the feature space, so the strategy work
     \textup{sign}\left[\sum_{i=0}^{N-1}\alpha_iy_i(\phi(\mathbf{\tilde{x}}), \phi(\mathbf{x}_i))+w_0\right].
     \label{kernel prodiction}
 \end{equation}
-A crucial observation is that in these two expressions only the scalar product of the feature map values appears. Therefore we can conclude that the specific form of the feature map is not important, but rather the scalar product it produces. We can define the kernel $K$ as 
+A crucial observation is that in these two expressions only the scalar product of the feature map values appears. Therefore, we can conclude that the specific form of the feature map is not important, but rather the scalar product it produces. We can define the kernel $K$ as 
 $$K:\mathbb{R}^d\times \mathbb{R}^d\rightarrow \mathbb{R},$$
 \begin{equation}
     \mathbf{x}, \mathbf{y}\mapsto(\phi(\mathbf{x}), \phi(\mathbf{y})),
@@ -225,7 +225,7 @@ One can also create a custom kernel, passing as an argument a callable function 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/circlesclassicaldecisionboundary.png}
-    \caption{Higly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref{polykernel ex}). The white and black areas are the two predicted classes. We observe how, using the kernel, we obtained a non-linear decision boundary.}
+    \caption{Highly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref{polykernel ex}). The white and black areas are the two predicted classes. We observe how, using the kernel, we obtained a non-linear decision boundary.}
     \label{fig:classical svm circle decision boundary}
 \end{figure}
 \newpage
@@ -235,7 +235,7 @@ Introduction bla bla
 
 \subsection{Quantum Support Vector Machine}
 \subsubsection{Quantum feature map and Quantum Kernels}
-The SVM alghoritm faces some important limitations when the feature space becomes large, as estimating kernel functions becomes computationally intensive. Quantum computing could enhance the algorithm's performace by providing access to exponentially large Hilbert feature spaces. The idea is to construct a feature map which maps classical data into a quantum state which lives in an exponentially large Hilbert feature space. Therefore in this context a feature map is a function 
+The SVM algorithm faces some important limitations when the feature space becomes large, as estimating kernel functions becomes computationally intensive. Quantum computing could enhance the algorithm's performance by providing access to exponentially large Hilbert feature spaces. The idea is to construct a feature map which maps classical data into a quantum state which lives in an exponentially large Hilbert feature space. Therefore, in this context a feature map is a function 
 \begin{equation}
     \phi: \mathbb{R}^d \rightarrow \mathcal{H},
 \end{equation}
@@ -244,7 +244,7 @@ In the framework of quantum computing $\mathcal{H}$ is a $n$-qubit Hilbert space
 \begin{equation}
     \mathcal{H}=\bigotimes_{i=0}^n \mathcal{H}_{qubit},
 \end{equation}
-where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is $2^n$. The feature map will implemented by the means of a parametrised quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})=U(x_0,\cdots, x_{d-1})$ such that 
+where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is $2^n$. The feature map will implemented by the means of a parametrized quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})=U(x_0,\cdots, x_{d-1})$ such that 
 \begin{equation}
     |\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}.
 \end{equation}
@@ -286,7 +286,7 @@ This kernel matrix is then plugged into eq. (\ref{kernel max K}) to train a clas
 \subsubsection{Quantum encoding circuits}
 Let's now discuss some possible choices of quantum encoding circuits:
 \begin{itemize}
-    \item Basis encoding: this can be applied if the istances live in a finite dimensional space, whose dimension $2^n$, where $n$ is the number of qubits. If the dimensione is smaller that $2^n$ we can still apply this encoding by using padding. The istances can be mapped into bit strings of lenght $n$ and the feature map corresponds to
+    \item Basis encoding: this can be applied if the instances live in a finite dimensional space, whose dimension $2^n$, where $n$ is the number of qubits. If the dimension is smaller that $2^n$ we can still apply this encoding by using padding. The instances can be mapped into bit strings of length $n$ and the feature map corresponds to
     \begin{equation}
         \phi:\{0,1\}^n \rightarrow \mathcal{H},
     \end{equation}
@@ -295,7 +295,7 @@ Let's now discuss some possible choices of quantum encoding circuits:
         K(x,y)=|\langle x|y\rangle|^2=|\delta_{x,y}|^2=\delta_{x,y}
     \end{equation}
     since vectors in the computational basis are orthogonal. 
-    \item Amplitude encoding: this can be applied with istances that are normalized vector, that is vectors of the form 
+    \item Amplitude encoding: this can be applied with instances that are normalized vector, that is vectors of the form 
     \begin{equation}
         \mathbf{x}=(x_0, \cdots, x_{d-1})^T\in \mathbb{R}^d,
     \end{equation}
@@ -310,7 +310,7 @@ Let's now discuss some possible choices of quantum encoding circuits:
     \end{equation}
     We went back to a polynomial kernel. 
     \item By creating more copies of the feature vector of amplitude encoding we can create higher order polynomial kernels. 
-    \item Product encoding: in this case each feature of the input is encoded in the amplitudes of one separate qubit. For example we can send
+    \item Product encoding: in this case each feature of the input is encoded in the amplitudes of one separate qubit. For example, we can send
     \begin{equation}
         \mathbf{x}=(x_0, \cdots, x_{d-1})^T \mapsto  \begin{pmatrix}
             \cos x_0\\\sin x_0
@@ -326,7 +326,7 @@ Let's now discuss some possible choices of quantum encoding circuits:
     \begin{equation}
         K(x,y)=\prod_{i=0}^{d-1}\cos(x_i-y_i).
     \end{equation}
-    \item ZZ feature map: The previously discussed encoding maps where quantum maps that in the end generated a kernel which is easy to calculate with classical tools, for example a polynomial kernel or a cosine kernel. It is important now to discuss quantum encoding circuits that creates a kernel which is not possible to write as an easy classical kernel, otherwise there is no advantage in using quantum computing for this task if the kernel could have been easily calculated with classical tools. The hope is that by using a purely quantum kernel we obtain better performance that by using a classical kernel. Since general quantum circuits are not expected to be classicaly simulable, there are many choices one can make. One example is generated by the following circuit 
+    \item ZZ feature map: The previously discussed encoding maps where quantum maps that in the end generated a kernel which is easy to calculate with classical tools, for example a polynomial kernel or a cosine kernel. It is important now to discuss quantum encoding circuits that creates a kernel which is not possible to write as an easy classical kernel, otherwise there is no advantage in using quantum computing for this task if the kernel could have been easily calculated with classical tools. The hope is that by using a purely quantum kernel we obtain better performance that by using a classical kernel. Since general quantum circuits are not expected to be classically simulable, there are many choices one can make. One example is generated by the following circuit 
 
     \[
         \Qcircuit @C=3em @R=2em {
@@ -343,60 +343,121 @@ Let's now discuss some possible choices of quantum encoding circuits:
         \mathcal{U}(\mathbf{x})=\exp\left[i\sum_{S\subseteq [n]}\phi_S(\mathbf{x})\prod_{i\in S}Z_i\right].
         \label{ZZ}
     \end{equation}
-    Here $[n]=\{0,\cdots, n-1\}$, $Z_i$ is the third Pauli matrix acting on the i-th qubit and $\phi_S(\mathbf{x})$ are arbitrary coefficients, which are the ones that actually encode the classical data. $S$ runs over all possibile subsets of $[n]$, and can be thought as an index that describes connectivities between different qubits or datapoints. We have $2^n$ possible choices of the coefficients. It is convenient to choose them in a way such that only the terms with $|S|\leq d$ contribute, in order to obtain a circuit that can be easily implemented on a quantum computer. This is done by asking that
+    Here $[n]=\{0,\cdots, n-1\}$, $Z_i$ is the third Pauli matrix acting on the i-th qubit and $\phi_S(\mathbf{x})$ are arbitrary coefficients, which are the ones that actually encode the classical data. $S$ runs over all possible subsets of $[n]$, and can be thought as an index that describes connectivities between different qubits or data points. We have $2^n$ possible choices of the coefficients. It is convenient to choose them in a way such that only the terms with $|S|\leq d$ contribute, in order to obtain a circuit that can be easily implemented on a quantum computer. This is done by asking that
     \begin{equation}
         \phi_S=0\,\,\,\,\,\textup{if}\,\,\,\,\,|S|>d.
     \end{equation}
     Let's focus on a simple case where $n=d=2$. There are two default choices for the coefficients in this case. The first one is to set 
     \begin{equation}
         \phi_{\{i\}}(\mathbf{x})=x_i,
+        \label{coeff Z}
     \end{equation}
     \begin{equation}
         \phi_{\{i,j\}}(\mathbf{x})=0.
     \end{equation}
-    The feature maps becomes 
+    The feature map becomes 
     \begin{equation}
         {U}(\mathbf{x})=e^{ix_0Z_0}\,e^{ix_1Z_1}H^{\otimes n}.
     \end{equation}
-    This is called Z feature map. The circuit decomposed in elementary quantum gates is shown in Figure . The other possible choice is  
+    This is called Z feature map. The circuit decomposed in elementary quantum gates is shown in Figure \ref{fig:Z}. 
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[height=100px]{images/Z.png}
+        \caption{Z feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi) = (1,0; 0, e^{i\phi})$. We observe how the circuit is parametrized by the coefficients of eq. (\ref{coeff Z}).}
+        \label{fig:Z}
+    \end{figure}
+    The other possible choice is  
     \begin{equation}
         \phi_{\{i\}}(\mathbf{x})=x_i,
+        \label{coeff ZZ1}
     \end{equation}
     \begin{equation}
         \phi_{\{i,j\}}(\mathbf{x})=(\pi-x_i)(\pi-x_j).
+        \label{coeff ZZ2}
     \end{equation}
     In this case the feature maps becomes 
     \begin{equation}
         {U}(\mathbf{x})=e^{i(\pi-x_0)(\pi-x_1)Z_0Z_1}\,e^{ix_0Z_0}\,e^{ix_1Z_1}H^{\otimes n}.
     \end{equation}
-    This is called ZZ feature map, and it is an encoding circuit thought to be hard to simulate classically. It is shown in Figure . We will see how it behaves later on. Those two are standard choices, but there are many more circuits that can be built starting from the general structure of eq. (\ref{ZZ}), especially if we consider a greater number of qubits, and so we allow connectivities of three and more qubits. 
+    This is called ZZ feature map, and it is an encoding circuit thought to be hard to simulate classically. It is shown in Figure \ref{fig:ZZ}. 
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[height=100px]{images/ZZ.png}
+        \caption{ZZ feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi) = (1,0; 0, e^{i\phi})$. We observe how the circuit is parametrized by the coefficients of eq. (\ref{coeff ZZ1}) and (\ref{coeff ZZ2}).}
+        \label{fig:ZZ}
+    \end{figure}
+    We will see how it behaves later on. Those two are standard choices, but there are many more circuits that can be built starting from the general structure of eq. (\ref{ZZ}), especially if we consider a greater number of qubits, and so we allow connectivities of three and more qubits. 
     \item Pauli feature map: Eq. (\ref{ZZ}) can be generalised to include not only Z gates, but all of the Pauli gates. We can have
     \begin{equation}
         \mathcal{U}(\mathbf{x})=\exp\left[i\sum_{S\subseteq [n]}\phi_S(\mathbf{x})\prod_{i\in S}P_i\right],
         \label{pauli}
     \end{equation}
-    where $P\in\{1,X,Y,Z\}$. This allows us to generate not only interaction of the $ZZ$ type, but also for example $YY$ type or $ZY$ type. 
-    \item We will now show an example of a feature map which is hard to simulate classically but which yields a classical kernel. 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    where $P\in\{1,X,Y,Z\}$. This allows us to generate not only interaction of the ZZ type, but also for example YY type or ZY type. An example with Y and ZY interactions is shown in Figure \ref{pauli}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{images/pauli.png}
+        \caption{Pauli feature map, with 2 qubits and 2 features, decomposed in term of elementary gates, constructed with Y and YZ interactions.}
+        \label{fig:Pauli}
+    \end{figure}
+    \item In general any parametrized quantum circuit can be used to encode classical data and create a quantum kernel. We will later use generic circuits and study what sort of datasets they separate.
 \end{itemize}
 
+\subsubsection{QSVM algorithm and Qiskit implementation}
+To sum things up the step of the Quantum Support Vector Machine (QSVM) algorithm are
+\begin{itemize}
+    \item Prepare the classical data into two vectors $X$ and $y$, where $$X_i=\mathbf{x}_i \in \mathbb{R}^d,\, \,\,\,i=0,\cdots , N-1,$$ is the i-th $d$-dimensional instance, and $$y_i\in \{-1,1\},$$ indicates the class that this instance belongs to.  
+    \item Choose a parametrized quantum circuit $U(\mathbf{x})$. The circuit accepts $d$ parameters, which are the features of the instance we are considering. One can choose a standard circuit like the ZZ feature map, or can create a custom circuit. We will extensively revisit the point of choosing the circuit later on.
+    \item For each pair of instances $\mathbf{x}_i$, $\mathbf{x}_j$ we must evaluate the kernel matrix $$K_{ij}=K(\mathbf{x}_i,\mathbf{x}_j).$$ This is an $N\times N$ matrix, so for each pair we have build $U(\mathbf{x}_i)$ and $U^\dagger(\mathbf{x}_j)$, in order to construct the circuit     
+    \begin{equation}
+        \Qcircuit @C=2em @R=2em {
+           \lstick{|0\rangle} & \multigate{4}{U(\mathbf{x}_i)} & \multigate{4}{U^\dagger(\mathbf{\mathbf{x}_j})} & \meter\\
+           \lstick{|0\rangle} & \ghost{U(\mathbf{x}_i)}        & \ghost{U^\dagger(\mathbf{\mathbf{x}_j})}        & \meter  \\
+           \lstick{\vdots}    & \ghost{U(\mathbf{x}_i)}        & \ghost{U^\dagger(\mathbf{\mathbf{x}_j})}        & \vdots \\
+           \lstick{|0\rangle} & \ghost{U(\mathbf{x}_i)}        & \ghost{U^\dagger(\mathbf{\mathbf{x}_j})}        & \meter  \\
+           \lstick{|0\rangle} & \ghost{U(\mathbf{x}_i)}        & \ghost{U^\dagger(\mathbf{\mathbf{x}_j})}        & \meter  \\
+        } 
+        \label{circuit item }
+    \end{equation}
+    and evaluate the matrix element 
+    \begin{equation}
+        K_{ij}=|^{\otimes n}\textrm{$\langle$}0|U(\mathbf{x}_iU^\dagger(\mathbf{x}_j)|0\rangle^{\otimes n}|^2.        
+    \end{equation}
+    As we saw this can be done, up to an error $R^{-1/2}$, by running the circuit (\ref{circuit item }) $R$ times and counting the number of times that we measure the string $000\cdots 0$.
+    \item Once we have the kernel matrix we use classical optimization to maximize
+    \begin{equation}
+        f(\alpha_0,\cdots,\alpha_{N-1})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_jK_{ij}.
+    \end{equation}
+    Once we found the optimal $\alpha$ we have constructed the decision boundary.
+    \item Given a new instance $\tilde{\mathbf{x}}$ we can, in the same way, calculate the kernel matrix element $$\tilde{K}_i=K(\mathbf{x}_i, \tilde{\mathbf{x}}),$$ and predict the class of $\tilde{\mathbf{x}}$ by applying \begin{equation}
+        \tilde{y}=\textup{sign}\left[\sum_{i=0}^{N-1}\alpha_iy_i\tilde{K}_i+w_0\right].
+    \end{equation}
+\end{itemize}
 
-
-
-
-
+\begin{algorithm}[H]
+    \caption{Quantum Support Vector Machine (QSVM)}
+    \begin{algorithmic}[1]
+        \State \textbf{Input:} Data $\{(\mathbf{x}_i, y_i)\}_{i=0}^{N-1}$, Quantum circuit $U(\mathbf{x})$, Optimization routine
+        \State \textbf{Parameters:} Measurement shots $R$
+        
+        \For{$i = 0 \textbf{ to } N-1$}
+            \For{$j = 0 \textbf{ to } N-1$}
+                \State Prepare $U(\mathbf{x}_i)$ and $U^\dagger(\mathbf{x}_j)$
+                \State Measure $K_{ij} = \left|\langle 0^{\otimes n} | U(\mathbf{x}_i) U^\dagger(\mathbf{x}_j) | 0^{\otimes n} \rangle\right|^2$
+            \EndFor
+        \EndFor
+        
+        \State Optimize $\alpha$ to maximize
+        \begin{equation*}
+            f(\alpha) = \sum_{i=0}^{N-1} \alpha_i - \frac{1}{2} \sum_{i=0}^{N-1} \sum_{j=0}^{N-1} \alpha_i \alpha_j y_i y_j K_{ij}
+        \end{equation*}
+    
+        \For{each new instance $\tilde{\mathbf{x}}$}
+            \State Compute $\tilde{K}_i = K(\mathbf{x}_i, \tilde{\mathbf{x}})$
+            \State Predict $\tilde{y} = \textup{sign}\left(\sum_{i=0}^{N-1} \alpha_i y_i \tilde{K}_i + w_0\right)$
+        \EndFor
+        
+    \end{algorithmic}
+    \end{algorithm}
 
 
 

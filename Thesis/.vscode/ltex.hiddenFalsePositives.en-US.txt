@@ -1,0 +1,2 @@
+{"rule":"MD_BASEFORM","sentence":"^\\QThe feature map will implemented by the means of a parametrized quantum circuit.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qscikit learn offers an easy way to easily implement all these common kernels.\\E$"}
