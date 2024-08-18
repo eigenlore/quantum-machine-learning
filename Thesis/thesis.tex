@@ -49,15 +49,15 @@ baa
 
 
 
-The Support Vector Machine (SVM) is a binary classification alghoritm, whose goal is to build the maximum margin separator between the two classes, that is the separator that maximizes the distance of the closest point from each class. The standard SVM alghoritm is a linear alghoritm, so in particular it will try and build the separating margin as a hyperplane in a $d$-dimensional space (so a $(d-1)$-dimensional plane), where $d$ is the number of features. The points that touch the margin, or that are on the wrong side of it, are called support vectors. The distance between the decision boundary and the support vectors is called margin. The alghoritm will find the biggest possible margin. 
+The Support Vector Machine (SVM) is a binary classification algorithm, whose goal is to build the maximum margin separator between the two classes, that is the separator that maximizes the distance of the closest point from each class. The standard SVM algorithm is a linear algorithm, so in particular it will try and build the separating margin as a hyperplane in a $d$-dimensional space (so a $(d-1)$-dimensional plane), where $d$ is the number of features. The points that touch the margin, or that are on the wrong side of it, are called support vectors. The distance between the decision boundary and the support vectors is called margin. The algorithm will find the biggest possible margin. 
 
 \subsubsection{Linear SVM}
-Let's start assuming that the classes are linearly separable. We are provided with a dataset with $N$ $d$-dimensional istances $\{\mathbf{x}_i\}_{i=0,\cdots, N-1}$. The two classes will be labelled with $$y\in \{-1,1\}.$$ The margin will be the the set of points 
+Let's start assuming that the classes are linearly separable. We are provided with a dataset with $N$ $d$-dimensional instances $\{\mathbf{x}_i\}_{i=0,\cdots, N-1}$. The two classes will be labelled with $$y\in \{-1,1\}.$$ The margin will be the set of points 
 \begin{equation}
     \{\mathbf{x}\in\mathbb{R}^d: w_0+\mathbf{w}^T\cdot \mathbf{x}=0\},
     \label{margin definition}
 \end{equation}  
-for appropriate parameters $w_0\in \mathbb{R}$ and $\mathbf{w}\in \mathbb{R}^d$, which define the hyperplane and must be found by the alghoritm. Now we have to find $$\max_{w_0, \mathbf{w}}(m),$$ with the constraint 
+for appropriate parameters $w_0\in \mathbb{R}$ and $\mathbf{w}\in \mathbb{R}^d$, which define the hyperplane and must be found by the algorithm. Now we have to find $$\max_{w_0, \mathbf{w}}(m),$$ with the constraint 
 \begin{equation}
     \frac{1}{||\mathbf{w}||}y_i(w_0+\mathbf{w}^T\cdot \mathbf{x_i})\geq m, \, \forall i=0,\cdots, N-1,
 \end{equation}
@@ -69,7 +69,7 @@ The constraint prevents data points from falling into the margin. Rescaling $\ma
 \begin{equation}
     ||\mathbf{w}||=\frac{1}{m}.
 \end{equation}
-Therefore the problem becomes minimizing
+Therefore, the problem becomes minimizing
 $$\frac{1}{2}||\mathbf{w}||, $$ with the constraint 
 \begin{equation}
     y_i(w_0+\mathbf{w}^T\cdot \mathbf{x_i})\geq 1, \, \forall i=0,\cdots, N-1.
@@ -80,7 +80,7 @@ In the theory of convex optimization one can solve for the Lagrangian dual of th
     \mathbf{w}=\sum_{i=0}^{N-1}\alpha_iy_i\mathbf{x}_i.
     \label{alpha def}
 \end{equation} 
-One would obtain that the dual problem consists in maximizing, with respect to to the weight vector $\mathbf{\alpha}\in\mathbb{R}^N$, the expression 
+One would obtain that the dual problem consists in maximizing, with respect to the weight vector $\mathbf{\alpha}\in\mathbb{R}^N$, the expression 
 \begin{equation}
     f(\alpha_0,\cdots,\alpha_{N-1})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_j(\mathbf{x}_i,\mathbf{x}_j),
     \label{dual problem SVM}
@@ -99,13 +99,13 @@ optimization problem, therefore the global maximum of $f$ can be efficiently fou
 \begin{equation}
     w_0=\mathbf{w}^T\mathbf{x}_i-y_i.
 \end{equation} 
-Once the optimal $\alpha_i$ have been found, given a new istance $\mathbf{\tilde{x}}$, according to eq. (\ref{alpha def}) and eq. (\ref{margin definition}), we can predict its class calculating 
+Once the optimal $\alpha_i$ have been found, given a new instance $\mathbf{\tilde{x}}$, according to eq. (\ref{alpha def}) and eq. (\ref{margin definition}), we can predict its class calculating 
 \begin{equation}
     \textup{sign}\left[\sum_{i=0}^{N-1}\alpha_iy_i(\mathbf{\tilde{x}}, \mathbf{x}_i)+w_0\right].
     \label{decision boundary svm}
 \end{equation} 
 
-What we just described is the so called hard margin SVM, because we did not allow points to fall inside the margin. One could relax this assumption, modifing the constraint in eq. (\ref{constraint hard margin}) into 
+What we just described is the so-called hard margin SVM, because we did not allow points to fall inside the margin. One could relax this assumption, modifying the constraint in eq. (\ref{constraint hard margin}) into 
 \begin{equation}
     y_i(w_0+\mathbf{w}^T\cdot \mathbf{x_i})\geq 1-\xi_i, \, \forall i=0,\cdots, N-1,
 \end{equation}
@@ -123,18 +123,18 @@ scikit-learn provides a straightforward implementation of the SVM algorithm, whi
 from sklearn.svm import SVC
 from sklearn.datasets import make_blobs 
 
-X,y = make_blobs(n_samples=100) #create mock dataset
+X,y = make_blobs(n_samples=200) #create mock dataset
 svm = SVC(kernel='linear', C=1) #create svm
 svm.fit(X, y) #fit the svm
 \end{lstlisting}
 
-The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can observe how the alghoritm built the largest possible margin. 
+The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can observe how the algorithm built the largest possible margin. 
 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/classicalsvm.png}
-    \caption{SVM decision boundary and margin border, fitted on a 2 feature mock dataset of 200 istances.}
+    \caption{SVM decision boundary and margin border, fitted on a 2 feature mock dataset of 200 instances.}
     \label{fig:classical svm mock}
 \end{figure}
 
@@ -143,10 +143,10 @@ We now need to address the issue of dealing with a highly non-linearly separable
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/circles.png}
-    \caption{Higly non-linear 2 feature mock dataset with 200 istances.}
+    \caption{Higly non-linear 2 feature mock dataset with 200 instances.}
     \label{fig:classical svm circles}
 \end{figure}
-It is clear that in this case we cannot use the SVM alghoritm in its basic form, not even with a soft margin. We must introduce the idea of kernelization. 
+It is clear that in this case we cannot use the SVM algorithm in its basic form, not even with a soft margin. We must introduce the idea of kernelization. 
 Let's introduce a function, called feature map, which projects the data in a higher dimensional space. That means a function
 \begin{equation}
     \phi:\mathbb{R}^d\rightarrow\mathbb{R}^D,
@@ -244,7 +244,7 @@ In the framework of quantum computing $\mathcal{H}$ is a $n$-qubit Hilbert space
 \begin{equation}
     \mathcal{H}=\bigotimes_{i=0}^n \mathcal{H}_{qubit},
 \end{equation}
-where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is $2^n$. The feature map will implemented by the means of a parametrized quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})=U(x_0,\cdots, x_{d-1})$ such that 
+where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is $2^n$. The feature map will be implemented by the means of a parametrized quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})=U(x_0,\cdots, x_{d-1})$ such that 
 \begin{equation}
     |\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}.
 \end{equation}
@@ -433,39 +433,71 @@ To sum things up the step of the Quantum Support Vector Machine (QSVM) algorithm
     \end{equation}
 \end{itemize}
 
+Schematically we have 
+
 \begin{algorithm}[H]
     \caption{Quantum Support Vector Machine (QSVM)}
     \begin{algorithmic}[1]
-        \State \textbf{Input:} Data $\{(\mathbf{x}_i, y_i)\}_{i=0}^{N-1}$, Quantum circuit $U(\mathbf{x})$, Optimization routine
+        \State \textbf{Input:} Data $\{(\mathbf{x}_i, y_i)\}_{i=0,\cdots,N-1}$, Quantum circuit $U(\mathbf{x})$
         \State \textbf{Parameters:} Measurement shots $R$
         
         \For{$i = 0 \textbf{ to } N-1$}
             \For{$j = 0 \textbf{ to } N-1$}
-                \State Prepare $U(\mathbf{x}_i)$ and $U^\dagger(\mathbf{x}_j)$
-                \State Measure $K_{ij} = \left|\langle 0^{\otimes n} | U(\mathbf{x}_i) U^\dagger(\mathbf{x}_j) | 0^{\otimes n} \rangle\right|^2$
+                \State \textbf{Prepare} $U(\mathbf{x}_i)$ and $U^\dagger(\mathbf{x}_j)$
+                \State \textbf{Run} circuit $U(\mathbf{x}_i)U^\dagger(\mathbf{x}_j)$ $R$ times  
+                \State \textbf{Measure} the frequency $f$ of $00\cdots 0$ 
+                \State \textbf{Set} $f=K_{ij}$ 
             \EndFor
         \EndFor
         
-        \State Optimize $\alpha$ to maximize
+        \State \textbf{Optimize} $\alpha$ to maximize
         \begin{equation*}
             f(\alpha) = \sum_{i=0}^{N-1} \alpha_i - \frac{1}{2} \sum_{i=0}^{N-1} \sum_{j=0}^{N-1} \alpha_i \alpha_j y_i y_j K_{ij}
         \end{equation*}
     
         \For{each new instance $\tilde{\mathbf{x}}$}
-            \State Compute $\tilde{K}_i = K(\mathbf{x}_i, \tilde{\mathbf{x}})$
-            \State Predict $\tilde{y} = \textup{sign}\left(\sum_{i=0}^{N-1} \alpha_i y_i \tilde{K}_i + w_0\right)$
+            \State \textbf{Compute} $\tilde{K}_i = K(\mathbf{x}_i, \tilde{\mathbf{x}})$
+            \State \textbf{Predict} $\tilde{y} = \textup{sign}\left(\sum_{i=0}^{N-1} \alpha_i y_i \tilde{K}_i + w_0\right)$
         \EndFor
         
     \end{algorithmic}
     \end{algorithm}
 
+This algorithm can be implemented in practice exploiting Qiskit to perform the circuit simulation and calculate the kernel, and subsequently using scikit-learn to perform the classical optimization once the kernel has been calculated. We can make an example, separating a mock dataset like in Figure \ref{fig:classical svm mock}, with a Pauli feature map. 
 
+\begin{lstlisting}
+    #create mock dataset
+    X,y=make_blobs(n_samples=200) 
+    #since the kernel involves rotation it is better to bring the data between 0 and pi
+    X=MinMaxScaler(feature_range=(0,np.pi)).fit_transform(X) 
+    #create quantum kernel
+    kernel=FidelityQuantumKernel(feature_map=ZFeatureMap()) 
+    #pass the kernel as a callable function 
+    svm=SVC(kernel=kernel.evaluate) 
+    #fit the svm
+    svm.fit(X, y) 
+\end{lstlisting}
 
+The result of the fit is shown in Figure \ref{fig:qsvm}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/qsvm.png}
+    \caption{QSVM decision boundary with ZFeatureMap, fitted on a 2 feature mock dataset of 200 instances.}
+    \label{fig:qsvm}
+\end{figure}
 
+\subsubsection{QSVM potential}
+In order to study the potential of the QSVM algorithm we could try and observe the form of the decision boundary of an artificial dataset which is easily separable by a QSVM. If the decision boundary is "classically looking", that is similar to the one we observed when we studied the linear or polynomial kernel, then it would look like the QSVM algorithm may not provide advantage over the classical SVM. We hope instead to find a complex looking decision boundary, which is not separable by classical kernels. 
 
-
-
-
+We use ZZFeatureMap, with $n=d=2$. Furthermore, we choose $f=Z_1Z_2$ and $V\in\textup{SU}(4)$. We assign $m(\mathbf{x})=+1$ when 
+\begin{equation}
+    \langle \phi(\mathbf{x}) V^\dagger f V|\phi(\mathbf{x})|\phi(\mathbf(x))\rangle >\Delta,
+\end{equation} 
+and $m(\mathbf{x})=-1$ when 
+\begin{equation}
+    \langle \phi(\mathbf{x}) V^\dagger f V|\phi(\mathbf{x})|\phi(\mathbf(x))\rangle <\Delta.
+\end{equation} 
+$\Delta$ controls how big is the gap between of the two classes. 
 
 
 

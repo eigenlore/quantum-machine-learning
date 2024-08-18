@@ -9,3 +9,4 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Quantum feature map and Quantum Kernels}{10}{}%
 \contentsline {subsubsection}{\numberline {3.1.2}Quantum encoding circuits}{12}{}%
 \contentsline {subsubsection}{\numberline {3.1.3}QSVM algorithm and Qiskit implementation}{17}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}QSVM potential}{20}{}%
