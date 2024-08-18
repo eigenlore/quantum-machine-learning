@@ -491,19 +491,33 @@ In order to study the potential of the QSVM algorithm we could try and observe t
 
 We use ZZFeatureMap, with $n=d=2$. Furthermore, we choose $f=Z_1Z_2$ and $V\in\textup{SU}(4)$. We assign $m(\mathbf{x})=+1$ when 
 \begin{equation}
-    \langle \phi(\mathbf{x}) V^\dagger f V|\phi(\mathbf{x})|\phi(\mathbf(x))\rangle >\Delta,
+    \langle \phi(\mathbf{x}) |V^\dagger f V|\phi(\mathbf{x})\rangle >\Delta,
 \end{equation} 
 and $m(\mathbf{x})=-1$ when 
 \begin{equation}
-    \langle \phi(\mathbf{x}) V^\dagger f V|\phi(\mathbf{x})|\phi(\mathbf(x))\rangle <\Delta.
+    \langle \phi(\mathbf{x}) |V^\dagger f V|\phi(\mathbf{x})\rangle <\Delta.
 \end{equation} 
-$\Delta$ controls how big is the gap between of the two classes. 
-
-
-
-
-
-
+$\Delta$ controls how big is the gap between of the two classes. We show this dataset in Figure \ref{fig:adhoc}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/adhoc.png}
+    \caption{Artificial ad hoc dataset, generated with $\Delta=0.3$. This dataset, by construction, is easily separable by ZZFeatureMap.}
+    \label{fig:adhoc}
+\end{figure}
+We observe how the dataset of Figure \ref{fig:adhoc} shows a very complicated pattern. Classical methods cannot hope to separate these two classes. In fact, if we divide the dataset into a training set and a test set, and apply the classical SVM algorithm, for example with the RBF kernel, we obtain an accuracy on the test set of 0.51, which is essentially like assigning the classes with a random coin toss. The result of the classical fit is shown in Figure \ref{fig:adhocrbf}, in which we observe how the correct decision boundary has not been found. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/adhocrbf.png}
+    \caption{Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes. }
+    \label{fig:adhocrbf}
+\end{figure}
+In Figure \ref{fig:adhoczz} is shown instead the result of the fit with the QSVM with ZZFeatureMap, which yields an accuracy on the test set of 1.0, and a nice looking decision boundary. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/adhoczz.png}
+    \caption{Result of the quantum fit on the artificial dataset, with ZZFeatureMap. We observe how the QSVM found the correct separation between the classes.}
+    \label{fig:adhoczz}
+\end{figure}
 
 
 
