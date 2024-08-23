@@ -530,11 +530,61 @@ In a QSVM algorithm the only choice the user has to make is the choice of the fe
 
 We see how the results of the fits are not satisfying. The accuracy may not be too low in some cases, but the form of the decision boundary tells us that the algorithm did not find the correct pattern for the data. With more complex dataset the algorithm may fail completely, like shown in Figure .
 
-It is clear at this point that the choice of the quantum encoding map is a very delicate part of the algorithm, and cannot be taken lightly. Choosing the feature map by trying the most common ones, as one may do with classical SVM, is not a safe method, as for a lot of datasets, even simple ones, the QSVM may fail. We need a more systematic way to choose the encoding. We will discuss those methods in the next sections.
+It is clear at this point that the choice of the quantum encoding map is a very delicate part of the algorithm, and cannot be taken lightly. Choosing the feature map by trying the most common ones, as one may do with classical SVM, is not a safe method, as for a lot of datasets, even simple ones, the QSVM may fail. We need a more systematic way to choose the encoding, as the performance of the model is significantly influenced by this choice. We will discuss those methods in the next sections.
 
 \subsection{Quantum kernel alignment}
 
-In the previous sections we discussed how 
+In the previous sections, we discussed that the main challenge with the QSVM algorithm lies in selecting an appropriate feature map. This choice is difficult because there is no clear guidance in constructing the appropriate circuit, and the number of possible circuits for data encoding is potentially unlimited. Without guidance, it is problematic to select a circuit which works, since we saw how the choice of the feature map is very delicate. A first way to address this problem is the so-called Quantum Kernel Alignment (QKA). 
+
+QKA is a hybrid quantum-classical approach, and consists in employing a parametrized quantum feature map $U(\mathbf{x}, \mathbf{\lambda})$, where we introduced $k$ parameters $\mathbf{\lambda}=(\lambda_0,\cdots, \lambda_{k-1})$ inside the feature map. The quantum circuit now has $d+k$ parameters, $d$ are passed through $\mathbf{x}$ and $k$ through $\mathbf{\lambda}$. However, the latter are fundamentally different from the former. The $\mathbf{x}$ parameters, as we saw, are the way the instance is passed to the circuit. The $\lambda$ parameters instead are just parameters which must be trained in order to find the best possible circuit. A parametrized feature map gives rise to a parametrized quantum kernel $$K_{i,j}(\mathbf{\lambda})=K_{\mathbf{\lambda}}(\mathbf{x}_i, \mathbf{x}_j),$$ and consequently to a parametrized objective function of the SVM
+\begin{equation}
+            f(\mathbf{\alpha}, \mathbf{\lambda})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_jK_{ij}(\mathbf{\lambda}).
+            \label{qka}
+\end{equation}
+Kernel alignment aims at minimizing the generalization error bound of SVM, and consists in solving the optimization problem
+\begin{equation}
+    \min_{\lambda}\max_{\alpha}f(\alpha, \lambda).
+\end{equation} 
+Here again $\alpha$ is the solution to the convex optimization problem of the SVM, while $\lambda$ is the variational parameter of the quantum circuit which must be trained. The optimization over $\alpha$ is performed as usual for the SVM. The optimization over $\lambda$ is performed using a Classical Simultaneous Stochastic Approximation (SPSA). The choice of SPSA lies in the fact that it needs less kernel evaluations compared to gradient descent methods, and it is more robust against noise, which is a serious issue of current real world quantum devices.    
+
+QKA is a hybrid quantum-classical method, because the quantum circuit is utilized to evaluate the kernel when necessary, while all the other tasks such as optimizations are performed by classical algorithms. The fundamental steps of are:
+\begin{itemize}
+    \item Choose a parametrized quantum circuit $U(\mathbf{x}, \mathbf{\lambda})$, where $\lambda\in \mathbb{R}^k$.
+    \item Choose an initial parameter $\lambda=\lambda_0$, and the maximum number of iterations $P$ of the SPSA algorithm.
+    \item Generate random vector $\Delta \in \{-1,1\}^k$.
+    \item Create two new parameters $\lambda_+$ and $\lambda_-$ such that $$\lambda_{\pm,i}=\lambda_i\pm c_i \Delta_i,$$ where $$c_i=\frac{c}{(i+1)^\gamma},$$ for chosen constants $c$ and $\gamma$. 
+    \item Evaluate, using the QSVM standard approach on quantum device, the two kernels $$K_{\pm,ij}=K_{\lambda_{\pm}}(\mathbf{x}_i, \mathbf{x}_j).$$
+    \item Find the solution $\alpha_{\pm}$ of the convex optimization problem in eq. (\ref{qka}), for the two kernels of the previous point, exploiting the standard SVM optimization.
+    \item 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
