@@ -428,6 +428,7 @@ To sum things up the step of the Quantum Support Vector Machine (QSVM) algorithm
     \item Once we have the kernel matrix we use classical optimization to maximize
     \begin{equation}
         f(\alpha_0,\cdots,\alpha_{N-1})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_jK_{ij}.
+        \label{loss function}
     \end{equation}
     Once we found the optimal $\alpha$ we have constructed the decision boundary.
     \item Given a new instance $\tilde{\mathbf{x}}$ we can, in the same way, calculate the kernel matrix element $$\tilde{K}_i=K(\mathbf{x}_i, \tilde{\mathbf{x}}),$$ and predict the class of $\tilde{\mathbf{x}}$ by applying \begin{equation}
@@ -523,7 +524,7 @@ In Figure \ref{fig:adhoczz} is shown instead the result of the fit with the QSVM
 
 Finding a dataset which is separable by quantum methods and not by classical methods leads us into thinking that the QSVM algorithm might outperform the SVM algorithm on datasets with complex patterns, which is the result we hoped to find. 
 
-\subsubsection{Issues of QSVM}
+\subsubsection{Issues of QSVM (mancano delle immagini)}
 
 In a QSVM algorithm the only choice the user has to make is the choice of the feature map, that is the choice of the quantum encoding circuit. It is easy to convince ourselves that this choice is crucial, and determines if the algorithm will be successful or not. In the classical case we also have to choose a kernel, but we found that this choice is much less delicate that in the quantum case. In fact, for example, the RBF kernel works very well for most applications. In the quantum case instead, we observed that the choice of the feature map is very tricky. If the wrong feature map is chosen, the QSVM performs very poorly even on very simple datasets, as we will now illustrate with some examples. Let's consider the dataset shown in Figure , which is simple enough to be expected to be separated without too many difficulties. The RBF kernel separates this dataset very well. Let's try to apply some of the quantum kernels we discussed in the previous sections. 
 
@@ -555,7 +556,14 @@ QKA is a hybrid quantum-classical method, because the quantum circuit is utilize
     \item Create two new parameters $\lambda_+$ and $\lambda_-$ such that $$\lambda_{\pm,i}=\lambda_i\pm c_i \Delta_i,$$ where $$c_i=\frac{c}{(i+1)^\gamma},$$ for chosen constants $c$ and $\gamma$. 
     \item Evaluate, using the QSVM standard approach on quantum device, the two kernels $$K_{\pm,ij}=K_{\lambda_{\pm}}(\mathbf{x}_i, \mathbf{x}_j).$$
     \item Find the solution $\alpha_{\pm}$ of the convex optimization problem in eq. (\ref{qka}), for the two kernels of the previous point, exploiting the standard SVM optimization.
-    \item 
+    \item Perform two evaluations of the loss function to estimate its gradient with respect to $\lambda_k$: \begin{equation}
+        g_k(\alpha_k, \lambda_k)=\frac{1}{2c_k\Delta_k}(f(\alpha_{+,k}, \lambda_{+,k})-f(\alpha_{-,k}, \lambda_{-,k})),
+    \end{equation} where the loss function $f$ is given by eq. (\ref{qka}).
+    \item Update $\lambda$ depending on the gradient $g_k(\alpha_k, \lambda_k)$ and the learning rate $a$. The update rule is \begin{equation}
+        \lambda_{k+1}=\lambda_k-a_kg_k(a_k,\lambda_k).
+    \end{equation}
+    \item Repeat the procedure until the cost function has converged or the maximum number of iterations has been reached. 
+    \item The final kernel is the optimal quantum kernel $K_{\lambda^*(\underline{x}_i, \underline{x}_j)}.$
 \end{itemize}
 
 
