@@ -1,15 +1,19 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Introduction}{2}{}%
-\contentsline {section}{\numberline {2}Classical machine learning}{2}{}%
-\contentsline {subsection}{\numberline {2.1}General overview}{2}{}%
-\contentsline {subsection}{\numberline {2.2}Support vector machine}{2}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}Linear SVM}{2}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{5}{}%
-\contentsline {section}{\numberline {3}Quantum machine learning}{10}{}%
-\contentsline {subsection}{\numberline {3.1}Quantum Support Vector Machine}{10}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Quantum feature map and Quantum Kernels}{10}{}%
-\contentsline {subsubsection}{\numberline {3.1.2}Quantum encoding circuits}{12}{}%
-\contentsline {subsubsection}{\numberline {3.1.3}QSVM algorithm and Qiskit implementation}{17}{}%
-\contentsline {subsubsection}{\numberline {3.1.4}QSVM potential}{20}{}%
-\contentsline {subsubsection}{\numberline {3.1.5}Issues of QSVM (mancano delle immagini)}{23}{}%
-\contentsline {subsection}{\numberline {3.2}Quantum kernel alignment}{24}{}%
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {section}{\numberline {2}Classical machine learning}{3}{}%
+\contentsline {subsection}{\numberline {2.1}General overview}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Support vector machine}{3}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Linear SVM}{3}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{6}{}%
+\contentsline {section}{\numberline {3}Quantum machine learning}{11}{}%
+\contentsline {subsection}{\numberline {3.1}Quantum Support Vector Machine}{11}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Quantum feature map and Quantum Kernels}{11}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Quantum encoding circuits}{13}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}QSVM algorithm and Qiskit implementation}{18}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}QSVM potential}{21}{}%
+\contentsline {subsubsection}{\numberline {3.1.5}Issues of QSVM (mancano delle immagini)}{24}{}%
+\contentsline {subsection}{\numberline {3.2}Quantum kernel alignment}{25}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Circuit optimization}{25}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Performance}{29}{}%
+\contentsline {subsection}{\numberline {3.3}Genetic algorithms}{30}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}General }{30}{}%

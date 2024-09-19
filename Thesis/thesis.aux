@@ -2,61 +2,73 @@
 \providecommand\babel@aux[2]{}
 \@nameuse{bbl@beforestart}
 \babel@aux{english}{}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Classical machine learning}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}General overview}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Support vector machine}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Linear SVM}{2}{}\protected@file@percent }
-\newlabel{margin definition}{{1}{2}{}{}{}}
-\newlabel{constraint hard margin}{{5}{3}{}{}{}}
-\newlabel{alpha def}{{6}{3}{}{}{}}
-\newlabel{dual problem SVM}{{7}{3}{}{}{}}
-\newlabel{decision boundary svm}{{11}{4}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces SVM decision boundary and margin border, fitted on a 2 feature mock dataset of 200 instances.}}{5}{}\protected@file@percent }
-\newlabel{fig:classical svm mock}{{1}{5}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Higly non-linear 2 feature mock dataset with 200 instances.}}{6}{}\protected@file@percent }
-\newlabel{fig:classical svm circles}{{2}{6}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Highly non-linear mock dataset in the feature space after the application of the feature map $\phi $. We observe now that the dataset is linearly separable.}}{7}{}\protected@file@percent }
-\newlabel{fig:classical svm circle 3d}{{3}{7}{}{}{}}
-\newlabel{kernel max}{{16}{7}{}{}{}}
-\newlabel{kernel prodiction}{{17}{8}{}{}{}}
-\newlabel{kernel max K}{{19}{8}{}{}{}}
-\newlabel{kernel prodiction K}{{20}{8}{}{}{}}
-\newlabel{polykernel ex}{{21}{8}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Highly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref {polykernel ex}). The white and black areas are the two predicted classes. We observe how, using the kernel, we obtained a non-linear decision boundary.}}{10}{}\protected@file@percent }
-\newlabel{fig:classical svm circle decision boundary}{{4}{10}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Quantum machine learning}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Quantum Support Vector Machine}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Quantum feature map and Quantum Kernels}{10}{}\protected@file@percent }
-\newlabel{circuit}{{26}{11}{}{}{}}
-\newlabel{frequency}{{27}{12}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Quantum encoding circuits}{12}{}\protected@file@percent }
-\newlabel{ZZ}{{37}{14}{}{}{}}
-\newlabel{coeff Z}{{39}{15}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Z feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi ) = (1,0; 0, e^{i\phi })$. We observe how the circuit is parametrized by the coefficients of eq. (\ref {coeff Z}).}}{15}{}\protected@file@percent }
-\newlabel{fig:Z}{{5}{15}{}{}{}}
-\newlabel{coeff ZZ1}{{42}{16}{}{}{}}
-\newlabel{coeff ZZ2}{{43}{16}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces ZZ feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi ) = (1,0; 0, e^{i\phi })$. We observe how the circuit is parametrized by the coefficients of eq. (\ref {coeff ZZ1}) and (\ref {coeff ZZ2}).}}{16}{}\protected@file@percent }
-\newlabel{fig:ZZ}{{6}{16}{}{}{}}
-\newlabel{pauli}{{45}{16}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Pauli feature map, with 2 qubits and 2 features, decomposed in term of elementary gates, constructed with Y and YZ interactions.}}{17}{}\protected@file@percent }
-\newlabel{fig:Pauli}{{7}{17}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}QSVM algorithm and Qiskit implementation}{17}{}\protected@file@percent }
-\newlabel{circuit item }{{46}{18}{}{}{}}
-\newlabel{loss function}{{48}{18}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Quantum Support Vector Machine (QSVM)}}{19}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces QSVM decision boundary with ZFeatureMap, fitted on a 2 feature mock dataset of 200 instances.}}{20}{}\protected@file@percent }
-\newlabel{fig:qsvm}{{8}{20}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.4}QSVM potential}{20}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Artificial ad hoc dataset, generated with $\Delta =0.3$. This dataset, by construction, is easily separable by ZZFeatureMap.}}{21}{}\protected@file@percent }
-\newlabel{fig:adhoc}{{9}{21}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes. }}{22}{}\protected@file@percent }
-\newlabel{fig:adhocrbf}{{10}{22}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Result of the quantum fit on the artificial dataset, with ZZFeatureMap. We observe how the QSVM found the correct separation between the classes.}}{23}{}\protected@file@percent }
-\newlabel{fig:adhoczz}{{11}{23}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.5}Issues of QSVM (mancano delle immagini)}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Quantum kernel alignment}{24}{}\protected@file@percent }
-\newlabel{qka}{{52}{25}{}{}{}}
-\gdef \@abspage@last{26}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Classical machine learning}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}General overview}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Support vector machine}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Linear SVM}{3}{}\protected@file@percent }
+\newlabel{margin definition}{{1}{3}{}{}{}}
+\newlabel{constraint hard margin}{{5}{4}{}{}{}}
+\newlabel{alpha def}{{6}{4}{}{}{}}
+\newlabel{dual problem SVM}{{7}{4}{}{}{}}
+\newlabel{decision boundary svm}{{11}{5}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces SVM decision boundary and margin border, fitted on a 2 feature mock dataset of 200 instances.}}{6}{}\protected@file@percent }
+\newlabel{fig:classical svm mock}{{1}{6}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Higly non-linear 2 feature mock dataset with 200 instances.}}{7}{}\protected@file@percent }
+\newlabel{fig:classical svm circles}{{2}{7}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Highly non-linear mock dataset in the feature space after the application of the feature map $\phi $. We observe now that the dataset is linearly separable.}}{8}{}\protected@file@percent }
+\newlabel{fig:classical svm circle 3d}{{3}{8}{}{}{}}
+\newlabel{kernel max}{{16}{8}{}{}{}}
+\newlabel{kernel prodiction}{{17}{9}{}{}{}}
+\newlabel{kernel max K}{{19}{9}{}{}{}}
+\newlabel{kernel prodiction K}{{20}{9}{}{}{}}
+\newlabel{polykernel ex}{{21}{9}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Highly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref {polykernel ex}). The white and black areas are the two predicted classes. We observe how, using the kernel, we obtained a non-linear decision boundary.}}{11}{}\protected@file@percent }
+\newlabel{fig:classical svm circle decision boundary}{{4}{11}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Quantum machine learning}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Quantum Support Vector Machine}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Quantum feature map and Quantum Kernels}{11}{}\protected@file@percent }
+\newlabel{circuit}{{26}{12}{}{}{}}
+\newlabel{frequency}{{27}{13}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Quantum encoding circuits}{13}{}\protected@file@percent }
+\newlabel{ZZ}{{37}{15}{}{}{}}
+\newlabel{coeff Z}{{39}{16}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Z feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi ) = (1,0; 0, e^{i\phi })$. We observe how the circuit is parametrized by the coefficients of eq. (\ref {coeff Z}).}}{16}{}\protected@file@percent }
+\newlabel{fig:Z}{{5}{16}{}{}{}}
+\newlabel{coeff ZZ1}{{42}{17}{}{}{}}
+\newlabel{coeff ZZ2}{{43}{17}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces ZZ feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi ) = (1,0; 0, e^{i\phi })$. We observe how the circuit is parametrized by the coefficients of eq. (\ref {coeff ZZ1}) and (\ref {coeff ZZ2}).}}{17}{}\protected@file@percent }
+\newlabel{fig:ZZ}{{6}{17}{}{}{}}
+\newlabel{pauli}{{45}{17}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Pauli feature map, with 2 qubits and 2 features, decomposed in term of elementary gates, constructed with Y and YZ interactions.}}{18}{}\protected@file@percent }
+\newlabel{fig:Pauli}{{7}{18}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}QSVM algorithm and Qiskit implementation}{18}{}\protected@file@percent }
+\newlabel{circuit item }{{46}{19}{}{}{}}
+\newlabel{loss function}{{48}{19}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Quantum Support Vector Machine (QSVM)}}{20}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces QSVM decision boundary with ZFeatureMap, fitted on a 2 feature mock dataset of 200 instances.}}{21}{}\protected@file@percent }
+\newlabel{fig:qsvm}{{8}{21}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.4}QSVM potential}{21}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Artificial ad hoc dataset, generated with $\Delta =0.3$. This dataset, by construction, is easily separable by ZZFeatureMap.}}{22}{}\protected@file@percent }
+\newlabel{fig:adhoc}{{9}{22}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes. }}{23}{}\protected@file@percent }
+\newlabel{fig:adhocrbf}{{10}{23}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Result of the quantum fit on the artificial dataset, with ZZFeatureMap. We observe how the QSVM found the correct separation between the classes.}}{24}{}\protected@file@percent }
+\newlabel{fig:adhoczz}{{11}{24}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.5}Issues of QSVM (mancano delle immagini)}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Quantum kernel alignment}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Circuit optimization}{25}{}\protected@file@percent }
+\newlabel{qka}{{52}{26}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Parametrized quantum circuit, with two rotation inserted before a ZZFeatureMap.}}{28}{}\protected@file@percent }
+\newlabel{fig:param rotation}{{12}{28}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Parametrized quantum circuit, with a ZZFeatureMap inserted before another ZZFeatureMap. The former has the parameters $\lambda $ for Quantum Kernel Alignment, while the latter has the parameters $\mathbf  {x}$ in order to encode the classical instance.}}{28}{}\protected@file@percent }
+\newlabel{fig:ZZafterZZ}{{13}{28}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Performance}{29}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Result of the fit of circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}}{29}{}\protected@file@percent }
+\newlabel{fig:qka}{{14}{29}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix.}}{30}{}\protected@file@percent }
+\newlabel{fig:loss function}{{15}{30}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Genetic algorithms}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}General }{30}{}\protected@file@percent }
+\gdef \@abspage@last{30}

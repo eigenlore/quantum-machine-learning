@@ -534,6 +534,7 @@ We see how the results of the fits are not satisfying. The accuracy may not be t
 It is clear at this point that the choice of the quantum encoding map is a very delicate part of the algorithm, and cannot be taken lightly. Choosing the feature map by trying the most common ones, as one may do with classical SVM, is not a safe method, as for a lot of datasets, even simple ones, the QSVM may fail. We need a more systematic way to choose the encoding, as the performance of the model is significantly influenced by this choice. We will discuss those methods in the next sections.
 
 \subsection{Quantum kernel alignment}
+\subsubsection{Circuit optimization}
 
 In the previous sections, we discussed that the main challenge with the QSVM algorithm lies in selecting an appropriate feature map. This choice is difficult because there is no clear guidance in constructing the appropriate circuit, and the number of possible circuits for data encoding is potentially unlimited. Without guidance, it is problematic to select a circuit which works, since we saw how the choice of the feature map is very delicate. A first way to address this problem is the so-called Quantum Kernel Alignment (QKA). 
 
@@ -563,28 +564,66 @@ QKA is a hybrid quantum-classical method, because the quantum circuit is utilize
         \lambda_{k+1}=\lambda_k-a_kg_k(a_k,\lambda_k).
     \end{equation}
     \item Repeat the procedure until the cost function has converged or the maximum number of iterations has been reached. 
-    \item The final kernel is the optimal quantum kernel $K_{\lambda^*(\underline{x}_i, \underline{x}_j)}.$
+    \item The final kernel is the optimal quantum kernel $K_{\lambda^*}(\underline{x}_i, \underline{x}_j).$
 \end{itemize}
 
+There are several possible choices for the insertion of the parameters in the quantum circuit. One common choice is to insert two parametrized rotations before the actual feature map, as shown in Figure \ref{fig:param rotation}. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/rotationsbeforeZZ.png}
+    \caption{Parametrized quantum circuit, with two rotation inserted before a ZZFeatureMap.}
+    \label{fig:param rotation}
+\end{figure}
+Another possible choice is to insert the parameters inside a ZZFeatureMap, and then apply the canonical ZZFeatureMap, as shown in Figure \ref{fig:ZZafterZZ}. The first one is parametrized by $\lambda$, while the second one by $\mathbf{x}$.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/ZZafterZZ.png}
+    \caption{Parametrized quantum circuit, with a ZZFeatureMap inserted before another ZZFeatureMap. The former has the parameters $\lambda$ for Quantum Kernel Alignment, while the latter has the parameters $\mathbf{x}$ in order to encode the classical instance.}
+    \label{fig:ZZafterZZ}
+\end{figure}
+
+QKA can be implemented in Qiskit using the TrainableFidelityQuantumKernel class and the SPSA optimizer as following. 
+\begin{lstlisting}
+    kernel = TrainableFidelityQuantumKernel()
+    cb_qkt = QKTCallback()
+    spsa_opt = SPSA(maxiter=20, callback=cb_qkt.callback, learning_rate=0.05)
+    loss = SVCLoss() #loss function for the SVM
+    qkt = QuantumKernelTrainer(quantum_kernel=kernel, loss=loss, optimizer=spsa_opt)
+    qka_results = qkt.fit(X_train, y_train) #optimize kernel
+    optimized_kernel = qka_results.quantum_kernel
+\end{lstlisting}
+The final kernel is the optimized one, which can be used to train the QSVM and obtain the final result. 
+
+
+\subsubsection{Performance}
+We can evaluate the performance of the QKA-QSVM observing the behavior on the previously discussed datasets, in which the standard SVM algorithm performed badly. 
+Let's consider for example the circular dataset of Figure \ref{fig:classical svm circles}. Let's use the feature map of Figure \ref{fig:param rotation}. 
+The result is shown in Figure \ref{fig:qka}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/qka.png}
+    \caption{Result of the fit of circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}
+    \label{fig:qka}
+\end{figure}\\
+The convergence of the SVC loss function and the final kernel is shown in Figure \ref{fig:loss function}. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/lossfunction.png}
+    \caption{On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix.}
+    \label{fig:loss function}
+\end{figure}
+
+We observe how even in this case the result is not satisfactory at all. The issue is that, even though now we have the freedom to insert parameters inside, it is still not clear how to choose the circuit or the parameters. This problem is not solved, consequently we are not capable of choosing a circuit which works for this particular dataset. We need to find a more advanced algorithm to choose the circuit.
 
 
 
 
+\subsection{Genetic algorithms}
 
+Genetic algorithm can be applied to the choice of the feature map. Le'ts first discuss in a general way how this class of algorithms work. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsubsection{General }
+Genetic algorithms are optimization algorithms inspired by the process of natural selection, a key mechanism of biological evolution. The core concept is based on mimicking the biological evolution process, particularly principles like survival of the fittest, reproduction, mutation, and inheritance.
 
 
 
