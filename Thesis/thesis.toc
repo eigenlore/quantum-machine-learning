@@ -16,4 +16,5 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Circuit optimization}{25}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Performance}{29}{}%
 \contentsline {subsection}{\numberline {3.3}Genetic algorithms}{30}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}General }{30}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}General introduction}{30}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Genetic algorithm for QSVM}{31}{}%

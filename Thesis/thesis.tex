@@ -620,10 +620,24 @@ We observe how even in this case the result is not satisfactory at all. The issu
 
 \subsection{Genetic algorithms}
 
-Genetic algorithm can be applied to the choice of the feature map. Le'ts first discuss in a general way how this class of algorithms work. 
+A genetic algorithm can help choose the best feature map. We'll see how these types of algorithms can pick the right feature map based on first principles, without us having to decide the circuit's structure. This is exactly what we wanted to achieve. But first, let's talk about how these algorithms work in general.
 
-\subsubsection{General }
+\subsubsection{General introduction}
+
 Genetic algorithms are optimization algorithms inspired by the process of natural selection, a key mechanism of biological evolution. The core concept is based on mimicking the biological evolution process, particularly principles like survival of the fittest, reproduction, mutation, and inheritance.
+
+The primary components of the algorithm are the individuals, whose specific characteristics depend on the problem being addressed. Each individual is defined by a genotype and a phenotype. The genotype consists of a collection of genes, typically represented by numbers or character strings. The phenotype is a practical manifestation of the genotype, such as a quantum circuit or a neural network.
+
+Individuals are organized into generations. The transition from one generation to the next occurs through crossover and mutation, mimicking the process of natural selection. A fitness function is defined to assess how well an individual performs in relation to the specific problem being addressed. The top-performing individuals in a generation, i.e., those with the highest fitness scores, can be passed directly to the next generation without undergoing crossover or mutation. This process is known as elitism.
+
+Crossover emulates the crossing-over mechanism in meiosis. Two parent individuals from the current generation are selected with a probability proportional to their fitness, and two offspring are produced by combining the genotypes of the parents in a specific manner. Additionally, the offspring may undergo random gene mutations. The fitness of both offspring is then evaluated, with only the fittest being retained for the next generation. This process is repeated multiple times to generate successive generations.
+
+This process continues until either the maximum number of generations is reached or an individual achieves a predetermined target fitness level. Such individual is the result of the genetic algorithm. 
+
+\subsubsection{Genetic algorithm for QSVM}
+Let's now discuss how the above-mentioned concepts apply to the application in the case of Quantum Support Vector Machine. The goal is to find the best possible feature map given a dataset. 
+
+An individual somehow represents a possible feature map choice.  
 
 
 
