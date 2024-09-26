@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1727105779.76436 "/home/lore/Desktop/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1727105781.55176 0
+["pdflatex"] 1727166007.77108 "/home/lore/Desktop/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1727166020.44963 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Desktop/Università/quantum-machine-learning/Thesis/thesis.tex" 1727105779.45947 45839 31fda08149771bda9bd176aff6762d19 ""
+  "/home/lore/Desktop/Università/quantum-machine-learning/Thesis/thesis.tex" 1727166007.23768 47994 4d7cdc11196632e6e9ae187de7759e15 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -95,6 +95,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1705352648 20144 147463a6a579f4597269ef9565205cfe ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty" 1705352648 5319 2b738d02ce36ada6dcdd9534940db0ee ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty" 1705352648 5048 425739d70251273bf93e3d51f3c40048 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd" 1705352648 2469 74341109f164f230581718c66211c718 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1705352648 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
@@ -135,9 +136,9 @@
   "images/qka.png" 1726666125.21883 36466 d2d9870b3f0dd3fd0c037e7a890b7992 ""
   "images/qsvm.png" 1723887338.82258 19468 3c842e7ab778c9ddee32a5043ba3e239 ""
   "images/rotationsbeforeZZ.png" 1726645290.56988 11896 48e6b6c2b4009bb2386793ff4f5ed202 ""
-  "thesis.aux" 1727105781.42041 7709 4acff03328cc9b6e347cef1ae18005d2 "pdflatex"
-  "thesis.tex" 1727105779.45947 45839 31fda08149771bda9bd176aff6762d19 ""
-  "thesis.toc" 1727105781.42241 1497 197dbcb896845ed4fbf3caa30285d941 "pdflatex"
+  "thesis.aux" 1727166020.25096 7709 766c1c1db913f3f7f8f634b4f37776ee "pdflatex"
+  "thesis.tex" 1727166007.23768 47994 4d7cdc11196632e6e9ae187de7759e15 ""
+  "thesis.toc" 1727166020.25396 1497 197dbcb896845ed4fbf3caa30285d941 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.log"
