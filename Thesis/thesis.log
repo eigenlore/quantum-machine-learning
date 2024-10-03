@@ -1,16 +1,16 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.25)  24 SEP 2024 10:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.25)  3 OCT 2024 20:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/lore/Desktop/Università/quantum-machine-learning/Thesis/thesis.tex
-(/home/lore/Desktop/Università/quantum-machine-learning/Thesis/thesis.tex
+**/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex
+(/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count187
 \c@section=\count188
@@ -335,102 +335,108 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.39998pt on input line 34.
+Package xypdf Info: Line width: 0.47998pt on input line 34.
  (./thesis.toc [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
- [2] [3] [4] [5]
-<images/classicalsvm.png, id=33, 409.7709pt x 312.2064pt>
+ [2] [3] [4] [5] [6]
+<images/classicalsvm.png, id=34, 409.7709pt x 312.2064pt>
 File: images/classicalsvm.png Graphic file (type png)
 <use images/classicalsvm.png>
 Package pdftex.def Info: images/classicalsvm.png  used on input line 138.
-(pdftex.def)             Requested size: 345.0pt x 262.86613pt.
-<images/circles.png, id=35, 418.4433pt x 312.2064pt>
+(pdftex.def)             Requested size: 390.0pt x 297.15654pt.
+<images/circles.png, id=36, 418.4433pt x 312.2064pt>
 File: images/circles.png Graphic file (type png)
 <use images/circles.png>
 Package pdftex.def Info: images/circles.png  used on input line 147.
-(pdftex.def)             Requested size: 345.0pt x 257.41148pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6 <./images/classicalsvm.png>]
-<images/circles3d.png, id=40, 468.3096pt x 459.1554pt>
+(pdftex.def)             Requested size: 390.0pt x 290.98732pt.
+ [7 <./images/classicalsvm.png>] [8 <./images/circles.png>]
+<images/circles3d.png, id=46, 468.3096pt x 459.1554pt>
 File: images/circles3d.png Graphic file (type png)
 <use images/circles3d.png>
 Package pdftex.def Info: images/circles3d.png  used on input line 172.
-(pdftex.def)             Requested size: 345.0pt x 338.27036pt.
- [7 <./images/circles.png>] [8 <./images/circles3d.png>] [9{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<images/circlesclassicaldecisionboundary.png, id=54, 418.4433pt x 312.2064pt>
-File: images/circlesclassicaldecisionboundary.png Graphic file (type png)
-<use images/circlesclassicaldecisionboundary.png>
-Package pdftex.def Info: images/circlesclassicaldecisionboundary.png  used on input line 229.
-(pdftex.def)             Requested size: 345.0pt x 257.41148pt.
+(pdftex.def)             Requested size: 390.0pt x 382.395pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10] [11 <./images/circlesclassicaldecisionboundary.png>] <xymatrix 4x5 962> [12] [13] [14] <xymatrix 4x5 848> [15]
-<images/Z.png, id=76, 174.1707pt x 125.7498pt>
+[9] [10 <./images/circles3d.png>] [11{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<images/circlesclassicaldecisionboundary.png, id=58, 418.4433pt x 312.2064pt>
+File: images/circlesclassicaldecisionboundary.png Graphic file (type png)
+<use images/circlesclassicaldecisionboundary.png>
+Package pdftex.def Info: images/circlesclassicaldecisionboundary.png  used on input line 229.
+(pdftex.def)             Requested size: 390.0pt x 290.98732pt.
+ [12] [13 <./images/circlesclassicaldecisionboundary.png>] [14] <xymatrix 4x5 962> [15] [16] [17] [18] <xymatrix 4x5 848> [19]
+<images/Z.png, id=87, 174.1707pt x 125.7498pt>
 File: images/Z.png Graphic file (type png)
 <use images/Z.png>
 Package pdftex.def Info: images/Z.png  used on input line 367.
 (pdftex.def)             Requested size: 139.03111pt x 100.37537pt.
- [16 <./images/Z.png>]
-<images/ZZ.png, id=81, 406.8801pt x 125.7498pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/ZZ.png, id=88, 406.8801pt x 125.7498pt>
 File: images/ZZ.png Graphic file (type png)
 <use images/ZZ.png>
 Package pdftex.def Info: images/ZZ.png  used on input line 387.
 (pdftex.def)             Requested size: 324.79054pt x 100.37537pt.
-<images/pauli.png, id=82, 592.614pt x 125.7498pt>
+[20] [21 <./images/Z.png> <./images/ZZ.png>]
+<images/pauli.png, id=97, 592.614pt x 125.7498pt>
 File: images/pauli.png Graphic file (type png)
 <use images/pauli.png>
 Package pdftex.def Info: images/pauli.png  used on input line 400.
-(pdftex.def)             Requested size: 345.0pt x 73.2093pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[17 <./images/ZZ.png>] <xymatrix 4x5 962> [18 <./images/pauli.png>] [19] [20]
-<images/qsvm.png, id=101, 411.939pt x 316.5426pt>
+(pdftex.def)             Requested size: 390.0pt x 82.75719pt.
+ [22 <./images/pauli.png>] <xymatrix 4x5 962> [23] [24] [25]
+<images/qsvm.png, id=113, 411.939pt x 316.5426pt>
 File: images/qsvm.png Graphic file (type png)
 <use images/qsvm.png>
 Package pdftex.def Info: images/qsvm.png  used on input line 487.
-(pdftex.def)             Requested size: 345.0pt x 265.10184pt.
- [21 <./images/qsvm.png>]
-<images/adhoc.png, id=106, 400.3758pt x 312.2064pt>
+(pdftex.def)             Requested size: 390.0pt x 299.68013pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[26] [27 <./images/qsvm.png>]
+<images/adhoc.png, id=122, 400.3758pt x 312.2064pt>
 File: images/adhoc.png Graphic file (type png)
 <use images/adhoc.png>
 Package pdftex.def Info: images/adhoc.png  used on input line 506.
-(pdftex.def)             Requested size: 345.0pt x 269.04488pt.
-<images/adhocrbf.png, id=107, 411.939pt x 316.5426pt>
+(pdftex.def)             Requested size: 390.0pt x 304.13562pt.
+<images/adhocrbf.png, id=123, 411.939pt x 316.5426pt>
 File: images/adhocrbf.png Graphic file (type png)
 <use images/adhocrbf.png>
 Package pdftex.def Info: images/adhocrbf.png  used on input line 513.
-(pdftex.def)             Requested size: 345.0pt x 265.10184pt.
-<images/adhoczz.png, id=108, 411.939pt x 316.5426pt>
+(pdftex.def)             Requested size: 390.0pt x 299.68013pt.
+<images/adhoczz.png, id=124, 411.939pt x 316.5426pt>
 File: images/adhoczz.png Graphic file (type png)
 <use images/adhoczz.png>
 Package pdftex.def Info: images/adhoczz.png  used on input line 520.
-(pdftex.def)             Requested size: 345.0pt x 265.10184pt.
- [22 <./images/adhoc.png>]
+(pdftex.def)             Requested size: 390.0pt x 299.68013pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23 <./images/adhocrbf.png>] [24 <./images/adhoczz.png>] [25] [26]
-<images/rotationsbeforeZZ.png, id=128, 453.1329pt x 125.7498pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28] [29 <./images/adhoc.png>] [30 <./images/adhocrbf.png>] [31 <./images/adhoczz.png>] [32] [33] [34]
+<images/rotationsbeforeZZ.png, id=151, 453.1329pt x 125.7498pt>
 File: images/rotationsbeforeZZ.png Graphic file (type png)
 <use images/rotationsbeforeZZ.png>
 Package pdftex.def Info: images/rotationsbeforeZZ.png  used on input line 573.
-(pdftex.def)             Requested size: 345.0pt x 95.7416pt.
-<images/ZZafterZZ.png, id=129, 732.0951pt x 125.7498pt>
+(pdftex.def)             Requested size: 390.0pt x 108.23097pt.
+<images/ZZafterZZ.png, id=152, 732.0951pt x 125.7498pt>
 File: images/ZZafterZZ.png Graphic file (type png)
 <use images/ZZafterZZ.png>
 Package pdftex.def Info: images/ZZafterZZ.png  used on input line 580.
-(pdftex.def)             Requested size: 345.0pt x 59.26166pt.
+(pdftex.def)             Requested size: 390.0pt x 66.99052pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -438,57 +444,60 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27]
-<images/qka.png, id=134, 402.5439pt x 327.3831pt>
+[35] [36 <./images/rotationsbeforeZZ.png> <./images/ZZafterZZ.png>]
+<images/qka.png, id=161, 402.5439pt x 327.3831pt>
 File: images/qka.png Graphic file (type png)
 <use images/qka.png>
 Package pdftex.def Info: images/qka.png  used on input line 604.
-(pdftex.def)             Requested size: 345.0pt x 280.58984pt.
-<images/lossfunction.png, id=135, 896.148pt x 332.442pt>
+(pdftex.def)             Requested size: 390.0pt x 317.18655pt.
+<images/lossfunction.png, id=162, 896.148pt x 332.442pt>
 File: images/lossfunction.png Graphic file (type png)
 <use images/lossfunction.png>
 Package pdftex.def Info: images/lossfunction.png  used on input line 611.
-(pdftex.def)             Requested size: 345.0pt x 127.98294pt.
- [28 <./images/rotationsbeforeZZ.png> <./images/ZZafterZZ.png>]
+(pdftex.def)             Requested size: 390.0pt x 144.67703pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[29 <./images/qka.png>] [30 <./images/lossfunction.png>] [31] [32]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 699.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[37] [38 <./images/qka.png>] [39 <./images/lossfunction.png>] [40] [41]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 694.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 699.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 694.
+<images/fenotip.png, id=181, 629.35126pt x 174.6525pt>
+File: images/fenotip.png Graphic file (type png)
+<use images/fenotip.png>
+Package pdftex.def Info: images/fenotip.png  used on input line 697.
+(pdftex.def)             Requested size: 390.0pt x 108.23012pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
+Underfull \hbox (badness 10000) in paragraph at lines 694--701
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 699--700
-
- []
-
-[33] (./thesis.aux)
+[42] [43 <./images/fenotip.png>] (./thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 9451 strings out of 474222
- 133525 string characters out of 5748733
- 1998975 words of memory out of 5000000
- 31577 multiletter control sequences out of 15000+600000
- 570259 words of font info for 85 fonts, out of 8000000 for 9000
+ 9460 strings out of 474222
+ 133827 string characters out of 5748733
+ 2016975 words of memory out of 5000000
+ 31591 multiletter control sequences out of 15000+600000
+ 571810 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,79p,1488b,1673s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on thesis.pdf (33 pages, 892190 bytes).
+ 72i,19n,79p,1490b,1785s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on thesis.pdf (43 pages, 869677 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
+ 268 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{listings}
@@ -637,7 +637,7 @@ This process continues until either the maximum number of generations is reached
 \subsubsection{Genetic algorithm for QSVM}
 Let's now discuss how the above-mentioned concepts apply to the application in the case of Quantum Support Vector Machine. The goal is to find the best possible feature map given a dataset. 
 
-An individual is meant to represent a possible feature map choice. The genes of an individual are taken of the form 
+An individual is meant to represent a possible feature map choice. We define the genes of an individual in the form 
 \begin{equation}
     [G, q_t, q_c, f],
 \end{equation} 
@@ -682,22 +682,24 @@ e^{-i\theta/2} & 0 \\
 \end{pmatrix}.
 \]
 
-Since the feature map is constituted by a parametrized quantum circuit $U(\theta)$, the parameters $\theta$ will be inserted inside the $R_z$ type gates. 
+Since the feature map is constituted by a parametrized quantum circuit $U(\mathbf{x})$, the parameters $\mathbf{x}$ will be inserted inside the $R_z$ type gates. 
 
 \item $q_t$ is the target qubit to which the gate is applied, therefore it will be an integer number between $0$ and $n-1$, where $n$ is the number of qubits. 
 
 \item $q_c$ is the control qubit, if it exists for that particular gate. If we use the gates set presented above only the $\textup{CNOT}$ gate has a control qubit, otherwise it is set to $\textup{None}$.
 
 \item $f$ represents which feature to use as the gate parameter, if the gate accepts a parameter. In our example only the $R_z$ gate accepts one. In the other cases it is set to $\textup{None}$. Since we have $d$ features $(x_0, \cdots, x_{d-1})$, $f$ will be an integer between $0$ and $d-1$. 
-
-
-
-
-
 \end{itemize}
 
-The genotype will be a collection of gates of this form. The number of genes can vary, and it will represent the number of gates of the circuit. The phenotype associated to a genotype will be the corresponding parametrized quantum circuit. Let's make an example and consider $n=d=2$ and the genotype \\\ \{[$R_z$, 0, None, 0], [$R_z$, 1, None, 0], [CNOT, 1, 0, None], [$X$, 1, None, None]\}. \\\\ 
+The genotype will be a collection of genes of this form. The number of genes can vary, in particular it will represent the number of gates of the circuit. The phenotype associated to a genotype will be the corresponding parametrized quantum circuit. Let's make an example of this and consider $n=d=2$ and the genotype \\\ \{[$R_z$, 0, None, 0], [$R_z$, 1, None, 0], [CNOT, 1, 0, None], [$X$, 1, None, None]\}. \\\\ There are 4 genes, so the circuit must have first gate. If we look at the first gene we can conclude that the first gate is a $R_z$ with the first qubit as target. The control qubit is set to None since $R_z$ is a single qubit gate. The 0-th feature $x_0$ is used as the parameter of the circuit. Similar considerations hold for the others 3 gates. The circuit, i.e. the phenotype, is represented in Figure \ref{fig:fenotip}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/fenotip.png}
+    \caption{Example of the phenotype of an individual. The phenotype is a quantum circuit.}
+    \label{fig:fenotip}
+\end{figure}
 
+We saw how parent individuals are passed to the child generation using crossover and mutations. Let's discuss how these operations are performed in the QSVM case. Crossover consists in cutting the circuit in half and pasting the two half in two different children circuits.  
 
 
 \end{document}
