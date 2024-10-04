@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{subcaption}
 \usepackage[braket, qm]{qcircuit} % Importa il pacchetto qcircuit
 \lstdefinestyle{python}{
     language=Python,
@@ -135,7 +136,7 @@ The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/classicalsvm.png}
+    \includegraphics[width=0.8\textwidth]{images/classicalsvm.png}
     \caption{SVM decision boundary and margin border, fitted on a 2 feature mock dataset of 200 instances.}
     \label{fig:classical svm mock}
 \end{figure}
@@ -144,7 +145,7 @@ The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can 
 We now need to address the issue of dealing with a highly non-linearly separable dataset. Let's consider as an example another mock dataset, shown in Figure (\ref{fig:classical svm circles}). 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/circles.png}
+    \includegraphics[width=0.8\textwidth]{images/circles.png}
     \caption{Higly non-linear 2 feature mock dataset with 200 instances.}
     \label{fig:classical svm circles}
 \end{figure}
@@ -169,7 +170,7 @@ $$    \phi:\mathbb{R}^2\rightarrow\mathbb{R}^3,$$
 The data of Figure (\ref{fig:classical svm circles}) after the application of the feature map $\phi$ are represented in Figure (\ref{fig:classical svm circle 3d}). 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/circles3d.png}
+    \includegraphics[width=0.8\textwidth]{images/circles3d.png}
     \caption{Highly non-linear mock dataset in the feature space after the application of the feature map $\phi$. We observe now that the dataset is linearly separable.}
     \label{fig:classical svm circle 3d}
 \end{figure}
@@ -226,7 +227,7 @@ scikit learn offers an easy way to easily implement all these common kernels. Fo
 One can also create a custom kernel, passing as an argument a callable function to be used to calculate the kernel. Fitting this SVC function to the non-linear dataset of Figure (\ref{fig:classical svm circles}) yields the result shown in Figure (\ref{fig:classical svm circle decision boundary}). 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/circlesclassicaldecisionboundary.png}
+    \includegraphics[width=0.8\textwidth]{images/circlesclassicaldecisionboundary.png}
     \caption{Highly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref{polykernel ex}). The white and black areas are the two predicted classes. We observe how, using the kernel, we obtained a non-linear decision boundary.}
     \label{fig:classical svm circle decision boundary}
 \end{figure}
@@ -397,7 +398,7 @@ Let's now discuss some possible choices of quantum encoding circuits:
     where $P\in\{1,X,Y,Z\}$. This allows us to generate not only interaction of the ZZ type, but also for example YY type or ZY type. An example with Y and ZY interactions is shown in Figure \ref{pauli}.
     \begin{figure}[h!]
         \centering
-        \includegraphics[width=\textwidth]{images/pauli.png}
+        \includegraphics[width=0.8\textwidth]{images/pauli.png}
         \caption{Pauli feature map, with 2 qubits and 2 features, decomposed in term of elementary gates, constructed with Y and YZ interactions.}
         \label{fig:Pauli}
     \end{figure}
@@ -484,7 +485,7 @@ This algorithm can be implemented in practice exploiting Qiskit to perform the c
 The result of the fit is shown in Figure \ref{fig:qsvm}.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/qsvm.png}
+    \includegraphics[width=0.8\textwidth]{images/qsvm.png}
     \caption{QSVM decision boundary with ZFeatureMap, fitted on a 2 feature mock dataset of 200 instances.}
     \label{fig:qsvm}
 \end{figure}
@@ -503,21 +504,21 @@ and $m(\mathbf{x})=-1$ when
 $\Delta$ controls how big is the gap between of the two classes. We show this dataset in Figure \ref{fig:adhoc}.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/adhoc.png}
+    \includegraphics[width=0.8\textwidth]{images/adhoc.png}
     \caption{Artificial ad hoc dataset, generated with $\Delta=0.3$. This dataset, by construction, is easily separable by ZZFeatureMap.}
     \label{fig:adhoc}
 \end{figure}
 We observe how the dataset of Figure \ref{fig:adhoc} shows a very complicated pattern. Classical methods cannot hope to separate these two classes. In fact, if we divide the dataset into a training set and a test set, and apply the classical SVM algorithm, for example with the RBF kernel, we obtain an accuracy on the test set of 0.51, which is essentially like assigning the classes with a random coin toss. The result of the classical fit is shown in Figure \ref{fig:adhocrbf}, in which we observe how the correct decision boundary has not been found. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/adhocrbf.png}
+    \includegraphics[width=0.8\textwidth]{images/adhocrbf.png}
     \caption{Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes. }
     \label{fig:adhocrbf}
 \end{figure}
 In Figure \ref{fig:adhoczz} is shown instead the result of the fit with the QSVM with ZZFeatureMap, which yields an accuracy on the test set of 1.0, and a nice looking decision boundary. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/adhoczz.png}
+    \includegraphics[width=0.8\textwidth]{images/adhoczz.png}
     \caption{Result of the quantum fit on the artificial dataset, with ZZFeatureMap. We observe how the QSVM found the correct separation between the classes.}
     \label{fig:adhoczz}
 \end{figure}
@@ -570,14 +571,14 @@ QKA is a hybrid quantum-classical method, because the quantum circuit is utilize
 There are several possible choices for the insertion of the parameters in the quantum circuit. One common choice is to insert two parametrized rotations before the actual feature map, as shown in Figure \ref{fig:param rotation}. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/rotationsbeforeZZ.png}
+    \includegraphics[width=0.8\textwidth]{images/rotationsbeforeZZ.png}
     \caption{Parametrized quantum circuit, with two rotation inserted before a ZZFeatureMap.}
     \label{fig:param rotation}
 \end{figure}
 Another possible choice is to insert the parameters inside a ZZFeatureMap, and then apply the canonical ZZFeatureMap, as shown in Figure \ref{fig:ZZafterZZ}. The first one is parametrized by $\lambda$, while the second one by $\mathbf{x}$.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/ZZafterZZ.png}
+    \includegraphics[width=0.8\textwidth]{images/ZZafterZZ.png}
     \caption{Parametrized quantum circuit, with a ZZFeatureMap inserted before another ZZFeatureMap. The former has the parameters $\lambda$ for Quantum Kernel Alignment, while the latter has the parameters $\mathbf{x}$ in order to encode the classical instance.}
     \label{fig:ZZafterZZ}
 \end{figure}
@@ -601,14 +602,14 @@ Let's consider for example the circular dataset of Figure \ref{fig:classical svm
 The result is shown in Figure \ref{fig:qka}.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/qka.png}
+    \includegraphics[width=0.8\textwidth]{images/qka.png}
     \caption{Result of the fit of circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}
     \label{fig:qka}
 \end{figure}\\
 The convergence of the SVC loss function and the final kernel is shown in Figure \ref{fig:loss function}. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/lossfunction.png}
+    \includegraphics[width=0.8\textwidth]{images/lossfunction.png}
     \caption{On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix.}
     \label{fig:loss function}
 \end{figure}
@@ -694,12 +695,80 @@ Since the feature map is constituted by a parametrized quantum circuit $U(\mathb
 The genotype will be a collection of genes of this form. The number of genes can vary, in particular it will represent the number of gates of the circuit. The phenotype associated to a genotype will be the corresponding parametrized quantum circuit. Let's make an example of this and consider $n=d=2$ and the genotype \\\ \{[$R_z$, 0, None, 0], [$R_z$, 1, None, 0], [CNOT, 1, 0, None], [$X$, 1, None, None]\}. \\\\ There are 4 genes, so the circuit must have first gate. If we look at the first gene we can conclude that the first gate is a $R_z$ with the first qubit as target. The control qubit is set to None since $R_z$ is a single qubit gate. The 0-th feature $x_0$ is used as the parameter of the circuit. Similar considerations hold for the others 3 gates. The circuit, i.e. the phenotype, is represented in Figure \ref{fig:fenotip}.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=\textwidth]{images/fenotip.png}
+    \includegraphics[width=0.8\textwidth]{images/fenotip.png}
     \caption{Example of the phenotype of an individual. The phenotype is a quantum circuit.}
     \label{fig:fenotip}
 \end{figure}
 
-We saw how parent individuals are passed to the child generation using crossover and mutations. Let's discuss how these operations are performed in the QSVM case. Crossover consists in cutting the circuit in half and pasting the two half in two different children circuits.  
+We saw how parent individuals are passed to the child generation using crossover and mutations. Let's discuss how these operations are performed in the QSVM case. 
 
+Crossover consists in cutting the circuit in half and pasting the two halves in two different children circuits. In formulas, assuming the number of genes to be even, starting from the parent genotype $$\{g^1_0, \cdots , g^1_{\frac{n}{2}-1}, g^1_{\frac{n}{2}}, \cdots, g^1_{n-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{n}{2}-1}, g^2_{\frac{n}{2}}, \cdots, g^2_{n-1}\},$$ we build the two children genotype $$\{g^1_0, \cdots , g^1_{\frac{n}{2}-1}, g^2_{\frac{n}{2}}, \cdots, g^2_{n-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{n}{2}-1}, g^1_{\frac{n}{2}}, \cdots, g^1_{n-1}\}.$$
+
+In Figure \ref{fig:1par}-\ref{fig:2child} it is shown an example to illustrate what happens on the phenotype. 
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/parent1.png}
+        \caption{First parent phenotype.}
+        \label{fig:1par}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/parent2.png}
+        \caption{Second parent phenotype.}
+        \label{fig:2par}
+    \end{minipage}
+
+    \vspace{0.5cm}
+
+    \begin{minipage}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/child1.png}
+        \caption{First child phenotype.}
+        \label{fig:1child}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/child2.png}
+        \caption{Second child phenotype.}
+        \label{fig:2child}
+    \end{minipage}
+\end{figure}
+
+Mutation instead consists in a random mutation of the genes. That is every gene is mutated, with a probability $p$, into another randomly chosen. Another alternative way could be to mutate only one randomly chosen gene, with a probability of the mutation occurring greater than the former. An example is shown in Figure \ref{fig:mutated}-\ref{fig:nonmutated}.  
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/mutated.png}
+        \caption{Starting non mutated individual.}
+        \label{fig:mutated}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/nonmutated.png}
+        \caption{Mutated individual. The first gene is mutated from a $\sqrt{X}$ acting on the first qubit into an $R_z$ acting again on the first qubit. The other genes in this case were not mutated.}
+        \label{fig:nonmutated}
+    \end{minipage}
+\end{figure}
+This is a possible result of the mutation, of course being intrinsically random another mutation would produce a different result.  
+
+The last concept we need to define in the QSVM case is the one of the fitness function. That is we need a quantitative way to assess how well an individual performs on the particular dataset we are considering. In machine learning there are several ways to evaluate the performance on a classification task. The simplest one is the accuracy on the test set, that is the ratio of correctly classified points and the total number of points. 
+\begin{equation}
+    \textup{acccuracy}=\frac{\textup{correctly classified points}}{\textup{total number of points}}.
+\end{equation}
+For instance, we could use test set accuracy as the fitness of an individual. However, this approach would not sufficiently penalize poorly performing individuals, who are selected to generate offspring with a probability proportional to their fitness. If we use accuracy, an individual with a fitness of 0.5 has only half the probability of being chosen compared to one with a fitness close to 1. This is problematic because the former performs very poorly (its performance is comparable to randomly guessing the labels) whereas the latter correctly classifies almost every label. Moreover, individuals with a fitness below 0.5, which are not uncommon given the potential issues with the QSVM algorithm when an unsuitable feature map is selected, still have a non-negligible chance of being chosen. We would prefer these individuals to be heavily penalized, as their performance is even worse than random guessing. A possible way to achieve this is to use $$\textup{fitness}=\textup{acccuracy}^6.$$ The function is represented in Figure (\ref{fig:fitness function}).
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/sigmoid.png}
+    \caption{Fitness of an individual as a function of its accuracy on the test set. This choice is made to properly penalize bad performing individuals.}
+    \label{fig:fitness function}
+\end{figure}
+This choice strongly penalizes individuals with performance scores below 0.5, drastically reducing their chances of being selected for reproduction. Conversely, individuals with higher accuracy have significantly greater fitness, resulting in a much higher probability of being chosen to generate offspring.
 
 \end{document}
