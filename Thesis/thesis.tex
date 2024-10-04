@@ -398,7 +398,7 @@ Let's now discuss some possible choices of quantum encoding circuits:
     where $P\in\{1,X,Y,Z\}$. This allows us to generate not only interaction of the ZZ type, but also for example YY type or ZY type. An example with Y and ZY interactions is shown in Figure \ref{pauli}.
     \begin{figure}[h!]
         \centering
-        \includegraphics[width=0.8\textwidth]{images/pauli.png}
+        \includegraphics[width=\textwidth]{images/pauli.png}
         \caption{Pauli feature map, with 2 qubits and 2 features, decomposed in term of elementary gates, constructed with Y and YZ interactions.}
         \label{fig:Pauli}
     \end{figure}
@@ -571,14 +571,14 @@ QKA is a hybrid quantum-classical method, because the quantum circuit is utilize
 There are several possible choices for the insertion of the parameters in the quantum circuit. One common choice is to insert two parametrized rotations before the actual feature map, as shown in Figure \ref{fig:param rotation}. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/rotationsbeforeZZ.png}
+    \includegraphics[width=\textwidth]{images/rotationsbeforeZZ.png}
     \caption{Parametrized quantum circuit, with two rotation inserted before a ZZFeatureMap.}
     \label{fig:param rotation}
 \end{figure}
 Another possible choice is to insert the parameters inside a ZZFeatureMap, and then apply the canonical ZZFeatureMap, as shown in Figure \ref{fig:ZZafterZZ}. The first one is parametrized by $\lambda$, while the second one by $\mathbf{x}$.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/ZZafterZZ.png}
+    \includegraphics[width=\textwidth]{images/ZZafterZZ.png}
     \caption{Parametrized quantum circuit, with a ZZFeatureMap inserted before another ZZFeatureMap. The former has the parameters $\lambda$ for Quantum Kernel Alignment, while the latter has the parameters $\mathbf{x}$ in order to encode the classical instance.}
     \label{fig:ZZafterZZ}
 \end{figure}
@@ -609,7 +609,7 @@ The result is shown in Figure \ref{fig:qka}.
 The convergence of the SVC loss function and the final kernel is shown in Figure \ref{fig:loss function}. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/lossfunction.png}
+    \includegraphics[width=\textwidth]{images/lossfunction.png}
     \caption{On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix.}
     \label{fig:loss function}
 \end{figure}
@@ -702,10 +702,8 @@ The genotype will be a collection of genes of this form. The number of genes can
 
 We saw how parent individuals are passed to the child generation using crossover and mutations. Let's discuss how these operations are performed in the QSVM case. 
 
-Crossover consists in cutting the circuit in half and pasting the two halves in two different children circuits. In formulas, assuming the number of genes to be even, starting from the parent genotype $$\{g^1_0, \cdots , g^1_{\frac{n}{2}-1}, g^1_{\frac{n}{2}}, \cdots, g^1_{n-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{n}{2}-1}, g^2_{\frac{n}{2}}, \cdots, g^2_{n-1}\},$$ we build the two children genotype $$\{g^1_0, \cdots , g^1_{\frac{n}{2}-1}, g^2_{\frac{n}{2}}, \cdots, g^2_{n-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{n}{2}-1}, g^1_{\frac{n}{2}}, \cdots, g^1_{n-1}\}.$$
-
+Crossover consists in cutting the circuit in half and pasting the two halves in two different children circuits. In formulas, assuming the number of genes $k$ to be even, starting from the parent genotype $$\{g^1_0, \cdots , g^1_{\frac{k}{2}-1}, g^1_{\frac{k}{2}}, \cdots, g^1_{k-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{k}{2}-1}, g^2_{\frac{k}{2}}, \cdots, g^2_{k-1}\},$$ we build the two children genotype $$\{g^1_0, \cdots , g^1_{\frac{k}{2}-1}, g^2_{\frac{k}{2}}, \cdots, g^2_{k-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{k}{2}-1}, g^1_{\frac{k}{2}}, \cdots, g^1_{k-1}\}.$$
 In Figure \ref{fig:1par}-\ref{fig:2child} it is shown an example to illustrate what happens on the phenotype. 
-
 \begin{figure}[h!]
     \centering
     \begin{minipage}{0.7\textwidth}
@@ -770,5 +768,48 @@ For instance, we could use test set accuracy as the fitness of an individual. Ho
     \label{fig:fitness function}
 \end{figure}
 This choice strongly penalizes individuals with performance scores below 0.5, drastically reducing their chances of being selected for reproduction. Conversely, individuals with higher accuracy have significantly greater fitness, resulting in a much higher probability of being chosen to generate offspring.
+
+Let us now provide a detailed explanation of how the algorithm functions. The initial inputs to the algorithm are as follows:
+\begin{itemize} 
+    \item A dataset, for which the objective is to discover a feature map that accurately classifies the data. This dataset will be split as usual into a training set and a test set. We will use the circular mock dataset of Figure (\ref{fig:classical svm circles}), as we saw the difficulties of its classification without a genetic algorithm. The dataset automatically defines the number of features $d$.  
+    \item The number $k$ of genes, that is the number of gates of the feature map. 
+    \item The number $n$ of qubits that we want the circuit to have.
+    \item The number of individuals that compose a generation.
+    \item The gate set to use to create the feature map. We will use $$\{X, \sqrt{X}, \textup{CNOT}, R_z\},$$ but other choices can be made, depending also on the type of physical architecture we plan on using for running the algorithm. For example Google Sycamore processor works by using the gates $$\{\sqrt{X}, \sqrt{Y},\sqrt{X+Y}, \textup{iSWAP}, \text{CZ}\},$$ so if we want to run the algorithm on that processor we could use this complete set of gates. 
+    \item The probability $p$ of a mutation occurring on an individual.
+    \item The target fitness we want to achieve. The algorithm will terminate if an individual reaches that target fitness. 
+    \item The maximum number of generations we allow. If no individual achieves the target fitness the algorithm will terminate when the maximum number of generations is reached. 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
