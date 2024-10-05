@@ -782,7 +782,7 @@ Let us now provide a detailed explanation of how the algorithm functions. The in
     \item The number of individuals $m$ that compose a generation.
     \item The percentage of individuals that automatically pass to the next generation through elitism. A typical value is $10\%$.
     \item The gate set to use to create the feature map. We will use $$\{X, \sqrt{X}, \textup{CNOT}, R_z\},$$ but other choices can be made, depending also on the type of physical architecture we plan on using for running the algorithm. For example Google Sycamore processor works by using the gates $$\{\sqrt{X}, \sqrt{Y},\sqrt{X+Y}, \textup{iSWAP}, \text{CZ}\},$$ so if we want to run the algorithm on that processor we could use this complete set of gates. 
-    \item The probability $p$ of a mutation occurring on an individual.
+    \item The probability $p$ of a mutation occurring on an individual. A standard value is 10\%.
     \item The target fitness we want to achieve. The algorithm will terminate if an individual reaches that target fitness. 
     \item The maximum number of generations we allow. If no individual achieves the target fitness the algorithm will terminate when the maximum number of generations is reached. 
 \end{itemize}
@@ -803,16 +803,45 @@ We now execute the algorithm on the circular dataset shown in Figure (\ref{fig:c
 
 An important goal is to construct the smallest possible quantum circuit, minimizing both the number of gates and qubits. This is motivated by the technical limitations of current quantum devices, which struggle with larger, more complex circuits. Consequently, we begin with a simple circuit and will increase its depth or number of qubits if necessary.
 
-For our experiment, we set a target fitness of 0.95, corresponding to an accuracy of 0.99, using eq. (\ref{accuracy}). We begin with a circuit comprising 2 qubits and 10 genes (gates), keeping the circuit compact.
+For our experiment, we set a target fitness of 0.95, corresponding to an accuracy of 0.99, using eq. (\ref{accuracy}). We begin with a circuit with 2 qubits and 10 genes (gates), keeping the circuit compact.
 
-The population size directly influences the efficiency of the algorithm. While larger populations provide more diversity and improve convergence, they significantly slow down the algorithm, particularly when using quantum simulators. Since running a single QSVM instance already requires substantial time, we opted for a reduced population size of 10 individuals. Although a standard starting point would be 100 individuals, we can begin with a small population and scale up if the results are unsatisfactory. We set a maximum number of 25 generations.
+The population size directly influences the efficiency of the algorithm. While larger populations provide more diversity and improve convergence, they significantly slow down the algorithm, particularly when using quantum simulators, like in our case. Since running a single QSVM instance already requires substantial time on a simulator, we opted for a reduced population size of 10 individuals. Although a standard starting point would be 100 individuals, we can begin with a small population and scale up if the results are unsatisfactory. We set a maximum number of 25 generations.
 
+The initial parameters are shown in Table (\ref{tabella accettanza})
+\begin{table}[h]
+    \centering
+    \begin{tabular}{||c c||} 
+     \hline
+     Parameter & Value  \\ [0.5ex] 
+     \hline\hline
+     Number of qubits & 2 \\ 
+     Number of features & 2  \\
+     Number of genes & 10  \\
+     Target accuracy & 99\%  \\ 
+     Maximum number of generation & 25  \\
+     Individuals in a generation & 10  \\ 
+     Individuals passed through elitism & 1 \\
+     Probability of a mutation & 10\% \\  
+     \hline
+    \end{tabular}
+    \caption{Parameters of the genetic algorithm}
+    \label{tabella accettanza}
+\end{table}
 
-
-
-
-
-
+After 25 generations the algorithm reaches a fitness of 86\%. The final individual phenotype is represented in Figure (\ref{fig:final circuit}).
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/finalcircuit.png}
+    \caption{Final circuit of the genetic algorithm. This is the phenotype of the best individual of the last generation. This is the circuit with the best performance on this dataset that the genetic algorithm could find.}
+    \label{fig:final circuit}
+\end{figure}
+This is the best-performing circuit identified by the genetic algorithm. Before exploring its potential, let's first assess whether the algorithm performed as expected. In Figure () we plot how the mean fitness of each generation evolves with the passing of generations. We observe an increase in the mean fitness, starting from a very low value in the first generation, which consists of randomly selected circuits, to a significantly higher value in the final generation. This confirms that the genetic algorithm is effectively improving the fitness of individuals through its internal crossover mechanics. If the mean fitness of the first generation was similar to that of the last, it would mean that the circuit was found by random chance, rendering the genetic algorithm useless. Instead, we clearly see how the algorithm consistently increases the fitness with each generation.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/meanaccuracy.png}
+    \caption{Mean accuracy of each generation. We observe a consistent increase of the accuracy, ensuring that the genetic algorithm is improving the performance of the feature maps from generation to generation.}
+    \label{fig:mean accuracy}
+\end{figure}
 
 
 
