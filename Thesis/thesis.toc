@@ -15,6 +15,7 @@
 \contentsline {subsection}{\numberline {3.2}Quantum kernel alignment}{31}{}%
 \contentsline {subsubsection}{\numberline {3.2.1}Circuit optimization}{31}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Performance}{36}{}%
-\contentsline {subsection}{\numberline {3.3}Genetic algorithms}{37}{}%
+\contentsline {subsection}{\numberline {3.3}Genetic algorithm}{37}{}%
 \contentsline {subsubsection}{\numberline {3.3.1}General introduction}{38}{}%
 \contentsline {subsubsection}{\numberline {3.3.2}Genetic algorithm for QSVM}{39}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Results}{49}{}%
