@@ -26,7 +26,7 @@
 %\newtheorem{theorem}{Theorem}
 \usepackage{amsmath, amssymb, graphicx, algorithm, algpseudocode}
 
-\linespread{1.7}
+\linespread{1.6}
 %\usepackage{fullpage}
 \title{Genetic algorithm for Quantum Support Vector Machines}
 \author{Lorenzo Tasca}
@@ -843,8 +843,29 @@ This is the best-performing circuit identified by the genetic algorithm. Before 
     \label{fig:mean accuracy}
 \end{figure}
 
+To verify that the circuit in Figure (\ref{fig:final circuit}) can truly separate circle-like datasets, we tested its performance on a new artificial dataset. This dataset was generated using the same parameters as the one the circuit was trained on, but with new data points. It's essential to ensure that the circuit does not perform well only on the specific dataset it was trained with, but also on slightly varied datasets. The result of the fit is shown in Figure (), where we achieved 94\% accuracy. This indicates that the circuit is highly effective at separating circle-like datasets.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/awesomeresult.png}
+    \caption{Final test of the resulting circuit of the genetic algorithm on a new dataset with respect the one it was trained on. The fact that the circuit is well performing on this dataset indicates that we actually found a circuit well performing on this sort of datasets.}
+    \label{fig:awesome}
+\end{figure}
 
+To further demonstrate how the genetic algorithm improved the performance of the individuals, let's try the same task with an individual from the first generation. The result, shown in Figure (\ref{fig:bad}), reveals poor performance, similar to the outcomes we observed when using standard feature map choices. So by just randomly picking circuits we are not able to construct well performing individuals. However, by evolving these individuals through crossover, the genetic algorithm is able to generate circuits with high accuracy for this type of dataset.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/badresult.png}
+    \caption{Test of the performance of an individual from the first generation on the same dataset. We observe how its performance is very low, indicating that the first generation of individuals performs poorly as we expected.}
+    \label{fig:bad}
+\end{figure}
 
+The fact that it performs well on this dataset is a strong indication of the potential of the final circuit we identified. However, it's natural to question how far this circuit can be pushed, as the dataset, while new, was still generated using the same parameters the genetic algorithm was trained on. What happens if we alter the shape by, for instance, adding noise or changing the radius of the two circles? Will the circuit still be able to classify correctly? Is the circuit able to classify all circle-like datasets? In Figure (\ref{fig:noise}) we used it to classify a different circle dataset, with noise added to the points. The classification reached a 91\% accuracy, indicating a good performance even on this dataset. We can answer affirmatively to the questions we asked.  
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/noise.png}
+    \caption{Test of the performance of the best individual on a new dataset with noise. The circuit is revealed to be robust against noise, correctly classifying 91\% of the point.}
+    \label{fig:noise}
+\end{figure}
 
 
 

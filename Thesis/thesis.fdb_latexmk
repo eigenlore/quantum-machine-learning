@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1728146902.15169 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1728146906.50105 0
+["pdflatex"] 1728202117.13976 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1728202119.32524 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1728146900.42453 60897 53ba6f9e48cf045f3d47453190d08e51 ""
+  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1728202114.25689 63932 6d65b32ae6f631fbb347a7aff696c640 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -125,6 +125,8 @@
   "images/adhoc.png" 1723976288.13648 24102 8367aec29870d6803d108f5f2d92ebb2 ""
   "images/adhocrbf.png" 1723979589.09471 30960 7ae7222a290b3e004edb8f5e38fb43d3 ""
   "images/adhoczz.png" 1723979691.80391 48313 d3a41279f6e3be5f4af2edc7f08b7d22 ""
+  "images/awesomeresult.png" 1728157490.01709 41281 c7651025af8f062e07ae0540640de894 ""
+  "images/badresult.png" 1728157504.50405 36758 4e92d2a3ffe704259f6eea9de15744a3 ""
   "images/child1.png" 1727942969.20829 10693 376f52b6c29864d6fa107a738ebf3d32 ""
   "images/child2.png" 1727942985.00118 10503 6eb29c6c41d768e229ce0a581e41f0fe ""
   "images/circles.png" 1722846122.74208 26892 93cea1232441f49b50106f254c34b719 ""
@@ -136,6 +138,7 @@
   "images/lossfunction.png" 1726666101.59199 281351 1c70327288657feff3de867dd02e8a52 ""
   "images/meanaccuracy.png" 1728146802.61283 25984 99c4d4d9ee540f0e45d99eb2323da841 ""
   "images/mutated.png" 1728025244.83341 8711 57f19b014a2a2d67702cf7a893548d59 ""
+  "images/noise.png" 1728201980.43225 41201 4bcfbb6ac2c9a6352cf55ef7125906ba ""
   "images/nonmutated.png" 1728025229.17561 8935 9f083ec1a64a69afd69710412ddb8877 ""
   "images/parent1.png" 1727942993.22912 10666 6566bf3616cd92f2e2392e82ed1d09d8 ""
   "images/parent2.png" 1727943000.55207 9789 991503d7cde541af1192dfbba0fa6b85 ""
@@ -144,9 +147,9 @@
   "images/qsvm.png" 1723887338.82258 19468 3c842e7ab778c9ddee32a5043ba3e239 ""
   "images/rotationsbeforeZZ.png" 1726645290.56988 11896 48e6b6c2b4009bb2386793ff4f5ed202 ""
   "images/sigmoid.png" 1728028140.10736 20513 377d5aba67e1619960f35ff72f65d0d9 ""
-  "thesis.aux" 1728146906.2047 10493 0ba3120eec6d1baa73e654c9ee3d4e93 "pdflatex"
-  "thesis.tex" 1728146900.42453 60897 53ba6f9e48cf045f3d47453190d08e51 ""
-  "thesis.toc" 1728146906.2077 1561 e4238d4f8b33c8da7ef22d29a85f352b "pdflatex"
+  "thesis.aux" 1728202119.19981 11565 f698a53a1568acddc5b150cfffbd8e56 "pdflatex"
+  "thesis.tex" 1728202114.25689 63932 6d65b32ae6f631fbb347a7aff696c640 ""
+  "thesis.toc" 1728202119.20181 1561 9ffb1b60aff33a3c8ff0cbd50babca85 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.log"

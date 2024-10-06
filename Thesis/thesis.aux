@@ -8,22 +8,22 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Support vector machine}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Linear SVM}{3}{}\protected@file@percent }
 \newlabel{margin definition}{{1}{4}{}{}{}}
-\newlabel{constraint hard margin}{{5}{5}{}{}{}}
+\newlabel{constraint hard margin}{{5}{4}{}{}{}}
 \newlabel{alpha def}{{6}{5}{}{}{}}
 \newlabel{dual problem SVM}{{7}{5}{}{}{}}
 \newlabel{decision boundary svm}{{11}{6}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces SVM decision boundary and margin border, fitted on a 2 feature mock dataset of 200 instances.}}{7}{}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:classical svm mock}{{1}{7}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{7}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Higly non-linear 2 feature mock dataset with 200 instances.}}{8}{}\protected@file@percent }
 \newlabel{fig:classical svm circles}{{2}{8}{}{}{}}
-\newlabel{kernel max}{{16}{9}{}{}{}}
-\newlabel{kernel prodiction}{{17}{9}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Highly non-linear mock dataset in the feature space after the application of the feature map $\phi $. We observe now that the dataset is linearly separable.}}{10}{}\protected@file@percent }
-\newlabel{fig:classical svm circle 3d}{{3}{10}{}{}{}}
-\newlabel{kernel max K}{{19}{11}{}{}{}}
-\newlabel{kernel prodiction K}{{20}{11}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Highly non-linear mock dataset in the feature space after the application of the feature map $\phi $. We observe now that the dataset is linearly separable.}}{9}{}\protected@file@percent }
+\newlabel{fig:classical svm circle 3d}{{3}{9}{}{}{}}
+\newlabel{kernel max}{{16}{10}{}{}{}}
+\newlabel{kernel prodiction}{{17}{10}{}{}{}}
+\newlabel{kernel max K}{{19}{10}{}{}{}}
+\newlabel{kernel prodiction K}{{20}{10}{}{}{}}
 \newlabel{polykernel ex}{{21}{11}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Highly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref {polykernel ex}). The white and black areas are the two predicted classes. We observe how, using the kernel, we obtained a non-linear decision boundary.}}{13}{}\protected@file@percent }
 \newlabel{fig:classical svm circle decision boundary}{{4}{13}{}{}{}}
@@ -61,40 +61,46 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Quantum kernel alignment}{31}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Circuit optimization}{31}{}\protected@file@percent }
 \newlabel{qka}{{52}{32}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Parametrized quantum circuit, with two rotation inserted before a ZZFeatureMap.}}{35}{}\protected@file@percent }
-\newlabel{fig:param rotation}{{12}{35}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Parametrized quantum circuit, with two rotation inserted before a ZZFeatureMap.}}{34}{}\protected@file@percent }
+\newlabel{fig:param rotation}{{12}{34}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Parametrized quantum circuit, with a ZZFeatureMap inserted before another ZZFeatureMap. The former has the parameters $\lambda $ for Quantum Kernel Alignment, while the latter has the parameters $\mathbf  {x}$ in order to encode the classical instance.}}{35}{}\protected@file@percent }
 \newlabel{fig:ZZafterZZ}{{13}{35}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Performance}{36}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Result of the fit of circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}}{37}{}\protected@file@percent }
-\newlabel{fig:qka}{{14}{37}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Result of the fit of circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}}{36}{}\protected@file@percent }
+\newlabel{fig:qka}{{14}{36}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix.}}{37}{}\protected@file@percent }
+\newlabel{fig:loss function}{{15}{37}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Genetic algorithm}{37}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix.}}{38}{}\protected@file@percent }
-\newlabel{fig:loss function}{{15}{38}{}{}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}General introduction}{38}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Genetic algorithm for QSVM}{39}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Example of the phenotype of an individual. The phenotype is a quantum circuit.}}{42}{}\protected@file@percent }
 \newlabel{fig:fenotip}{{16}{42}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces First parent phenotype.}}{44}{}\protected@file@percent }
-\newlabel{fig:1par}{{17}{44}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Second parent phenotype.}}{44}{}\protected@file@percent }
-\newlabel{fig:2par}{{18}{44}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces First child phenotype.}}{44}{}\protected@file@percent }
-\newlabel{fig:1child}{{19}{44}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Second child phenotype.}}{44}{}\protected@file@percent }
-\newlabel{fig:2child}{{20}{44}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Starting non mutated individual.}}{45}{}\protected@file@percent }
-\newlabel{fig:mutated}{{21}{45}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Mutated individual. The first gene is mutated from a $\sqrt  {X}$ acting on the first qubit into an $R_z$ acting again on the first qubit. The other genes in this case were not mutated.}}{45}{}\protected@file@percent }
-\newlabel{fig:nonmutated}{{22}{45}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces First parent phenotype.}}{43}{}\protected@file@percent }
+\newlabel{fig:1par}{{17}{43}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Second parent phenotype.}}{43}{}\protected@file@percent }
+\newlabel{fig:2par}{{18}{43}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces First child phenotype.}}{43}{}\protected@file@percent }
+\newlabel{fig:1child}{{19}{43}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Second child phenotype.}}{43}{}\protected@file@percent }
+\newlabel{fig:2child}{{20}{43}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Starting non mutated individual.}}{44}{}\protected@file@percent }
+\newlabel{fig:mutated}{{21}{44}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Mutated individual. The first gene is mutated from a $\sqrt  {X}$ acting on the first qubit into an $R_z$ acting again on the first qubit. The other genes in this case were not mutated.}}{44}{}\protected@file@percent }
+\newlabel{fig:nonmutated}{{22}{44}{}{}{}}
 \newlabel{accuracy}{{59}{45}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Fitness of an individual as a function of its accuracy on the test set. This choice is made to properly penalize bad performing individuals.}}{46}{}\protected@file@percent }
-\newlabel{fig:fitness function}{{23}{46}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Results}{49}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parameters of the genetic algorithm}}{50}{}\protected@file@percent }
-\newlabel{tabella accettanza}{{1}{50}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Final circuit of the genetic algorithm. This is the phenotype of the best individual of the last generation. This is the circuit with the best performance on this dataset that the genetic algorithm could find.}}{51}{}\protected@file@percent }
-\newlabel{fig:final circuit}{{24}{51}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Mean accuracy of each generation. We observe a consistent increase of the accuracy, ensuring that the genetic algorithm is improving the performance of the feature maps from generation to generation.}}{52}{}\protected@file@percent }
-\newlabel{fig:mean accuracy}{{25}{52}{}{}{}}
-\gdef \@abspage@last{52}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Fitness of an individual as a function of its accuracy on the test set. This choice is made to properly penalize bad performing individuals.}}{45}{}\protected@file@percent }
+\newlabel{fig:fitness function}{{23}{45}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Results}{48}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parameters of the genetic algorithm}}{49}{}\protected@file@percent }
+\newlabel{tabella accettanza}{{1}{49}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Final circuit of the genetic algorithm. This is the phenotype of the best individual of the last generation. This is the circuit with the best performance on this dataset that the genetic algorithm could find.}}{50}{}\protected@file@percent }
+\newlabel{fig:final circuit}{{24}{50}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Mean accuracy of each generation. We observe a consistent increase of the accuracy, ensuring that the genetic algorithm is improving the performance of the feature maps from generation to generation.}}{51}{}\protected@file@percent }
+\newlabel{fig:mean accuracy}{{25}{51}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Final test of the resulting circuit of the genetic algorithm on a new dataset with respect the one it was trained on. The fact that the circuit is well performing on this dataset indicates that we actually found a circuit well performing on this sort of datasets.}}{52}{}\protected@file@percent }
+\newlabel{fig:awesome}{{26}{52}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Test of the performance of an individual from the first generation on the same dataset. We observe how its performance is very low, indicating that the first generation of individuals performs poorly as we expected.}}{53}{}\protected@file@percent }
+\newlabel{fig:bad}{{27}{53}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Test of the performance of the best individual on a new dataset with noise. The circuit is revealed to be robust against noise, correctly classifying 91\% of the point.}}{54}{}\protected@file@percent }
+\newlabel{fig:noise}{{28}{54}{}{}{}}
+\gdef \@abspage@last{54}

@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {2.1}General overview}{3}{}%
 \contentsline {subsection}{\numberline {2.2}Support vector machine}{3}{}%
 \contentsline {subsubsection}{\numberline {2.2.1}Linear SVM}{3}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{8}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{7}{}%
 \contentsline {section}{\numberline {3}Quantum machine learning}{13}{}%
 \contentsline {subsection}{\numberline {3.1}Quantum Support Vector Machine}{13}{}%
 \contentsline {subsubsection}{\numberline {3.1.1}Quantum feature map and Quantum Kernels}{13}{}%
@@ -18,4 +18,4 @@
 \contentsline {subsection}{\numberline {3.3}Genetic algorithm}{37}{}%
 \contentsline {subsubsection}{\numberline {3.3.1}General introduction}{38}{}%
 \contentsline {subsubsection}{\numberline {3.3.2}Genetic algorithm for QSVM}{39}{}%
-\contentsline {subsubsection}{\numberline {3.3.3}Results}{49}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Results}{48}{}%
