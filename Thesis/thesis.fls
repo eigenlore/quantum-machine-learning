@@ -336,6 +336,11 @@ INPUT ./images/noise.png
 INPUT ./images/noise.png
 INPUT ./images/noise.png
 INPUT ./images/noise.png
+INPUT ./images/moon.png
+INPUT ./images/moon.png
+INPUT ./images/moon.png
+INPUT ./images/moon.png
+INPUT ./images/moon.png
 INPUT thesis.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
