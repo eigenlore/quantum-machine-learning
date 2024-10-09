@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.25)  8 OCT 2024 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.25)  9 OCT 2024 22:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -363,486 +363,264 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package xypdf Info: Line width: 0.47998pt on input line 35.
+ (./thesis.toc [1
 
-No file thesis.toc.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-
-LaTeX Warning: Reference `dual problem SVM' on page 4 undefined on input line 98.
-
-
-LaTeX Warning: Reference `dual problem SVM' on page 4 undefined on input line 100.
-
-
-LaTeX Warning: Reference `alpha def' on page 4 undefined on input line 105.
-
-
-LaTeX Warning: Reference `margin definition' on page 4 undefined on input line 105.
-
-[4]
-
-LaTeX Warning: Reference `constraint hard margin' on page 5 undefined on input line 111.
-
-
-LaTeX Warning: Reference `fig:classical svm mock' on page 5 undefined on input line 134.
-
-[5]
-<images/classicalsvm.png, id=31, 409.7709pt x 312.2064pt>
+ [2] [3] [4] [5] [6] [7] [8]
+<images/classicalsvm.png, id=41, 409.7709pt x 312.2064pt>
 File: images/classicalsvm.png Graphic file (type png)
 <use images/classicalsvm.png>
-Package pdftex.def Info: images/classicalsvm.png  used on input line 139.
+Package pdftex.def Info: images/classicalsvm.png  used on input line 151.
 (pdftex.def)             Requested size: 312.00119pt x 237.72237pt.
-
-
-LaTeX Warning: Reference `fig:classical svm circles' on page 6 undefined on input line 145.
-
-<images/circles.png, id=33, 418.4433pt x 312.2064pt>
+<images/circles.png, id=43, 418.4433pt x 312.2064pt>
 File: images/circles.png Graphic file (type png)
 <use images/circles.png>
-Package pdftex.def Info: images/circles.png  used on input line 148.
+Package pdftex.def Info: images/circles.png  used on input line 160.
 (pdftex.def)             Requested size: 312.00119pt x 232.78699pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./images/classicalsvm.png>] [7 <./images/circles.png>]
-
-LaTeX Warning: Reference `fig:classical svm circles' on page 8 undefined on input line 170.
-
-
-LaTeX Warning: Reference `fig:classical svm circle 3d' on page 8 undefined on input line 170.
-
-<images/circles3d.png, id=43, 468.3096pt x 459.1554pt>
+[9 <./images/classicalsvm.png>] [10 <./images/circles.png>]
+<images/circles3d.png, id=52, 468.3096pt x 459.1554pt>
 File: images/circles3d.png Graphic file (type png)
 <use images/circles3d.png>
-Package pdftex.def Info: images/circles3d.png  used on input line 173.
+Package pdftex.def Info: images/circles3d.png  used on input line 185.
 (pdftex.def)             Requested size: 312.00119pt x 305.916pt.
-
-LaTeX Warning: Reference `dual problem SVM' on page 8 undefined on input line 177.
-
-
-LaTeX Warning: Reference `decision boundary svm' on page 8 undefined on input line 177.
-
-[8 <./images/circles3d.png>]
-
-LaTeX Warning: Reference `kernel max' on page 9 undefined on input line 191.
-
-
-LaTeX Warning: Reference `kernel prodiction' on page 9 undefined on input line 191.
-
-[9]
-
-LaTeX Warning: Reference `kernel max K' on page 10 undefined on input line 211.
-
-
-LaTeX Warning: Reference `kernel prodiction K' on page 10 undefined on input line 211.
-
-
-LaTeX Warning: Reference `fig:classical svm mock' on page 10 undefined on input line 218.
-
-
-LaTeX Warning: Reference `polykernel ex' on page 10 undefined on input line 219.
-
-[10{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-
-LaTeX Warning: Reference `polykernel ex' on page 11 undefined on input line 223.
-
-
-LaTeX Warning: Reference `fig:classical svm circles' on page 11 undefined on input line 227.
-
-
-LaTeX Warning: Reference `fig:classical svm circle decision boundary' on page 11 undefined on input line 227.
-
-<images/circlesclassicaldecisionboundary.png, id=55, 418.4433pt x 312.2064pt>
+ [11 <./images/circles3d.png>] [12] [13{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<images/circlesclassicaldecisionboundary.png, id=65, 418.4433pt x 312.2064pt>
 File: images/circlesclassicaldecisionboundary.png Graphic file (type png)
 <use images/circlesclassicaldecisionboundary.png>
-Package pdftex.def Info: images/circlesclassicaldecisionboundary.png  used on input line 230.
+Package pdftex.def Info: images/circlesclassicaldecisionboundary.png  used on input line 242.
 (pdftex.def)             Requested size: 312.00119pt x 232.78699pt.
 
-LaTeX Warning: Reference `polykernel ex' on page 11 undefined on input line 231.
-
-
-LaTeX Warning: Reference `polykernel ex' on page 11 undefined on input line 231.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11] [12 <./images/circlesclassicaldecisionboundary.png>] [13] <xymatrix 4x5 962>
-
-LaTeX Warning: Reference `frequency' on page 14 undefined on input line 277.
-
-
-LaTeX Warning: Reference `circuit' on page 14 undefined on input line 283.
-
-[14]
-
-LaTeX Warning: Reference `kernel max K' on page 15 undefined on input line 287.
-
-[15] [16] <xymatrix 4x5 848> [17] [18]
-
-LaTeX Warning: Reference `fig:Z' on page 19 undefined on input line 365.
-
-<images/Z.png, id=83, 174.1707pt x 125.7498pt>
+[14] [15 <./images/circlesclassicaldecisionboundary.png>] [16] <xymatrix 4x5 962> [17] [18] [19] <xymatrix 4x5 848> [20] [21]
+<images/Z.png, id=93, 174.1707pt x 125.7498pt>
 File: images/Z.png Graphic file (type png)
 <use images/Z.png>
-Package pdftex.def Info: images/Z.png  used on input line 368.
+Package pdftex.def Info: images/Z.png  used on input line 380.
 (pdftex.def)             Requested size: 139.03111pt x 100.37537pt.
-
-LaTeX Warning: Reference `coeff Z' on page 19 undefined on input line 369.
-
-
-LaTeX Warning: Reference `coeff Z' on page 19 undefined on input line 369.
-
-
-LaTeX Warning: Reference `fig:ZZ' on page 19 undefined on input line 385.
-
-<images/ZZ.png, id=84, 406.8801pt x 125.7498pt>
+<images/ZZ.png, id=94, 406.8801pt x 125.7498pt>
 File: images/ZZ.png Graphic file (type png)
 <use images/ZZ.png>
-Package pdftex.def Info: images/ZZ.png  used on input line 388.
+Package pdftex.def Info: images/ZZ.png  used on input line 400.
 (pdftex.def)             Requested size: 324.79054pt x 100.37537pt.
 
-LaTeX Warning: Reference `coeff ZZ1' on page 19 undefined on input line 389.
-
-
-LaTeX Warning: Reference `coeff ZZ2' on page 19 undefined on input line 389.
-
-
-LaTeX Warning: Reference `coeff ZZ1' on page 19 undefined on input line 389.
-
-
-LaTeX Warning: Reference `coeff ZZ2' on page 19 undefined on input line 389.
-
-
-LaTeX Warning: Reference `ZZ' on page 19 undefined on input line 392.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19 <./images/Z.png>]
-
-LaTeX Warning: Reference `ZZ' on page 20 undefined on input line 393.
-
-
-LaTeX Warning: Reference `pauli' on page 20 undefined on input line 398.
-
-<images/pauli.png, id=90, 592.614pt x 125.7498pt>
+[22 <./images/Z.png>]
+<images/pauli.png, id=99, 592.614pt x 125.7498pt>
 File: images/pauli.png Graphic file (type png)
 <use images/pauli.png>
-Package pdftex.def Info: images/pauli.png  used on input line 401.
+Package pdftex.def Info: images/pauli.png  used on input line 413.
 (pdftex.def)             Requested size: 390.0pt x 82.75719pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20 <./images/ZZ.png>] [21 <./images/pauli.png>] <xymatrix 4x5 962>
-
-LaTeX Warning: Reference `circuit item ' on page 22 undefined on input line 428.
-
-[22] [23]
-
-LaTeX Warning: Reference `fig:classical svm mock' on page 24 undefined on input line 470.
-
-[24]
-
-LaTeX Warning: Reference `fig:qsvm' on page 25 undefined on input line 485.
-
-<images/qsvm.png, id=109, 411.939pt x 316.5426pt>
+[23 <./images/ZZ.png>] [24 <./images/pauli.png>] <xymatrix 4x5 962> [25] [26] [27]
+<images/qsvm.png, id=119, 411.939pt x 316.5426pt>
 File: images/qsvm.png Graphic file (type png)
 <use images/qsvm.png>
-Package pdftex.def Info: images/qsvm.png  used on input line 488.
+Package pdftex.def Info: images/qsvm.png  used on input line 500.
 (pdftex.def)             Requested size: 312.00119pt x 239.7441pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25]
-
-LaTeX Warning: Reference `fig:adhoc' on page 26 undefined on input line 504.
-
-<images/adhoc.png, id=115, 400.3758pt x 312.2064pt>
+[28]
+<images/adhoc.png, id=124, 400.3758pt x 312.2064pt>
 File: images/adhoc.png Graphic file (type png)
 <use images/adhoc.png>
-Package pdftex.def Info: images/adhoc.png  used on input line 507.
+Package pdftex.def Info: images/adhoc.png  used on input line 519.
 (pdftex.def)             Requested size: 312.00119pt x 243.3104pt.
-
-LaTeX Warning: Reference `fig:adhoc' on page 26 undefined on input line 511.
-
-
-LaTeX Warning: Reference `fig:adhocrbf' on page 26 undefined on input line 511.
-
-<images/adhocrbf.png, id=116, 411.939pt x 316.5426pt>
+<images/adhocrbf.png, id=125, 411.939pt x 316.5426pt>
 File: images/adhocrbf.png Graphic file (type png)
 <use images/adhocrbf.png>
-Package pdftex.def Info: images/adhocrbf.png  used on input line 514.
+Package pdftex.def Info: images/adhocrbf.png  used on input line 526.
 (pdftex.def)             Requested size: 312.00119pt x 239.7441pt.
-
-LaTeX Warning: Reference `fig:adhoczz' on page 26 undefined on input line 518.
-
-<images/adhoczz.png, id=117, 411.939pt x 316.5426pt>
+<images/adhoczz.png, id=126, 411.939pt x 316.5426pt>
 File: images/adhoczz.png Graphic file (type png)
 <use images/adhoczz.png>
-Package pdftex.def Info: images/adhoczz.png  used on input line 521.
+Package pdftex.def Info: images/adhoczz.png  used on input line 533.
 (pdftex.def)             Requested size: 312.00119pt x 239.7441pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[26 <./images/qsvm.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[29 <./images/qsvm.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27 <./images/adhoc.png>] [28 <./images/adhocrbf.png>] [29 <./images/adhoczz.png>] [30] [31]
 
-LaTeX Warning: Reference `qka' on page 32 undefined on input line 560.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `qka' on page 32 undefined on input line 563.
-
-[32]
-
-LaTeX Warning: Reference `fig:param rotation' on page 33 undefined on input line 571.
-
-<images/rotationsbeforeZZ.png, id=145, 453.1329pt x 125.7498pt>
+[30 <./images/adhoc.png>] [31 <./images/adhocrbf.png>] [32 <./images/adhoczz.png>] [33] [34] [35]
+<images/rotationsbeforeZZ.png, id=154, 453.1329pt x 125.7498pt>
 File: images/rotationsbeforeZZ.png Graphic file (type png)
 <use images/rotationsbeforeZZ.png>
-Package pdftex.def Info: images/rotationsbeforeZZ.png  used on input line 574.
+Package pdftex.def Info: images/rotationsbeforeZZ.png  used on input line 586.
 (pdftex.def)             Requested size: 390.0pt x 108.23097pt.
-
-LaTeX Warning: Reference `fig:ZZafterZZ' on page 33 undefined on input line 578.
-
-<images/ZZafterZZ.png, id=146, 732.0951pt x 125.7498pt>
+<images/ZZafterZZ.png, id=155, 732.0951pt x 125.7498pt>
 File: images/ZZafterZZ.png Graphic file (type png)
 <use images/ZZafterZZ.png>
-Package pdftex.def Info: images/ZZafterZZ.png  used on input line 581.
+Package pdftex.def Info: images/ZZafterZZ.png  used on input line 593.
 (pdftex.def)             Requested size: 390.0pt x 66.99052pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[33 <./images/rotationsbeforeZZ.png>]
-
-LaTeX Warning: Reference `fig:classical svm circles' on page 34 undefined on input line 601.
-
-
-LaTeX Warning: Reference `fig:param rotation' on page 34 undefined on input line 601.
-
-
-LaTeX Warning: Reference `fig:qka' on page 34 undefined on input line 602.
-
-<images/qka.png, id=151, 402.5439pt x 327.3831pt>
+[36 <./images/rotationsbeforeZZ.png>]
+<images/qka.png, id=160, 402.5439pt x 327.3831pt>
 File: images/qka.png Graphic file (type png)
 <use images/qka.png>
-Package pdftex.def Info: images/qka.png  used on input line 605.
+Package pdftex.def Info: images/qka.png  used on input line 617.
 (pdftex.def)             Requested size: 312.00119pt x 253.74924pt.
-
-LaTeX Warning: Reference `fig:loss function' on page 34 undefined on input line 609.
-
-<images/lossfunction.png, id=152, 896.148pt x 332.442pt>
+<images/lossfunction.png, id=161, 896.148pt x 332.442pt>
 File: images/lossfunction.png Graphic file (type png)
 <use images/lossfunction.png>
-Package pdftex.def Info: images/lossfunction.png  used on input line 612.
+Package pdftex.def Info: images/lossfunction.png  used on input line 624.
 (pdftex.def)             Requested size: 390.0pt x 144.67703pt.
-[34 <./images/ZZafterZZ.png>]
+ [37 <./images/ZZafterZZ.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35 <./images/qka.png>] [36 <./images/lossfunction.png>] [37] [38] [39]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 700.
+[38 <./images/qka.png>] [39 <./images/lossfunction.png>] [40] [41] [42]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 712.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 700.
-
-
-LaTeX Warning: Reference `fig:fenotip' on page 40 undefined on input line 700.
-
-<images/fenotip.png, id=175, 629.35126pt x 174.6525pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 712.
+<images/fenotip.png, id=184, 629.35126pt x 174.6525pt>
 File: images/fenotip.png Graphic file (type png)
 <use images/fenotip.png>
-Package pdftex.def Info: images/fenotip.png  used on input line 703.
+Package pdftex.def Info: images/fenotip.png  used on input line 715.
 (pdftex.def)             Requested size: 312.00119pt x 86.5825pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--707
+Underfull \hbox (badness 10000) in paragraph at lines 712--719
 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[40]
-
-LaTeX Warning: Reference `fig:1par' on page 41 undefined on input line 711.
-
-
-LaTeX Warning: Reference `fig:2child' on page 41 undefined on input line 711.
-
-<images/parent1.png, id=179, 629.35126pt x 174.6525pt>
+[43]
+<images/parent1.png, id=189, 629.35126pt x 174.6525pt>
 File: images/parent1.png Graphic file (type png)
 <use images/parent1.png>
-Package pdftex.def Info: images/parent1.png  used on input line 716.
+Package pdftex.def Info: images/parent1.png  used on input line 728.
 (pdftex.def)             Requested size: 272.99881pt x 75.76003pt.
-<images/parent2.png, id=180, 629.35126pt x 174.6525pt>
+<images/parent2.png, id=190, 629.35126pt x 174.6525pt>
 File: images/parent2.png Graphic file (type png)
 <use images/parent2.png>
-Package pdftex.def Info: images/parent2.png  used on input line 723.
+Package pdftex.def Info: images/parent2.png  used on input line 735.
 (pdftex.def)             Requested size: 272.99881pt x 75.76003pt.
-<images/child1.png, id=181, 629.35126pt x 174.6525pt>
+<images/child1.png, id=191, 629.35126pt x 174.6525pt>
 File: images/child1.png Graphic file (type png)
 <use images/child1.png>
-Package pdftex.def Info: images/child1.png  used on input line 732.
+Package pdftex.def Info: images/child1.png  used on input line 744.
 (pdftex.def)             Requested size: 272.99881pt x 75.76003pt.
-<images/child2.png, id=182, 629.35126pt x 174.6525pt>
+<images/child2.png, id=192, 629.35126pt x 174.6525pt>
 File: images/child2.png Graphic file (type png)
 <use images/child2.png>
-Package pdftex.def Info: images/child2.png  used on input line 739.
+Package pdftex.def Info: images/child2.png  used on input line 751.
 (pdftex.def)             Requested size: 272.99881pt x 75.76003pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig:mutated' on page 41 undefined on input line 745.
-
-
-LaTeX Warning: Reference `fig:nonmutated' on page 41 undefined on input line 745.
-
-<images/mutated.png, id=183, 453.1329pt x 125.7498pt>
+<images/mutated.png, id=193, 453.1329pt x 125.7498pt>
 File: images/mutated.png Graphic file (type png)
 <use images/mutated.png>
-Package pdftex.def Info: images/mutated.png  used on input line 750.
+Package pdftex.def Info: images/mutated.png  used on input line 762.
 (pdftex.def)             Requested size: 272.99881pt x 75.76129pt.
-<images/nonmutated.png, id=184, 453.1329pt x 125.7498pt>
+<images/nonmutated.png, id=194, 453.1329pt x 125.7498pt>
 File: images/nonmutated.png Graphic file (type png)
 <use images/nonmutated.png>
-Package pdftex.def Info: images/nonmutated.png  used on input line 757.
+Package pdftex.def Info: images/nonmutated.png  used on input line 769.
 (pdftex.def)             Requested size: 272.99881pt x 75.76129pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41 <./images/fenotip.png>] [42 <./images/parent1.png> <./images/parent2.png> <./images/child1.png> <./images/child2.png>] [43 <./images/mutated.png> <./images/nonmutated.png>]
-
-LaTeX Warning: Reference `fig:fitness function' on page 44 undefined on input line 773.
-
-<images/sigmoid.png, id=198, 409.7709pt x 312.2064pt>
+[44 <./images/fenotip.png>] [45 <./images/parent1.png> <./images/parent2.png> <./images/child1.png> <./images/child2.png>] [46 <./images/mutated.png> <./images/nonmutated.png>]
+<images/sigmoid.png, id=207, 409.7709pt x 312.2064pt>
 File: images/sigmoid.png Graphic file (type png)
 <use images/sigmoid.png>
-Package pdftex.def Info: images/sigmoid.png  used on input line 776.
+Package pdftex.def Info: images/sigmoid.png  used on input line 788.
 (pdftex.def)             Requested size: 312.00119pt x 237.72237pt.
-[44 <./images/sigmoid.png>]
-
-LaTeX Warning: Reference `fig:classical svm circles' on page 45 undefined on input line 784.
-
-[45]
-Overfull \hbox (1.3538pt too wide) in paragraph at lines 792--793
+ [47 <./images/sigmoid.png>] [48]
+Overfull \hbox (1.3538pt too wide) in paragraph at lines 804--805
 []\OT1/cmr/m/n/12 The max-i-mum num-ber of gen-er-a-tions we al-low. If no in-di-vid-ual achieves
  []
 
-[46]
-
-LaTeX Warning: Reference `fig:classical svm circles' on page 47 undefined on input line 808.
-
-
-LaTeX Warning: Reference `accuracy' on page 47 undefined on input line 812.
-
-[47]
-
-LaTeX Warning: Reference `tabella accettanza' on page 48 undefined on input line 816.
-
-
-LaTeX Warning: Reference `fig:final circuit' on page 48 undefined on input line 837.
-
-<images/finalcircuit.png, id=212, 359.9046pt x 125.7498pt>
+[49] [50]
+<images/finalcircuit.png, id=223, 359.9046pt x 125.7498pt>
 File: images/finalcircuit.png Graphic file (type png)
 <use images/finalcircuit.png>
-Package pdftex.def Info: images/finalcircuit.png  used on input line 840.
+Package pdftex.def Info: images/finalcircuit.png  used on input line 852.
 (pdftex.def)             Requested size: 312.00119pt x 109.01959pt.
-<images/meanaccuracy.png, id=213, 413.3844pt x 327.3831pt>
+<images/meanaccuracy.png, id=224, 413.3844pt x 327.3831pt>
 File: images/meanaccuracy.png Graphic file (type png)
 <use images/meanaccuracy.png>
-Package pdftex.def Info: images/meanaccuracy.png  used on input line 847.
+Package pdftex.def Info: images/meanaccuracy.png  used on input line 859.
 (pdftex.def)             Requested size: 312.00119pt x 247.09529pt.
-[48]
+ [51]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig:final circuit' on page 49 undefined on input line 852.
-
-<images/awesomeresult.png, id=217, 389.5353pt x 312.9291pt>
+<images/awesomeresult.png, id=228, 389.5353pt x 312.9291pt>
 File: images/awesomeresult.png Graphic file (type png)
 <use images/awesomeresult.png>
-Package pdftex.def Info: images/awesomeresult.png  used on input line 855.
+Package pdftex.def Info: images/awesomeresult.png  used on input line 867.
 (pdftex.def)             Requested size: 312.00119pt x 250.64442pt.
-[49 <./images/finalcircuit.png>]
+[52 <./images/finalcircuit.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig:bad' on page 50 undefined on input line 860.
-
-<images/badresult.png, id=223, 389.5353pt x 312.9291pt>
+<images/badresult.png, id=233, 389.5353pt x 312.9291pt>
 File: images/badresult.png Graphic file (type png)
 <use images/badresult.png>
-Package pdftex.def Info: images/badresult.png  used on input line 863.
+Package pdftex.def Info: images/badresult.png  used on input line 875.
 (pdftex.def)             Requested size: 312.00119pt x 250.64442pt.
-[50 <./images/meanaccuracy.png>]
+[53 <./images/meanaccuracy.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig:noise' on page 51 undefined on input line 868.
-
-<images/noise.png, id=229, 385.9218pt x 312.9291pt>
+<images/noise.png, id=238, 385.9218pt x 312.9291pt>
 File: images/noise.png Graphic file (type png)
 <use images/noise.png>
-Package pdftex.def Info: images/noise.png  used on input line 871.
+Package pdftex.def Info: images/noise.png  used on input line 883.
 (pdftex.def)             Requested size: 312.00119pt x 252.99844pt.
-[51 <./images/awesomeresult.png>]
+[54 <./images/awesomeresult.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig:moon' on page 52 undefined on input line 878.
-
-<images/moon.png, id=234, 385.9218pt x 312.9291pt>
+<images/moon.png, id=243, 385.9218pt x 312.9291pt>
 File: images/moon.png Graphic file (type png)
 <use images/moon.png>
-Package pdftex.def Info: images/moon.png  used on input line 881.
+Package pdftex.def Info: images/moon.png  used on input line 893.
 (pdftex.def)             Requested size: 312.00119pt x 252.99844pt.
 
-LaTeX Warning: Reference `tabella accettanza' on page 52 undefined on input line 885.
-
-
-Overfull \hbox (2.9987pt too wide) in paragraph at lines 878--886
+Overfull \hbox (2.9987pt too wide) in paragraph at lines 890--898
 \OT1/cmr/m/n/12 Let's now test the per-for-mance on an-other ar-ti-fi-cial dataset, the moon dataset.
  []
 
-[52 <./images/badresult.png>]
+[55 <./images/badresult.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: File `images/mooncircuit.png' not found on input line 890.
-
-
-/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex:890: Package pdftex.def Error: File `images/mooncircuit.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.890 ...th=0.8\textwidth]{images/mooncircuit.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-<images/moonboh.png, id=239, 385.9218pt x 312.9291pt>
+<images/moonboh.png, id=249, 385.9218pt x 312.9291pt>
 File: images/moonboh.png Graphic file (type png)
 <use images/moonboh.png>
-Package pdftex.def Info: images/moonboh.png  used on input line 895.
+Package pdftex.def Info: images/moonboh.png  used on input line 907.
 (pdftex.def)             Requested size: 312.00119pt x 252.99844pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -850,32 +628,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[53 <./images/noise.png>] [54 <./images/moon.png>] [55] [56 <./images/moonboh.png>] (./thesis.aux)
+[56 <./images/noise.png>] [57 <./images/moon.png>] [58 <./images/moonboh.png>] (./thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 11046 strings out of 474222
- 165433 string characters out of 5748733
+ 11019 strings out of 474222
+ 164514 string characters out of 5748733
  2016975 words of memory out of 5000000
- 33170 multiletter control sequences out of 15000+600000
+ 33141 multiletter control sequences out of 15000+600000
  571810 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,19n,79p,1490b,1667s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (56 pages, 1124290 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on thesis.pdf (58 pages, 1121432 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
+ 344 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

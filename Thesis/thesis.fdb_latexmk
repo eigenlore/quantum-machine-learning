@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1728373426.984 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1728373429.45251 2
+["pdflatex"] 1728504258.13087 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1728504261.16371 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1728373423.51613 65029 bac340a24e90e02a6070be219dc20cf3 ""
+  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1728504257.75969 67709 915deed6f8b2b909e271b4ff9195c9bf ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -53,7 +53,6 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1248133631 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -140,7 +139,6 @@
   "images/meanaccuracy.png" 1728146802.61283 25984 99c4d4d9ee540f0e45d99eb2323da841 ""
   "images/moon.png" 1728203866.41227 38746 ec58c2dac2eb521f55ddc788e7d9c24e ""
   "images/moonboh.png" 1728373334.47251 41135 2d3487c8a641f1168aa887ff2c7cdc14 ""
-  "images/mooncircuit.png" 0 -1 0 ""
   "images/mutated.png" 1728025244.83341 8711 57f19b014a2a2d67702cf7a893548d59 ""
   "images/noise.png" 1728201980.43225 41201 4bcfbb6ac2c9a6352cf55ef7125906ba ""
   "images/nonmutated.png" 1728025229.17561 8935 9f083ec1a64a69afd69710412ddb8877 ""
@@ -151,9 +149,9 @@
   "images/qsvm.png" 1723887338.82258 19468 3c842e7ab778c9ddee32a5043ba3e239 ""
   "images/rotationsbeforeZZ.png" 1726645290.56988 11896 48e6b6c2b4009bb2386793ff4f5ed202 ""
   "images/sigmoid.png" 1728028140.10736 20513 377d5aba67e1619960f35ff72f65d0d9 ""
-  "thesis.aux" 1728373429.24711 12380 76f72aa1a978320ede207b2057fb6aa3 "pdflatex"
-  "thesis.tex" 1728373423.51613 65029 bac340a24e90e02a6070be219dc20cf3 ""
-  "thesis.toc" 1728373429.24911 1677 40fc645dca71e1efad37e1d255b5146b "pdflatex"
+  "thesis.aux" 1728504260.98657 12388 df6096f835d38d0710dec43f22a7a1a9 "pdflatex"
+  "thesis.tex" 1728504257.75969 67709 915deed6f8b2b909e271b4ff9195c9bf ""
+  "thesis.toc" 1728504260.98957 1677 524577f37f812f15d6dca7c431af52a1 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.log"

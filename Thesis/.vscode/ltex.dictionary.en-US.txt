@@ -7,3 +7,4 @@ i-th
 qubit
 simulable
 codomain
+kernelized

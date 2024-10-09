@@ -43,7 +43,19 @@
 
 \section{Introduction}
 
+Quantum machine learning (QML) has recently gained attention as an emerging field of research in quantum information science, combining the principles of quantum computing and machine learning. The main goal of QML is to leverage quantum phenomena like superposition, entanglement and interference to perform machine learning tasks. In contrast to traditional machine learning techniques, QML algorithms seem to offer potential benefits, as they can solve complex problems more efficiently and cost-effectively.
 
+One of the most promising and most researched QML method at present is the Quantum Support Vector Machine (QSVM), an extension of the classical Support Vector Machine (SVM), a machine learning algorithm for classification and regression. The classical SVM is one of the most used and popular models, that has been successfully applied to various fields, such as image recognition, text classification and bioinformatics. However, as the complexity and the size of the dataset increases, classical SVMs are no longer able to perform efficiently. QSVM aims to overcome these limitations by leveraging the principles of quantum computing, constructing a quantum circuit that maps classical data into an exponentially large quantum Hilbert space, hoping to achieve an exponential speedup. 
+
+However, the design of such a circuit is often done manually, following for example standard practices and patterns, or some sort of rule of thumb. This approach may work for simple problems, but one quickly finds out that using hand-crafted circuits for non-trivial tasks leads to a bad performance of the model, as finding the correct ansatz by hand is too difficult. It is necessary to automate this process, i.e. we need an algorithm that designs a properly working quantum circuit from scratch. 
+
+One way to attack this problem is by using a genetic algorithm. Genetic algorithms are meta-heuristic optimization algorithms inspired by the process of natural selection. In this work we develop a genetic algorithm that automatically designs, from first principles, the circuit to use in a QSVM classification, and we test the algorithm on various datasets. 
+
+This work is organized as follows: in Chapter 2 we introduce how a classical SVM works, in particular we present the fundamental concept of kernelized SVM. In Chapter 3 we discuss the QSVM, we define what it is and see how it performs on some datasets. We will encounter the tedious problem of choosing the quantum embedding circuit. In Chapter 4 we introduce our genetic algorithm, and test its performance on several datasets. In Chapter 5 we draw conclusions and discuss possible future developments. 
+
+
+
+\newpage
 \section{Classical machine learning}
 
 \subsection{General overview}
@@ -887,7 +899,7 @@ The algorithm conceptually works in the same way of the circle dataset, we utili
 The resulting final circuit is shown in Figure (), and its performance on the dataset in Figure (), achieving an accuracy of 90\%. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/mooncircuit.png}
+    %\includegraphics[width=0.8\textwidth]{images/mooncircuit.png}
     \caption{Final circuit of the genetic algorithm used on the moon dataset.}
     \label{fig:mooncircuit}
 \end{figure}\begin{figure}[h!]
