@@ -59,10 +59,23 @@ This work is organized as follows: in Chapter 2 we introduce how a classical SVM
 \section{Classical machine learning}
 
 \subsection{General overview}
-baa
+
+Machine learning (ML) is a subset of artificial intelligence, focused on developing algorithms that enable computers to learn from and make decisions based on data. A ML algorithm takes a set of $N$ samples of data, called \textit{dataset}, and automatically predicts properties of unknown data, without the need to give it explicit instructions. The dataset is often split into a \textit{training set}, on which the algorithm is trained on, and a \textit{test set}, utilized to evaluate the performance of the model. Data can be multidimensional, and each dimension is usually called \textit{feature}. 
+
+ML algorithms can be classified in different categories: 
+\begin{itemize}
+    \item \textbf{Supervised learning}: each data point has a label that the model aims to predict. The label can be:
+    \begin{itemize}
+        \item Discrete, meaning the data can be separated into two or more classes. The goal is to use the training data to predict the labels for the test data. This is called \textit{classification}. An example is identifying whether an image contains a dog or a cat, or diagnosing a medical condition as positive or negative based on patient records.
+        \item Continuous, when each data is labelled by a continuous value, meaning the target variable can take on any value within a range. The model attempts to predict this continuous value. This is called \textit{regression}. For example, predicting the future price of a house based on its features is a regression problem.
+    \end{itemize}
+    \item \textbf{Unsupervised learning}: our dataset does not have labels, yet we would like to empirically determine something about the data. For example we may want to determine if the data can be represented as belonging to distinct groups (clustering).
+\end{itemize}
+
+In this work we will focus on the Support Vector Machine, a supervised classification algorithm. 
+
+
 \subsection{Support vector machine}
-
-
 
 The Support Vector Machine (SVM) is a binary classification algorithm, whose goal is to build the maximum margin separator between the two classes, that is the separator that maximizes the distance of the closest point from each class. The standard SVM algorithm is a linear algorithm, so in particular it will try and build the separating margin as a hyperplane in a $d$-dimensional space (so a $(d-1)$-dimensional plane), where $d$ is the number of features. The points that touch the margin, or that are on the wrong side of it, are called support vectors. The distance between the decision boundary and the support vectors is called margin. The algorithm will find the biggest possible margin. 
 
@@ -144,7 +157,6 @@ svm.fit(X, y) #fit the svm
 \end{lstlisting}
 
 The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can observe how the algorithm built the largest possible margin. 
-
 
 \begin{figure}[h!]
     \centering
