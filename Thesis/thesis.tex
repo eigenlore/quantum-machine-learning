@@ -58,7 +58,7 @@ This work is organized as follows: in Chapter 2 we introduce how a classical SVM
 
 
 \newpage
-\section{Classical machine learning}
+\section{Classical Support Vector Machine}
 
 \subsection{General overview}
 
@@ -258,17 +258,18 @@ One can also create a custom kernel, passing as an argument a callable function 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/circlesclassicaldecisionboundary.png}
-    \caption{Highly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref{polykernel ex}). The white and black areas are the two predicted classes. We observe how, using the kernel, we obtained a non-linear decision boundary.}
+    \caption{Highly non-linear mock dataset decision boundary, fitted with a SVM using kernel of eq. (\ref{polykernel ex}). The white and black areas are the two predicted classes. We observe how, using this kernel, we obtain a non-linear decision boundary.}
     \label{fig:classical svm circle decision boundary}
 \end{figure}
+
+\newpage \,
 \newpage
+\section{Quantum Support Vector Machine}
+\subsection{General overview}
+The concept of QSVM as we use today was first introduced in 2019, by Havlicek et al. and, independently, by Schuld , that proposed and experimentally implemented the method on a superconducting processor. In 2021 Liu et al. established a rigorous quantum speedup for supervised classification using a general-purpose quantum learning algorithm that only requires classical access to data. Since then several interesting works have been published, but none faces the problem of how to build the quantum circuit to use to encode the classical data in the quantum device. This choice, we will see, is highly problematic, as already noted by Park et al. . In order to use the QSVM for real world applications it is mandatory to have a functioning way of finding the correct circuit to use.
 
-\section{Quantum machine learning}
-Introduction bla bla
-
-\subsection{Quantum Support Vector Machine}
-\subsubsection{Quantum feature map and Quantum Kernels}
-The SVM algorithm faces some important limitations when the feature space becomes large, as estimating kernel functions becomes computationally intensive. Quantum computing could enhance the algorithm's performance by providing access to exponentially large Hilbert feature spaces. The idea is to construct a feature map which maps classical data into a quantum state which lives in an exponentially large Hilbert feature space. Therefore, in this context a feature map is a function 
+\subsection{Quantum feature map and Quantum Kernels}
+We anticipated how the classical SVM algorithm faces some important limitations when the feature space becomes large, as estimating kernel functions becomes computationally intensive. Quantum computing could enhance the algorithm's performance by providing access to exponentially large Hilbert feature spaces. The idea is to construct a feature map which maps classical data into a quantum state which lives in an exponentially large Hilbert feature space. Therefore, in this context a feature map is a function 
 \begin{equation}
     \phi: \mathbb{R}^d \rightarrow \mathcal{H},
 \end{equation}
@@ -316,7 +317,7 @@ $$
 \end{equation}
 This kernel matrix is then plugged into eq. (\ref{kernel max K}) to train a classical SVM. 
 
-\subsubsection{Quantum encoding circuits}
+\subsection{Quantum encoding circuits}
 Let's now discuss some possible choices of quantum encoding circuits:
 \begin{itemize}
     \item Basis encoding: this can be applied if the instances live in a finite dimensional space, whose dimension $2^n$, where $n$ is the number of qubits. If the dimension is smaller that $2^n$ we can still apply this encoding by using padding. The instances can be mapped into bit strings of length $n$ and the feature map corresponds to
@@ -435,8 +436,8 @@ Let's now discuss some possible choices of quantum encoding circuits:
     \item In general any parametrized quantum circuit can be used to encode classical data and create a quantum kernel. We will later use generic circuits and study what sort of datasets they separate.
 \end{itemize}
 
-\subsubsection{QSVM algorithm and Qiskit implementation}
-To sum things up the step of the Quantum Support Vector Machine (QSVM) algorithm are
+\subsection{QSVM algorithm and Qiskit implementation}
+To sum things up, the step of the Quantum Support Vector Machine (QSVM) algorithm are:
 \begin{itemize}
     \item Prepare the classical data into two vectors $X$ and $y$, where $$X_i=\mathbf{x}_i \in \mathbb{R}^d,\, \,\,\,i=0,\cdots , N-1,$$ is the i-th $d$-dimensional instance, and $$y_i\in \{-1,1\},$$ indicates the class that this instance belongs to.  
     \item Choose a parametrized quantum circuit $U(\mathbf{x})$. The circuit accepts $d$ parameters, which are the features of the instance we are considering. One can choose a standard circuit like the ZZ feature map, or can create a custom circuit. We will extensively revisit the point of choosing the circuit later on.
@@ -520,7 +521,7 @@ The result of the fit is shown in Figure \ref{fig:qsvm}.
     \label{fig:qsvm}
 \end{figure}
 
-\subsubsection{QSVM potential}
+\subsection{QSVM potential}
 In order to study the potential of the QSVM algorithm we could try and observe the form of the decision boundary of an artificial dataset which is easily separable by a QSVM. If the decision boundary is "classically looking", that is similar to the one we observed when we studied the linear or polynomial kernel, then it would look like the QSVM algorithm may not provide advantage over the classical SVM. We hope instead to find a complex looking decision boundary, which is not separable by classical kernels. 
 
 We use ZZFeatureMap, with $n=d=2$. Furthermore, we choose $f=Z_1Z_2$ and $V\in\textup{SU}(4)$. We assign $m(\mathbf{x})=+1$ when 
@@ -555,10 +556,9 @@ In Figure \ref{fig:adhoczz} is shown instead the result of the fit with the QSVM
 
 Finding a dataset which is separable by quantum methods and not by classical methods leads us into thinking that the QSVM algorithm might outperform the SVM algorithm on datasets with complex patterns, which is the result we hoped to find. 
 
-\subsubsection{Issues of QSVM (mancano delle immagini)}
+\subsection{Issues of QSVM (mancano delle immagini)}
 
 In a QSVM algorithm the only choice the user has to make is the choice of the feature map, that is the choice of the quantum encoding circuit. It is easy to convince ourselves that this choice is crucial, and determines if the algorithm will be successful or not. In the classical case we also have to choose a kernel, but we found that this choice is much less delicate that in the quantum case. In fact, for example, the RBF kernel works very well for most applications. In the quantum case instead, we observed that the choice of the feature map is very tricky. If the wrong feature map is chosen, the QSVM performs very poorly even on very simple datasets, as we will now illustrate with some examples. Let's consider the dataset shown in Figure , which is simple enough to be expected to be separated without too many difficulties. The RBF kernel separates this dataset very well. Let's try to apply some of the quantum kernels we discussed in the previous sections. 
-
 
 We see how the results of the fits are not satisfying. The accuracy may not be too low in some cases, but the form of the decision boundary tells us that the algorithm did not find the correct pattern for the data. With more complex dataset the algorithm may fail completely, like shown in Figure .
 
@@ -648,10 +648,10 @@ We observe how even in this case the result is not satisfactory at all. The issu
 
 
 
-
+\newpage
 \section{Genetic algorithm}
 
-A genetic algorithm can help choose the best feature map. We'll see how these types of algorithms can pick the right feature map based on first principles, without us having to decide the circuit's structure. This is exactly what we wanted to achieve. But first, let's talk about how these algorithms work in general.
+A genetic algorithm can be used to choose the best feature map. We'll see how these types of algorithms can pick the right feature map based on first principles, without us having to decide the circuit's structure. Genetic algorithms have been previously used in the context of quantum computing, for example by Creevey et al. and Sünkel et al. We will apply this strategy for the QSVM case. 
 
 \subsection{General introduction}
 
@@ -671,7 +671,7 @@ This process continues until either the maximum number of generations is reached
 
 
 
-Let's now discuss how the above-mentioned concepts apply to the application in the case of Quantum Support Vector Machine. The goal is to find the best possible feature map given a dataset. 
+Let's now discuss how the above-mentioned concepts apply in the case of Quantum Support Vector Machine. The goal is to find the best possible feature map given a dataset. 
 
 An individual is meant to represent a possible feature map choice. We define the genes of an individual in the form 
 \begin{equation}
@@ -793,11 +793,11 @@ This is a possible result of the mutation, of course being intrinsically random 
 
 The last concept we need to define in the QSVM case is the one of the fitness function. That is we need a quantitative way to assess how well an individual performs on the particular dataset we are considering. In machine learning there are several ways to evaluate the performance on a classification task. The simplest one is the accuracy on the test set, that is the ratio of correctly classified points and the total number of points. 
 \begin{equation}
-    \textup{acccuracy}=\frac{\textup{correctly classified points}}{\textup{total number of points}}.
+    \textup{accuracy}=\frac{\textup{correctly classified points}}{\textup{total number of points}}.
 \end{equation}
 For instance, we could use test set accuracy as the fitness of an individual. However, this approach would not sufficiently penalize poorly performing individuals, who are selected to generate offspring with a probability proportional to their fitness. If we use accuracy, an individual with a fitness of 0.5 has only half the probability of being chosen compared to one with a fitness close to 1. This is problematic because the former performs very poorly (its performance is comparable to randomly guessing the labels) whereas the latter correctly classifies almost every label. Moreover, individuals with a fitness below 0.5, which are not uncommon given the potential issues with the QSVM algorithm when an unsuitable feature map is selected, still have a non-negligible chance of being chosen. We would prefer these individuals to be heavily penalized, as their performance is even worse than random guessing. A possible way to achieve this is to use
 \begin{equation}
-    \textup{fitness}=\textup{acccuracy}^6.
+    \textup{fitness}=\textup{accuracy}^6.
     \label{accuracy}
 \end{equation}
 The function is represented in Figure (\ref{fig:fitness function}).
@@ -834,7 +834,7 @@ The first step is to generate the first generation of individuals. This is done 
 
 \subsection{Results}
 
-\subsubsection{Cirle dataset}
+\subsubsection{Circle dataset}
 We now execute the algorithm on the circular dataset shown in Figure (\ref{fig:classical svm circles}). The genetic algorithm was implemented in Python, exploiting Qiskit to run the QSVM when necessary.
 
 An important goal is to construct the smallest possible quantum circuit, minimizing both the number of gates and qubits. This is motivated by the technical limitations of current quantum devices, which struggle with larger, more complex circuits. Consequently, we begin with a simple circuit and will increase its depth or number of qubits if necessary.
@@ -905,19 +905,12 @@ The fact that it performs well on this dataset is a strong indication of the pot
 
 \subsection{Moon dataset}
 
-Let's now test the performance on another artificial dataset, the moon dataset. It is shown in Figure (\ref{fig:moon}). 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/moon.png}
-    \caption{Artificial moon dataset.}
-    \label{fig:moon}
-\end{figure}
-The algorithm conceptually works in the same way of the circle dataset, we utilized the same initial parameters as well, shown in Table (\ref{tabella accettanza}).
+Let's now test the performance on another artificial dataset, the moon dataset. The algorithm conceptually works in the same way of the circle dataset, we utilized the same initial parameters as well, shown in Table (\ref{tabella accettanza}).
 
-The resulting final circuit is shown in Figure (), and its performance on the dataset in Figure (), achieving an accuracy of 90\%. 
+The resulting final circuit is shown in Figure (), and its performance on the dataset in Figure (\ref{fig:moonboh}), achieving an accuracy of 90\%. 
 \begin{figure}[h!]
     \centering
-    %\includegraphics[width=0.8\textwidth]{images/mooncircuit.png}
+    \includegraphics[width=0.8\textwidth]{images/mooncircuit.png}
     \caption{Final circuit of the genetic algorithm used on the moon dataset.}
     \label{fig:mooncircuit}
 \end{figure}\begin{figure}[h!]
@@ -928,7 +921,8 @@ The resulting final circuit is shown in Figure (), and its performance on the da
 \end{figure}
 
 
-
+\newpage 
+\section{Conclusions}
 
 
 

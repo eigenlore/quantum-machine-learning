@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1728989667.34302 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1728989670.43221 0
+["pdflatex"] 1729008773.31542 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1729008775.99288 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1728989666.79196 70171 c4c70a3c160efb6d5b18fea375d98637 ""
+  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1729008772.55333 70864 40d4f040e4c8967e5b89130da7793bf9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -139,8 +139,8 @@
   "images/finalcircuit.png" 1728145588.19026 8415 a364aeeeb997161484af82ee8c603af0 ""
   "images/lossfunction.png" 1726666101.59199 281351 1c70327288657feff3de867dd02e8a52 ""
   "images/meanaccuracy.png" 1728146802.61283 25984 99c4d4d9ee540f0e45d99eb2323da841 ""
-  "images/moon.png" 1728203866.41227 38746 ec58c2dac2eb521f55ddc788e7d9c24e ""
   "images/moonboh.png" 1728373334.47251 41135 2d3487c8a641f1168aa887ff2c7cdc14 ""
+  "images/mooncircuit.png" 1729008422.92056 11011 0c40b63ef955bccc3cf7bfb9b7167b8f ""
   "images/mutated.png" 1728025244.83341 8711 57f19b014a2a2d67702cf7a893548d59 ""
   "images/noise.png" 1728201980.43225 41201 4bcfbb6ac2c9a6352cf55ef7125906ba ""
   "images/nonmutated.png" 1728025229.17561 8935 9f083ec1a64a69afd69710412ddb8877 ""
@@ -151,9 +151,9 @@
   "images/qsvm.png" 1723887338.82258 19468 3c842e7ab778c9ddee32a5043ba3e239 ""
   "images/rotationsbeforeZZ.png" 1726645290.56988 11896 48e6b6c2b4009bb2386793ff4f5ed202 ""
   "images/sigmoid.png" 1728028140.10736 20513 377d5aba67e1619960f35ff72f65d0d9 ""
-  "thesis.aux" 1728989670.29784 12391 2fdc3bc7e32a3ab085a80d8f9c9df3df "pdflatex"
-  "thesis.tex" 1728989666.79196 70171 c4c70a3c160efb6d5b18fea375d98637 ""
-  "thesis.toc" 1728989670.29984 1678 8a0cb28bbce511e8a1643166e6a2f0e5 "pdflatex"
+  "thesis.aux" 1729008775.85431 12299 0ee147343c122751b7efa65aa530c46e "pdflatex"
+  "thesis.tex" 1729008772.55333 70864 40d4f040e4c8967e5b89130da7793bf9 ""
+  "thesis.toc" 1729008775.85631 1711 962990a76b8711405eee46e44dbf1e42 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.log"
