@@ -49,7 +49,9 @@ One of the most promising and most researched QML method at present is the Quant
 
 However, the design of such a circuit is often done manually, following for example standard practices and patterns, or some sort of rule of thumb. This approach may work for simple problems, but one quickly finds out that using hand-crafted circuits for non-trivial tasks leads to a bad performance of the model, as finding the correct ansatz by hand is too difficult. It is necessary to automate this process, i.e. we need an algorithm that designs a properly working quantum circuit from scratch. 
 
-One way to attack this problem is by using a genetic algorithm. Genetic algorithms are meta-heuristic optimization algorithms inspired by the process of natural selection. In this work we develop a genetic algorithm that automatically designs, from first principles, the circuit to use in a QSVM classification, and we test the algorithm on various datasets. 
+One way to attack this problem is by using a genetic algorithm. Genetic algorithms are meta-heuristic optimization algorithms inspired by the process of natural selection. In this work we develop a genetic algorithm that automatically designs, from first principles, the circuit to use in a QSVM classification, and we test it on various datasets. 
+
+The algorithm was implemented exploiting the Python library Qiskit, for what regards the quantum device simulation, and scikit-learn, for the machine learning part. Qiskit is an open source Software Development Kit for working with quantum computers at the level of extended quantum circuits, operators, and primitives.
 
 This work is organized as follows: in Chapter 2 we introduce how a classical SVM works, in particular we present the fundamental concept of kernelized SVM. In Chapter 3 we discuss the QSVM, we define what it is and see how it performs on some datasets. We will encounter the tedious problem of choosing the quantum embedding circuit. In Chapter 4 we introduce our genetic algorithm, and test its performance on several datasets. In Chapter 5 we draw conclusions and discuss possible future developments. 
 
@@ -66,13 +68,17 @@ ML algorithms can be classified in different categories:
 \begin{itemize}
     \item \textbf{Supervised learning}: each data point has a label that the model aims to predict. The label can be:
     \begin{itemize}
-        \item Discrete, meaning the data can be separated into two or more classes. The goal is to use the training data to predict the labels for the test data. This is called \textit{classification}. An example is identifying whether an image contains a dog or a cat, or diagnosing a medical condition as positive or negative based on patient records.
-        \item Continuous, when each data is labelled by a continuous value, meaning the target variable can take on any value within a range. The model attempts to predict this continuous value. This is called \textit{regression}. For example, predicting the future price of a house based on its features is a regression problem.
+        \item Discrete, meaning the data can be separated into two or more classes and the goal is to use the training data to predict the labels for the test data. This is called \textit{classification}. An example is identifying whether an image contains a dog or a cat, or diagnosing a medical condition as positive or negative based on patient records.
+        \item Continuous, when each data is labelled by a continuous value, meaning the target variable can take on any value within a range and the model attempts to predict this continuous value. This is called \textit{regression}. For example, predicting the future price of a house based on its features is a regression problem.
     \end{itemize}
     \item \textbf{Unsupervised learning}: our dataset does not have labels, yet we would like to empirically determine something about the data. For example we may want to determine if the data can be represented as belonging to distinct groups (clustering).
 \end{itemize}
 
 In this work we will focus on the Support Vector Machine, a supervised classification algorithm. 
+
+Datasets vary from small simple dataset with 2 numerical features, up to large and complex datasets with thousands of numerical and categorical features. In our case, due to the limited computational power we possess, we will study only small 2D datasets.
+
+
 
 
 \subsection{Support vector machine}
