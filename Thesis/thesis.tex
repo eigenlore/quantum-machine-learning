@@ -556,11 +556,17 @@ In Figure \ref{fig:adhoczz} is shown instead the result of the fit with the QSVM
 
 Finding a dataset which is separable by quantum methods and not by classical methods leads us into thinking that the QSVM algorithm might outperform the SVM algorithm on datasets with complex patterns, which is the result we hoped to find. 
 
-\subsection{Issues of QSVM (mancano delle immagini)}
+\subsection{Issues of QSVM}
 
-In a QSVM algorithm the only choice the user has to make is the choice of the feature map, that is the choice of the quantum encoding circuit. It is easy to convince ourselves that this choice is crucial, and determines if the algorithm will be successful or not. In the classical case we also have to choose a kernel, but we found that this choice is much less delicate that in the quantum case. In fact, for example, the RBF kernel works very well for most applications. In the quantum case instead, we observed that the choice of the feature map is very tricky. If the wrong feature map is chosen, the QSVM performs very poorly even on very simple datasets, as we will now illustrate with some examples. Let's consider the dataset shown in Figure , which is simple enough to be expected to be separated without too many difficulties. The RBF kernel separates this dataset very well. Let's try to apply some of the quantum kernels we discussed in the previous sections. 
+In a QSVM algorithm the only choice the user has to make is the choice of the feature map, that is the choice of the quantum encoding circuit. It is easy to convince ourselves that this choice is crucial, and determines if the algorithm will be successful or not. In the classical case we also have to choose a kernel, but we found that this choice is much less delicate that in the quantum case. In fact, for example, the RBF kernel works very well for most applications. In the quantum case instead, we observed that the choice of the feature map is very tricky. If the wrong feature map is chosen, the QSVM performs very poorly even on very simple datasets, as we will now illustrate with some examples. Let's consider the dataset shown in Figure (\ref{fig:classical svm circles}), which is simple enough to be expected to be separated without too many difficulties. We already saw of classical kernels separate this dataset very well. Let's try to apply some of the quantum kernels we discussed in the previous sections. 
 
-We see how the results of the fits are not satisfying. The accuracy may not be too low in some cases, but the form of the decision boundary tells us that the algorithm did not find the correct pattern for the data. With more complex dataset the algorithm may fail completely, like shown in Figure .
+We find that the results of the fits are not satisfying. The accuracy may not be too low in some cases, but the form of the decision boundary tells us that the algorithm did not find the correct pattern for the data. In some cases the algorithm may fail completely, like shown in Figure (\ref{fig:failcircle}).
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/failcircle.png}
+    \caption{Circle dataset fitted with PauliFeatureMap leads to a very inaccurate decision boundary.}
+    \label{fig:failcircle}
+\end{figure}
 
 It is clear at this point that the choice of the quantum encoding map is a very delicate part of the algorithm, and cannot be taken lightly. Choosing the feature map by trying the most common ones, as one may do with classical SVM, is not a safe method, as for a lot of datasets, even simple ones, the QSVM may fail. We need a more systematic way to choose the encoding, as the performance of the model is significantly influenced by this choice. We will discuss those methods in the next sections.
 

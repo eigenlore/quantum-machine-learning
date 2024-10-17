@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.25)  15 OCT 2024 18:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.25)  17 OCT 2024 15:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,180 +458,189 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[31 <./images/adhoc.png>] [32 <./images/adhocrbf.png>] [33 <./images/adhoczz.png>] [34] [35] [36]
-<images/rotationsbeforeZZ.png, id=158, 453.1329pt x 125.7498pt>
+[31 <./images/adhoc.png>] [32 <./images/adhocrbf.png>]
+<images/failcircle.png, id=144, 411.939pt x 316.5426pt>
+File: images/failcircle.png Graphic file (type png)
+<use images/failcircle.png>
+Package pdftex.def Info: images/failcircle.png  used on input line 566.
+(pdftex.def)             Requested size: 312.00119pt x 239.7441pt.
+ [33 <./images/adhoczz.png>] [34 <./images/failcircle.png>] [35] [36]
+<images/rotationsbeforeZZ.png, id=159, 453.1329pt x 125.7498pt>
 File: images/rotationsbeforeZZ.png Graphic file (type png)
 <use images/rotationsbeforeZZ.png>
-Package pdftex.def Info: images/rotationsbeforeZZ.png  used on input line 604.
+Package pdftex.def Info: images/rotationsbeforeZZ.png  used on input line 610.
 (pdftex.def)             Requested size: 390.0pt x 108.23097pt.
-<images/ZZafterZZ.png, id=159, 732.0951pt x 125.7498pt>
+<images/ZZafterZZ.png, id=160, 732.0951pt x 125.7498pt>
 File: images/ZZafterZZ.png Graphic file (type png)
 <use images/ZZafterZZ.png>
-Package pdftex.def Info: images/ZZafterZZ.png  used on input line 611.
+Package pdftex.def Info: images/ZZafterZZ.png  used on input line 617.
 (pdftex.def)             Requested size: 390.0pt x 66.99052pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[37 <./images/rotationsbeforeZZ.png>]
-<images/qka.png, id=165, 402.5439pt x 327.3831pt>
+ [37] [38 <./images/rotationsbeforeZZ.png> <./images/ZZafterZZ.png>]
+<images/qka.png, id=171, 402.5439pt x 327.3831pt>
 File: images/qka.png Graphic file (type png)
 <use images/qka.png>
-Package pdftex.def Info: images/qka.png  used on input line 635.
+Package pdftex.def Info: images/qka.png  used on input line 641.
 (pdftex.def)             Requested size: 312.00119pt x 253.74924pt.
-<images/lossfunction.png, id=166, 896.148pt x 332.442pt>
+<images/lossfunction.png, id=172, 896.148pt x 332.442pt>
 File: images/lossfunction.png Graphic file (type png)
 <use images/lossfunction.png>
-Package pdftex.def Info: images/lossfunction.png  used on input line 642.
+Package pdftex.def Info: images/lossfunction.png  used on input line 648.
 (pdftex.def)             Requested size: 390.0pt x 144.67703pt.
- [38 <./images/ZZafterZZ.png>]
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[39 <./images/qka.png>] [40 <./images/lossfunction.png>] [41] [42] [43]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 730.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[39]
+
+LaTeX Warning: Text page 40 contains only floats.
+
+[40 <./images/qka.png> <./images/lossfunction.png>] [41] [42] [43] [44]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 736.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 730.
-<images/fenotip.png, id=189, 629.35126pt x 174.6525pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 736.
+<images/fenotip.png, id=194, 629.35126pt x 174.6525pt>
 File: images/fenotip.png Graphic file (type png)
 <use images/fenotip.png>
-Package pdftex.def Info: images/fenotip.png  used on input line 733.
+Package pdftex.def Info: images/fenotip.png  used on input line 739.
 (pdftex.def)             Requested size: 312.00119pt x 86.5825pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 730--737
+Underfull \hbox (badness 10000) in paragraph at lines 736--743
 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44]
-<images/parent1.png, id=193, 629.35126pt x 174.6525pt>
+[45]
+<images/parent1.png, id=198, 629.35126pt x 174.6525pt>
 File: images/parent1.png Graphic file (type png)
 <use images/parent1.png>
-Package pdftex.def Info: images/parent1.png  used on input line 746.
+Package pdftex.def Info: images/parent1.png  used on input line 752.
 (pdftex.def)             Requested size: 272.99881pt x 75.76003pt.
-<images/parent2.png, id=194, 629.35126pt x 174.6525pt>
+<images/parent2.png, id=199, 629.35126pt x 174.6525pt>
 File: images/parent2.png Graphic file (type png)
 <use images/parent2.png>
-Package pdftex.def Info: images/parent2.png  used on input line 753.
+Package pdftex.def Info: images/parent2.png  used on input line 759.
 (pdftex.def)             Requested size: 272.99881pt x 75.76003pt.
-<images/child1.png, id=195, 629.35126pt x 174.6525pt>
+<images/child1.png, id=200, 629.35126pt x 174.6525pt>
 File: images/child1.png Graphic file (type png)
 <use images/child1.png>
-Package pdftex.def Info: images/child1.png  used on input line 762.
+Package pdftex.def Info: images/child1.png  used on input line 768.
 (pdftex.def)             Requested size: 272.99881pt x 75.76003pt.
-<images/child2.png, id=196, 629.35126pt x 174.6525pt>
+<images/child2.png, id=201, 629.35126pt x 174.6525pt>
 File: images/child2.png Graphic file (type png)
 <use images/child2.png>
-Package pdftex.def Info: images/child2.png  used on input line 769.
+Package pdftex.def Info: images/child2.png  used on input line 775.
 (pdftex.def)             Requested size: 272.99881pt x 75.76003pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/mutated.png, id=197, 453.1329pt x 125.7498pt>
+<images/mutated.png, id=202, 453.1329pt x 125.7498pt>
 File: images/mutated.png Graphic file (type png)
 <use images/mutated.png>
-Package pdftex.def Info: images/mutated.png  used on input line 780.
+Package pdftex.def Info: images/mutated.png  used on input line 786.
 (pdftex.def)             Requested size: 272.99881pt x 75.76129pt.
-<images/nonmutated.png, id=198, 453.1329pt x 125.7498pt>
+<images/nonmutated.png, id=203, 453.1329pt x 125.7498pt>
 File: images/nonmutated.png Graphic file (type png)
 <use images/nonmutated.png>
-Package pdftex.def Info: images/nonmutated.png  used on input line 787.
+Package pdftex.def Info: images/nonmutated.png  used on input line 793.
 (pdftex.def)             Requested size: 272.99881pt x 75.76129pt.
-[45 <./images/fenotip.png>]
+[46 <./images/fenotip.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[46 <./images/parent1.png> <./images/parent2.png> <./images/child1.png> <./images/child2.png>] [47 <./images/mutated.png> <./images/nonmutated.png>]
-<images/sigmoid.png, id=211, 409.7709pt x 312.2064pt>
+[47 <./images/parent1.png> <./images/parent2.png> <./images/child1.png> <./images/child2.png>] [48 <./images/mutated.png> <./images/nonmutated.png>]
+<images/sigmoid.png, id=216, 409.7709pt x 312.2064pt>
 File: images/sigmoid.png Graphic file (type png)
 <use images/sigmoid.png>
-Package pdftex.def Info: images/sigmoid.png  used on input line 806.
+Package pdftex.def Info: images/sigmoid.png  used on input line 812.
 (pdftex.def)             Requested size: 312.00119pt x 237.72237pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[48] [49 <./images/sigmoid.png>]
-Overfull \hbox (1.3538pt too wide) in paragraph at lines 822--823
+[49] [50 <./images/sigmoid.png>]
+Overfull \hbox (1.3538pt too wide) in paragraph at lines 828--829
 []\OT1/cmr/m/n/12 The max-i-mum num-ber of gen-er-a-tions we al-low. If no in-di-vid-ual achieves
  []
 
-[50] [51]
+[51] [52]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/finalcircuit.png, id=227, 359.9046pt x 125.7498pt>
+<images/finalcircuit.png, id=232, 359.9046pt x 125.7498pt>
 File: images/finalcircuit.png Graphic file (type png)
 <use images/finalcircuit.png>
-Package pdftex.def Info: images/finalcircuit.png  used on input line 870.
+Package pdftex.def Info: images/finalcircuit.png  used on input line 876.
 (pdftex.def)             Requested size: 312.00119pt x 109.01959pt.
-<images/meanaccuracy.png, id=228, 413.3844pt x 327.3831pt>
+<images/meanaccuracy.png, id=233, 413.3844pt x 327.3831pt>
 File: images/meanaccuracy.png Graphic file (type png)
 <use images/meanaccuracy.png>
-Package pdftex.def Info: images/meanaccuracy.png  used on input line 877.
+Package pdftex.def Info: images/meanaccuracy.png  used on input line 883.
 (pdftex.def)             Requested size: 312.00119pt x 247.09529pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[52] [53 <./images/finalcircuit.png>]
-<images/awesomeresult.png, id=236, 389.5353pt x 312.9291pt>
+[53] [54 <./images/finalcircuit.png>]
+<images/awesomeresult.png, id=241, 389.5353pt x 312.9291pt>
 File: images/awesomeresult.png Graphic file (type png)
 <use images/awesomeresult.png>
-Package pdftex.def Info: images/awesomeresult.png  used on input line 885.
+Package pdftex.def Info: images/awesomeresult.png  used on input line 891.
 (pdftex.def)             Requested size: 312.00119pt x 250.64442pt.
- [54 <./images/meanaccuracy.png>]
-<images/badresult.png, id=241, 389.5353pt x 312.9291pt>
+ [55 <./images/meanaccuracy.png>]
+<images/badresult.png, id=247, 389.5353pt x 312.9291pt>
 File: images/badresult.png Graphic file (type png)
 <use images/badresult.png>
-Package pdftex.def Info: images/badresult.png  used on input line 893.
+Package pdftex.def Info: images/badresult.png  used on input line 899.
 (pdftex.def)             Requested size: 312.00119pt x 250.64442pt.
- [55 <./images/awesomeresult.png>]
-<images/noise.png, id=247, 385.9218pt x 312.9291pt>
+ [56 <./images/awesomeresult.png>]
+<images/noise.png, id=252, 385.9218pt x 312.9291pt>
 File: images/noise.png Graphic file (type png)
 <use images/noise.png>
-Package pdftex.def Info: images/noise.png  used on input line 901.
+Package pdftex.def Info: images/noise.png  used on input line 907.
 (pdftex.def)             Requested size: 312.00119pt x 252.99844pt.
- [56 <./images/badresult.png>]
-Overfull \hbox (2.9987pt too wide) in paragraph at lines 908--909
+ [57 <./images/badresult.png>]
+Overfull \hbox (2.9987pt too wide) in paragraph at lines 914--915
 \OT1/cmr/m/n/12 Let's now test the per-for-mance on an-other ar-ti-fi-cial dataset, the moon dataset.
  []
 
-[57 <./images/noise.png>]
-<images/mooncircuit.png, id=256, 453.1329pt x 125.7498pt>
+[58 <./images/noise.png>]
+<images/mooncircuit.png, id=261, 453.1329pt x 125.7498pt>
 File: images/mooncircuit.png Graphic file (type png)
 <use images/mooncircuit.png>
-Package pdftex.def Info: images/mooncircuit.png  used on input line 913.
+Package pdftex.def Info: images/mooncircuit.png  used on input line 919.
 (pdftex.def)             Requested size: 312.00119pt x 86.58516pt.
-<images/moonboh.png, id=257, 385.9218pt x 312.9291pt>
+<images/moonboh.png, id=262, 385.9218pt x 312.9291pt>
 File: images/moonboh.png Graphic file (type png)
 <use images/moonboh.png>
-Package pdftex.def Info: images/moonboh.png  used on input line 918.
+Package pdftex.def Info: images/moonboh.png  used on input line 924.
 (pdftex.def)             Requested size: 312.00119pt x 252.99844pt.
- [58 <./images/mooncircuit.png> <./images/moonboh.png>] [59] (./thesis.aux)
+ [59 <./images/mooncircuit.png> <./images/moonboh.png>] [60] (./thesis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 11020 strings out of 474222
- 164574 string characters out of 5748733
+ 11028 strings out of 474222
+ 164785 string characters out of 5748733
  2016975 words of memory out of 5000000
- 33141 multiletter control sequences out of 15000+600000
+ 33149 multiletter control sequences out of 15000+600000
  572157 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,19n,79p,1490b,1787s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (59 pages, 1116461 bytes).
+Output written on thesis.pdf (60 pages, 1140567 bytes).
 PDF statistics:
- 352 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
+ 357 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

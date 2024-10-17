@@ -11,14 +11,14 @@
 \contentsline {subsection}{\numberline {3.3}Quantum encoding circuits}{20}{}%
 \contentsline {subsection}{\numberline {3.4}QSVM algorithm and Qiskit implementation}{25}{}%
 \contentsline {subsection}{\numberline {3.5}QSVM potential}{29}{}%
-\contentsline {subsection}{\numberline {3.6}Issues of QSVM (mancano delle immagini)}{32}{}%
-\contentsline {subsection}{\numberline {3.7}Quantum kernel alignment}{34}{}%
-\contentsline {subsubsection}{\numberline {3.7.1}Circuit optimization}{34}{}%
+\contentsline {subsection}{\numberline {3.6}Issues of QSVM}{32}{}%
+\contentsline {subsection}{\numberline {3.7}Quantum kernel alignment}{35}{}%
+\contentsline {subsubsection}{\numberline {3.7.1}Circuit optimization}{35}{}%
 \contentsline {subsubsection}{\numberline {3.7.2}Performance}{39}{}%
-\contentsline {section}{\numberline {4}Genetic algorithm}{41}{}%
-\contentsline {subsection}{\numberline {4.1}General introduction}{41}{}%
-\contentsline {subsection}{\numberline {4.2}Genetic algorithm for QSVM}{42}{}%
-\contentsline {subsection}{\numberline {4.3}Results}{51}{}%
-\contentsline {subsubsection}{\numberline {4.3.1}Circle dataset}{51}{}%
-\contentsline {subsection}{\numberline {4.4}Moon dataset}{57}{}%
-\contentsline {section}{\numberline {5}Conclusions}{59}{}%
+\contentsline {section}{\numberline {4}Genetic algorithm}{42}{}%
+\contentsline {subsection}{\numberline {4.1}General introduction}{42}{}%
+\contentsline {subsection}{\numberline {4.2}Genetic algorithm for QSVM}{43}{}%
+\contentsline {subsection}{\numberline {4.3}Results}{52}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Circle dataset}{52}{}%
+\contentsline {subsection}{\numberline {4.4}Moon dataset}{58}{}%
+\contentsline {section}{\numberline {5}Conclusions}{60}{}%
