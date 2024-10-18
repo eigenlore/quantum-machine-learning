@@ -266,7 +266,7 @@ One can also create a custom kernel, passing as an argument a callable function 
 \newpage
 \section{Quantum Support Vector Machine}
 \subsection{General overview}
-The concept of QSVM as we use today was first introduced in 2019, by Havlicek et al. and, independently, by Schuld , that proposed and experimentally implemented the method on a superconducting processor. In 2021 Liu et al. established a rigorous quantum speedup for supervised classification using a general-purpose quantum learning algorithm that only requires classical access to data. Since then several interesting works have been published, but none faces the problem of how to build the quantum circuit to use to encode the classical data in the quantum device. This choice, we will see, is highly problematic, as already noted by Park et al. . In order to use the QSVM for real world applications it is mandatory to have a functioning way of finding the correct circuit to use.
+The concept of QSVM as we use today was first introduced in 2019, by Havlicek et al. \cite{primo} and, independently, by Schuld \cite{shuld}, that proposed and experimentally implemented the method on a superconducting processor. In 2021 Liu et al. established a rigorous quantum speedup for supervised classification using a general-purpose quantum learning algorithm that only requires classical access to data. Since then several interesting works have been published, but none faces the problem of how to build the quantum circuit to use to encode the classical data in the quantum device. This choice, we will see, is highly problematic, as already noted by Park et al. \cite{schifo}. In order to use the QSVM for real world applications it is mandatory to have a functioning way of finding the correct circuit to use.
 
 \subsection{Quantum feature map and Quantum Kernels}
 We anticipated how the classical SVM algorithm faces some important limitations when the feature space becomes large, as estimating kernel functions becomes computationally intensive. Quantum computing could enhance the algorithm's performance by providing access to exponentially large Hilbert feature spaces. The idea is to construct a feature map which maps classical data into a quantum state which lives in an exponentially large Hilbert feature space. Therefore, in this context a feature map is a function 
@@ -938,7 +938,82 @@ The algorithm showed great performance on simple 2D datasets, finding the optima
 The goal now would be to further study the performance of the genetic algorithm we developed on larger multidimensional datasets, where the QSVM is expected to outperform classical algorithms. Conducting such tests on a quantum simulator, like Qiskit, would require significant computational resources, as simulating a quantum circuit on classical hardware is highly demanding. The ultimate goal therefore is to test the algorithm on a real scalable quantum device, its natural field of application. We are confident that it would show great performance, demonstrating its viability for real-world applications.
 
 
+\newpage
+\begin{thebibliography}{9}
+\bibitem{sakurai}
+Željko Ivezić, \emph{Statistics, Data Mining, and Machine Learning in Astronomy} (1994)
 
+\bibitem{belkic}
+Mitchell Melanie, \emph{An Introduction to Genetic Algorithms} (1999)
+
+\bibitem{belkic}
+A.E. Eiben, \emph{Introduction to Evolutionary Computing} (2003)
+
+\bibitem{belkic}
+Leo Sünkel, \emph{GA4QCO: Genetic Algorithm for Quantum Circuit
+Optimization} (2023)
+
+\bibitem{belkic}
+Floyd M. Creevey, \emph{GASP: a genetic algorithm for state
+preparation on quantum computers} (2023)
+
+\bibitem{belkic}
+Floyd M. Creevey, \emph{Kernel Alignment for Quantum Support Vector Machines Using Genetic
+Algorithms} (2023)
+
+\bibitem{belkic}
+Thomas Hubregtsen, \emph{Training Quantum Embedding Kernels on Near-Term Quantum Computers} (2021)
+
+\bibitem{belkic}
+Jennifer R. Glick, \emph{Covariant quantum kernels for data with group structure} (2022)
+
+\bibitem{belkic}
+Maria Schuld, \emph{Supervised quantum machine learning models are kernel methods} (2021)
+
+\bibitem{belkic}
+Xiaojian Zhou, \emph{Quantum kernel estimation-based quantum support vector
+regression} (2024)
+
+\bibitem{belkic}
+Seth Lloyd, \emph{Quantum embeddings for machine learning} (2022)
+
+\bibitem{belkic}
+Maria Schuld, \emph{Machine
+Learning
+with Quantum
+Computers} (2021)
+
+\bibitem{belkic}
+N. Innan, \emph{Enhancing Quantum Support Vector Machines through
+Variational Kernel Training} (2023)
+
+\bibitem{shuld}
+Maria Schuld, \emph{Quantum machine learning in feature Hilbert spaces} (2018)
+
+\bibitem{primo}
+Vojtech Havlicek, \emph{Supervised learning with quantum enhanced feature spaces} (2018)
+
+\bibitem{belkic}
+Jiaying Yang, \emph{Support Vector Machines on Noisy Intermediate
+Scale Quantum Computers} (2019)
+
+\bibitem{belkic}
+Y. Liu, \emph{A rigorous and robust quantum speed-up in supervised machine learning} (2020)
+
+
+\bibitem{belkic}
+Patrick Rebentrost, \emph{Quantum support vector machine for big data classification} (2014)
+
+\bibitem{schifo}
+Jae-Eun Park, \emph{Practical application improvement to Quantum SVM} (2020)
+
+
+
+
+
+
+
+\end{thebibliography}
 
 
 
