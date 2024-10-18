@@ -929,7 +929,13 @@ The resulting final circuit is shown in Figure (\ref{fig:mooncircuit}), and its 
 
 \newpage 
 \section{Conclusions}
+The Quantum Support Vector Machine is an algorithm with great potential to outperform classical supervised classification models. Once fully implemented on a large scalable quantum device, we think it will successfully classify large datasets with many features and complicated patterns, that are intractable with classical methods. 
 
+However we found it to be a very peaky algorithm in the choice of the quantum embedding circuit, so it is essential to use a proper algorithm to construct such a circuit, as using standard rule of thumb is often insufficient. The possibility we explored in this work is the one of a genetic algorithm. 
+
+The algorithm showed great performance on simple 2D datasets, finding the optimal circuit that we were not able to find with other methods, opening the road to a broader application of genetic algorithms for QSVM, and in general in the field of Quantum Machine Learning. 
+
+The goal now would be to further study the performance of the genetic algorithm we developed on larger multidimensional datasets, where the QSVM is expected to outperform classical algorithms. Conducting such tests on a quantum simulator, like Qiskit, would require significant computational resources, as simulating a quantum circuit on classical hardware is highly demanding. The ultimate goal therefore is to test the algorithm on a real scalable quantum device, its natural field of application. We are confident that it would show great performance, demonstrating its viability for real-world applications.
 
 
 
