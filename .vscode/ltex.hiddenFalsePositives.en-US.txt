@@ -1,1 +1,2 @@
 {"rule":"FIRST_OF_ALL","sentence":"^\\QFirst of all we are\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QWe performed several tests on medium size bidimensional datasets L'algoritmo sviluppato è stato testato utilizzando il framework Qiskit, che permette di simulare un dispositivo quantistico su un hardware classico.\\E$"}

@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+\pagestyle{empty}
+\linespread{1.3}
+
+
+\title{Sintesi della Relazione per la prova finale}
+\date{}
+\author{}
+\begin{document}
+%\maketitle
+
+
+\begin{itemize}
+   \item \textbf{Cognome e Nome:} Tasca Lorenzo
+    \item \textbf{Matricola:} 858746
+    \item \textbf{Titolo:} Genetic algorithm for Quantum Support Vector Machines    \item \textbf{Relatore:} Alberto Leporati
+    \item \textbf{Correlatore:} Alberto Zaffaroni
+    \item \textbf{Date della seduta della prova finale:} 25-26-27 novembre 2024 
+  \item \textbf{Corso di laurea:} Fisica
+    \item \textbf{Recapito telefonico:} +39 3807578480
+    
+\end{itemize}
+
+$\,$
+
+Il Quantum Machine Learning è una recente disciplina che si propone di sfruttare le potenzialità del Quantum Computing per potenziare le performance di alcuni algoritmi di Machine Learning. Un esempio tra i più studiati è la Support Vector Machine (SVM). La SVM è un algoritmo supervisionato di classificazione binaria, che si propone di separare le due classi costruendo un iperpiano separatore che massimizza la distanza dai punti più vicini. Nel caso in cui i dati non siano linearmente separabili è possibile applicare una funzione, nota come feature map, per renderli separabili in uno spazio di dimensione maggiore. 
+
+È stata pensata una versione quantistica della SVM, nota come Quantum Support Vector Machine (QSVM), che si propone di utilizzare una feature map quantistica, al posto di una funzione classica. Una feature map quantistica consiste in un circuito, che effettua l'embedding dei dati classici in uno stato quantistico. La QSVM ha il potenziale di separare dataset con molte dimensioni e pattern complessi, che risultano intrattabili per la SVM classica. 
+
+La scelta del circuito quantistico da utilizzare per effettuare l'embedding dei dati risulta particolarmente delicata, e influenza significativamente la performance dell'algoritmo. Una scelta non ragionata della feature map porta a performance inadeguate, con accuratezze spesso addirittura sotto al 50\%. Per questa ragione non è consigliabile scegliere il circuito basandosi solamente su scelte standard o regole generali, come invece è prassi nel caso classico.
+
+Per le motivazioni sopracitate, in questo lavoro abbiamo sviluppato un algoritmo genetico il cui scopo è, dato un dataset, individuare il miglior circuito da utilizzare come embedding per la QSVM. L'algoritmo lavora senza richiedere all'utilizzatore alcun ansatz sulla forma del circuito. Gli algoritmi genetici sono algoritmi euristici basati sulla selezione naturale, che tramite i processi di crossover e mutazione, costruiscono generazioni via via più performanti di individui. 
+
+L'algoritmo sviluppato è stato testato utilizzando il framework Qiskit, che permette di simulare un dispositivo quantistico su un hardware classico. Sono stati effettuati vari test su dataset bidimensionali di piccole-medie dimensioni, in linea con la potenza computazionale a disposizione, ottenendo ottimi risultati in termini di performance dell'individuo finale dell'algoritmo.
+
+Possibili sviluppi futuri includono testare l'algoritmo su dataset con maggiore dimensionalità, compito che però è computazionalmente oneroso, e testare l'algoritmo su un reale dispositivo quantistico scalabile.
+
+
+
+
+
+\newpage
+\begin{itemize}
+    \item \textbf{Surname  and Name} Tasca Lorenzo
+    \item \textbf{Identification number:} 858746
+    \item \textbf{Title:} Genetic algorithm for Quantum Support Vector Machines    
+    \item \textbf{Supervisor:} Alberto Leporati
+    \item \textbf{Cosupervisor:} Alberto Zaffaroni
+    \item \textbf{Date of the graduation session:} November 25-26-27, 2024
+    \item \textbf{Degree:} Physics
+    \item \textbf{Phone number:} +39 3807578480
+    
+\end{itemize}
+$\,$
+
+Quantum Machine Learning is a recent discipline whose goal is to exploit the power of Quantum Computing to enhance the performance of some Machine Learning algorithms. One of the most studied is the Support Vector Machine (SVM). The SVM is supervised binary classification algorithm, which separates the two classes constructing a separating hyperplane which maximizes the distance from the nearest data points. In case the data are not linearly separable, it is possible to apply a feature map, to separate the data in a higher dimensional space. 
+
+A Quantum enhanced version of the SVM has been constructed, called Quantum Support Vector Machine (QSVM), which uses a quantum feature map instead of a classical one. A quantum feature map consists in a quantum circuit, which embeds the classical data into a quantum state. The QSVM has shown the potential to separate big datasets with many features and complex patterns, that are unmanageable for the classical SVM.
+
+The choice of the quantum circuit to use to embed the data is very delicate, and significantly influences the performance of the algorithm. An unreasoned choice of the feature map leads to an inadequate performance, with an accuracy often under 50\%. For this reason it is not advisable to choose the circuit based on standard choices or rule of thumb, as often done in the classical case.  
+
+For the abovementioned reasons, in this work we developed a genetic algorithm, whose goal is, given a dataset, to find the best circuit to use as the embedding circuit for the QSVM. The algorithm works without the need of any ansatz of the circuit given by the user. Genetic algorithms are heuristic algorithms based on natural selection, that, through the processes of crossover and mutation, build generations of individuals with an increasing performance.
+
+The developed algorithm was tested on the framework Qiskit, that allows simulation of a quantum device on classical hardware. We conducted multiple tests on medium-sized, two-dimensional datasets, aligned with the computational power available, and achieved excellent results regarding the performance of the algorithm's final individual.
+
+Possible future developments include testing the algorithm on higher-dimensional datasets, a computationally demanding task, and evaluating the algorithm on a real, scalable quantum device.
+
+
+
+
+\end{document}
