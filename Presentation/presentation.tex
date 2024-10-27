@@ -1,0 +1,70 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Singapore}
+\usecolortheme{default}
+\beamertemplatenavigationsymbolsempty
+
+
+\title[Genetic algorithm for QSVM] 
+{Genetic algorithm for Quantum Support Vector Machines}
+
+
+
+\author[Lorenzo Tasca]
+{Lorenzo Tasca}
+ 
+
+\date[25/11/2024] 
+{25 Novembre 2024}
+
+\logo{\includegraphics[height=1cm]{logo.png}}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+
+
+\begin{frame}
+\frametitle{Introduzione}
+    \begin{itemize}
+    \item<1-> Quantum Machine Learning si propone di sfruttare le potenzialitò del
+    Quantum Computing per potenziare le performance di alcuni algoritmi di Machine Learning. 
+        \item<2-> Vedremo come il potenziale di Coulomb fa sorgere vari problemi a causa della sua natura a lungo raggio, e necessita quindi di una trattazione a parte.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sezione d'urto differenziale}
+
+
+
+   
+ Per definirla partiamo dall'equazione di Lippman-Scwhinger, che ci dice come un'onda piana nell'urto viene deformata in un'onda sferica:
+\begin{columns}
+\column{0.5\textwidth}
+  $$\psi\approx e^{ik\cdot x}+f(k,k')\frac{e^{ikr}}{r}.$$
+
+
+\column{0.5\textwidth}
+\begin{figure}
+      \includegraphics[height=2.5cm]{logo.png}
+ \end{figure}
+
+
+\end{columns}
+\vspace{4mm}
+    Richiamando il caso classico, possiamo definire la sezione d'urto $d\sigma$ come la sezione del fascio incidente attraverso la quale passa una corrente di probabilità pari a quella che entra in un angolo solido $d\Omega$:  $$J_{in}\,\alert{d\sigma}=J_{out}\,d\Sigma,$$ con $d\Sigma=r^2d\Omega$.
+    Si trova che  $$\frac{{d\sigma}}{d\Omega}=|f(k,k')|^2.$$
+
+\end{frame}
+
+
+
+
+
+
+
+\end{document}
