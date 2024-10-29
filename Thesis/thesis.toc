@@ -1,24 +1,24 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Introduction}{3}{}%
-\contentsline {section}{\numberline {2}Classical Support Vector Machine}{5}{}%
-\contentsline {subsection}{\numberline {2.1}General overview}{5}{}%
-\contentsline {subsection}{\numberline {2.2}Support vector machine}{6}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}Linear SVM}{7}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{11}{}%
-\contentsline {section}{\numberline {3}Quantum Support Vector Machine}{17}{}%
-\contentsline {subsection}{\numberline {3.1}General overview}{17}{}%
-\contentsline {subsection}{\numberline {3.2}Quantum feature map and Quantum Kernels}{17}{}%
-\contentsline {subsection}{\numberline {3.3}Quantum encoding circuits}{20}{}%
-\contentsline {subsection}{\numberline {3.4}QSVM algorithm and Qiskit implementation}{25}{}%
-\contentsline {subsection}{\numberline {3.5}QSVM potential}{29}{}%
-\contentsline {subsection}{\numberline {3.6}Issues of QSVM}{32}{}%
-\contentsline {subsection}{\numberline {3.7}Quantum kernel alignment}{35}{}%
-\contentsline {subsubsection}{\numberline {3.7.1}Circuit optimization}{35}{}%
-\contentsline {subsubsection}{\numberline {3.7.2}Performance}{39}{}%
-\contentsline {section}{\numberline {4}Genetic algorithm}{42}{}%
-\contentsline {subsection}{\numberline {4.1}General introduction}{42}{}%
-\contentsline {subsection}{\numberline {4.2}Genetic algorithm for QSVM}{43}{}%
-\contentsline {subsection}{\numberline {4.3}Results}{52}{}%
-\contentsline {subsubsection}{\numberline {4.3.1}Circle dataset}{52}{}%
-\contentsline {subsubsection}{\numberline {4.3.2}Moon dataset}{58}{}%
-\contentsline {section}{\numberline {5}Conclusions}{60}{}%
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Classical Support Vector Machine}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}General overview}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Support vector machine}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Linear SVM}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Kernel SVM}{11}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {3}Quantum Support Vector Machine}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}General overview}{17}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Quantum feature map and Quantum Kernels}{17}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Quantum encoding circuits}{20}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}QSVM algorithm and Qiskit implementation}{26}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}QSVM potential}{30}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Issues of QSVM}{33}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Quantum kernel alignment}{36}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Circuit optimization}{36}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}Performance}{40}{subsubsection.3.7.2}%
+\contentsline {section}{\numberline {4}Genetic algorithm}{43}{section.4}%
+\contentsline {subsection}{\numberline {4.1}General introduction}{43}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Genetic algorithm for QSVM}{44}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Results}{53}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Circle dataset}{53}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Moon dataset}{59}{subsubsection.4.3.2}%
+\contentsline {section}{\numberline {5}Conclusions}{61}{section.5}%

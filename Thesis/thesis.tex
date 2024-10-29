@@ -3,8 +3,12 @@
 \usepackage[english]{babel}
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage{subcaption}
+\usepackage{subcaption, hyperref}
 \usepackage[braket, qm]{qcircuit} % Importa il pacchetto qcircuit
+\hypersetup{
+    colorlinks=false,
+    linkbordercolor=white
+}
 \lstdefinestyle{python}{
     language=Python,
     basicstyle=\ttfamily\small,
@@ -32,7 +36,7 @@
 
 \begin{document}
 
-\maketitle
+%\maketitle
 \tableofcontents
 
 \newpage
@@ -40,9 +44,9 @@
 
 \section{Introduction}
 
-Quantum machine learning (QML) has recently gained attention as an emerging field of research in quantum information science, combining the principles of quantum computing and machine learning. The main goal of QML is to leverage quantum phenomena like superposition, entanglement and interference to perform machine learning tasks. In contrast to traditional machine learning techniques, QML algorithms seem to offer potential benefits, as they can solve complex problems more efficiently and cost-effectively.
+Quantum machine learning (QML) has recently gained attention as an emerging field of research in quantum information science, combining the principles of quantum computing and machine learning. \cite{biamonte2017} The main goal of QML is to leverage quantum phenomena like superposition, entanglement and interference to perform machine learning tasks. In contrast to traditional machine learning techniques, QML algorithms seem to offer potential benefits, as they can solve complex problems more efficiently and cost-effectively.
 
-One of the most promising and most researched QML method at present is the Quantum Support Vector Machine (QSVM), an extension of the classical Support Vector Machine (SVM), a machine learning algorithm for classification and regression. The classical SVM is one of the most used and popular models, that has been successfully applied to various fields, such as image recognition, text classification and bioinformatics. However, as the complexity and the size of the dataset increases, classical SVMs are no longer able to perform efficiently. QSVM aims to overcome these limitations by leveraging the principles of quantum computing, constructing a quantum circuit that maps classical data into an exponentially large quantum Hilbert space, hoping to achieve an exponential speedup. 
+One of the most promising and most researched QML method at present is the Quantum Support Vector Machine (QSVM) \cite{havlicek2019}, an extension of the classical Support Vector Machine (SVM), a machine learning algorithm for classification and regression tasks. The classical SVM is one of the most used and popular models, that has been successfully applied to various fields, such as image recognition, text classification and bioinformatics. \cite{cristianini2000} However, as the complexity and the size of the dataset increases, classical SVMs are no longer able to perform efficiently. QSVM aims to overcome these limitations by leveraging the principles of quantum computing, constructing a quantum circuit that maps classical data into an exponentially large quantum Hilbert space, in this way hoping to achieve an exponential speedup. 
 
 However, the design of such a circuit is often done manually, following for example standard practices and patterns, or some sort of rule of thumb. This approach may work for simple problems, but one quickly finds out that using hand-crafted circuits for non-trivial tasks leads to a bad performance of the model, as finding the correct ansatz by hand is too difficult. It is necessary to automate this process, i.e. we need an algorithm that designs a properly working quantum circuit from scratch. 
 
@@ -65,13 +69,13 @@ ML algorithms can be classified in different categories:
 \begin{itemize}
     \item \textbf{Supervised learning}: each data point has a label that the model aims to predict. The label can be:
     \begin{itemize}
-        \item Discrete, meaning the data can be separated into two or more classes and the goal is to use the training data to predict the labels for the test data. This is called \textit{classification}. An example is identifying whether an image contains a dog or a cat, or diagnosing a medical condition as positive or negative based on patient records.
+        \item Discrete, meaning the data can be separated into two or more classes and the goal is to use the training data to predict the labels for the test data. This task is called \textit{classification}. An example is identifying whether an image contains a dog or a cat, or diagnosing a medical condition as positive or negative based on patient records.
         \item Continuous, when each data is labelled by a continuous value, meaning the target variable can take on any value within a range and the model attempts to predict this continuous value. This is called \textit{regression}. For example, predicting the future price of a house based on its features is a regression problem.
     \end{itemize}
-    \item \textbf{Unsupervised learning}: our dataset does not have labels, yet we would like to empirically determine something about the data. For example we may want to determine if the data can be represented as belonging to distinct groups (clustering).
+    \item \textbf{Unsupervised learning}: the dataset does not have labels, yet we would like to empirically determine something about the data. For example we may want to determine if the data can be represented as belonging to distinct groups (clustering).
 \end{itemize}
 
-In this work we will focus on the Support Vector Machine, a supervised classification algorithm. 
+In this work we will focus on the Support Vector Machine \cite{cristianini2000}, a supervised classification algorithm. 
 
 Datasets vary from small simple dataset with 2 numerical features, up to large and complex datasets with thousands of numerical and categorical features. In our case, due to the limited computational power we possess, we will study only small 2D datasets.
 
@@ -80,7 +84,7 @@ Datasets vary from small simple dataset with 2 numerical features, up to large a
 
 \subsection{Support vector machine}
 
-The Support Vector Machine (SVM) is a binary classification algorithm, whose goal is to build the maximum margin separator between the two classes, that is the separator that maximizes the distance of the closest point from each class. The standard SVM algorithm is a linear algorithm, so in particular it will try and build the separating margin as a hyperplane in a $d$-dimensional space (so a $(d-1)$-dimensional plane), where $d$ is the number of features. The points that touch the margin, or that are on the wrong side of it, are called support vectors. The distance between the decision boundary and the support vectors is called margin. The algorithm will find the biggest possible margin. 
+The Support Vector Machine (SVM) \cite{cristianini2000} is a binary classification algorithm, whose goal is to build the maximum margin separator between the two classes, that is, the separator that maximizes the distance of the closest point from each class. The standard SVM algorithm is a linear algorithm, so in particular it will try and build the separating margin as a hyperplane in a $d$-dimensional space (hence a $(d-1)$-dimensional plane), where $d$ is the number of features. The points that touch the margin, or that are on the wrong side of it, are called support vectors. The distance between the decision boundary and the support vectors is called margin. The algorithm will find the biggest possible margin. 
 
 \subsubsection{Linear SVM}
 Let's start assuming that the classes are linearly separable. We are provided with a dataset with $N$ $d$-dimensional instances $\{\mathbf{x}_i\}_{i=0,\cdots, N-1}$. The two classes will be labelled with $$y\in \{-1,1\}.$$ The margin will be the set of points 
@@ -88,7 +92,7 @@ Let's start assuming that the classes are linearly separable. We are provided wi
     \{\mathbf{x}\in\mathbb{R}^d: w_0+\mathbf{w}^T\cdot \mathbf{x}=0\},
     \label{margin definition}
 \end{equation}  
-for appropriate parameters $w_0\in \mathbb{R}$ and $\mathbf{w}\in \mathbb{R}^d$, which define the hyperplane and must be found by the algorithm. Now we have to find $$\max_{w_0, \mathbf{w}}(m),$$ with the constraint 
+for appropriate parameters $w_0\in \mathbb{R}$ and $\mathbf{w}\in \mathbb{R}^d$, which define an hyperplane and must be found by the algorithm. Now we have to find $$\max_{w_0, \mathbf{w}}(m),$$ with the constraint 
 \begin{equation}
     \frac{1}{||\mathbf{w}||}y_i(w_0+\mathbf{w}^T\cdot \mathbf{x_i})\geq m, \, \forall i=0,\cdots, N-1,
 \end{equation}
@@ -118,7 +122,7 @@ One would obtain that the dual problem consists in maximizing, with respect to t
 \end{equation}
 with the constraint
 \begin{equation}
-    \alpha_i\geq 0,\,\forall i=0,\cdots, N-1,
+    \alpha_i\geq 0,\,\,\,\,\,\,\,\,\,\forall i=0,\cdots, N-1,
 \end{equation}
 \begin{equation}
     \sum_{i=0}^{N-1}\alpha_iy_i=0.
@@ -126,7 +130,7 @@ with the constraint
 In eq. (\ref{dual problem SVM}) we indicated as $(\mathbf{x}_i,\mathbf{x}_j)$ the standard dot product of $\mathbb{R}^d$, explicitly
 $$(\mathbf{x}_i,\mathbf{x}_j)=\mathbf{x}_i^T\cdot\mathbf{x}_j=\sum_{k=0}^{d-1}(\mathbf{x}_i)_k(\mathbf{x}_j)_k.$$
 Eq. (\ref{dual problem SVM}) defines a quadratic programming
-optimization problem, therefore the global maximum of $f$ can be efficiently found in the context of convex analysis. The parameter $w_0$ can be found by imposing that, for a support vector $$y_i(\mathbf{w}^T\mathbf{x}_i+w_0)=1,$$ that is 
+optimization problem, therefore the global maximum of $f$ can be efficiently found in the context of convex analysis. The parameter $w_0$ can be found by imposing that, for a support vector $$y_i(\mathbf{w}^T\mathbf{x}_i+w_0)=1,$$ that is, 
 \begin{equation}
     w_0=\mathbf{w}^T\mathbf{x}_i-y_i.
 \end{equation} 
@@ -136,9 +140,9 @@ Once the optimal $\alpha_i$ have been found, given a new instance $\mathbf{\tild
     \label{decision boundary svm}
 \end{equation} 
 
-What we just described is the so-called hard margin SVM, because we did not allow points to fall inside the margin. One could relax this assumption, modifying the constraint in eq. (\ref{constraint hard margin}) into 
+What we just described is the so-called hard margin SVM \cite{cristianini2000}, because we did not allow points to fall inside the margin. One could relax this assumption, modifying the constraint in eq. (\ref{constraint hard margin}) into 
 \begin{equation}
-    y_i(w_0+\mathbf{w}^T\cdot \mathbf{x_i})\geq 1-\xi_i, \, \forall i=0,\cdots, N-1,
+    y_i(w_0+\mathbf{w}^T\cdot \mathbf{x_i})\geq 1-\xi_i, \,\,\,\,\,\,\,\,\,\,\,\, \forall i=0,\cdots, N-1,
 \end{equation}
 where we introduced the slack variables $\xi_i$. We limit the softness of the margin by setting a positive constant $C$ such that 
 $$ \xi\geq0,$$
@@ -147,7 +151,7 @@ $$ \xi\geq0,$$
 \end{equation}
 This is called soft margin SVM. 
 
-scikit-learn provides a straightforward implementation of the SVM algorithm, which we can use to observe the algorithm in action through an example. We use a mock dataset with 2 features, so we can easily print the data, the decision boundary and the margin. 
+Scikit-learn \cite{pedregosa2011} provides a straightforward implementation of the SVM algorithm, which we can use to observe the algorithm in action through an example. We use a mock dataset with 2 features, so we can easily print the data, the decision boundary and the margin. 
 
 
 \begin{lstlisting}
@@ -159,7 +163,7 @@ svm = SVC(kernel='linear', C=1) #create svm
 svm.fit(X, y) #fit the svm
 \end{lstlisting}
 
-The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can observe how the algorithm built the largest possible margin. 
+The result of the fit is shown in Figure \ref{fig:classical svm mock}. We can observe how the algorithm built the largest possible margin. 
 
 \begin{figure}[h!]
     \centering
@@ -169,7 +173,7 @@ The result of the fit is shown in Figure (\ref{fig:classical svm mock}). We can 
 \end{figure}
 
 \subsubsection{Kernel SVM}
-We now need to address the issue of dealing with a highly non-linearly separable dataset. Let's consider as an example another mock dataset, shown in Figure (\ref{fig:classical svm circles}). 
+We now need to address the issue of dealing with a highly non-linearly separable dataset. Let's consider as an example another mock dataset, shown in Figure \ref{fig:classical svm circles}. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/circles.png}
@@ -194,14 +198,14 @@ $$    \phi:\mathbb{R}^2\rightarrow\mathbb{R}^3,$$
         \sqrt{2}x_0x_1
         \end{pmatrix} .
 \end{equation}
-The data of Figure (\ref{fig:classical svm circles}) after the application of the feature map $\phi$ are represented in Figure (\ref{fig:classical svm circle 3d}). 
+The data of Figure \ref{fig:classical svm circles} after the application of the feature map $\phi$ are represented in Figure \ref{fig:classical svm circle 3d}. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/circles3d.png}
     \caption{Highly non-linear mock dataset in the feature space after the application of the feature map $\phi$. We observe now that the dataset is linearly separable.}
     \label{fig:classical svm circle 3d}
 \end{figure}
-The dataset is now linearly separable in the feature space, so the strategy worked. We can now apply the SVM algorithm in this space Consider the two central equations of the algorithm: equation (\ref{dual problem SVM}), which provides the expression to maximize in order to find the margin, and equation (\ref{decision boundary svm}), which gives the rule for predicting the class of a new instance. These two equations are now modified into 
+The dataset is now linearly separable in the feature space, so the strategy worked. We can now apply the SVM algorithm in this space. Consider the two central equations of the algorithm: equation (\ref{dual problem SVM}), which provides the expression to maximize in order to find the margin, and equation (\ref{decision boundary svm}), which gives the rule for predicting the class of a new instance. These two equations are now modified into 
 \begin{equation}
     f(\alpha_0,\cdots,\alpha_{N-1})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_j(\phi(\mathbf{x}_i,)\phi(\mathbf{x}_j)),
     \label{kernel max}
@@ -235,23 +239,23 @@ We see explicitly that the only quantity that matters is the kernel $K$. In our 
             \end{pmatrix}=(\mathbf{x}^T\cdot\mathbf{y})^2.   
             \label{polykernel ex}   
 \end{equation}
-Therefore once we are given a dataset it is sufficient for us to choose an appropriate kernel, and forget about the feature map. Once the kernel has been chosen the SVM can be trained using eq. (\ref{kernel max K}), and we can use it to predict a new class using eq. (\ref{kernel prodiction K}). There are some properties that the kernel must satisfy:
+Therefore, once we are given a dataset it is sufficient for us to choose an appropriate kernel, and forget about the feature map. Once the kernel has been chosen the SVM can be trained using eq. (\ref{kernel max K}), and we can use it to predict a new class using eq. (\ref{kernel prodiction K}). There are some properties that the kernel must satisfy:
 \begin{itemize}
     \item The kernel must be symmetric, that is $$\forall\, \mathbf{x},\mathbf{y}\in \mathbb{R}^d,\,K(\mathbf{x},\mathbf{y})=K(\mathbf{y},\mathbf{x}).$$
     \item The kernel must be positive definite, that is $$\forall\, \mathbf{x},\mathbf{y}\in \mathbb{R}^d,\,K(\mathbf{x},\mathbf{y})\geq 0.$$
 \end{itemize}
 Common choices of kernels are
 \begin{itemize}
-    \item Linear kernel: $$K(\mathbf{x},\mathbf{y})=\mathbf{x}^T\cdot\mathbf{y}.$$ This goes back to the standard SVM we used in Figure (\ref{fig:classical svm mock}). It is suitable only for linearly separable (or close to, using soft margin) datasets.
+    \item Linear kernel: $$K(\mathbf{x},\mathbf{y})=\mathbf{x}^T\cdot\mathbf{y}.$$ This goes back to the standard SVM we used in Figure \ref{fig:classical svm mock}. It is suitable only for linearly separable (or close to, using soft margin) datasets.
     \item Polynomial kernel: $$K(\mathbf{x},\mathbf{y})=(\gamma\mathbf{x}^T\cdot\mathbf{y}+c)^\delta.$$ For $c=0$, $\gamma=1$ and $\delta=2$ we obtain the kernel of eq. (\ref{polykernel ex}). 
     \item Gaussian kernel: $$K(\mathbf{x},\mathbf{y})=\exp(-\gamma||\mathbf{x}-\mathbf{y}||).$$ This is also known as Radial Basis Function (RBF) kernel. 
     \item Sigmoid kernel: $$K(\mathbf{x},\mathbf{y})=\tanh(\mathbf{x}^T\cdot\mathbf{y}+c).$$
 \end{itemize}
-scikit learn offers an easy way to easily implement all these common kernels. For example the kernel in eq. (\ref{polykernel ex}) can be implemented as 
+Scikit learn offers an easy way to easily implement all these common kernels. For example, the kernel in eq. (\ref{polykernel ex}) can be implemented as 
 \begin{lstlisting}
     svm = SVC(kernel='poly', degree=2, gamma=1, coef0=0)
 \end{lstlisting}\
-One can also create a custom kernel, passing as an argument a callable function to be used to calculate the kernel. Fitting this SVC function to the non-linear dataset of Figure (\ref{fig:classical svm circles}) yields the result shown in Figure (\ref{fig:classical svm circle decision boundary}). 
+One can also create a custom kernel, passing as an argument a callable function to be used to calculate the kernel. Fitting this SVC function to the non-linear dataset of Figure \ref{fig:classical svm circles} yields the result shown in Figure \ref{fig:classical svm circle decision boundary}. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/circlesclassicaldecisionboundary.png}
@@ -273,14 +277,14 @@ We anticipated how the classical SVM algorithm faces some important limitations 
 $$\mathbf{x}\mapsto \phi(\mathbf{x})\equiv |\phi(\mathbf{x})\rangle.$$
 In the framework of quantum computing $\mathcal{H}$ is a $n$-qubit Hilbert space, that is a space of the form
 \begin{equation}
-    \mathcal{H}=\bigotimes_{i=0}^n \mathcal{H}_{qubit},
+    \mathcal{H}=\bigotimes_{i=0}^{n-1} \mathcal{H}_{qubit},
 \end{equation}
-where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is $2^n$. The feature map will be implemented by the means of a parametrized quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})=U(x_0,\cdots, x_{d-1})$ such that 
+where $\mathcal{H}_{qubit}$ is the Hilbert space of a single qubit. The dimension of $\mathcal{H}$ is thus $2^n$. The feature map will be implemented by means of a parametrized quantum circuit. That means that it exists a unitary operator that depends on $d$ classical parameters $U(\mathbf{x})=U(x_0,\cdots, x_{d-1})$ such that 
 \begin{equation}
     |\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}.
 \end{equation}
-This circuit is called quantum encoding circuit, because it encodes classical data into a quantum state. The classical data is passed to the circuit as a parameter. We will later make examples of frequently used encoding circuits. 
-Once we have the feature map the kernel is constructed as 
+This circuit is called \textit{quantum encoding circuit}, because it encodes classical data into a quantum state. The classical data is passed to the circuit as a parameter. We will later make examples of frequently used encoding circuits. 
+Once we have the feature map, the kernel is constructed as 
 \begin{equation}
     K(\mathbf{x}, \mathbf{y})=\left | \langle \phi(\mathbf{x})|\phi(\mathbf{y})\rangle \right |^2.
 \end{equation}
@@ -302,7 +306,7 @@ Here $\langle\,\,, \,\rangle$ denotes the standard internal scalar product betwe
     \lim_{R\rightarrow +\infty}\frac{A}{R}=K(\mathbf{x}, \mathbf{y}).
     \label{frequency}
 \end{equation}
-The proof is straightforward. The LHS of eq. (\ref{frequency}) is the probability of measuring $000\cdots 0$, which according to quantum mechanics can be calculated as 
+The proof is straightforward. The left hand side of eq. (\ref{frequency}) is the probability of measuring $000\cdots 0$, which according to quantum mechanics can be calculated as 
 $$
     |^{\otimes n}\textrm{$\langle$}0|U(\mathbf{x})U^\dagger(\mathbf{y})|0\rangle^{\otimes n}|^2=|^{\otimes n}\textrm{$\langle$}0|U^\dagger(\mathbf{y})U(\mathbf{x})|0\rangle^{\otimes n}|^2=$$$$=|\langle \phi(\mathbf{y})|\phi(\mathbf{x})\rangle|^2=K(\mathbf{x}, \mathbf{y}).
 $$
@@ -317,21 +321,21 @@ This kernel matrix is then plugged into eq. (\ref{kernel max K}) to train a clas
 \subsection{Quantum encoding circuits}
 Let's now discuss some possible choices of quantum encoding circuits:
 \begin{itemize}
-    \item Basis encoding: this can be applied if the instances live in a finite dimensional space, whose dimension $2^n$, where $n$ is the number of qubits. If the dimension is smaller that $2^n$ we can still apply this encoding by using padding. The instances can be mapped into bit strings of length $n$ and the feature map corresponds to
+    \item Basis encoding: this can be applied if the instances live in a finite dimensional space, whose dimension is $2^n$, where $n$ is the number of qubits. If the dimension is smaller that $2^n$ we can still apply this encoding by using padding. The instances can be mapped into bit strings of length $n$ and the feature map corresponds to
     \begin{equation}
         \phi:\{0,1\}^n \rightarrow \mathcal{H},
     \end{equation}
-    $$x=(x_0\cdots x_{n-1})\mapsto |x_0\rangle \otimes \cdots \otimes |x_{n-1}\rangle\equiv|x_0\cdots x_{n-1}\rangle=|x\rangle.$$ Here $|x\rangle$ is a state of the so called computational basis. For example the bit string $01001$ is mapped to the quantum state $$|0\rangle \otimes |1\rangle \otimes |0\rangle \otimes |0\rangle \otimes |1\rangle=|01001\rangle.$$ The kernel that originates from this feature map is 
+    $$x=(x_0\cdots x_{n-1})\mapsto |x_0\rangle \otimes \cdots \otimes |x_{n-1}\rangle\equiv|x_0\cdots x_{n-1}\rangle=|x\rangle.$$ Here $|x\rangle$ is a state of the so called computational basis. For example, the bit string $01001$ is mapped to the quantum state $$|0\rangle \otimes |1\rangle \otimes |0\rangle \otimes |0\rangle \otimes |1\rangle=|01001\rangle.$$ The kernel that originates from this feature map is 
     \begin{equation}
         K(x,y)=|\langle x|y\rangle|^2=|\delta_{x,y}|^2=\delta_{x,y}
     \end{equation}
-    since vectors in the computational basis are orthogonal. 
-    \item Amplitude encoding: this can be applied with instances that are normalized vector, that is vectors of the form 
+    since vectors in the computational basis are orthogonal, and $\delta$ is the Kronecker delta. 
+    \item Amplitude encoding: this can be applied with instances that are normalized vectors, that is vectors of the form 
     \begin{equation}
         \mathbf{x}=(x_0, \cdots, x_{d-1})^T\in \mathbb{R}^d,
     \end{equation}
     such that $$\sum_{i=0}^{d-1}x_i^2=1.$$
-    In this case the encoding consists in sending
+    In this case, the encoding consists in mapping
     \begin{equation}
         \mathbf{x}=(x_0, \cdots, x_{d-1})^T \mapsto |\phi(\mathbf{x})\rangle=\sum_{i=0}^{d-1}x_i|i\rangle,
     \end{equation}
@@ -339,9 +343,9 @@ Let's now discuss some possible choices of quantum encoding circuits:
     \begin{equation}
         K(x,y)=\left|\sum_{i,j}x_iy_j\langle i|j\rangle\right|^2=\left|\sum_{i,j}x_iy_j\delta_{i,j}\right|^2=(\mathbf{x}^T \cdot \mathbf{y})^2.
     \end{equation}
-    We went back to a polynomial kernel. 
-    \item By creating more copies of the feature vector of amplitude encoding we can create higher order polynomial kernels. 
-    \item Product encoding: in this case each feature of the input is encoded in the amplitudes of one separate qubit. For example, we can send
+    As we can see we went back to a polynomial kernel. 
+    \item By creating more copies of the feature vector in amplitude encoding, we can create higher order polynomial kernels. 
+    \item Product encoding: in this case each feature of the input is encoded in the amplitudes of one separate qubit. For example, we can map
     \begin{equation}
         \mathbf{x}=(x_0, \cdots, x_{d-1})^T \mapsto  \begin{pmatrix}
             \cos x_0\\\sin x_0
@@ -357,7 +361,7 @@ Let's now discuss some possible choices of quantum encoding circuits:
     \begin{equation}
         K(x,y)=\prod_{i=0}^{d-1}\cos(x_i-y_i).
     \end{equation}
-    \item ZZ feature map: The previously discussed encoding maps where quantum maps that in the end generated a kernel which is easy to calculate with classical tools, for example a polynomial kernel or a cosine kernel. It is important now to discuss quantum encoding circuits that creates a kernel which is not possible to write as an easy classical kernel, otherwise there is no advantage in using quantum computing for this task if the kernel could have been easily calculated with classical tools. The hope is that by using a purely quantum kernel we obtain better performance that by using a classical kernel. Since general quantum circuits are not expected to be classically simulable, there are many choices one can make. One example is generated by the following circuit 
+    \item ZZ feature map: The encoding maps discussed above are quantum maps that ultimately produce a kernel easily computable with classical tools, like a polynomial or cosine kernel. It is important now to discuss quantum encoding circuits which do not produce an easy classical kernel, otherwise there is no advantage in using quantum computing for this task if the kernel could always be easily calculated with classical tools. The hope is that by using a purely quantum kernel we obtain better performance than by using a classical kernel, in terms of classification or regression capability. Since general quantum circuits are not expected to be classically simulable, there are many choices one can make. One example is generated by the following circuit 
 
     \[
         \Qcircuit @C=3em @R=2em {
@@ -374,7 +378,7 @@ Let's now discuss some possible choices of quantum encoding circuits:
         \mathcal{U}(\mathbf{x})=\exp\left[i\sum_{S\subseteq [n]}\phi_S(\mathbf{x})\prod_{i\in S}Z_i\right].
         \label{ZZ}
     \end{equation}
-    Here $[n]=\{0,\cdots, n-1\}$, $Z_i$ is the third Pauli matrix acting on the i-th qubit and $\phi_S(\mathbf{x})$ are arbitrary coefficients, which are the ones that actually encode the classical data. $S$ runs over all possible subsets of $[n]$, and can be thought as an index that describes connectivities between different qubits or data points. We have $2^n$ possible choices of the coefficients. It is convenient to choose them in a way such that only the terms with $|S|\leq d$ contribute, in order to obtain a circuit that can be easily implemented on a quantum computer. This is done by asking that
+    Here $[n]=\{0,\cdots, n-1\}$, $Z_i$ is the third Pauli matrix acting on the $i$-th qubit, and $\phi_S(\mathbf{x})$ are arbitrary coefficients, which are the ones that actually encode the classical data. $S$ runs over all possible subsets of $[n]$, and can be thought of as an index that describes connectivities between different qubits or data points. We have $2^n$ possible choices of the coefficients. It is convenient to choose them in such a way that only the terms with $|S|\leq d$ contribute, in order to obtain a circuit that can be easily implemented on a quantum computer. This is done by asking that
     \begin{equation}
         \phi_S=0\,\,\,\,\,\textup{if}\,\,\,\,\,|S|>d.
     \end{equation}
@@ -390,11 +394,11 @@ Let's now discuss some possible choices of quantum encoding circuits:
     \begin{equation}
         {U}(\mathbf{x})=e^{ix_0Z_0}\,e^{ix_1Z_1}H^{\otimes n}.
     \end{equation}
-    This is called Z feature map. The circuit decomposed in elementary quantum gates is shown in Figure \ref{fig:Z}. 
+    This is called the \textit{Z feature map}. The corresponding circuit, decomposed in elementary quantum gates, is shown in Figure \ref{fig:Z}. 
     \begin{figure}[h!]
         \centering
         \includegraphics[height=100px]{images/Z.png}
-        \caption{Z feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi) = (1,0; 0, e^{i\phi})$. We observe how the circuit is parametrized by the coefficients of eq. (\ref{coeff Z}).}
+        \caption{Z feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi) = (1,0; 0, e^{i\phi})$, where $\phi$ is the parameter of the gate, and in our case can either be $2x_0$ or $2x_1$. We observe how the circuit is parametrized by the coefficients of eq. (\ref{coeff Z}).}
         \label{fig:Z}
     \end{figure}
     The other possible choice is  
@@ -410,11 +414,11 @@ Let's now discuss some possible choices of quantum encoding circuits:
     \begin{equation}
         {U}(\mathbf{x})=e^{i(\pi-x_0)(\pi-x_1)Z_0Z_1}\,e^{ix_0Z_0}\,e^{ix_1Z_1}H^{\otimes n}.
     \end{equation}
-    This is called ZZ feature map, and it is an encoding circuit thought to be hard to simulate classically. It is shown in Figure \ref{fig:ZZ}. 
+    This is called the \textit{ZZ feature map}, and it is an encoding circuit thought to be hard to simulate classically. It is shown in Figure \ref{fig:ZZ}. 
     \begin{figure}[h!]
         \centering
         \includegraphics[height=100px]{images/ZZ.png}
-        \caption{ZZ feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi) = (1,0; 0, e^{i\phi})$. We observe how the circuit is parametrized by the coefficients of eq. (\ref{coeff ZZ1}) and (\ref{coeff ZZ2}).}
+        \caption{ZZ feature map, with 2 qubits and 2 features, decomposed in terms of elementary gates. The gate $P$ is defined as $P(\phi) = (1,0; 0, e^{i\phi})$, where $\phi$ is the parameter of the gate. The values that the parameter take are shown in the Figure, according to eq. (\ref{coeff ZZ1}) and (\ref{coeff ZZ2}).}
         \label{fig:ZZ}
     \end{figure}
     We will see how it behaves later on. Those two are standard choices, but there are many more circuits that can be built starting from the general structure of eq. (\ref{ZZ}), especially if we consider a greater number of qubits, and so we allow connectivities of three and more qubits. 
@@ -423,7 +427,7 @@ Let's now discuss some possible choices of quantum encoding circuits:
         \mathcal{U}(\mathbf{x})=\exp\left[i\sum_{S\subseteq [n]}\phi_S(\mathbf{x})\prod_{i\in S}P_i\right],
         \label{pauli}
     \end{equation}
-    where $P\in\{1,X,Y,Z\}$. This allows us to generate not only interaction of the ZZ type, but also for example YY type or ZY type. An example with Y and ZY interactions is shown in Figure \ref{pauli}.
+    where $P\in\{1,X,Y,Z\}$. This allows us to generate not only interactions of the ZZ type, but also for example YY type or ZY type. An example with Y and ZY interactions is shown in Figure \ref{fig:Pauli}.
     \begin{figure}[h!]
         \centering
         \includegraphics[width=\textwidth]{images/pauli.png}
@@ -555,9 +559,9 @@ Finding a dataset which is separable by quantum methods and not by classical met
 
 \subsection{Issues of QSVM}
 
-In a QSVM algorithm the only choice the user has to make is the choice of the feature map, that is the choice of the quantum encoding circuit. It is easy to convince ourselves that this choice is crucial, and determines if the algorithm will be successful or not. In the classical case we also have to choose a kernel, but we found that this choice is much less delicate that in the quantum case. In fact, for example, the RBF kernel works very well for most applications. In the quantum case instead, we observed that the choice of the feature map is very tricky. If the wrong feature map is chosen, the QSVM performs very poorly even on very simple datasets, as we will now illustrate with some examples. Let's consider the dataset shown in Figure (\ref{fig:classical svm circles}), which is simple enough to be expected to be separated without too many difficulties. We already saw of classical kernels separate this dataset very well. Let's try to apply some of the quantum kernels we discussed in the previous sections. 
+In a QSVM algorithm the only choice the user has to make is the choice of the feature map, that is the choice of the quantum encoding circuit. It is easy to convince ourselves that this choice is crucial, and determines if the algorithm will be successful or not. In the classical case we also have to choose a kernel, but we found that this choice is much less delicate that in the quantum case. In fact, for example, the RBF kernel works very well for most applications. In the quantum case instead, we observed that the choice of the feature map is very tricky. If the wrong feature map is chosen, the QSVM performs very poorly even on very simple datasets, as we will now illustrate with some examples. Let's consider the dataset shown in Figure \ref{fig:classical svm circles}, which is simple enough to be expected to be separated without too many difficulties. We already saw of classical kernels separate this dataset very well. Let's try to apply some of the quantum kernels we discussed in the previous sections. 
 
-We find that the results of the fits are not satisfying. The accuracy may not be too low in some cases, but the form of the decision boundary tells us that the algorithm did not find the correct pattern for the data. In some cases the algorithm may fail completely, like shown in Figure (\ref{fig:failcircle}).
+We find that the results of the fits are not satisfying. The accuracy may not be too low in some cases, but the form of the decision boundary tells us that the algorithm did not find the correct pattern for the data. In some cases the algorithm may fail completely, like shown in Figure \ref{fig:failcircle}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/failcircle.png}
@@ -803,7 +807,7 @@ For instance, we could use test set accuracy as the fitness of an individual. Ho
     \textup{fitness}=\textup{accuracy}^6.
     \label{accuracy}
 \end{equation}
-The function is represented in Figure (\ref{fig:fitness function}).
+The function is represented in Figure \ref{fig:fitness function}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/sigmoid.png}
@@ -814,7 +818,7 @@ This choice strongly penalizes individuals with performance scores below 0.5, dr
 
 Let us now provide a detailed explanation of how the algorithm functions. The initial inputs to the algorithm are as follows:
 \begin{itemize} 
-    \item A dataset, for which the objective is to discover a feature map that accurately classifies the data. This dataset will be split as usual into a training set and a test set. We will use the circular mock dataset of Figure (\ref{fig:classical svm circles}), as we saw the difficulties of its classification without a genetic algorithm. The dataset automatically defines the number of features $d$.  
+    \item A dataset, for which the objective is to discover a feature map that accurately classifies the data. This dataset will be split as usual into a training set and a test set. We will use the circular mock dataset of Figure \ref{fig:classical svm circles}, as we saw the difficulties of its classification without a genetic algorithm. The dataset automatically defines the number of features $d$.  
     \item The number $k$ of genes, that is the number of gates of the feature map. 
     \item The number $n$ of qubits that we want the circuit to have.
     \item The number of individuals $m$ that compose a generation.
@@ -838,7 +842,7 @@ The first step is to generate the first generation of individuals. This is done 
 \subsection{Results}
 
 \subsubsection{Circle dataset}
-We now execute the algorithm on the circular dataset shown in Figure (\ref{fig:classical svm circles}). The genetic algorithm was implemented in Python, exploiting Qiskit to run the QSVM when necessary.
+We now execute the algorithm on the circular dataset shown in Figure \ref{fig:classical svm circles}. The genetic algorithm was implemented in Python, exploiting Qiskit to run the QSVM when necessary.
 
 An important goal is to construct the smallest possible quantum circuit, minimizing both the number of gates and qubits. This is motivated by the technical limitations of current quantum devices, which struggle with larger, more complex circuits. Consequently, we begin with a simple circuit and will increase its depth or number of qubits if necessary.
 
@@ -882,7 +886,7 @@ This is the best-performing circuit identified by the genetic algorithm. Before 
     \label{fig:mean accuracy}
 \end{figure}
 
-To verify that the circuit in Figure (\ref{fig:final circuit}) can truly separate circle-like datasets, we tested its performance on a new artificial dataset. This dataset was generated using the same parameters as the one the circuit was trained on, but with new data points. It's essential to ensure that the circuit does not perform well only on the specific dataset it was trained with, but also on slightly varied datasets. The result of the fit is shown in Figure (), where we achieved 94\% accuracy. This indicates that the circuit is highly effective at separating circle-like datasets.
+To verify that the circuit in Figure \ref{fig:final circuit} can truly separate circle-like datasets, we tested its performance on a new artificial dataset. This dataset was generated using the same parameters as the one the circuit was trained on, but with new data points. It's essential to ensure that the circuit does not perform well only on the specific dataset it was trained with, but also on slightly varied datasets. The result of the fit is shown in Figure \ref{fig:awesome}, where we achieved 94\% accuracy. This indicates that the circuit is highly effective at separating circle-like datasets.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/awesomeresult.png}
@@ -890,7 +894,7 @@ To verify that the circuit in Figure (\ref{fig:final circuit}) can truly separat
     \label{fig:awesome}
 \end{figure}
 
-To further demonstrate how the genetic algorithm improved the performance of the individuals, let's try the same task with an individual from the first generation. The result, shown in Figure (\ref{fig:bad}), reveals poor performance, similar to the outcomes we observed when using standard feature map choices. So by just randomly picking circuits we are not able to construct well performing individuals. However, by evolving these individuals through crossover, the genetic algorithm is able to generate circuits with high accuracy for this type of dataset.
+To further demonstrate how the genetic algorithm improved the performance of the individuals, let's try the same task with an individual from the first generation. The result, shown in Figure \ref{fig:bad}, reveals poor performance, similar to the outcomes we observed when using standard feature map choices. So by just randomly picking circuits we are not able to construct well performing individuals. However, by evolving these individuals through crossover, the genetic algorithm is able to generate circuits with high accuracy for this type of dataset.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/badresult.png}
@@ -898,7 +902,7 @@ To further demonstrate how the genetic algorithm improved the performance of the
     \label{fig:bad}
 \end{figure}
 
-The fact that it performs well on this dataset is a strong indication of the potential of the final circuit we identified. However, it's natural to question how far this circuit can be pushed, as the dataset, while new, was still generated using the same parameters the genetic algorithm was trained on. What happens if we alter the shape by, for instance, adding noise or changing the radius of the two circles? Will the circuit still be able to classify correctly? Is the circuit able to classify all circle-like datasets? In Figure (\ref{fig:noise}) we used it to classify a different circle dataset, with noise added to the points. The classification reached a 91\% accuracy, indicating a good performance even on this dataset. We can answer affirmatively to the questions we asked.  
+The fact that it performs well on this dataset is a strong indication of the potential of the final circuit we identified. However, it's natural to question how far this circuit can be pushed, as the dataset, while new, was still generated using the same parameters the genetic algorithm was trained on. What happens if we alter the shape by, for instance, adding noise or changing the radius of the two circles? Will the circuit still be able to classify correctly? Is the circuit able to classify all circle-like datasets? In Figure \ref{fig:noise} we used it to classify a different circle dataset, with noise added to the points. The classification reached a 91\% accuracy, indicating a good performance even on this dataset. We can answer affirmatively to the questions we asked.  
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/noise.png}
@@ -910,7 +914,7 @@ The fact that it performs well on this dataset is a strong indication of the pot
 
 Let's now test the performance on another artificial dataset, the moon dataset. The algorithm conceptually works in the same way of the circle dataset, we utilized the same initial parameters as well, shown in Table (\ref{tabella accettanza}).
 
-The resulting final circuit is shown in Figure (\ref{fig:mooncircuit}), and its performance on the dataset in Figure (\ref{fig:moonboh}), achieving an accuracy of 90\%. 
+The resulting final circuit is shown in Figure \ref{fig:mooncircuit}, and its performance on the dataset in Figure \ref{fig:moonboh}, achieving an accuracy of 90\%. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/mooncircuit.png}
@@ -937,6 +941,19 @@ The goal now would be to further study the performance of the genetic algorithm 
 
 \newpage
 \begin{thebibliography}{9}
+
+    \bibitem{biamonte2017}
+    Biamonte, J., Wittek, P., Pancotti, N., Rebentrost, P., Wiebe, N., \& Lloyd, S. (2017). \textit{Quantum machine learning}. Nature, 549(7671), 195-202. DOI:10.1038/nature23474.
+
+    \bibitem{havlicek2019}
+Havlíček, V., Córcoles, A.D., Temme, K., Harrow, A.W., Kandala, A., Chow, J.M., \& Gambetta, J.M. (2019). \textit{Supervised learning with quantum-enhanced feature spaces}. Nature, 567(7747), 209-212. DOI:10.1038/s41586-019-0980-2.
+
+\bibitem{cristianini2000}
+Cristianini, N., \& Shawe-Taylor, J. (2000). \textit{An Introduction to Support Vector Machines and Other Kernel-based Learning Methods}. Cambridge University Press.
+    
+\bibitem{pedregosa2011}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., \& Grisel, O. (2011). \textit{Scikit-learn: Machine Learning in Python}. Journal of Machine Learning Research, 12, 2825-2830.
+
 \bibitem{sakurai}
 Željko Ivezić, \emph{Statistics, Data Mining, and Machine Learning in Astronomy} (1994)
 
