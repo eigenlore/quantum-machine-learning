@@ -105,7 +105,7 @@ The constraint prevents data points from falling into the margin. Rescaling $\ma
     ||\mathbf{w}||=\frac{1}{m}.
 \end{equation}
 Therefore, the problem becomes minimizing
-$$\frac{1}{2}||\mathbf{w}||, $$ with the constraint 
+$$||\mathbf{w}||, $$ with the constraint 
 \begin{equation}
     y_i(w_0+\mathbf{w}^T\cdot \mathbf{x_i})\geq 1, \, \forall i=0,\cdots, N-1.
     \label{constraint hard margin}
@@ -126,7 +126,9 @@ with the constraint
 \end{equation}
 \begin{equation}
     \sum_{i=0}^{N-1}\alpha_iy_i=0.
+    \label{constraint}
 \end{equation}
+The constraint in eq. (\ref{constraint}) ensures that the hyperplane is not overly influenced by one of the two classes, like for example if one class has more data points than the other, avoiding overfitting and fairly considering the contribution of both.  
 In eq. (\ref{dual problem SVM}) we indicated as $(\mathbf{x}_i,\mathbf{x}_j)$ the standard dot product of $\mathbb{R}^d$, explicitly
 $$(\mathbf{x}_i,\mathbf{x}_j)=\mathbf{x}_i^T\cdot\mathbf{x}_j=\sum_{k=0}^{d-1}(\mathbf{x}_i)_k(\mathbf{x}_j)_k.$$
 Eq. (\ref{dual problem SVM}) defines a quadratic programming
@@ -943,8 +945,8 @@ The goal now would be to further study the performance of the genetic algorithm 
 
 \begin{thebibliography}{9}
 
-    \bibitem{biamonte2017}
-    Biamonte, J., Wittek, P., Pancotti, N., Rebentrost, P., Wiebe, N., \& Lloyd, S. (2017). \textit{Quantum machine learning}. Nature, 549(7671), 195-202. DOI:10.1038/nature23474.
+\bibitem{biamonte2017}
+Biamonte, J., Wittek, P., Pancotti, N., Rebentrost, P., Wiebe, N., \& Lloyd, S. (2017). \textit{Quantum machine learning}. Nature, 549(7671), 195-202. DOI:10.1038/nature23474.
 
     \bibitem{havlicek2019}
 Havlíček, V., Córcoles, A.D., Temme, K., Harrow, A.W., Kandala, A., Chow, J.M., \& Gambetta, J.M. (2019). \textit{Supervised learning with quantum-enhanced feature spaces}. Nature, 567(7747), 209-212. DOI:10.1038/s41586-019-0980-2.
@@ -981,13 +983,13 @@ Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., \& Grisel, 
     Glick, J. R., \& Larocca, M. (2022). \textit{Covariant Quantum Kernels for Data with Group Structure}.
     
     \bibitem{schuld2021a}
-    Schuld, M., & Killoran, N. (2021). \textit{Supervised Quantum Machine Learning Models Are Kernel Methods}. Quantum, 5, 456.
+    Schuld, M., \& Killoran, N. (2021). \textit{Supervised Quantum Machine Learning Models Are Kernel Methods}. Quantum, 5, 456.
     
     \bibitem{zhou2024}
     Zhou, X. (2024). \textit{Quantum Kernel Estimation-Based Quantum Support Vector Regression}.
     
     \bibitem{lloyd2022}
-    Lloyd, S., \& Rebentrost, P. (2022). \textit{Quantum Embeddings for Machine Learning}. Nature Reviews Physics, 4(9), 589–600.
+    Lloyd, S., \& Rebentrost, P. (2022). \textit{Quantum Embeddings for Machine Learning}. Nature Reviews Physics, 4(9), 589-600.
     
     \bibitem{schuld2021b}
     Schuld, M. (2021). \textit{Machine Learning with Quantum Computers}. Springer.
@@ -996,7 +998,7 @@ Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., \& Grisel, 
     Innan, N., \& Güler, H. (2023). \textit{Enhancing Quantum Support Vector Machines Through Variational Kernel Training}.
     
     \bibitem{schuld2018}
-    Schuld, M., & Petruccione, F. (2018). \textit{Quantum Machine Learning in Feature Hilbert Spaces}. Springer.
+    Schuld, M., \& Petruccione, F. (2018). \textit{Quantum Machine Learning in Feature Hilbert Spaces}. Springer.
     
     \bibitem{yang2019}
     Yang, J., Ferrie, C., \& Auckenthaler, R. (2019). \textit{Support Vector Machines on Noisy Intermediate-Scale Quantum Computers}. Quantum Information Processing, 18(11), 313.
