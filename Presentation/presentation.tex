@@ -17,52 +17,173 @@
 \date[25/11/2024] 
 {25 Novembre 2024}
 
-\logo{\includegraphics[height=1cm]{logo.png}}
-
+\logo{\includegraphics[height=1cm]{images/logo.png}}
 
 \begin{document}
 
 \frame{\titlepage}
 
-
-
-
 \begin{frame}
 \frametitle{Introduzione}
-    \begin{itemize}
-    \item<1-> Quantum Machine Learning si propone di sfruttare le potenzialitò del
-    Quantum Computing per potenziare le performance di alcuni algoritmi di Machine Learning. 
-        \item<2-> Vedremo come il potenziale di Coulomb fa sorgere vari problemi a causa della sua natura a lungo raggio, e necessita quindi di una trattazione a parte.
-        \end{itemize}
+
+\begin{columns}
+  \column{0.5\textwidth}
+
+  \begin{itemize}
+    \item<1-> Il Quantum Machine Learning si propone di sfruttare le potenzialità del Quantum Computing per potenziare le performance di algoritmi di Machine Learning. 
+    \item<2-> Un esempio tra i più studiati è quello della Support Vector Machine (SVM). 
+  \end{itemize}
+  
+  \column{0.5\textwidth}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/1.png}
+   \end{figure}
+  
+  \end{columns}
+  
+\end{frame}
+
+
+
+\begin{frame}
+
+  \frametitle{Support Vector Machine}
+  
+    \begin{columns}
+      \column{0.5\textwidth}
+    
+      \begin{itemize}
+        \item<1-> La Support Vector Machine è un algoritmo supervisionato di classificazione binaria. 
+            \item<2-> L'algoritmo trova il massimo margine separatore tra le classi. 
+            \item<3-> La funzione da minimizzare dipende solo dai prodotti scalari tra le istanze $\langle \mathbf{x}_i, \mathbf{x}_j \rangle$. 
+            \end{itemize}
+      
+      \column{0.5\textwidth}
+      \begin{figure}
+            \includegraphics[width=1.1\textwidth]{images/classicalsvm.png}
+       \end{figure}
+      
+      \end{columns}
+  
+  \end{frame}
+
+
+
+\begin{frame}
+
+  \frametitle{Kernel Support Vector Machine}
+  
+  \begin{itemize}
+    \item<1-> Nel caso in cui i dati non siano linearmente separabili è possibile applicare una feature map $\phi(\mathbf{x})$.
+    \item<3-> La funzione costo dipenderà solo da $K_{ij}=\langle \phi(\mathbf{x}_i), \phi(\mathbf{x}_j) \rangle$
+    
+    \item<2->[]
+      \begin{columns}
+        \column{0.5\textwidth}
+        \begin{figure}
+          \includegraphics[width=1\textwidth]{images/circles.png}
+        \end{figure}
+      
+        \column{0.5\textwidth}
+        \begin{figure}
+          \includegraphics[width=1\textwidth]{images/circles3d.png}
+        \end{figure}
+      \end{columns}
+    
+
+  \end{itemize}
+  
 \end{frame}
 
 \begin{frame}
-\frametitle{Sezione d'urto differenziale}
+
+  \frametitle{Quantum Support Vector Machine}
+  
+  \begin{columns}
+    \column{0.5\textwidth}
+  
+    \begin{itemize}
+      \item<1-> È possibile usare una feature map quantistica per effettuare l'embedding dei dati classici. 
+          \item<2-> Consiste in un circuito parametrizzato $U(\mathbf{x})$, che agisce sullo stato iniziale $|0\rangle^{\otimes n}$, producendo uno stato $|\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}$.
+          \item<3-> Viene poi costruito il kernel $K_{ij}=\langle \phi(\mathbf{x}_i)| \phi(\mathbf{x}_j) \rangle.$
+          \end{itemize}
+    
+    \column{0.5\textwidth}
+    \only{\begin{figure}
+          \includegraphics[width=0.7\textwidth]{images/Pasted image.png}
+     \end{figure}}<2>
+     \only{\begin{figure}
+      \includegraphics[width=\textwidth]{images/Pasted image (2).png}
+ \end{figure}}<3>
 
 
+    
+    \end{columns}
 
-   
- Per definirla partiamo dall'equazione di Lippman-Scwhinger, che ci dice come un'onda piana nell'urto viene deformata in un'onda sferica:
-\begin{columns}
-\column{0.5\textwidth}
-  $$\psi\approx e^{ik\cdot x}+f(k,k')\frac{e^{ikr}}{r}.$$
+\end{frame}
 
 
-\column{0.5\textwidth}
-\begin{figure}
-      \includegraphics[height=2.5cm]{logo.png}
- \end{figure}
+\begin{frame}
+  \frametitle{Quantum Feature Maps}
 
-
-\end{columns}
-\vspace{4mm}
-    Richiamando il caso classico, possiamo definire la sezione d'urto $d\sigma$ come la sezione del fascio incidente attraverso la quale passa una corrente di probabilità pari a quella che entra in un angolo solido $d\Omega$:  $$J_{in}\,\alert{d\sigma}=J_{out}\,d\Sigma,$$ con $d\Sigma=r^2d\Omega$.
-    Si trova che  $$\frac{{d\sigma}}{d\Omega}=|f(k,k')|^2.$$
+  \begin{columns}
+    \column{0.5\textwidth}
+  
+    \begin{itemize}
+      \item<1-> Ci sono moltissime scelte possibili di circuiti. Un esempio è la ZZ feature map.
+          \item<2-> La QSVM mostra il potenziale di separare complicati dataset, con pattern complessi.  
+          \item[]<3->  
+          \item<4-> Questi dataset non sono gestibili coi kernel classici. 
+          
+          \end{itemize}
+    
+    \column{0.5\textwidth}
+    \only{\begin{figure}
+          \includegraphics[width=1\textwidth]{images/ZZ.png}
+     \end{figure}}<1>
+     \only{\begin{figure}
+      \includegraphics[width=\textwidth]{images/adhoc.png}
+ \end{figure}}<2>
+ \only{\begin{figure}
+  \includegraphics[width=\textwidth]{images/adhoczz.png}
+\end{figure}}<3>
+\only{\begin{figure}
+  \includegraphics[width=\textwidth]{images/adhocrbf.png}
+\end{figure}}<4>
+    
+    \end{columns}
 
 \end{frame}
 
 
 
+\begin{frame}
+  \frametitle{Quantum Feature Maps}
+
+  \begin{columns}
+    \column{0.5\textwidth}
+  
+    \begin{itemize}
+      \item<1-> Nonostante le grandi potenzialità, la scelta della feature map si rivela molto delicata.
+          \item<2-> Una scelta non congeniale porta a performance pessime, con accuretezze anche inferiori al 50\%. 
+      
+          \item<3-> Il problema è che non ci sono regole generali valide per la scelta del circuito. 
+          
+          \end{itemize}
+    
+    \column{0.5\textwidth}
+
+     \only{\begin{figure}
+      \includegraphics[width=\textwidth]{images/failcircle.png}
+ \end{figure}}<2>
+ \only{\begin{figure}
+  \includegraphics[width=\textwidth]{images/failcircle.png}
+\end{figure}}<3>
+
+    
+    \end{columns}
+
+\end{frame}
 
 
 
