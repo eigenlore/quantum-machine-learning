@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1730628681.43874 "/home/lore/Documents/Università/quantum-machine-learning/Presentation/presentation.tex" "presentation.pdf" "presentation" 1730628684.1239 0
+["pdflatex"] 1730808600.45646 "/home/lore/Documents/Università/quantum-machine-learning/Presentation/presentation.tex" "presentation.pdf" "presentation" 1730808603.85707 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Documents/Università/quantum-machine-learning/Presentation/presentation.tex" 1730628681.15911 4592 6dc6fdeb5fe57328be200b7f22640953 ""
+  "/home/lore/Documents/Università/quantum-machine-learning/Presentation/presentation.tex" 1730808598.36307 5102 cb80a7d39500bde9d0ba60aa7923d8c9 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -205,13 +205,15 @@
   "images/adhoczz.png" 1723979691.80391 48313 d3a41279f6e3be5f4af2edc7f08b7d22 ""
   "images/circles.png" 1722846122.74208 26892 93cea1232441f49b50106f254c34b719 ""
   "images/circles3d.png" 1722846137.13508 235435 a6ab02ef02d2de26546a62e466507784 ""
-  "images/classicalsvm.png" 1730452062.93567 30774 227befb0345d1de868d46275f4ddc663 ""
+  "images/classicaldata.png" 1730807660.7268 20947 d826d104b7e9f59e3ea0a05eea4acd4e ""
+  "images/classicalsvm.png" 1730807681.98531 35736 e2f0f569eb0dd04b4df8fdce00de5221 ""
   "images/failcircle.png" 1729173236.71834 41765 2e4a0ef1841b2c5a0a4174af94660918 ""
   "images/logo.png" 1730054274.47887 158502 723a2e97480c38db6e94056734f98b26 ""
-  "presentation.aux" 1730628683.97209 1354 a44e1c18891a2dbc6aeb1d8f11d856b6 "pdflatex"
-  "presentation.nav" 1730628683.97309 849 b6c8b04eb2246da5d463373b4cdbd6d2 "pdflatex"
-  "presentation.out" 1730628682.4911 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1730628681.15911 4592 6dc6fdeb5fe57328be200b7f22640953 ""
+  "images/separatedcircle.png" 1730808355.6897 27429 dca073ceec9af87b85a058e753d1b03f ""
+  "presentation.aux" 1730808603.59995 1853 f4955cfa830311ebc2840604f1e3acab "pdflatex"
+  "presentation.nav" 1730808603.60195 1204 8f9363cca8dae57e6c81cf0b72f9c9f2 "pdflatex"
+  "presentation.out" 1730808601.74399 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1730808598.36307 5102 cb80a7d39500bde9d0ba60aa7923d8c9 ""
   (generated)
   "presentation.aux"
   "presentation.log"

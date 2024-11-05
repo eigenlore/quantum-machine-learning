@@ -25,69 +25,94 @@
 
 \begin{frame}
 \frametitle{Quantum Machine Learning}
-
-
 \centering
 \begin{figure}
       \includegraphics[width=1.1\textwidth]{images/1.png}
      \end{figure}
-
-  
-
-   
 \end{frame}
 
 
 
 \begin{frame}
-
   \frametitle{Support Vector Machine}
-  
-    \begin{columns}
-      \column{0.5\textwidth}
-    
-      \begin{itemize}
-        \item<1-> La Support Vector Machine è un algoritmo supervisionato di classificazione binaria. 
-            \item<2-> L'algoritmo trova il massimo margine separatore tra le classi. 
-            \item<3-> La funzione da minimizzare dipende solo dai prodotti scalari tra le istanze $\langle \mathbf{x}_i, \mathbf{x}_j \rangle$. 
-            \end{itemize}
-      
-      \column{0.5\textwidth}
+    \begin{itemize}
+      \item     La Support Vector Machine è un algoritmo supervisionato di classificazione binaria. 
+    \end{itemize}
       \begin{figure}
-            \includegraphics[width=1.2\textwidth]{images/classicalsvm.png}
+            \includegraphics[width=0.7\textwidth]{images/classicaldata.png}
        \end{figure}
-      
-      \end{columns}
-  
   \end{frame}
 
 
 
-\begin{frame}
+  \begin{frame}
+    \frametitle{Support Vector Machine}
+      \begin{itemize}
+        \item L'algoritmo trova il massimo margine separatore tra le classi. 
+      \end{itemize}
+        \begin{figure}
+              \includegraphics[width=0.7\textwidth]{images/classicalsvm.png}
+         \end{figure}
+    \end{frame}
 
+
+    \begin{frame}
+      \frametitle{Support Vector Machine}
+        \begin{itemize}
+          \item Per farlo utilizza solo i prodotti scalari tra i dati $\langle \mathbf{x}_i, \mathbf{x}_j\rangle$.  
+        \end{itemize}
+          \begin{figure}
+                \includegraphics[width=0.7\textwidth]{images/classicalsvm.png}
+           \end{figure}
+      \end{frame}
+
+
+\begin{frame}
   \frametitle{Kernel Support Vector Machine}
   
   \begin{itemize}
-    \item<1-> Nel caso in cui i dati non siano linearmente separabili è possibile applicare una feature map $\phi(\mathbf{x})$.
-    \item<3-> La funzione costo dipenderà solo da $K_{ij}=\langle \phi(\mathbf{x}_i), \phi(\mathbf{x}_j) \rangle$
-    
-    \item<2->[]
-      \begin{columns}
-        \column{0.5\textwidth}
+    \item Nel caso in cui i dati non siano linearmente separabili?
+  \end{itemize}
+     
         \begin{figure}
-          \includegraphics[width=1\textwidth]{images/circles.png}
+          \includegraphics[width=0.7\textwidth]{images/circles.png}
         \end{figure}
-      
-        \column{0.5\textwidth}
+        
+\end{frame}
+
+\begin{frame}
+  \frametitle{Kernel Support Vector Machine}
+  
+  \begin{itemize}
+    \item È possibile applicare una feature map $\phi(\mathbf{x})$.
+  \end{itemize}
+     
         \begin{figure}
-          \includegraphics[width=1\textwidth]{images/circles3d.png}
+          \includegraphics[width=0.6\textwidth]{images/circles3d.png}
         \end{figure}
-      \end{columns}
-    
+        
+\end{frame}
+
+\begin{frame}
+  \frametitle{Kernel Support Vector Machine}
+  
+  \begin{itemize}
+    \item L'algoritmo è interessato solo a $K_{ij}=\langle \phi(\mathbf{x}_i), \phi(\mathbf{x}_j) \rangle$.
 
   \end{itemize}
-  
+     
+        \begin{figure}
+          \includegraphics[width=0.7\textwidth]{images/separatedcircle.png}
+        \end{figure}
+        
 \end{frame}
+
+
+
+
+
+
+
 
 \begin{frame}
 
@@ -97,15 +122,18 @@
     \column{0.5\textwidth}
   
     \begin{itemize}
-      \item<1-> È possibile usare una feature map quantistica applicata ai dati classici. 
-          \item<2-> Consiste in un circuito parametrizzato $U(\mathbf{x})$, che agisce sullo stato iniziale $|0\rangle^{\otimes n}$, producendo uno stato $|\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}$.
-          \item<3-> Viene poi costruito il kernel $K_{ij}=\langle \phi(\mathbf{x}_i)| \phi(\mathbf{x}_j) \rangle.$
+      \item<1-> La feature map diventa un circuito quantistico parametrizzato. \\\,
+          \item<2-> $|\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}$.\\\,
+          \item<3->  $K_{ij}=\langle \phi(\mathbf{x}_i)| \phi(\mathbf{x}_j) \rangle.$
           \end{itemize}
     
     \column{0.5\textwidth}
     \only{\begin{figure}
           \includegraphics[width=0.7\textwidth]{images/Pasted image.png}
-     \end{figure}}<2>
+     \end{figure}}<1>
+     \only{\begin{figure}
+      \includegraphics[width=0.7\textwidth]{images/Pasted image.png}
+ \end{figure}}<2>
      \only{\begin{figure}
       \includegraphics[width=\textwidth]{images/Pasted image (2).png}
  \end{figure}}<3>
