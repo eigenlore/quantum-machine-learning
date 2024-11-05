@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1730464678.01244 "/home/lore/Documents/Università/quantum-machine-learning/Presentation/presentation.tex" "presentation.pdf" "presentation" 1730464680.68236 0
+["pdflatex"] 1730628681.43874 "/home/lore/Documents/Università/quantum-machine-learning/Presentation/presentation.tex" "presentation.pdf" "presentation" 1730628684.1239 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Documents/Università/quantum-machine-learning/Presentation/presentation.tex" 1730464674.91934 4961 eeea948b4287ece07cba3ec2f84e48cc ""
+  "/home/lore/Documents/Università/quantum-machine-learning/Presentation/presentation.tex" 1730628681.15911 4592 6dc6fdeb5fe57328be200b7f22640953 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -196,7 +196,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1720733508 41397 9faae6d82bd50f2dbfc10ae285bd31e2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1730058856 5483312 31090f1c3437d4bbfc097aaea5bf9b97 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1730058919 8242196 11d8ac00f0158cd64d3dceb59f21ea25 ""
-  "images/1.png" 1730406842.57096 107000 5ffa4f524831091ff428b30e3b8b9a80 ""
+  "images/1.png" 1730538653.9015 97248 bd0016f528ccb31a19a19fb0d96dfc0b ""
   "images/Pasted image (2).png" 1730462079.37012 24783 f59e9be18fa6f5d8d3b463e8cf93947d ""
   "images/Pasted image.png" 1730460178.87657 9222 65f379d927e9556f8c43a0bacca69491 ""
   "images/ZZ.png" 1723535796.47182 9330 b0a33e18aab03bbb7e8029d0bfc86e89 ""
@@ -208,10 +208,10 @@
   "images/classicalsvm.png" 1730452062.93567 30774 227befb0345d1de868d46275f4ddc663 ""
   "images/failcircle.png" 1729173236.71834 41765 2e4a0ef1841b2c5a0a4174af94660918 ""
   "images/logo.png" 1730054274.47887 158502 723a2e97480c38db6e94056734f98b26 ""
-  "presentation.aux" 1730464680.51431 1356 113f9aa7c17476d74b2f88f6b3edf750 "pdflatex"
-  "presentation.nav" 1730464680.51531 851 93fbbb9442fe5204b447e37d83877d62 "pdflatex"
-  "presentation.out" 1730464679.03132 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1730464674.91934 4961 eeea948b4287ece07cba3ec2f84e48cc ""
+  "presentation.aux" 1730628683.97209 1354 a44e1c18891a2dbc6aeb1d8f11d856b6 "pdflatex"
+  "presentation.nav" 1730628683.97309 849 b6c8b04eb2246da5d463373b4cdbd6d2 "pdflatex"
+  "presentation.out" 1730628682.4911 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1730628681.15911 4592 6dc6fdeb5fe57328be200b7f22640953 ""
   (generated)
   "presentation.aux"
   "presentation.log"

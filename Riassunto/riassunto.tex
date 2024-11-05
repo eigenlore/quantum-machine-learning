@@ -26,7 +26,7 @@
 
 $\,$
 
-Il Quantum Machine Learning è una recente disciplina che si propone di sfruttare le potenzialità del Quantum Computing per potenziare le performance di alcuni algoritmi di Machine Learning. Un esempio tra i più studiati è la Support Vector Machine (SVM). La SVM è un algoritmo supervisionato di classificazione binaria, che si propone di separare le due classi costruendo un iperpiano separatore che massimizza la distanza dai punti più vicini. Nel caso in cui i dati non siano linearmente separabili è possibile applicare una funzione, nota come feature map, per renderli separabili in uno spazio di dimensione maggiore. 
+Il Quantum Machine Learning è una recente disciplina che si propone di sfruttare le potenzialità del Quantum Computing per potenziare le performance di alcuni algoritmi di Machine Learning. Un esempio tra i più studiati è la Support Vector Machine (SVM). La SVM è un algoritmo supervisionato di classificazione binaria, il cui scopo è separare le due classi costruendo un iperpiano separatore che massimizza la distanza dai punti più vicini. Nel caso in cui i dati non siano linearmente separabili è possibile applicare una funzione, nota come feature map, per renderli separabili in uno spazio di dimensione maggiore. 
 
 È stata pensata una versione quantistica della SVM, nota come Quantum Support Vector Machine (QSVM), che si propone di utilizzare una feature map quantistica, al posto di una funzione classica. Una feature map quantistica consiste in un circuito, che effettua l'embedding dei dati classici in uno stato quantistico. La QSVM ha il potenziale di separare dataset con molte dimensioni e pattern complessi, che risultano intrattabili per la SVM classica. 
 
@@ -56,17 +56,17 @@ Possibili sviluppi futuri includono testare l'algoritmo su dataset con maggiore 
 \end{itemize}
 $\,$
 
-Quantum Machine Learning is a recent discipline whose goal is to exploit the power of Quantum Computing to enhance the performance of some Machine Learning algorithms. One of the most studied is the Support Vector Machine (SVM). The SVM is supervised binary classification algorithm, which separates the two classes constructing a separating hyperplane which maximizes the distance from the nearest data points. In case the data are not linearly separable, it is possible to apply a feature map, to separate the data in a higher dimensional space. 
+Quantum Machine Learning is a recent discipline whose goal is to exploit the power of Quantum Computing to enhance the performance of some Machine Learning algorithms. One of the most studied algorithms is the Support Vector Machine (SVM). The SVM is supervised binary classification algorithm, which separates the two classes constructing a separating hyperplane which maximizes the distance from the nearest data points. In case the data are not linearly separable, it is possible to apply a feature map, to separate the data in a higher dimensional space. 
 
 A Quantum enhanced version of the SVM has been constructed, called Quantum Support Vector Machine (QSVM), which uses a quantum feature map instead of a classical one. A quantum feature map consists in a quantum circuit, which embeds the classical data into a quantum state. The QSVM has shown the potential to separate big datasets with many features and complex patterns, that are unmanageable for the classical SVM.
 
-The choice of the quantum circuit to use to embed the data is very delicate, and significantly influences the performance of the algorithm. An unreasoned choice of the feature map leads to an inadequate performance, with an accuracy often under 50\%. For this reason it is not advisable to choose the circuit based on standard choices or rule of thumb, as often done in the classical case.  
+The choice of the quantum circuit to use to embed the data is very delicate, and significantly influences the performance of the algorithm. An unreasoned choice of the feature map leads to an inadequate performance, with an accuracy often under 50\%. For this reason it is not advisable to choose the circuit based on standard choices or rules of thumb, as often done in the classical case.  
 
 For the abovementioned reasons, in this work we developed a genetic algorithm, whose goal is, given a dataset, to find the best circuit to use as the embedding circuit for the QSVM. The algorithm works without the need of any ansatz of the circuit given by the user. Genetic algorithms are heuristic algorithms based on natural selection, that, through the processes of crossover and mutation, build generations of individuals with an increasing performance.
 
 The developed algorithm was tested on the framework Qiskit, that allows simulation of a quantum device on classical hardware. We conducted multiple tests on medium-sized, two-dimensional datasets, aligned with the computational power available, and achieved excellent results regarding the performance of the algorithm's final individual.
 
-Possible future developments include testing the algorithm on higher-dimensional datasets, a computationally demanding task, and evaluating the algorithm on a real, scalable quantum device.
+Possible future developments include testing the algorithm on higher-dimensional datasets, which is a computationally demanding task, and evaluating the algorithm on a real, scalable quantum device.
 
 
 

@@ -24,23 +24,17 @@
 \frame{\titlepage}
 
 \begin{frame}
-\frametitle{Introduzione}
+\frametitle{Quantum Machine Learning}
 
-\begin{columns}
-  \column{0.5\textwidth}
 
-  \begin{itemize}
-    \item<1-> Il Quantum Machine Learning si propone di sfruttare le potenzialità del Quantum Computing per potenziare le performance di algoritmi di Machine Learning. 
-    \item<2-> Un esempio tra i più studiati è quello della Support Vector Machine (SVM). 
-  \end{itemize}
+\centering
+\begin{figure}
+      \includegraphics[width=1.1\textwidth]{images/1.png}
+     \end{figure}
+
   
-  \column{0.5\textwidth}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{images/1.png}
-   \end{figure}
-  
-  \end{columns}
-  
+
+   
 \end{frame}
 
 
@@ -60,7 +54,7 @@
       
       \column{0.5\textwidth}
       \begin{figure}
-            \includegraphics[width=1.1\textwidth]{images/classicalsvm.png}
+            \includegraphics[width=1.2\textwidth]{images/classicalsvm.png}
        \end{figure}
       
       \end{columns}
@@ -103,7 +97,7 @@
     \column{0.5\textwidth}
   
     \begin{itemize}
-      \item<1-> È possibile usare una feature map quantistica per effettuare l'embedding dei dati classici. 
+      \item<1-> È possibile usare una feature map quantistica applicata ai dati classici. 
           \item<2-> Consiste in un circuito parametrizzato $U(\mathbf{x})$, che agisce sullo stato iniziale $|0\rangle^{\otimes n}$, producendo uno stato $|\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}$.
           \item<3-> Viene poi costruito il kernel $K_{ij}=\langle \phi(\mathbf{x}_i)| \phi(\mathbf{x}_j) \rangle.$
           \end{itemize}
@@ -184,7 +178,6 @@
     \end{columns}
 
 \end{frame}
-
 
 
 

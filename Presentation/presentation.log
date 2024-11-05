@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2024.10.27)  1 NOV 2024 13:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2024.10.27)  3 NOV 2024 11:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -699,58 +699,13 @@ Package pdftex.def Info: images/logo.png  used on input line 24.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logo.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 44.
- (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
-)
-<images/1.png, id=30, 421.575pt x 304.13625pt>
+<images/1.png, id=30, 1342.2647pt x 425.33907pt>
 File: images/1.png Graphic file (type png)
 <use images/1.png>
-Package pdftex.def Info: images/1.png  used on input line 44.
-(pdftex.def)             Requested size: 153.64493pt x 110.84406pt.
+Package pdftex.def Info: images/1.png  used on input line 38.
+(pdftex.def)             Requested size: 338.02072pt x 107.11331pt.
 
-
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 44.
-(pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[2
-
- <./images/1.png>]
-File: images/1.png Graphic file (type png)
-<use images/1.png>
-Package pdftex.def Info: images/1.png  used on input line 44.
-(pdftex.def)             Requested size: 153.64493pt x 110.84406pt.
-
-
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 44.
-(pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[3
-
-]
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 68.
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 68.
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 68.
-<images/classicalsvm.png, id=43, 409.7709pt x 312.2064pt>
-File: images/classicalsvm.png Graphic file (type png)
-<use images/classicalsvm.png>
-Package pdftex.def Info: images/classicalsvm.png  used on input line 68.
-(pdftex.def)             Requested size: 169.01035pt x 128.76767pt.
-
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 68--68
+Overfull \hbox (30.73085pt too wide) in paragraph at lines 38--38
  [] 
  []
 
@@ -758,17 +713,54 @@ Overfull \hbox (15.36542pt too wide) in paragraph at lines 68--68
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 68.
+Package pdftex.def Info: images/logo.png  used on input line 38.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[4
+[2
+
+ <./images/1.png (PNG copy)>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 62.
+ (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
+)
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 62.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 62.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 62.
+<images/classicalsvm.png, id=36, 409.7709pt x 312.2064pt>
+File: images/classicalsvm.png Graphic file (type png)
+<use images/classicalsvm.png>
+Package pdftex.def Info: images/classicalsvm.png  used on input line 62.
+(pdftex.def)             Requested size: 184.37344pt x 140.47252pt.
+
+Overfull \hbox (30.72852pt too wide) in paragraph at lines 62--62
+ [] 
+ []
+
+
+
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 62.
+(pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
+[3
 
  <./images/classicalsvm.png>]
 File: images/classicalsvm.png Graphic file (type png)
 <use images/classicalsvm.png>
-Package pdftex.def Info: images/classicalsvm.png  used on input line 68.
-(pdftex.def)             Requested size: 169.01035pt x 128.76767pt.
+Package pdftex.def Info: images/classicalsvm.png  used on input line 62.
+(pdftex.def)             Requested size: 184.37344pt x 140.47252pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 68--68
+Overfull \hbox (30.72852pt too wide) in paragraph at lines 62--62
  [] 
  []
 
@@ -776,17 +768,17 @@ Overfull \hbox (15.36542pt too wide) in paragraph at lines 68--68
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 68.
+Package pdftex.def Info: images/logo.png  used on input line 62.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[5
+[4
 
 ]
 File: images/classicalsvm.png Graphic file (type png)
 <use images/classicalsvm.png>
-Package pdftex.def Info: images/classicalsvm.png  used on input line 68.
-(pdftex.def)             Requested size: 169.01035pt x 128.76767pt.
+Package pdftex.def Info: images/classicalsvm.png  used on input line 62.
+(pdftex.def)             Requested size: 184.37344pt x 140.47252pt.
 
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 68--68
+Overfull \hbox (30.72852pt too wide) in paragraph at lines 62--62
  [] 
  []
 
@@ -794,189 +786,189 @@ Overfull \hbox (15.36542pt too wide) in paragraph at lines 68--68
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 68.
+Package pdftex.def Info: images/logo.png  used on input line 62.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[6
+[5
 
 ]
-<images/circles.png, id=63, 418.4433pt x 312.2064pt>
+<images/circles.png, id=57, 418.4433pt x 312.2064pt>
 File: images/circles.png Graphic file (type png)
 <use images/circles.png>
-Package pdftex.def Info: images/circles.png  used on input line 96.
+Package pdftex.def Info: images/circles.png  used on input line 90.
 (pdftex.def)             Requested size: 153.64493pt x 114.63324pt.
-<images/circles3d.png, id=64, 468.3096pt x 459.1554pt>
+<images/circles3d.png, id=58, 468.3096pt x 459.1554pt>
 File: images/circles3d.png Graphic file (type png)
 <use images/circles3d.png>
-Package pdftex.def Info: images/circles3d.png  used on input line 96.
+Package pdftex.def Info: images/circles3d.png  used on input line 90.
 (pdftex.def)             Requested size: 153.64493pt x 150.63896pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 96.
+Package pdftex.def Info: images/logo.png  used on input line 90.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[7
+[6
 
  <./images/circles.png> <./images/circles3d.png>]
 File: images/circles.png Graphic file (type png)
 <use images/circles.png>
-Package pdftex.def Info: images/circles.png  used on input line 96.
+Package pdftex.def Info: images/circles.png  used on input line 90.
 (pdftex.def)             Requested size: 153.64493pt x 114.63324pt.
 File: images/circles3d.png Graphic file (type png)
 <use images/circles3d.png>
-Package pdftex.def Info: images/circles3d.png  used on input line 96.
+Package pdftex.def Info: images/circles3d.png  used on input line 90.
 (pdftex.def)             Requested size: 153.64493pt x 150.63896pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 96.
+Package pdftex.def Info: images/logo.png  used on input line 90.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[8
+[7
 
 ]
 File: images/circles.png Graphic file (type png)
 <use images/circles.png>
-Package pdftex.def Info: images/circles.png  used on input line 96.
+Package pdftex.def Info: images/circles.png  used on input line 90.
 (pdftex.def)             Requested size: 153.64493pt x 114.63324pt.
 File: images/circles3d.png Graphic file (type png)
 <use images/circles3d.png>
-Package pdftex.def Info: images/circles3d.png  used on input line 96.
+Package pdftex.def Info: images/circles3d.png  used on input line 90.
 (pdftex.def)             Requested size: 153.64493pt x 150.63896pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 96.
+Package pdftex.def Info: images/logo.png  used on input line 90.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[9
+[8
 
 ]
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 123.
+Package pdftex.def Info: images/logo.png  used on input line 117.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[10
+[9
 
 ]
-<images/Pasted image.png, id=90, 306.14375pt x 491.8375pt>
+<images/Pasted image.png, id=84, 306.14375pt x 491.8375pt>
 File: images/Pasted image.png Graphic file (type png)
 <use images/Pasted image.png>
-Package pdftex.def Info: images/Pasted image.png  used on input line 123.
+Package pdftex.def Info: images/Pasted image.png  used on input line 117.
 (pdftex.def)             Requested size: 107.55098pt x 172.7836pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 123.
+Package pdftex.def Info: images/logo.png  used on input line 117.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[11
+[10
 
  <./images/Pasted image.png>]
-<images/Pasted image (2).png, id=97, 798.985pt x 660.4675pt>
+<images/Pasted image (2).png, id=91, 798.985pt x 660.4675pt>
 File: images/Pasted image (2).png Graphic file (type png)
 <use images/Pasted image (2).png>
-Package pdftex.def Info: images/Pasted image (2).png  used on input line 123.
+Package pdftex.def Info: images/Pasted image (2).png  used on input line 117.
 (pdftex.def)             Requested size: 153.64493pt x 127.00182pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 123.
+Package pdftex.def Info: images/logo.png  used on input line 117.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[12
+[11
 
  <./images/Pasted image (2).png>]
-<images/ZZ.png, id=104, 406.8801pt x 125.7498pt>
+<images/ZZ.png, id=98, 406.8801pt x 125.7498pt>
 File: images/ZZ.png Graphic file (type png)
 <use images/ZZ.png>
-Package pdftex.def Info: images/ZZ.png  used on input line 156.
+Package pdftex.def Info: images/ZZ.png  used on input line 150.
 (pdftex.def)             Requested size: 153.64493pt x 47.48416pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 156.
+Package pdftex.def Info: images/logo.png  used on input line 150.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[13
+[12
 
  <./images/ZZ.png>]
-<images/adhoc.png, id=112, 400.3758pt x 312.2064pt>
+<images/adhoc.png, id=105, 400.3758pt x 312.2064pt>
 File: images/adhoc.png Graphic file (type png)
 <use images/adhoc.png>
-Package pdftex.def Info: images/adhoc.png  used on input line 156.
+Package pdftex.def Info: images/adhoc.png  used on input line 150.
 (pdftex.def)             Requested size: 153.64493pt x 119.81157pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 156.
+Package pdftex.def Info: images/logo.png  used on input line 150.
+(pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
+[13
+
+ <./images/adhoc.png>]
+<images/adhoczz.png, id=113, 411.939pt x 316.5426pt>
+File: images/adhoczz.png Graphic file (type png)
+<use images/adhoczz.png>
+Package pdftex.def Info: images/adhoczz.png  used on input line 150.
+(pdftex.def)             Requested size: 153.64493pt x 118.06078pt.
+
+
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 150.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
 [14
 
- <./images/adhoc.png>]
-<images/adhoczz.png, id=119, 411.939pt x 316.5426pt>
-File: images/adhoczz.png Graphic file (type png)
-<use images/adhoczz.png>
-Package pdftex.def Info: images/adhoczz.png  used on input line 156.
-(pdftex.def)             Requested size: 153.64493pt x 118.06078pt.
-
-
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 156.
-(pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[15
-
  <./images/adhoczz.png>]
-<images/adhocrbf.png, id=126, 411.939pt x 316.5426pt>
+<images/adhocrbf.png, id=120, 411.939pt x 316.5426pt>
 File: images/adhocrbf.png Graphic file (type png)
 <use images/adhocrbf.png>
-Package pdftex.def Info: images/adhocrbf.png  used on input line 156.
+Package pdftex.def Info: images/adhocrbf.png  used on input line 150.
 (pdftex.def)             Requested size: 153.64493pt x 118.06078pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 156.
+Package pdftex.def Info: images/logo.png  used on input line 150.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[16
+[15
 
  <./images/adhocrbf.png>]
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 186.
+Package pdftex.def Info: images/logo.png  used on input line 180.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[17
+[16
 
 ]
-<images/failcircle.png, id=138, 411.939pt x 316.5426pt>
+<images/failcircle.png, id=132, 411.939pt x 316.5426pt>
 File: images/failcircle.png Graphic file (type png)
 <use images/failcircle.png>
-Package pdftex.def Info: images/failcircle.png  used on input line 186.
+Package pdftex.def Info: images/failcircle.png  used on input line 180.
 (pdftex.def)             Requested size: 153.64493pt x 118.06078pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 186.
+Package pdftex.def Info: images/logo.png  used on input line 180.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[18
+[17
 
  <./images/failcircle.png>]
 File: images/failcircle.png Graphic file (type png)
 <use images/failcircle.png>
-Package pdftex.def Info: images/failcircle.png  used on input line 186.
+Package pdftex.def Info: images/failcircle.png  used on input line 180.
 (pdftex.def)             Requested size: 153.64493pt x 118.06078pt.
 
 
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 186.
+Package pdftex.def Info: images/logo.png  used on input line 180.
 (pdftex.def)             Requested size: 27.05371pt x 28.45274pt.
-[19
+[18
 
 ]
 \tf@nav=\write6
@@ -997,18 +989,18 @@ Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21714 strings out of 473584
- 418678 string characters out of 5730878
+ 21711 strings out of 473584
+ 418651 string characters out of 5730878
  1934905 words of memory out of 5000000
- 44121 multiletter control sequences out of 15000+600000
+ 44120 multiletter control sequences out of 15000+600000
  565701 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,123p,485b,677s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,15n,123p,485b,676s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on presentation.pdf (19 pages, 639882 bytes).
+Output written on presentation.pdf (18 pages, 619932 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
+ 191 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
