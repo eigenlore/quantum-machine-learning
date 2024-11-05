@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1730797547.42274 "/home/lore/Documents/Università/quantum-machine-learning/Riassunto/riassunto.tex" "riassunto.pdf" "riassunto" 1730797547.93984 0
+["pdflatex"] 1730797802.57197 "/home/lore/Documents/Università/quantum-machine-learning/Riassunto/riassunto.tex" "riassunto.pdf" "riassunto" 1730797803.14646 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Documents/Università/quantum-machine-learning/Riassunto/riassunto.tex" 1730797547.16038 6238 23193dad6a587bcc3d1969e57bd03635 ""
+  "/home/lore/Documents/Università/quantum-machine-learning/Riassunto/riassunto.tex" 1730797802.23917 6285 a1b87888820dfa1673a701b3b592c594 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -28,8 +28,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1720733508 41397 9faae6d82bd50f2dbfc10ae285bd31e2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1730058856 5483312 31090f1c3437d4bbfc097aaea5bf9b97 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1730058919 8242196 11d8ac00f0158cd64d3dceb59f21ea25 ""
-  "riassunto.aux" 1730797547.88639 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "riassunto.tex" 1730797547.16038 6238 23193dad6a587bcc3d1969e57bd03635 ""
+  "riassunto.aux" 1730797803.09615 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "riassunto.tex" 1730797802.23917 6285 a1b87888820dfa1673a701b3b592c594 ""
   (generated)
   "riassunto.aux"
   "riassunto.log"
