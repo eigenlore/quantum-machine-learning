@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usetheme{Singapore}
 \usecolortheme{default}
+\usepackage{graphicx}
 \beamertemplatenavigationsymbolsempty
 
 
@@ -146,66 +147,185 @@
 
 
 \begin{frame}
-  \frametitle{Quantum Feature Maps}
-
-  \begin{columns}
-    \column{0.5\textwidth}
+  \frametitle{Quantum Kernels}
   
-    \begin{itemize}
-      \item<1-> Ci sono moltissime scelte possibili di circuiti. Un esempio è la ZZ feature map.
-          \item<2-> La QSVM mostra il potenziale di separare complicati dataset, con pattern complessi.  
-          \item[]<3->  
-          \item<4-> Questi dataset non sono gestibili coi kernel classici. 
-          
-          \end{itemize}
-    
-    \column{0.5\textwidth}
-    \only{\begin{figure}
-          \includegraphics[width=1\textwidth]{images/ZZ.png}
-     \end{figure}}<1>
-     \only{\begin{figure}
-      \includegraphics[width=\textwidth]{images/adhoc.png}
- \end{figure}}<2>
- \only{\begin{figure}
-  \includegraphics[width=\textwidth]{images/adhoczz.png}
-\end{figure}}<3>
-\only{\begin{figure}
-  \includegraphics[width=\textwidth]{images/adhocrbf.png}
-\end{figure}}<4>
-    
-    \end{columns}
+  \begin{itemize}
+    \item Un esempio possibile: la ZZ Feature Map. \\\,
+  \end{itemize}
+     
+        \begin{figure}
+          \includegraphics[width=\textwidth]{images/ZZ.png}
+        \end{figure}
+        
+\end{frame}
 
+
+\begin{frame}
+  \frametitle{Quantum Kernels}
+  
+  \begin{itemize}
+    \item Ottime performance su dataset complessi. 
+  \end{itemize}
+        \begin{figure}
+          \includegraphics[width=0.7\textwidth]{images/adhoc.png}
+        \end{figure}
+        
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quantum Kernels}
+  
+  \begin{itemize}
+    \item Ottime performance su dataset complessi.  
+  \end{itemize}
+        \begin{figure}
+          \includegraphics[width=0.7\textwidth]{images/adhoczz.png}
+        \end{figure}
+        
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Quantum Kernels}
+  \begin{itemize}
+    \item I metodi classici falliscono.  
+  \end{itemize}
+        \begin{figure}
+          \includegraphics[width=0.7\textwidth]{images/adhocrbf.png}
+        \end{figure}
+        
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Scelta del Quantum Kernel}
+  \begin{itemize}
+    \item La scelta del kernel risulta spesso problematica. 
+  \end{itemize}
+        \begin{figure}
+          \includegraphics[width=0.7\textwidth]{images/failcircle.png}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Scelta del Quantum Kernel}
+  \begin{itemize}
+    \item Manca una guida per effettuare la scelta.
+  \end{itemize}
+        \begin{figure}
+          \includegraphics[width=0.7\textwidth]{images/failcircle.png}
+        \end{figure}
 \end{frame}
 
 
 
 \begin{frame}
-  \frametitle{Quantum Feature Maps}
+  \frametitle{Algoritmo genetico}
+  \begin{itemize}
+    \item Un algoritmo genetico può scegliere la miglior feature map.\\\,
+  \end{itemize}
 
-  \begin{columns}
-    \column{0.5\textwidth}
-  
-    \begin{itemize}
-      \item<1-> Nonostante le grandi potenzialità, la scelta della feature map si rivela molto delicata.
-          \item<2-> Una scelta non congeniale porta a performance pessime, con accuretezze anche inferiori al 50\%. 
-      
-          \item<3-> Il problema è che non ci sono regole generali valide per la scelta del circuito. 
-          
-          \end{itemize}
-    
-    \column{0.5\textwidth}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/genetic.png}
+  \end{figure} 
+\end{frame}
 
-     \only{\begin{figure}
-      \includegraphics[width=\textwidth]{images/failcircle.png}
- \end{figure}}<2>
- \only{\begin{figure}
-  \includegraphics[width=\textwidth]{images/failcircle.png}
-\end{figure}}<3>
 
-    
-    \end{columns}
+\begin{frame}
+  \frametitle{Algoritmo genetico}
+  \begin{itemize}
+    \item Gli individui sono formati da gate scelti da un set completo.\\\,
+  \end{itemize}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/fenotip.png}
+  \end{figure} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Algoritmo genetico}
+  \begin{itemize}
+    \item La fitness di un individuo si calcola a partire dalla sua accuratezza.
+  \end{itemize}
+
+  \begin{figure}
+    \includegraphics[width=0.7\textwidth]{images/sigmoid.png}
+  \end{figure} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Algoritmo genetico}
+  \begin{itemize}
+    \item La prima generazione è generata randomicamente. 
+  \end{itemize}
+
+  \begin{figure}
+    \includegraphics[width=0.7\textwidth]{images/badresult.png}
+  \end{figure} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Algoritmo genetico}
+  \begin{itemize}
+    \item Gli individui sono passati alla seguente generazione con il crossover.
+    \vspace{0.5cm}
+
+  \centering \textit{Parent individuals}    \,\,\,\,\,\,\,
+  \end{itemize}
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/parent1.png}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/parent2.png}
+\end{minipage}
+
+\vspace{0.5cm}
+\centering \textit{Child individuals}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/child1.png}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/child2.png}
+\end{minipage}
 
 \end{frame}
+
+
+\begin{frame}
+  \frametitle{Algoritmo genetico}
+  \begin{itemize}
+    \item Inoltre subiscono una mutazione casuale.  
+  \end{itemize}
+
+  \begin{figure}
+    \includegraphics[width=0.9\textwidth]{images/nonmutated.png}
+  \end{figure} 
+  \begin{figure}
+    \includegraphics[width=0.9\textwidth]{images/mutated.png}
+  \end{figure} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Algoritmo genetico}
+  \begin{itemize}
+    \item Con l'andare delle generazioni aumenta l'accuratezza media.  
+  \end{itemize}
+
+  \begin{figure}
+    \includegraphics[width=0.7\textwidth]{images/meanaccuracy.png}
+  \end{figure} 
+
+\end{frame}
+
+
+
+
+
+
+
 
 
 
