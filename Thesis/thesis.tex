@@ -440,11 +440,11 @@ Let's now discuss some possible choices of quantum encoding circuits:
 \end{itemize}
 
 \subsection{QSVM algorithm and Qiskit implementation}
-To sum things up, the step of the Quantum Support Vector Machine (QSVM) algorithm are:
+To sum things up, the step of the Quantum Support Vector Machine (QSVM) algorithm are the following:
 \begin{itemize}
     \item Prepare the classical data into two vectors $X$ and $y$, where $$X_i=\mathbf{x}_i \in \mathbb{R}^d,\, \,\,\,i=0,\cdots , N-1,$$ is the i-th $d$-dimensional instance, and $$y_i\in \{-1,1\},$$ indicates the class that this instance belongs to.  
     \item Choose a parametrized quantum circuit $U(\mathbf{x})$. The circuit accepts $d$ parameters, which are the features of the instance we are considering. One can choose a standard circuit like the ZZ feature map, or can create a custom circuit. We will extensively revisit the point of choosing the circuit later on.
-    \item For each pair of instances $\mathbf{x}_i$, $\mathbf{x}_j$ we must evaluate the kernel matrix $$K_{ij}=K(\mathbf{x}_i,\mathbf{x}_j).$$ This is an $N\times N$ matrix, so for each pair we have build $U(\mathbf{x}_i)$ and $U^\dagger(\mathbf{x}_j)$, in order to construct the circuit     
+    \item For each pair of instances $\mathbf{x}_i$, $\mathbf{x}_j$ we must evaluate the kernel matrix $$K_{ij}=K(\mathbf{x}_i,\mathbf{x}_j).$$ This is an $N\times N$ matrix, so for each pair we have to build $U(\mathbf{x}_i)$ and $U^\dagger(\mathbf{x}_j)$, in order to construct the circuit     
     \begin{equation}
         \Qcircuit @C=2em @R=2em {
            \lstick{|0\rangle} & \multigate{4}{U(\mathbf{x}_i)} & \multigate{4}{U^\dagger(\mathbf{\mathbf{x}_j})} & \meter\\
@@ -457,9 +457,9 @@ To sum things up, the step of the Quantum Support Vector Machine (QSVM) algorith
     \end{equation}
     and evaluate the matrix element 
     \begin{equation}
-        K_{ij}=|^{\otimes n}\textrm{$\langle$}0|U(\mathbf{x}_iU^\dagger(\mathbf{x}_j)|0\rangle^{\otimes n}|^2.        
+        K_{ij}=|^{\otimes n}\textrm{$\langle$}0|U(\mathbf{x}_i)U^\dagger(\mathbf{x}_j)|0\rangle^{\otimes n}|^2.        
     \end{equation}
-    As we saw this can be done, up to an error $R^{-1/2}$, by running the circuit (\ref{circuit item }) $R$ times and counting the number of times that we measure the string $000\cdots 0$.
+    As we saw this can be done, up to an error $R^{-1/2}$, by running the circuit (\ref{circuit item }) $R$ times and counting the number of times we measure the string $000\cdots 0$.
     \item Once we have the kernel matrix we use classical optimization to maximize
     \begin{equation}
         f(\alpha_0,\cdots,\alpha_{N-1})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_jK_{ij}.
@@ -471,13 +471,13 @@ To sum things up, the step of the Quantum Support Vector Machine (QSVM) algorith
     \end{equation}
 \end{itemize}
 
-Schematically we have 
+Schematically these operations are described in Algorithm 1. 
 
 \begin{algorithm}[H]
     \caption{Quantum Support Vector Machine (QSVM)}
     \begin{algorithmic}[1]
         \State \textbf{Input:} Data $\{(\mathbf{x}_i, y_i)\}_{i=0,\cdots,N-1}$, Quantum circuit $U(\mathbf{x})$
-        \State \textbf{Parameters:} Measurement shots $R$
+        \State \textbf{Parameters:} Number of measurement shots $R$
         
         \For{$i = 0 \textbf{ to } N-1$}
             \For{$j = 0 \textbf{ to } N-1$}
@@ -501,7 +501,7 @@ Schematically we have
     \end{algorithmic}
     \end{algorithm}
 
-This algorithm can be implemented in practice exploiting Qiskit to perform the circuit simulation and calculate the kernel, and subsequently using scikit-learn to perform the classical optimization once the kernel has been calculated. We can make an example, separating a mock dataset like in Figure \ref{fig:classical svm mock}, with a Pauli feature map. 
+This algorithm can be implemented in practice by exploiting Qiskit to perform the circuit simulation and calculate the kernel, and subsequently using scikit-learn to perform the classical optimization once the kernel has been calculated. We can make an example, separating a mock dataset like the one in Figure \ref{fig:classical svm mock}, with a Pauli feature map. 
 
 \begin{lstlisting}
     #create mock dataset
@@ -520,12 +520,12 @@ The result of the fit is shown in Figure \ref{fig:qsvm}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/qsvm.png}
-    \caption{QSVM decision boundary with ZFeatureMap, fitted on a 2 feature mock dataset of 200 instances.}
+    \caption{QSVM decision boundary with ZFeatureMap, fitted on a two feature mock dataset of 200 instances.}
     \label{fig:qsvm}
 \end{figure}
 
 \subsection{QSVM potential}
-In order to study the potential of the QSVM algorithm we could try and observe the form of the decision boundary of an artificial dataset which is easily separable by a QSVM. If the decision boundary is "classically looking", that is similar to the one we observed when we studied the linear or polynomial kernel, then it would look like the QSVM algorithm may not provide advantage over the classical SVM. We hope instead to find a complex looking decision boundary, which is not separable by classical kernels. 
+In order to study the potential of the QSVM algorithm we could observe the form of the decision boundary of an artificial dataset which is easily separable by a QSVM. If the decision boundary is "classically looking", that is, similar to the one we observed when we studied the linear or polynomial kernel, then it would look like the QSVM algorithm may not provide advantage over the classical SVM. We hope instead to find a complex looking decision boundary, which is not separable by classical kernels. 
 
 We use ZZFeatureMap, with $n=d=2$. Furthermore, we choose $f=Z_1Z_2$ and $V\in\textup{SU}(4)$. We assign $m(\mathbf{x})=+1$ when 
 \begin{equation}
@@ -535,18 +535,18 @@ and $m(\mathbf{x})=-1$ when
 \begin{equation}
     \langle \phi(\mathbf{x}) |V^\dagger f V|\phi(\mathbf{x})\rangle <\Delta.
 \end{equation} 
-$\Delta$ controls how big is the gap between of the two classes. We show this dataset in Figure \ref{fig:adhoc}.
+$\Delta$ controls how big is the gap between the two classes. We show this dataset in Figure \ref{fig:adhoc}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/adhoc.png}
     \caption{Artificial ad hoc dataset, generated with $\Delta=0.3$. This dataset, by construction, is easily separable by ZZFeatureMap.}
     \label{fig:adhoc}
 \end{figure}
-We observe how the dataset of Figure \ref{fig:adhoc} shows a very complicated pattern. Classical methods cannot hope to separate these two classes. In fact, if we divide the dataset into a training set and a test set, and apply the classical SVM algorithm, for example with the RBF kernel, we obtain an accuracy on the test set of 0.51, which is essentially like assigning the classes with a random coin toss. The result of the classical fit is shown in Figure \ref{fig:adhocrbf}, in which we observe how the correct decision boundary has not been found. 
+As we can see, such dataset shows a very complicated pattern. Classical methods cannot hope to separate these two classes. In fact, if we divide the dataset into a training set and a test set, and we apply the classical SVM algorithm, for example with the RBF kernel, we obtain an accuracy on the test set of 0.51, which is essentially like assigning the classes with a random coin toss. The result of the classical fit is shown in Figure \ref{fig:adhocrbf}, in which we observe how the correct decision boundary has not been found. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/adhocrbf.png}
-    \caption{Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes. }
+    \caption{Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes.}
     \label{fig:adhocrbf}
 \end{figure}
 In Figure \ref{fig:adhoczz} is shown instead the result of the fit with the QSVM with ZZFeatureMap, which yields an accuracy on the test set of 1.0, and a nice looking decision boundary. 
@@ -561,9 +561,9 @@ Finding a dataset which is separable by quantum methods and not by classical met
 
 \subsection{Issues of QSVM}
 
-In a QSVM algorithm the only choice the user has to make is the choice of the feature map, that is the choice of the quantum encoding circuit. It is easy to convince ourselves that this choice is crucial, and determines if the algorithm will be successful or not. In the classical case we also have to choose a kernel, but we found that this choice is much less delicate that in the quantum case. In fact, for example, the RBF kernel works very well for most applications. In the quantum case instead, we observed that the choice of the feature map is very tricky. If the wrong feature map is chosen, the QSVM performs very poorly even on very simple datasets, as we will now illustrate with some examples. Let's consider the dataset shown in Figure \ref{fig:classical svm circles}, which is simple enough to be expected to be separated without too many difficulties. We already saw of classical kernels separate this dataset very well. Let's try to apply some of the quantum kernels we discussed in the previous sections. 
+In a QSVM algorithm, the only decision the user needs to make is the selection of the feature map, which corresponds to choosing the quantum encoding circuit. It's clear that this choice is crucial, as it determines whether the algorithm will be successful. In the classical case, we also need to choose a kernel, but this decision is generally less sensitive than in the quantum case. For instance, the RBF kernel performs well across most applications. In the quantum case, however, selecting the feature map is particularly challenging: if the wrong feature map is chosen, the QSVM performs very poorly, even on simple datasets, as we will demonstrate with some examples. Let's consider the dataset shown in Figure \ref{fig:classical svm circles}, which is simple enough to be expected to be separated without too many difficulties. We already saw classical kernels separate this dataset very well. Let us now try to apply some of the quantum kernels we discussed in the previous sections. 
 
-We find that the results of the fits are not satisfying. The accuracy may not be too low in some cases, but the form of the decision boundary tells us that the algorithm did not find the correct pattern for the data. In some cases the algorithm may fail completely, like shown in Figure \ref{fig:failcircle}.
+We find that the results of the fits are not satisfying, as the accuracy is always between 40\% and 60\%, but most importantly the form of the decision boundary tells us that the algorithm did not find the correct pattern for the data, as shown in Figure \ref{fig:failcircle}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/failcircle.png}
@@ -571,14 +571,14 @@ We find that the results of the fits are not satisfying. The accuracy may not be
     \label{fig:failcircle}
 \end{figure}
 
-It is clear at this point that the choice of the quantum encoding map is a very delicate part of the algorithm, and cannot be taken lightly. Choosing the feature map by trying the most common ones, as one may do with classical SVM, is not a safe method, as for a lot of datasets, even simple ones, the QSVM may fail. We need a more systematic way to choose the encoding, as the performance of the model is significantly influenced by this choice. We will discuss those methods in the next sections.
+It is clear at this point that the choice of the quantum encoding map is a very delicate part of the algorithm, and cannot be taken lightly. Choosing the feature map by trying the most common ones, as one may do with classical SVM, is not a safe method, as for many datasets, even simple ones, the QSVM may fail. We need a more systematic way to choose the encoding, as the performance of the model is significantly influenced by this choice. We will discuss those methods in the next sections.
 
 \subsection{Quantum kernel alignment}
 \subsubsection{Circuit optimization}
 
-In the previous sections, we discussed that the main challenge with the QSVM algorithm lies in selecting an appropriate feature map. This choice is difficult because there is no clear guidance in constructing the appropriate circuit, and the number of possible circuits for data encoding is potentially unlimited. Without guidance, it is problematic to select a circuit which works, since we saw how the choice of the feature map is very delicate. A first way to address this problem is the so-called Quantum Kernel Alignment (QKA). 
+In the previous sections, we observed how the main challenge with the QSVM algorithm lies in selecting an appropriate feature map. This choice is difficult because there is no clear guidance in constructing the appropriate circuit, and the number of possible circuits for data encoding is potentially unlimited. Without guidance, it is problematic to select a circuit which works, since we saw how the choice of the feature map is very delicate. A first way to address this problem is the so-called Quantum Kernel Alignment (QKA). 
 
-QKA is a hybrid quantum-classical approach, and consists in employing a parametrized quantum feature map $U(\mathbf{x}, \mathbf{\lambda})$, where we introduced $k$ parameters $\mathbf{\lambda}=(\lambda_0,\cdots, \lambda_{k-1})$ inside the feature map. The quantum circuit now has $d+k$ parameters, $d$ are passed through $\mathbf{x}$ and $k$ through $\mathbf{\lambda}$. However, the latter are fundamentally different from the former. The $\mathbf{x}$ parameters, as we saw, are the way the instance is passed to the circuit. The $\lambda$ parameters instead are just parameters which must be trained in order to find the best possible circuit. A parametrized feature map gives rise to a parametrized quantum kernel $$K_{i,j}(\mathbf{\lambda})=K_{\mathbf{\lambda}}(\mathbf{x}_i, \mathbf{x}_j),$$ and consequently to a parametrized objective function of the SVM
+QKA is a hybrid quantum-classical approach, and consists in employing a parametrized quantum feature map $U(\mathbf{x}, \mathbf{\lambda})$, which depends upon $k$ parameters $\mathbf{\lambda}=(\lambda_0,\cdots, \lambda_{k-1})$. The quantum circuit now has $d+k$ parameters, where $d$ are passed through $\mathbf{x}$ and $k$ through $\mathbf{\lambda}$. However, the latter are fundamentally different from the former. The $\mathbf{x}$ parameters, as we saw, are the way the instance is passed to the circuit. The $\lambda$ parameters instead must be trained in order to find the best possible circuit. A parametrized feature map gives rise to a parametrized quantum kernel $$K_{i,j}(\mathbf{\lambda})=K_{\mathbf{\lambda}}(\mathbf{x}_i, \mathbf{x}_j),$$ and consequently to a parametrized objective function of the SVM
 \begin{equation}
             f(\mathbf{\alpha}, \mathbf{\lambda})=\sum_{i=0}^{N-1} \alpha_i-\frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}\alpha_i\alpha_jy_iy_jK_{ij}(\mathbf{\lambda}).
             \label{qka}
@@ -587,27 +587,27 @@ Kernel alignment aims at minimizing the generalization error bound of SVM, and c
 \begin{equation}
     \min_{\lambda}\max_{\alpha}f(\alpha, \lambda).
 \end{equation} 
-Here again $\alpha$ is the solution to the convex optimization problem of the SVM, while $\lambda$ is the variational parameter of the quantum circuit which must be trained. The optimization over $\alpha$ is performed as usual for the SVM. The optimization over $\lambda$ is performed using a Classical Simultaneous Stochastic Approximation (SPSA). The choice of SPSA lies in the fact that it needs less kernel evaluations compared to gradient descent methods, and it is more robust against noise, which is a serious issue of current real world quantum devices.    
+Here again $\alpha$ is the solution to the convex optimization problem of the SVM, while $\lambda$ is the variational parameter of the quantum circuit which must be trained. The optimization over $\alpha$ is performed as usual for the SVM. The optimization over $\lambda$ is performed using a Classical Simultaneous Stochastic Approximation (SPSA). \cite{spall1992} The choice of SPSA lies in the fact that it needs less kernel evaluations compared to gradient descent methods, and it is more robust against noise, which is a serious issue of current real world quantum devices.    
 
-QKA is a hybrid quantum-classical method, because the quantum circuit is utilized to evaluate the kernel when necessary, while all the other tasks such as optimizations are performed by classical algorithms. The fundamental steps of are:
+QKA is a hybrid quantum-classical method, because the quantum circuit is utilized to evaluate the kernel when necessary, while all the other tasks such as optimizations are performed by classical algorithms. The fundamental steps of QKA are:
 \begin{itemize}
     \item Choose a parametrized quantum circuit $U(\mathbf{x}, \mathbf{\lambda})$, where $\lambda\in \mathbb{R}^k$.
-    \item Choose an initial parameter $\lambda=\lambda_0$, and the maximum number of iterations $P$ of the SPSA algorithm.
-    \item Generate random vector $\Delta \in \{-1,1\}^k$.
+    \item Choose an initial parameter value $\lambda=\lambda_0$, and the maximum number of iterations $P$ of the SPSA algorithm.
+    \item Generate a random vector $\Delta \in \{-1,1\}^k$.
     \item Create two new parameters $\lambda_+$ and $\lambda_-$ such that $$\lambda_{\pm,i}=\lambda_i\pm c_i \Delta_i,$$ where $$c_i=\frac{c}{(i+1)^\gamma},$$ for chosen constants $c$ and $\gamma$. 
     \item Evaluate, using the QSVM standard approach on quantum device, the two kernels $$K_{\pm,ij}=K_{\lambda_{\pm}}(\mathbf{x}_i, \mathbf{x}_j).$$
     \item Find the solution $\alpha_{\pm}$ of the convex optimization problem in eq. (\ref{qka}), for the two kernels of the previous point, exploiting the standard SVM optimization.
     \item Perform two evaluations of the loss function to estimate its gradient with respect to $\lambda_k$: \begin{equation}
         g_k(\alpha_k, \lambda_k)=\frac{1}{2c_k\Delta_k}(f(\alpha_{+,k}, \lambda_{+,k})-f(\alpha_{-,k}, \lambda_{-,k})),
     \end{equation} where the loss function $f$ is given by eq. (\ref{qka}).
-    \item Update $\lambda$ depending on the gradient $g_k(\alpha_k, \lambda_k)$ and the learning rate $a$. The update rule is \begin{equation}
-        \lambda_{k+1}=\lambda_k-a_kg_k(a_k,\lambda_k).
+    \item Update $\lambda$ depending on the gradient $g_k(\alpha_k, \lambda_k)$ and the learning rate $a_k$. The update rule is \begin{equation}
+        \lambda_{k+1}=\lambda_k-a_kg_k(\alpha_k,\lambda_k).
     \end{equation}
     \item Repeat the procedure until the cost function has converged or the maximum number of iterations has been reached. 
     \item The final kernel is the optimal quantum kernel $K_{\lambda^*}(\underline{x}_i, \underline{x}_j).$
 \end{itemize}
 
-There are several possible choices for the insertion of the parameters in the quantum circuit. One common choice is to insert two parametrized rotations before the actual feature map, as shown in Figure \ref{fig:param rotation}. 
+There are several possible choices for the embedding of the parameters in the quantum circuit. One common choice is to insert two parametrized rotations before the actual feature map, as shown in Figure \ref{fig:param rotation}. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/rotationsbeforeZZ.png}
@@ -622,7 +622,7 @@ Another possible choice is to insert the parameters inside a ZZFeatureMap, and t
     \label{fig:ZZafterZZ}
 \end{figure}
 
-QKA can be implemented in Qiskit using the TrainableFidelityQuantumKernel class and the SPSA optimizer as following. 
+QKA can be implemented in Qiskit using the TrainableFidelityQuantumKernel class and the SPSA optimizer as follows. 
 \begin{lstlisting}
     kernel = TrainableFidelityQuantumKernel()
     cb_qkt = QKTCallback()
@@ -636,51 +636,47 @@ The final kernel is the optimized one, which can be used to train the QSVM and o
 
 
 \subsubsection{Performance}
-We can evaluate the performance of the QKA-QSVM observing the behavior on the previously discussed datasets, in which the standard SVM algorithm performed badly. 
-Let's consider for example the circular dataset of Figure \ref{fig:classical svm circles}. Let's use the feature map of Figure \ref{fig:param rotation}. 
-The result is shown in Figure \ref{fig:qka}.
+We can evaluate the performance of the QKA-QSVM by observing the behavior on the previously discussed datasets, in which the standard SVM algorithm performed badly. 
+Let us consider for example the circular dataset of Figure \ref{fig:classical svm circles}, and let us use the feature map of Figure \ref{fig:param rotation}. 
+The resultinf fit is shown in Figure \ref{fig:qka}, while the convergence of the SVC loss function and the final kernel are shown in Figure \ref{fig:loss function}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/qka.png}
-    \caption{Result of the fit of circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}
+    \caption{Result of the fit of the circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}
     \label{fig:qka}
 \end{figure}\\
-The convergence of the SVC loss function and the final kernel is shown in Figure \ref{fig:loss function}. 
+ 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/lossfunction.png}
-    \caption{On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix.}
+    \caption{On the left, the convergence of the loss function during the QKA training is shown. On the right, we can see the final trained kernel matrix.}
     \label{fig:loss function}
 \end{figure}
 
-We observe how even in this case the result is not satisfactory at all. The issue is that, even though now we have the freedom to insert parameters inside, it is still not clear how to choose the circuit or the parameters. This problem is not solved, consequently we are not capable of choosing a circuit which works for this particular dataset. We need to find a more advanced algorithm to choose the circuit.
+We observe how even in this case the result is not satisfactory at all. The problem is that, even though now we have the freedom to insert parameters inside the model, it is still not clear how to choose the circuit or the parameters. This problem is not solved, consequently we are not capable of choosing a circuit that works for this particular dataset. We thus need to find a more advanced algorithm to choose the circuit.
 
 
 
 \newpage
 \section{Genetic algorithm}
 
-A genetic algorithm can be used to choose the best feature map. We'll see how these types of algorithms can pick the right feature map based on first principles, without us having to decide the circuit's structure. Genetic algorithms have been previously used in the context of quantum computing, for example by Creevey et al. and Sünkel et al. We will apply this strategy for the QSVM case. 
+A genetic algorithm can be used to choose the best feature map. We'll see how these types of algorithms can pick the right feature map based on first principles, without us having to decide the circuit's structure. Genetic algorithms have been previously used in the context of quantum computing, for example in \cite{creevey2023a}\cite{creevey2023b}\cite{sunckel2023}. We will apply this strategy for the QSVM case. 
 
 \subsection{General introduction}
 
-Genetic algorithms are optimization algorithms inspired by the process of natural selection, a key mechanism of biological evolution. The core concept is based on mimicking the biological evolution process, particularly principles like survival of the fittest, reproduction, mutation, and inheritance.
+Genetic algorithms \cite{mitchell1999}\cite{eiben2003} are optimization algorithms inspired by the process of natural selection, a key mechanism of biological evolution. The core concept is based on mimicking the biological evolution process, particularly principles like survival of the fittest, reproduction, mutation, and inheritance.
 
 The primary components of the algorithm are the individuals, whose specific characteristics depend on the problem being addressed. Each individual is defined by a genotype and a phenotype. The genotype consists of a collection of genes, typically represented by numbers or character strings. The phenotype is a practical manifestation of the genotype, such as a quantum circuit or a neural network.
 
-Individuals are organized into generations. The transition from one generation to the next occurs through crossover and mutation, mimicking the process of natural selection. A fitness function is defined to assess how well an individual performs in relation to the specific problem being addressed. The top-performing individuals in a generation, i.e., those with the highest fitness scores, can be passed directly to the next generation without undergoing crossover or mutation. This process is known as elitism.
+Individuals are organized into populations, which are evolved with the passing of generations. The transition from one generation to the next occurs through crossover and mutation, mimicking the process of natural selection. A fitness function is defined to assess how well an individual performs in relation to the specific problem being addressed. The top-performing individuals in a generation, i.e., those with the highest fitness scores, can be passed directly to the next generation without undergoing crossover or mutation. This process is known as elitism.
 
-Crossover emulates the crossing-over mechanism in meiosis. Two parent individuals from the current generation are selected with a probability proportional to their fitness, and two offspring are produced by combining the genotypes of the parents in a specific manner. Additionally, the offspring may undergo random gene mutations. The fitness of both offspring is then evaluated, with only the fittest being retained for the next generation. This way the generations all have the same number of individuals, to avoid an exponential growth of the dimension. This process is repeated multiple times to generate successive generations.
+Crossover emulates the crossing-over mechanism in meiosis. Two parent individuals from the current generation are selected with a probability proportional to their fitness, and two offspring are produced by combining the genotypes of the parents in a specific manner. Additionally, the offspring may undergo random gene mutations. The fitness of both offspring is then evaluated, with only the fittest being retained for the next generation. This way the generations all have the same number of individuals, to avoid an exponential growth of the dimension. 
 
-This process continues until either the maximum number of generations is reached or an individual achieves a predetermined target fitness level. Such individual is the result of the genetic algorithm. 
+This process is repeated multiple times to generate successive generations, and continues until either the maximum number of generations is reached or an individual achieves a predetermined target fitness level. The best individual of the last generation is the result of the genetic algorithm. 
 
 \subsection{Genetic algorithm for QSVM}
 
-
-
-
-
-Let's now discuss how the above-mentioned concepts apply in the case of Quantum Support Vector Machine. The goal is to find the best possible feature map given a dataset. 
+Let's now discuss how the above-mentioned concepts apply to the case of Quantum Support Vector Machine. The goal is to find the best possible feature map, given a dataset. 
 
 An individual is meant to represent a possible feature map choice. We define the genes of an individual in the form 
 \begin{equation}
@@ -691,7 +687,7 @@ where
     \item $G$ is a gate chosen from a universal set of gates. For example, we can choose the set \begin{equation}
         \{X, \sqrt{X}, \textup{CNOT}, R_z\}.
     \end{equation}
-    Here universal means that every possible gate can be generated using some combination of gates from this set. 
+    Here universal means that every possible $n$-input/$n$-output gate can be generated using some combination of gates (that is, a circuit) from this set. 
     $X, \sqrt{X}, \textup{CNOT}$ are fixed 1 and 2 qubit gates, whose matrix form is
 
 \[
@@ -718,7 +714,7 @@ X = \begin{pmatrix}
 \]
 
 
-On the other hand $R_z$ is a parametrized gate of the form
+On the other hand, $R_z$ is a parametrized gate of the form
 
 \[
 R_z(\theta) = \begin{pmatrix}
@@ -736,7 +732,7 @@ Since the feature map is constituted by a parametrized quantum circuit $U(\mathb
 \item $f$ represents which feature to use as the gate parameter, if the gate accepts a parameter. In our example only the $R_z$ gate accepts one. In the other cases it is set to $\textup{None}$. Since we have $d$ features $(x_0, \cdots, x_{d-1})$, $f$ will be an integer between $0$ and $d-1$. 
 \end{itemize}
 
-The genotype will be a collection of genes of this form. The number of genes can vary, in particular it will represent the number of gates of the circuit. The phenotype associated to a genotype will be the corresponding parametrized quantum circuit. Let's make an example of this and consider $n=d=2$ and the genotype \\\ \{[$R_z$, 0, None, 0], [$R_z$, 1, None, 0], [CNOT, 1, 0, None], [$X$, 1, None, None]\}. \\\\ There are 4 genes, so the circuit must have first gate. If we look at the first gene we can conclude that the first gate is a $R_z$ with the first qubit as target. The control qubit is set to None since $R_z$ is a single qubit gate. The 0-th feature $x_0$ is used as the parameter of the circuit. Similar considerations hold for the others 3 gates. The circuit, i.e. the phenotype, is represented in Figure \ref{fig:fenotip}.
+The genotype will be a collection of genes of this form. The number of genes can vary, in particular it will represent the number of gates of the circuit. The phenotype associated to a genotype will be the corresponding parametrized quantum circuit. Let's make an example of this and consider $n=d=2$ and the genotype \\\ \{[$R_z$, 0, None, 0], [$R_z$, 1, None, 0], [CNOT, 1, 0, None], [$X$, 1, None, None]\}. \\\\ There are four genes, so the circuit must have four gate. If we look at the first gene we can conclude that the first gate is a $R_z$ with the first qubit as target. The control qubit is set to None since $R_z$ is a single qubit gate. The 0-th feature $x_0$ is used as the parameter of the circuit. Similar considerations hold for the others three gates. The circuit, i.e. the phenotype, is represented in Figure \ref{fig:fenotip}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/fenotip.png}
@@ -746,8 +742,8 @@ The genotype will be a collection of genes of this form. The number of genes can
 
 We saw how parent individuals are passed to the child generation using crossover and mutations. Let's discuss how these operations are performed in the QSVM case. 
 
-Crossover consists in cutting the circuit in half and pasting the two halves in two different children circuits. In formulas, assuming the number of genes $k$ to be even, starting from the parent genotype $$\{g^1_0, \cdots , g^1_{\frac{k}{2}-1}, g^1_{\frac{k}{2}}, \cdots, g^1_{k-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{k}{2}-1}, g^2_{\frac{k}{2}}, \cdots, g^2_{k-1}\},$$ we build the two children genotype $$\{g^1_0, \cdots , g^1_{\frac{k}{2}-1}, g^2_{\frac{k}{2}}, \cdots, g^2_{k-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{k}{2}-1}, g^1_{\frac{k}{2}}, \cdots, g^1_{k-1}\}.$$
-In Figure \ref{fig:1par}-\ref{fig:2child} it is shown an example to illustrate what happens on the phenotype. 
+Crossover consists in cutting the circuit in half and pasting the two halves in two different children circuits. In formulas, assuming the number of genes $k$ to be even, starting from the parents genotypes $$\{g^1_0, \cdots , g^1_{\frac{k}{2}-1}, g^1_{\frac{k}{2}}, \cdots, g^1_{k-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{k}{2}-1}, g^2_{\frac{k}{2}}, \cdots, g^2_{k-1}\},$$ we build the two children genotype $$\{g^1_0, \cdots , g^1_{\frac{k}{2}-1}, g^2_{\frac{k}{2}}, \cdots, g^2_{k-1}\},$$$$\{g^2_0, \cdots , g^2_{\frac{k}{2}-1}, g^1_{\frac{k}{2}}, \cdots, g^1_{k-1}\}.$$
+In Figures \ref{fig:1par}-\ref{fig:2child} it is shown an example to illustrate what happens on the phenotype. 
 \begin{figure}[h!]
     \centering
     \begin{minipage}{0.7\textwidth}
@@ -781,7 +777,7 @@ In Figure \ref{fig:1par}-\ref{fig:2child} it is shown an example to illustrate w
     \end{minipage}
 \end{figure}
 
-Mutation instead consists in a random mutation of the genes. That is every gene is mutated, with a probability $p$, into another randomly chosen. Another alternative way could be to mutate only one randomly chosen gene, with a probability of the mutation occurring greater than the former. An example is shown in Figure \ref{fig:mutated}-\ref{fig:nonmutated}.  
+Mutation, instead, consists in a random mutation of the genes. That is, every gene is mutated, with a probability $p$, into another randomly chosen gene. An alternative way could be to mutate only one randomly chosen gene. An example is shown in Figures \ref{fig:mutated}-\ref{fig:nonmutated}.  
 \begin{figure}[h!]
     \centering
     \begin{minipage}{0.7\textwidth}
@@ -794,22 +790,22 @@ Mutation instead consists in a random mutation of the genes. That is every gene 
     \begin{minipage}{0.7\textwidth}
         \centering
         \includegraphics[width=\linewidth]{images/nonmutated.png}
-        \caption{Mutated individual. The first gene is mutated from a $\sqrt{X}$ acting on the first qubit into an $R_z$ acting again on the first qubit. The other genes in this case were not mutated.}
+        \caption{Mutated individual. The first gene is mutated from a $\sqrt{X}$ gate acting on the first qubit into an $R_z$ gate acting again on the first qubit. The other genes in this case were not mutated.}
         \label{fig:nonmutated}
     \end{minipage}
 \end{figure}
-This is a possible result of the mutation, of course being intrinsically random another mutation would produce a different result.  
+This is a possible result of the mutation; of course, being an intrinsically random process, another mutation would produce a different result.  
 
-The last concept we need to define in the QSVM case is the one of the fitness function. That is we need a quantitative way to assess how well an individual performs on the particular dataset we are considering. In machine learning there are several ways to evaluate the performance on a classification task. The simplest one is the accuracy on the test set, that is the ratio of correctly classified points and the total number of points. 
+The last concept we need to define in the QSVM case is the one of the fitness function. That is, we need a quantitative way to assess how well an individual performs on the particular dataset we are considering. In machine learning there are several ways to evaluate the performance on a classification task. The simplest one is the accuracy on the test set, that is, the ratio of correctly classified points and the total number of points:
 \begin{equation}
-    \textup{accuracy}=\frac{\textup{correctly classified points}}{\textup{total number of points}}.
+    \textup{accuracy}=\frac{\textup{number of correctly classified points}}{\textup{total number of points}}.
 \end{equation}
 For instance, we could use test set accuracy as the fitness of an individual. However, this approach would not sufficiently penalize poorly performing individuals, who are selected to generate offspring with a probability proportional to their fitness. If we use accuracy, an individual with a fitness of 0.5 has only half the probability of being chosen compared to one with a fitness close to 1. This is problematic because the former performs very poorly (its performance is comparable to randomly guessing the labels) whereas the latter correctly classifies almost every label. Moreover, individuals with a fitness below 0.5, which are not uncommon given the potential issues with the QSVM algorithm when an unsuitable feature map is selected, still have a non-negligible chance of being chosen. We would prefer these individuals to be heavily penalized, as their performance is even worse than random guessing. A possible way to achieve this is to use
 \begin{equation}
     \textup{fitness}=\textup{accuracy}^6.
     \label{accuracy}
 \end{equation}
-The function is represented in Figure \ref{fig:fitness function}.
+This function is represented in Figure \ref{fig:fitness function}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/sigmoid.png}
@@ -818,41 +814,41 @@ The function is represented in Figure \ref{fig:fitness function}.
 \end{figure}
 This choice strongly penalizes individuals with performance scores below 0.5, drastically reducing their chances of being selected for reproduction. Conversely, individuals with higher accuracy have significantly greater fitness, resulting in a much higher probability of being chosen to generate offspring.
 
-Let us now provide a detailed explanation of how the algorithm functions. The initial inputs to the algorithm are as follows:
+Let us now provide a detailed explanation of how the algorithm works. The initial inputs to the algorithm are as follows:
 \begin{itemize} 
     \item A dataset, for which the objective is to discover a feature map that accurately classifies the data. This dataset will be split as usual into a training set and a test set. We will use the circular mock dataset of Figure \ref{fig:classical svm circles}, as we saw the difficulties of its classification without a genetic algorithm. The dataset automatically defines the number of features $d$.  
     \item The number $k$ of genes, that is the number of gates of the feature map. 
     \item The number $n$ of qubits that we want the circuit to have.
     \item The number of individuals $m$ that compose a generation.
     \item The percentage of individuals that automatically pass to the next generation through elitism. A typical value is $10\%$.
-    \item The gate set to use to create the feature map. We will use $$\{X, \sqrt{X}, \textup{CNOT}, R_z\},$$ but other choices can be made, depending also on the type of physical architecture we plan on using for running the algorithm. For example Google Sycamore processor works by using the gates $$\{\sqrt{X}, \sqrt{Y},\sqrt{X+Y}, \textup{iSWAP}, \text{CZ}\},$$ so if we want to run the algorithm on that processor we could use this complete set of gates. 
+    \item The gate set to use to create the feature map. We will use $$\{X, \sqrt{X}, \textup{CNOT}, R_z\},$$ but other choices can be made, depending also on the type of hardware architecture we plan to use for running the algorithm. For example, Google Sycamore processor works by using the gates $$\{\sqrt{X}, \sqrt{Y},\sqrt{X+Y}, \textup{iSWAP}, \text{CZ}\},$$ so if we want to run the algorithm on that processor we could use this complete set of gates. 
     \item The probability $p$ of a mutation occurring on an individual. A standard value is 10\%.
     \item The target fitness we want to achieve. The algorithm will terminate if an individual reaches that target fitness. 
-    \item The maximum number of generations we allow. If no individual achieves the target fitness the algorithm will terminate when the maximum number of generations is reached. 
+    \item The maximum number of generations we allow. If no individual achieves the target fitness, the algorithm will terminate when the maximum number of generations is reached. 
 \end{itemize}
 
-The first step is to generate the first generation of individuals. This is done by randomly choosing $m$ circuits. Then the genetic algorithm begins, and works as follows:
+The first step is to produce the first generation of individuals. This is done by randomly choosing $m$ circuits. Then the genetic algorithm begins, and works as follows:
 \begin{itemize}
     \item The fitness of all the individuals is calculated.
-    \item A fixed percentage of individuals, the one with the best fitnesses, are automatically passed to the next generation. 
-    \item The remaining spots in the next generation are filled by children generated with crossover and mutations. For each spot two parents are chosen by randomly picking in the current generation, with a probability proportional to the fitness. Then two children are generated with crossover, and a random mutation is applied to each of them. The fitness of both children is evaluated and only the best one is kept and placed in the next generation. This procedure is repeated until the next generation is completely filled. Recall that all the generations have the same number of individual.
-    \item This is repeated until an individual achieves the target fitness, or the total number of generations is reached.
-    \item The best individual of the last generation is the result of the algorithm. In particular its phenotype is the best circuit that can be used in a QSVM to separate this particular dataset. 
+    \item A fixed percentage of individuals, the ones with the best fitness values, are automatically passed to the next generation. 
+    \item The remaining spots in the next generation are filled by children generated with crossover and mutations. For each spot, two parents are chosen by randomly picking in the current generation, with a probability proportional to the fitness. Then two children are generated by crossover, and a random mutation is applied to each of them. The fitness of both children is evaluated and only the best one is kept and placed in the next generation. This procedure is repeated until the next generation is completely filled. Recall that all the generations have the same number of individuals.
+    \item This process is repeated until an individual achieves the target fitness, or the total number of generations is reached.
+    \item The best individual of the last generation is the result of the algorithm. In particular, its phenotype is the best circuit that can be used in a QSVM to separate this particular dataset. 
 \end{itemize}
 
 
-\subsection{Results}
+\subsection{Results of the Experiments}
 
 \subsubsection{Circle dataset}
 We now execute the algorithm on the circular dataset shown in Figure \ref{fig:classical svm circles}. The genetic algorithm was implemented in Python, exploiting Qiskit to run the QSVM when necessary.
 
-An important goal is to construct the smallest possible quantum circuit, minimizing both the number of gates and qubits. This is motivated by the technical limitations of current quantum devices, which struggle with larger, more complex circuits. Consequently, we begin with a simple circuit and will increase its depth or number of qubits if necessary.
+An important goal is to construct the smallest possible quantum circuit, minimizing both the number of gates and qubits. This is motivated by the technical limitations of current quantum devices, which struggle with larger, more complex circuits. Consequently we begin with a simple circuit, increasing its depth or number of qubits when necessary.
 
-For our experiment, we set a target fitness of 0.95, corresponding to an accuracy of 0.99, using eq. (\ref{accuracy}). We begin with a circuit with 2 qubits and 10 genes (gates), keeping the circuit compact.
+For our experiment, we set a target fitness of 0.95, corresponding to an accuracy of 0.99, using eq. (\ref{accuracy}). We begin with a circuit with 2 qubits and 10 genes (gates), thus keeping the circuit compact.
 
 The population size directly influences the efficiency of the algorithm. While larger populations provide more diversity and improve convergence, they significantly slow down the algorithm, particularly when using quantum simulators, like in our case. Since running a single QSVM instance already requires substantial time on a simulator, we opted for a reduced population size of 10 individuals. Although a standard starting point would be 100 individuals, we can begin with a small population and scale up if the results are unsatisfactory. We set a maximum number of 25 generations.
 
-The initial parameters are shown in Table (\ref{tabella accettanza})
+The initial values of parameters are shown in Table (\ref{tabella accettanza}).
 \begin{table}[h]
     \centering
     \begin{tabular}{||c c||} 
@@ -869,7 +865,7 @@ The initial parameters are shown in Table (\ref{tabella accettanza})
      Probability of a mutation & 10\% \\  
      \hline
     \end{tabular}
-    \caption{Parameters of the genetic algorithm}
+    \caption{Parameters of the genetic algorithm, and their initial value.}
     \label{tabella accettanza}
 \end{table}
 
@@ -877,64 +873,70 @@ After 25 generations the algorithm reaches a fitness of 86\%. The final individu
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/finalcircuit.png}
-    \caption{Final circuit of the genetic algorithm. This is the phenotype of the best individual of the last generation. This is the circuit with the best performance on this dataset that the genetic algorithm could find.}
+    \caption{Final circuit produced by the genetic algorithm. Being the phenotype of the best individual of the last generation, this is the circuit with the best performance on this dataset that the genetic algorithm could find.}
     \label{fig:final circuit}
 \end{figure}
-This is the best-performing circuit identified by the genetic algorithm. Before exploring its potential, let's first assess whether the algorithm performed as expected. In Figure () we plot how the mean fitness of each generation evolves with the passing of generations. We observe an increase in the mean fitness, starting from a very low value in the first generation, which consists of randomly selected circuits, to a significantly higher value in the final generation. This confirms that the genetic algorithm is effectively improving the fitness of individuals through its internal crossover mechanics. If the mean fitness of the first generation was similar to that of the last, it would mean that the circuit was found by random chance, rendering the genetic algorithm useless. Instead, we clearly see how the algorithm consistently increases the fitness with each generation.
+This is the best-performing circuit identified by the genetic algorithm. Before exploring its potential, let's first assess whether the algorithm performed as expected. In Figure \ref{fig:mean accuracy} we plot how the mean fitness of each generation evolves with the passing of generations. We observe an increase in the mean fitness, starting from a very low value in the first generation, which consists of randomly selected circuits, to a significantly higher value in the final generation. This confirms that the genetic algorithm is effectively improving the fitness of individuals through its internal crossover mechanics. If the mean fitness of the first generation was similar to that of the last one, it would mean that the circuit was found by random chance, making the genetic algorithm useless. Instead, we clearly see how the algorithm consistently increases the fitness with each generation. The maximum fitness of each generation is also shown in Figure \ref{fig:max accuracy}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/meanaccuracy.png}
     \caption{Mean accuracy of each generation. We observe a consistent increase of the accuracy, ensuring that the genetic algorithm is improving the performance of the feature maps from generation to generation.}
     \label{fig:mean accuracy}
 \end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/maxaccuracy.png}
+    \caption{Maximum accuracy of each generation.}
+    \label{fig:max accuracy}
+\end{figure}
 
-To verify that the circuit in Figure \ref{fig:final circuit} can truly separate circle-like datasets, we tested its performance on a new artificial dataset. This dataset was generated using the same parameters as the one the circuit was trained on, but with new data points. It's essential to ensure that the circuit does not perform well only on the specific dataset it was trained with, but also on slightly varied datasets. The result of the fit is shown in Figure \ref{fig:awesome}, where we achieved 94\% accuracy. This indicates that the circuit is highly effective at separating circle-like datasets.
+To verify that the circuit in Figure \ref{fig:final circuit} can truly separate circle-like datasets, we tested its performance on a new artificial dataset. This dataset was generated using the same parameters as the one the circuit was trained on, but with new data points. It is important to ensure that the circuit does not perform well only on the specific dataset it was trained with, but also on slightly varied datasets. The result of the fit is shown in Figure \ref{fig:awesome}, where we achieved 94\% accuracy. This indicates that the circuit is highly effective at separating circle-like datasets.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/awesomeresult.png}
-    \caption{Final test of the resulting circuit of the genetic algorithm on a new dataset with respect the one it was trained on. The fact that the circuit is well performing on this dataset indicates that we actually found a circuit well performing on this sort of datasets.}
+    \caption{A further test of the resulting circuit of the genetic algorithm on a new dataset, with respect to the one it was trained on. The fact that the circuit is well performing also on this dataset indicates that we actually found a circuit well performing on this sort of datasets.}
     \label{fig:awesome}
 \end{figure}
 
-To further demonstrate how the genetic algorithm improved the performance of the individuals, let's try the same task with an individual from the first generation. The result, shown in Figure \ref{fig:bad}, reveals poor performance, similar to the outcomes we observed when using standard feature map choices. So by just randomly picking circuits we are not able to construct well performing individuals. However, by evolving these individuals through crossover, the genetic algorithm is able to generate circuits with high accuracy for this type of dataset.
+To further demonstrate how the genetic algorithm improved the performance of the individuals, let us classify the dataset with an individual from the first generation. The result, shown in Figure \ref{fig:bad}, reveals poor performance, similar to the outcomes we observed when using standard features map . So by just randomly picking circuits we are not able to construct well performing individuals. However, by evolving these individuals through crossover, the genetic algorithm is able to generate circuits with high accuracy for this type of datasets.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/badresult.png}
-    \caption{Test of the performance of an individual from the first generation on the same dataset. We observe how its performance is very low, indicating that the first generation of individuals performs poorly as we expected.}
+    \caption{Test of the performance of the best fitness individual from the first generation on the same dataset. We observe how its performance is very low, indicating that the first generation of individuals performs poorly as we expected.}
     \label{fig:bad}
 \end{figure}
 
-The fact that it performs well on this dataset is a strong indication of the potential of the final circuit we identified. However, it's natural to question how far this circuit can be pushed, as the dataset, while new, was still generated using the same parameters the genetic algorithm was trained on. What happens if we alter the shape by, for instance, adding noise or changing the radius of the two circles? Will the circuit still be able to classify correctly? Is the circuit able to classify all circle-like datasets? In Figure \ref{fig:noise} we used it to classify a different circle dataset, with noise added to the points. The classification reached a 91\% accuracy, indicating a good performance even on this dataset. We can answer affirmatively to the questions we asked.  
+The fact that it performs well on this dataset is a strong indication of the potential of the final circuit we identified. However, it's natural to question how far this circuit can be pushed, as the dataset, while new, was still generated using the same parameters the genetic algorithm was trained on. What happens if we alter the shape by, for instance, adding noise or changing the radius of the two circles? Will the circuit still be able to classify correctly? Is the circuit able to classify all circle-like datasets? In Figure \ref{fig:noise} we used it to classify a different circle dataset, with a gaussian noise added to the points. The classification reached a 91\% accuracy, indicating a good performance even on this dataset. We can answer affirmatively to the questions we asked.  
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/noise.png}
-    \caption{Test of the performance of the best individual on a new dataset with noise. The circuit is revealed to be robust against noise, correctly classifying 91\% of the point.}
+    \caption{Test of the performance of the best individual on a new dataset with noise. The circuit is revealed to be robust against noise, correctly classifying 91\% of the points.}
     \label{fig:noise}
 \end{figure}
 
 \subsubsection{Moon dataset}
 
-Let's now test the performance on another artificial dataset, the moon dataset. The algorithm conceptually works in the same way of the circle dataset, we utilized the same initial parameters as well, shown in Table (\ref{tabella accettanza}).
+Let's now test the performance of the genetic algorithm on another artificial dataset, the moon dataset.\cite{pedregosa2011} The algorithm conceptually works in the same way of the circle dataset, we utilized the same initial parameters as well, shown in Table (\ref{tabella accettanza}).
 
 The resulting final circuit is shown in Figure \ref{fig:mooncircuit}, and its performance on the dataset in Figure \ref{fig:moonboh}, achieving an accuracy of 90\%. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/mooncircuit.png}
-    \caption{Final circuit of the genetic algorithm used on the moon dataset.}
+    \caption{Final circuit produced by the genetic algorithm used on the moon dataset.}
     \label{fig:mooncircuit}
 \end{figure}\begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/moonboh.png}
-    \caption{Performance of the final circuit on the moon dataset. Even in this case a good accuracy is achieved.}
+    \caption{Performance of the final circuit on the moon dataset. Even in this case a good accuracy (90\%) is achieved.}
     \label{fig:moonboh}
 \end{figure}
 
 
 \newpage 
-\section{Conclusions}
+\section{Conclusions and Directions for Future Work}
 The Quantum Support Vector Machine is an algorithm with great potential to outperform classical supervised classification models. Once fully implemented on a large scalable quantum device, we think it will successfully classify large datasets with many features and complicated patterns, that are intractable with classical methods. 
 
-However we found it to be a very peaky algorithm in the choice of the quantum embedding circuit, so it is essential to use a proper algorithm to construct such a circuit, as using standard rule of thumb is often insufficient. The possibility we explored in this work is the one of a genetic algorithm. 
+However, we found it to be a very peaky algorithm in the choice of the quantum embedding circuit, so it is essential to use a proper algorithm to construct such a circuit, as using standard rule of thumb is often insufficient. The possibility we explored in this work is the one of using a genetic algorithm. 
 
 The algorithm showed great performance on simple 2D datasets, finding the optimal circuit that we were not able to find with other methods, opening the road to a broader application of genetic algorithms for QSVM, and in general in the field of Quantum Machine Learning. 
 
@@ -945,77 +947,52 @@ The goal now would be to further study the performance of the genetic algorithm 
 
 \begin{thebibliography}{9}
 
-\bibitem{biamonte2017}
-Biamonte, J., Wittek, P., Pancotti, N., Rebentrost, P., Wiebe, N., \& Lloyd, S. (2017). \textit{Quantum machine learning}. Nature, 549(7671), 195-202. DOI:10.1038/nature23474.
-
-    \bibitem{havlicek2019}
-Havlíček, V., Córcoles, A.D., Temme, K., Harrow, A.W., Kandala, A., Chow, J.M., \& Gambetta, J.M. (2019). \textit{Supervised learning with quantum-enhanced feature spaces}. Nature, 567(7747), 209-212. DOI:10.1038/s41586-019-0980-2.
-
-\bibitem{cristianini2000}
-Cristianini, N., \& Shawe-Taylor, J. (2000). \textit{An Introduction to Support Vector Machines and Other Kernel-based Learning Methods}. Cambridge University Press.
-    
-\bibitem{pedregosa2011}
-Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., \& Grisel, O. (2011). \textit{Scikit-learn: Machine Learning in Python}. Journal of Machine Learning Research, 12, 2825-2830.
-
-
-    \bibitem{ivezic1994}
-    Ivezić, Ž., Connolly, A. J., VanderPlas, J. T., \& Gray, A. (1994). \textit{Statistics, Data Mining, and Machine Learning in Astronomy}. Princeton University Press.
-    
-    \bibitem{mitchell1999}
-    Mitchell, M. (1999). \textit{An Introduction to Genetic Algorithms}. MIT Press.
-    
-    \bibitem{eiben2003}
-    Eiben, A. E., \& Smith, J. E. (2003). \textit{Introduction to Evolutionary Computing}. Springer.
-    
-    \bibitem{sunckel2023}
-    Sünkel, L. (2023). \textit{GA4QCO: Genetic Algorithm for Quantum Circuit Optimization}.
-    
+    \bibitem{biamonte2017}
+    Biamonte, Jacob, et al. "Quantum machine learning." Nature 549.7671 (2017): 195-202.
     \bibitem{creevey2023a}
-    Creevey, F. M. (2023). \textit{GASP: A Genetic Algorithm for State Preparation on Quantum Computers}.
-    
+    Creevey, Floyd M., Charles D. Hill, and Lloyd CL Hollenberg. "GASP: a genetic algorithm for state preparation on quantum computers." Scientific reports 13.1 (2023): 11956.
     \bibitem{creevey2023b}
-    Creevey, F. M. (2023). \textit{Kernel Alignment for Quantum Support Vector Machines Using Genetic Algorithms}.
-    
-    \bibitem{hubregtsen2021}
-    Hubregtsen, T., \& García-Pérez, G. (2021). \textit{Training Quantum Embedding Kernels on Near-Term Quantum Computers}.
-    
+    Creevey, Floyd M., et al. "Kernel Alignment for Quantum Support Vector Machines Using Genetic Algorithms." arXiv preprint arXiv:2312.01562 (2023).
+    \bibitem{cristianini2000}
+    Cristianini, Nello. An introduction to support vector machines and other kernel-based learning methods. Cambridge University Press, 2000.    
+    \bibitem{eiben2003}
+    Eiben, A. \& Smith, Jim. (2003). Introduction To Evolutionary Computing. 10.1007/978-3-662-05094-1.     
     \bibitem{glick2022}
-    Glick, J. R., \& Larocca, M. (2022). \textit{Covariant Quantum Kernels for Data with Group Structure}.
-    
-    \bibitem{schuld2021a}
-    Schuld, M., \& Killoran, N. (2021). \textit{Supervised Quantum Machine Learning Models Are Kernel Methods}. Quantum, 5, 456.
-    
-    \bibitem{zhou2024}
-    Zhou, X. (2024). \textit{Quantum Kernel Estimation-Based Quantum Support Vector Regression}.
-    
-    \bibitem{lloyd2022}
-    Lloyd, S., \& Rebentrost, P. (2022). \textit{Quantum Embeddings for Machine Learning}. Nature Reviews Physics, 4(9), 589-600.
-    
-    \bibitem{schuld2021b}
-    Schuld, M. (2021). \textit{Machine Learning with Quantum Computers}. Springer.
-    
+    Glick, Jennifer R., et al. "Covariant quantum kernels for data with group structure." Nature Physics 20.3 (2024): 479-483.    
+    \bibitem{havlicek2019}
+    Havlíček, Vojtěch, et al. "Supervised learning with quantum-enhanced feature spaces." Nature 567.7747 (2019): 209-212.    
+    \bibitem{hubregtsen2021}
+    Hubregtsen, Thomas, et al. "Training quantum embedding kernels on near-term quantum computers." Physical Review A 106.4 (2022): 042431.    
     \bibitem{innan2023}
-    Innan, N., \& Güler, H. (2023). \textit{Enhancing Quantum Support Vector Machines Through Variational Kernel Training}.
-    
-    \bibitem{schuld2018}
-    Schuld, M., \& Petruccione, F. (2018). \textit{Quantum Machine Learning in Feature Hilbert Spaces}. Springer.
-    
-    \bibitem{yang2019}
-    Yang, J., Ferrie, C., \& Auckenthaler, R. (2019). \textit{Support Vector Machines on Noisy Intermediate-Scale Quantum Computers}. Quantum Information Processing, 18(11), 313.
-    
+    Innan, Nouhaila, et al. "Enhancing quantum support vector machines through variational kernel training." Quantum Information Processing 22.10 (2023): 374.    
+    \bibitem{ivezic1994}
+    Ivezic, Željko, et al. "Statistics, Data Mining, and Machine Learning in Astronomy." A PRACTICAL PYTHON GUIDE TO SURVEY DATA ANALYSIS. Princeton University Press.[2014] (2014): 134.    
+    \bibitem{lloyd2022}
+    Lloyd, Seth, et al. "Quantum embeddings for machine learning." arXiv preprint arXiv:2001.03622 (2020).    
     \bibitem{liu2020}
-    Liu, Y., Arunachalam, S., \& Temme, K. (2020). \textit{A Rigorous and Robust Quantum Speed-Up in Supervised Machine Learning}. Nature Physics, 16(7), 773-777.
-    
-    \bibitem{rebentrost2014}
-    Rebentrost, P., Mohseni, M., \& Lloyd, S. (2014). \textit{Quantum Support Vector Machine for Big Data Classification}. Physical Review Letters, 113(13), 130503.
-    
+    Liu, Yunchao, Srinivasan Arunachalam, and Kristan Temme. "A rigorous and robust quantum speed-up in supervised machine learning." Nature Physics 17.9 (2021): 1013-1017.    
+    \bibitem{mitchell1999}
+    Mitchell, Melanie. An introduction to genetic algorithms. MIT press, 1998.    
     \bibitem{park2020}
-    Park, J.-E., \& Oh, S. J. (2020). \textit{Practical Application Improvement to Quantum SVM}. Quantum Information Processing, 19, 135.
-    
-    
-
-
-
+    Park, Jae-Eun, et al. "Practical application improvement to Quantum SVM: theory to practice." arXiv preprint arXiv:2012.07725 (2020).    
+    \bibitem{pedregosa2011}
+    Pedregosa, Fabian, et al. "Scikit-learn: Machine learning in Python." the Journal of machine Learning research 12 (2011): 2825-2830.    
+    \bibitem{rebentrost2014}
+    Rebentrost, Patrick, Masoud Mohseni, and Seth Lloyd. "Quantum support vector machine for big data classification." Physical review letters 113.13 (2014): 130503.    
+    \bibitem{schuld2018}
+    Schuld, Maria, and Nathan Killoran. "Quantum machine learning in feature hilbert spaces." Physical review letters 122.4 (2019): 040504.    
+    \bibitem{schuld2021a}
+    Schuld, Maria. "Supervised quantum machine learning models are kernel methods." arXiv preprint arXiv:2101.11020 (2021).    
+    \bibitem{schuld2021b}
+    Schuld, Maria, and Francesco Petruccione. Machine learning with quantum computers. Vol. 676. Berlin: Springer, 2021.    
+    \bibitem{spall1992}
+    Spall, James C. "Multivariate stochastic approximation using a simultaneous perturbation gradient approximation." IEEE transactions on automatic control 37.3 (1992): 332-341.    
+    \bibitem{sunckel2023}
+    Sünkel, Leo, et al. "GA4QCO: genetic algorithm for quantum circuit optimization." arXiv preprint arXiv:2302.01303 (2023).    
+    \bibitem{yang2019}
+    Yang, Jiaying, Ahsan Javed Awan, and Gemma Vall-Llosera. "Support vector machines on noisy intermediate scale quantum computers." arXiv preprint arXiv:1909.11988 (2019).    
+    \bibitem{zhou2024}
+    Zhou, Xiaojian, et al. "Quantum kernel estimation-based quantum support vector regression." Quantum Information Processing 23.1 (2024): 29.    
 
 
 

@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {4}Genetic algorithm}{43}{section.4}%
 \contentsline {subsection}{\numberline {4.1}General introduction}{43}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Genetic algorithm for QSVM}{44}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Results}{53}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Results of the Experiments}{53}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4.3.1}Circle dataset}{53}{subsubsection.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.3.2}Moon dataset}{59}{subsubsection.4.3.2}%
-\contentsline {section}{\numberline {5}Conclusions}{61}{section.5}%
+\contentsline {section}{\numberline {5}Conclusions and Directions for Future Work}{62}{section.5}%

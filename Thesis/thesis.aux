@@ -64,11 +64,11 @@
 \newlabel{loss function}{{48}{28}{QSVM algorithm and Qiskit implementation}{equation.3.48}{}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Quantum Support Vector Machine (QSVM)}}{29}{algorithm.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5}QSVM potential}{30}{subsection.3.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces QSVM decision boundary with ZFeatureMap, fitted on a 2 feature mock dataset of 200 instances.}}{31}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:qsvm}{{8}{31}{QSVM decision boundary with ZFeatureMap, fitted on a 2 feature mock dataset of 200 instances}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces QSVM decision boundary with ZFeatureMap, fitted on a two feature mock dataset of 200 instances.}}{31}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:qsvm}{{8}{31}{QSVM decision boundary with ZFeatureMap, fitted on a two feature mock dataset of 200 instances}{figure.caption.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Artificial ad hoc dataset, generated with $\Delta =0.3$. This dataset, by construction, is easily separable by ZZFeatureMap.}}{32}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:adhoc}{{9}{32}{Artificial ad hoc dataset, generated with $\Delta =0.3$. This dataset, by construction, is easily separable by ZZFeatureMap}{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes. }}{33}{figure.caption.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes.}}{33}{figure.caption.11}\protected@file@percent }
 \newlabel{fig:adhocrbf}{{10}{33}{Result of the classical fit with RBF kernel on the artificial dataset. We observe how the SVM could not find the correct separation between the classes}{figure.caption.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Issues of QSVM}{33}{subsection.3.6}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Result of the quantum fit on the artificial dataset, with ZZFeatureMap. We observe how the QSVM found the correct separation between the classes.}}{34}{figure.caption.12}\protected@file@percent }
@@ -78,15 +78,21 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Quantum kernel alignment}{36}{subsection.3.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.1}Circuit optimization}{36}{subsubsection.3.7.1}\protected@file@percent }
 \newlabel{qka}{{52}{36}{Circuit optimization}{equation.3.52}{}}
+\citation{spall1992}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Parametrized quantum circuit, with two rotation inserted before a ZZFeatureMap.}}{39}{figure.caption.14}\protected@file@percent }
 \newlabel{fig:param rotation}{{13}{39}{Parametrized quantum circuit, with two rotation inserted before a ZZFeatureMap}{figure.caption.14}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Parametrized quantum circuit, with a ZZFeatureMap inserted before another ZZFeatureMap. The former has the parameters $\lambda $ for Quantum Kernel Alignment, while the latter has the parameters $\mathbf  {x}$ in order to encode the classical instance.}}{39}{figure.caption.15}\protected@file@percent }
 \newlabel{fig:ZZafterZZ}{{14}{39}{Parametrized quantum circuit, with a ZZFeatureMap inserted before another ZZFeatureMap. The former has the parameters $\lambda $ for Quantum Kernel Alignment, while the latter has the parameters $\mathbf {x}$ in order to encode the classical instance}{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.2}Performance}{40}{subsubsection.3.7.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Result of the fit of circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}}{41}{figure.caption.16}\protected@file@percent }
-\newlabel{fig:qka}{{15}{41}{Result of the fit of circular dataset using QKA-QSVM. An accuracy of 50\% is achieved}{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix.}}{41}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:loss function}{{16}{41}{On the left convergence of the loss function during the QKA training. On the right the final trained kernel matrix}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Result of the fit of the circular dataset using QKA-QSVM. An accuracy of 50\% is achieved.}}{41}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:qka}{{15}{41}{Result of the fit of the circular dataset using QKA-QSVM. An accuracy of 50\% is achieved}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces On the left, the convergence of the loss function during the QKA training is shown. On the right, we can see the final trained kernel matrix.}}{41}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:loss function}{{16}{41}{On the left, the convergence of the loss function during the QKA training is shown. On the right, we can see the final trained kernel matrix}{figure.caption.17}{}}
+\citation{creevey2023a}
+\citation{creevey2023b}
+\citation{sunckel2023}
+\citation{mitchell1999}
+\citation{eiben2003}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Genetic algorithm}{43}{section.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}General introduction}{43}{subsection.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Genetic algorithm for QSVM}{44}{subsection.4.2}\protected@file@percent }
@@ -102,51 +108,55 @@
 \newlabel{fig:2child}{{21}{48}{Second child phenotype}{figure.caption.19}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Starting non mutated individual.}}{49}{figure.caption.20}\protected@file@percent }
 \newlabel{fig:mutated}{{22}{49}{Starting non mutated individual}{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Mutated individual. The first gene is mutated from a $\sqrt  {X}$ acting on the first qubit into an $R_z$ acting again on the first qubit. The other genes in this case were not mutated.}}{49}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:nonmutated}{{23}{49}{Mutated individual. The first gene is mutated from a $\sqrt {X}$ acting on the first qubit into an $R_z$ acting again on the first qubit. The other genes in this case were not mutated}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Mutated individual. The first gene is mutated from a $\sqrt  {X}$ gate acting on the first qubit into an $R_z$ gate acting again on the first qubit. The other genes in this case were not mutated.}}{49}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:nonmutated}{{23}{49}{Mutated individual. The first gene is mutated from a $\sqrt {X}$ gate acting on the first qubit into an $R_z$ gate acting again on the first qubit. The other genes in this case were not mutated}{figure.caption.20}{}}
 \newlabel{accuracy}{{59}{50}{Genetic algorithm for QSVM}{equation.4.59}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Fitness of an individual as a function of its accuracy on the test set. This choice is made to properly penalize bad performing individuals.}}{51}{figure.caption.21}\protected@file@percent }
 \newlabel{fig:fitness function}{{24}{51}{Fitness of an individual as a function of its accuracy on the test set. This choice is made to properly penalize bad performing individuals}{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Results}{53}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Results of the Experiments}{53}{subsection.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Circle dataset}{53}{subsubsection.4.3.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parameters of the genetic algorithm}}{55}{table.caption.22}\protected@file@percent }
-\newlabel{tabella accettanza}{{1}{55}{Parameters of the genetic algorithm}{table.caption.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Final circuit of the genetic algorithm. This is the phenotype of the best individual of the last generation. This is the circuit with the best performance on this dataset that the genetic algorithm could find.}}{55}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:final circuit}{{25}{55}{Final circuit of the genetic algorithm. This is the phenotype of the best individual of the last generation. This is the circuit with the best performance on this dataset that the genetic algorithm could find}{figure.caption.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parameters of the genetic algorithm, and their initial value.}}{55}{table.caption.22}\protected@file@percent }
+\newlabel{tabella accettanza}{{1}{55}{Parameters of the genetic algorithm, and their initial value}{table.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Final circuit produced by the genetic algorithm. Being the phenotype of the best individual of the last generation, this is the circuit with the best performance on this dataset that the genetic algorithm could find.}}{55}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:final circuit}{{25}{55}{Final circuit produced by the genetic algorithm. Being the phenotype of the best individual of the last generation, this is the circuit with the best performance on this dataset that the genetic algorithm could find}{figure.caption.23}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Mean accuracy of each generation. We observe a consistent increase of the accuracy, ensuring that the genetic algorithm is improving the performance of the feature maps from generation to generation.}}{56}{figure.caption.24}\protected@file@percent }
 \newlabel{fig:mean accuracy}{{26}{56}{Mean accuracy of each generation. We observe a consistent increase of the accuracy, ensuring that the genetic algorithm is improving the performance of the feature maps from generation to generation}{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Final test of the resulting circuit of the genetic algorithm on a new dataset with respect the one it was trained on. The fact that the circuit is well performing on this dataset indicates that we actually found a circuit well performing on this sort of datasets.}}{57}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:awesome}{{27}{57}{Final test of the resulting circuit of the genetic algorithm on a new dataset with respect the one it was trained on. The fact that the circuit is well performing on this dataset indicates that we actually found a circuit well performing on this sort of datasets}{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Test of the performance of an individual from the first generation on the same dataset. We observe how its performance is very low, indicating that the first generation of individuals performs poorly as we expected.}}{58}{figure.caption.26}\protected@file@percent }
-\newlabel{fig:bad}{{28}{58}{Test of the performance of an individual from the first generation on the same dataset. We observe how its performance is very low, indicating that the first generation of individuals performs poorly as we expected}{figure.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Test of the performance of the best individual on a new dataset with noise. The circuit is revealed to be robust against noise, correctly classifying 91\% of the point.}}{59}{figure.caption.27}\protected@file@percent }
-\newlabel{fig:noise}{{29}{59}{Test of the performance of the best individual on a new dataset with noise. The circuit is revealed to be robust against noise, correctly classifying 91\% of the point}{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Maximum accuracy of each generation.}}{57}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:max accuracy}{{27}{57}{Maximum accuracy of each generation}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces A further test of the resulting circuit of the genetic algorithm on a new dataset, with respect to the one it was trained on. The fact that the circuit is well performing also on this dataset indicates that we actually found a circuit well performing on this sort of datasets.}}{58}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:awesome}{{28}{58}{A further test of the resulting circuit of the genetic algorithm on a new dataset, with respect to the one it was trained on. The fact that the circuit is well performing also on this dataset indicates that we actually found a circuit well performing on this sort of datasets}{figure.caption.26}{}}
+\citation{pedregosa2011}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Test of the performance of the best fitness individual from the first generation on the same dataset. We observe how its performance is very low, indicating that the first generation of individuals performs poorly as we expected.}}{59}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:bad}{{29}{59}{Test of the performance of the best fitness individual from the first generation on the same dataset. We observe how its performance is very low, indicating that the first generation of individuals performs poorly as we expected}{figure.caption.27}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Moon dataset}{59}{subsubsection.4.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Final circuit of the genetic algorithm used on the moon dataset.}}{60}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:mooncircuit}{{30}{60}{Final circuit of the genetic algorithm used on the moon dataset}{figure.caption.28}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Performance of the final circuit on the moon dataset. Even in this case a good accuracy is achieved.}}{60}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:moonboh}{{31}{60}{Performance of the final circuit on the moon dataset. Even in this case a good accuracy is achieved}{figure.caption.29}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusions}{61}{section.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Test of the performance of the best individual on a new dataset with noise. The circuit is revealed to be robust against noise, correctly classifying 91\% of the points.}}{60}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:noise}{{30}{60}{Test of the performance of the best individual on a new dataset with noise. The circuit is revealed to be robust against noise, correctly classifying 91\% of the points}{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Final circuit produced by the genetic algorithm used on the moon dataset.}}{61}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:mooncircuit}{{31}{61}{Final circuit produced by the genetic algorithm used on the moon dataset}{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Performance of the final circuit on the moon dataset. Even in this case a good accuracy (90\%) is achieved.}}{61}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:moonboh}{{32}{61}{Performance of the final circuit on the moon dataset. Even in this case a good accuracy (90\%) is achieved}{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusions and Directions for Future Work}{62}{section.5}\protected@file@percent }
 \bibcite{biamonte2017}{1}
-\bibcite{havlicek2019}{2}
-\bibcite{cristianini2000}{3}
-\bibcite{pedregosa2011}{4}
-\bibcite{ivezic1994}{5}
-\bibcite{mitchell1999}{6}
-\bibcite{eiben2003}{7}
-\bibcite{sunckel2023}{8}
-\bibcite{creevey2023a}{9}
-\bibcite{creevey2023b}{10}
-\bibcite{hubregtsen2021}{11}
-\bibcite{glick2022}{12}
-\bibcite{schuld2021a}{13}
-\bibcite{zhou2024}{14}
-\bibcite{lloyd2022}{15}
-\bibcite{schuld2021b}{16}
-\bibcite{innan2023}{17}
-\bibcite{schuld2018}{18}
-\bibcite{yang2019}{19}
-\bibcite{liu2020}{20}
-\bibcite{rebentrost2014}{21}
-\bibcite{park2020}{22}
-\gdef \@abspage@last{64}
+\bibcite{creevey2023a}{2}
+\bibcite{creevey2023b}{3}
+\bibcite{cristianini2000}{4}
+\bibcite{eiben2003}{5}
+\bibcite{glick2022}{6}
+\bibcite{havlicek2019}{7}
+\bibcite{hubregtsen2021}{8}
+\bibcite{innan2023}{9}
+\bibcite{ivezic1994}{10}
+\bibcite{lloyd2022}{11}
+\bibcite{liu2020}{12}
+\bibcite{mitchell1999}{13}
+\bibcite{park2020}{14}
+\bibcite{pedregosa2011}{15}
+\bibcite{rebentrost2014}{16}
+\bibcite{schuld2018}{17}
+\bibcite{schuld2021a}{18}
+\bibcite{schuld2021b}{19}
+\bibcite{spall1992}{20}
+\bibcite{sunckel2023}{21}
+\bibcite{yang2019}{22}
+\bibcite{zhou2024}{23}
+\gdef \@abspage@last{66}

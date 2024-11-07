@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1730462074.4717 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1730462076.94516 0
+["pdflatex"] 1730984889.46182 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1730984892.2926 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1730462069.66815 77268 5c198f51cab5fe8bf021e5687fb35f35 ""
+  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1730984885.97656 78185 89c37fced8707302de488a63b96973ad ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -166,6 +166,7 @@
   "images/fenotip.png" 1727165767.18602 10245 319d3eb4a6b9262d7e32f14bf173deca ""
   "images/finalcircuit.png" 1728145588.19026 8415 a364aeeeb997161484af82ee8c603af0 ""
   "images/lossfunction.png" 1726666101.59199 281351 1c70327288657feff3de867dd02e8a52 ""
+  "images/maxaccuracy.png" 1730984530.77991 16558 0f2bb7297037ef8e20447045f91bc399 ""
   "images/meanaccuracy.png" 1728146802.61283 25984 99c4d4d9ee540f0e45d99eb2323da841 ""
   "images/moonboh.png" 1728373334.47251 41135 2d3487c8a641f1168aa887ff2c7cdc14 ""
   "images/mooncircuit.png" 1729008422.92056 11011 0c40b63ef955bccc3cf7bfb9b7167b8f ""
@@ -179,10 +180,10 @@
   "images/qsvm.png" 1723887338.82258 19468 3c842e7ab778c9ddee32a5043ba3e239 ""
   "images/rotationsbeforeZZ.png" 1726645290.56988 11896 48e6b6c2b4009bb2386793ff4f5ed202 ""
   "images/sigmoid.png" 1728028140.10736 20513 377d5aba67e1619960f35ff72f65d0d9 ""
-  "thesis.aux" 1730462076.79513 19978 ffae01b6703322ad5ba81d5934ec9b55 "pdflatex"
-  "thesis.out" 1730462076.79813 3633 f0825e5e3510e6b2f46e7df32cda2628 "pdflatex"
-  "thesis.tex" 1730462069.66815 77268 5c198f51cab5fe8bf021e5687fb35f35 ""
-  "thesis.toc" 1730462076.79813 2018 2646f51da7d5e4eb1baccbc27b9d52ad "pdflatex"
+  "thesis.aux" 1730984892.11257 20704 6a1fb5335847b7600f50f0072dd210e1 "pdflatex"
+  "thesis.out" 1730984892.11557 3907 6e02ea6f05468ba83205cb4f661b905a "pdflatex"
+  "thesis.tex" 1730984885.97656 78185 89c37fced8707302de488a63b96973ad ""
+  "thesis.toc" 1730984892.11657 2068 72bc51beaa220712c91efd06870f06f3 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.log"
