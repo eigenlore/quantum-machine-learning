@@ -936,7 +936,7 @@ The Support Vector Machine can be also used to perform regression tasks: in this
 
 The model produced by Support Vector Classification depends only on a subset of the training data, because the cost function for building the model does not consider the training points that lie beyond the margin. Analogously, the model produced by SVR depends only on a subset of the training data, because the cost function for building the model ignores any training data close to the model prediction.
 
-As for the Support Vector Classifier (SVC), also the SVR algorithm can be ultimately reduced to a dual minimization problem, with dual variables $\alpha_i$. In this case the function to minimize is \cite{drucker}:
+As for the Support Vector Classifier (SVC), also the SVR algorithm can be ultimately reduced to a dual minimization problem. The dual variables $\alpha_i$ are just fictitious variables of the dual problem. In this case the function to minimize is \cite{drucker}:
 \begin{equation}
     \min_{\alpha, \alpha^*} \frac{1}{2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1} (\alpha_i-\alpha^*_i)(\alpha_j-\alpha^*_j) K_{ij}-\sum_{i=0}^{N-1} (\alpha_i-\alpha^*_i)+\epsilon\sum_{i=0}^{N-1} (\alpha_i+\alpha^*_i),
 \end{equation}
@@ -988,7 +988,7 @@ The genetic algorithm is run with the parameters shown in Table \ref{tabella acc
      Probability of a mutation & 10\% \\  
      \hline
     \end{tabular}
-    \caption{Parameters of the genetic algorithm, and their initial value. The target fitness has been chosen by looking at the performance of the classical SVR with RBF kernel.}
+    \caption{Parameters of the genetic algorithm, and their initial value. The target fitness has been chosen by looking at the performance of the classical SVR with RBF kernel. The other parameters have been chosen with the same philosophy of the QSCV case, that is keeping the circuit compact, and having a maximum number of generations compatible with the computational power available.}
     \label{tabella accettanza svr}
 \end{table}
 The mean accuracy of the generations is shown in Figure \ref{fig:mean accuracy svr}.

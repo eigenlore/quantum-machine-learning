@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1731063529.68964 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1731063535.973 0
+["pdflatex"] 1731077796.63922 "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" "thesis.pdf" "thesis" 1731077801.49932 0
   "/etc/texmf/web2c/texmf.cnf" 1690461169.0687 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1731063529.19506 83087 d333857c35ac63c033b3adafc28949cd ""
+  "/home/lore/Documents/Università/quantum-machine-learning/Thesis/thesis.tex" 1731077796.12807 83348 32c35e7c0f7f0bddc5415429855a7f46 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -181,10 +181,10 @@
   "images/qsvm.png" 1723887338.82258 19468 3c842e7ab778c9ddee32a5043ba3e239 ""
   "images/rotationsbeforeZZ.png" 1726645290.56988 11896 48e6b6c2b4009bb2386793ff4f5ed202 ""
   "images/sigmoid.png" 1728028140.10736 20513 377d5aba67e1619960f35ff72f65d0d9 ""
-  "thesis.aux" 1731063535.70631 21951 138a993869f46858bcfa19031173170b "pdflatex"
-  "thesis.out" 1731063535.71131 4274 819e44c20413f53dcc6e1085da0d17f9 "pdflatex"
-  "thesis.tex" 1731063529.19506 83087 d333857c35ac63c033b3adafc28949cd ""
-  "thesis.toc" 1731063535.71231 2242 9f9ec3617b18cf918ba42b507ceb4915 "pdflatex"
+  "thesis.aux" 1731077801.33807 22375 5716510b5570929d4b6f51afa70ad2a4 "pdflatex"
+  "thesis.out" 1731077801.34207 4274 819e44c20413f53dcc6e1085da0d17f9 "pdflatex"
+  "thesis.tex" 1731077796.12807 83348 32c35e7c0f7f0bddc5415429855a7f46 ""
+  "thesis.toc" 1731077801.34307 2242 9f9ec3617b18cf918ba42b507ceb4915 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.log"
