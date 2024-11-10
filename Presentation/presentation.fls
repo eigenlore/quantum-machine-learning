@@ -344,10 +344,6 @@ INPUT ./images/1.png
 INPUT ./images/1.png
 INPUT ./images/1.png
 INPUT ./images/1.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
@@ -375,11 +371,11 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
-INPUT ./images/classicaldata.png
-INPUT ./images/classicaldata.png
-INPUT ./images/classicaldata.png
-INPUT ./images/classicaldata.png
-INPUT ./images/classicaldata.png
+INPUT ./images/genetic-algorithms-in-python.png
+INPUT ./images/genetic-algorithms-in-python.png
+INPUT ./images/genetic-algorithms-in-python.png
+INPUT ./images/genetic-algorithms-in-python.png
+INPUT ./images/genetic-algorithms-in-python.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
@@ -396,23 +392,11 @@ INPUT ./images/logo.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
-INPUT ./images/classicalsvm.png
-INPUT ./images/classicalsvm.png
-INPUT ./images/classicalsvm.png
-INPUT ./images/classicalsvm.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
 INPUT ./images/circles.png
 INPUT ./images/circles.png
 INPUT ./images/circles.png
 INPUT ./images/circles.png
 INPUT ./images/circles.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
 INPUT ./images/circles3d.png
 INPUT ./images/circles3d.png
 INPUT ./images/circles3d.png
@@ -422,37 +406,11 @@ INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
-INPUT ./images/separatedcircle.png
-INPUT ./images/separatedcircle.png
-INPUT ./images/separatedcircle.png
-INPUT ./images/separatedcircle.png
-INPUT ./images/separatedcircle.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
 INPUT ./images/Pasted image.png
 INPUT ./images/Pasted image.png
 INPUT ./images/Pasted image.png
 INPUT ./images/Pasted image.png
 INPUT ./images/Pasted image.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/Pasted image.png
-INPUT ./images/Pasted image.png
-INPUT ./images/Pasted image.png
-INPUT ./images/Pasted image.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/Pasted image (2).png
-INPUT ./images/Pasted image (2).png
-INPUT ./images/Pasted image (2).png
-INPUT ./images/Pasted image (2).png
-INPUT ./images/Pasted image (2).png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
@@ -462,19 +420,6 @@ INPUT ./images/ZZ.png
 INPUT ./images/ZZ.png
 INPUT ./images/ZZ.png
 INPUT ./images/ZZ.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/adhoc.png
-INPUT ./images/adhoc.png
-INPUT ./images/adhoc.png
-INPUT ./images/adhoc.png
-INPUT ./images/adhoc.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
 INPUT ./images/adhoczz.png
 INPUT ./images/adhoczz.png
 INPUT ./images/adhoczz.png
@@ -484,6 +429,11 @@ INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
+INPUT ./images/adhocpoly.png
+INPUT ./images/adhocpoly.png
+INPUT ./images/adhocpoly.png
+INPUT ./images/adhocpoly.png
+INPUT ./images/adhocpoly.png
 INPUT ./images/adhocrbf.png
 INPUT ./images/adhocrbf.png
 INPUT ./images/adhocrbf.png
@@ -498,14 +448,11 @@ INPUT ./images/failcircle.png
 INPUT ./images/failcircle.png
 INPUT ./images/failcircle.png
 INPUT ./images/failcircle.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/failcircle.png
-INPUT ./images/failcircle.png
-INPUT ./images/failcircle.png
-INPUT ./images/failcircle.png
+INPUT ./images/failmoon.png
+INPUT ./images/failmoon.png
+INPUT ./images/failmoon.png
+INPUT ./images/failmoon.png
+INPUT ./images/failmoon.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
@@ -524,19 +471,6 @@ INPUT ./images/fenotip.png
 INPUT ./images/fenotip.png
 INPUT ./images/fenotip.png
 INPUT ./images/fenotip.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/sigmoid.png
-INPUT ./images/sigmoid.png
-INPUT ./images/sigmoid.png
-INPUT ./images/sigmoid.png
-INPUT ./images/sigmoid.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
-INPUT ./images/logo.png
 INPUT ./images/badresult.png
 INPUT ./images/badresult.png
 INPUT ./images/badresult.png
@@ -590,6 +524,70 @@ INPUT ./images/meanaccuracy.png
 INPUT ./images/meanaccuracy.png
 INPUT ./images/meanaccuracy.png
 INPUT ./images/meanaccuracy.png
+INPUT ./images/maxaccuracy.png
+INPUT ./images/maxaccuracy.png
+INPUT ./images/maxaccuracy.png
+INPUT ./images/maxaccuracy.png
+INPUT ./images/maxaccuracy.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/awesomeresult.png
+INPUT ./images/awesomeresult.png
+INPUT ./images/awesomeresult.png
+INPUT ./images/awesomeresult.png
+INPUT ./images/awesomeresult.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/finalcircuit.png
+INPUT ./images/noise.png
+INPUT ./images/noise.png
+INPUT ./images/noise.png
+INPUT ./images/noise.png
+INPUT ./images/noise.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/moonsrbf.png
+INPUT ./images/moonsrbf.png
+INPUT ./images/moonsrbf.png
+INPUT ./images/moonsrbf.png
+INPUT ./images/moonsrbf.png
+INPUT ./images/qsvm.png
+INPUT ./images/qsvm.png
+INPUT ./images/qsvm.png
+INPUT ./images/qsvm.png
+INPUT ./images/qsvm.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/multi.png
+INPUT ./images/multi.png
+INPUT ./images/multi.png
+INPUT ./images/multi.png
+INPUT ./images/multi.png
+INPUT ./images/device.png
+INPUT ./images/device.png
+INPUT ./images/device.png
+INPUT ./images/device.png
+INPUT ./images/device.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
+INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
 INPUT ./images/logo.png
@@ -603,6 +601,7 @@ INPUT ./presentation.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb

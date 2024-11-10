@@ -9,12 +9,18 @@
 \title[Genetic algorithm for QSVM] 
 {Genetic algorithm for Quantum Support Vector Machines}
 
-
-
 \author[Lorenzo Tasca]
 {Lorenzo Tasca}
  
+\institute[]
+{
 
+  Dipartimento di Fisica “Giuseppe Occhialini”\\
+  Università degli Studi di Milano-Bicocca\\\,\\
+  Relatore: Alberto Ottavio Leporati\\
+  Correlatore: Alberto Zaffaroni
+  
+}
 \date[25/11/2024] 
 {25 Novembre 2024}
 
@@ -25,11 +31,16 @@
 \frame{\titlepage}
 
 \begin{frame}
-\frametitle{Quantum Machine Learning}
+\frametitle{Quantum Machine Learning  +  Genetic Algorithm}
 \centering
-\begin{figure}
-      \includegraphics[width=1.1\textwidth]{images/1.png}
-     \end{figure}
+     \begin{minipage}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/1.png}
+  \end{minipage}%
+  \begin{minipage}{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.8\textwidth]{images/genetic-algorithms-in-python.png}
+  \end{minipage}
 \end{frame}
 
 
@@ -37,107 +48,59 @@
 \begin{frame}
   \frametitle{Support Vector Machine}
     \begin{itemize}
-      \item     La Support Vector Machine è un algoritmo supervisionato di classificazione binaria. 
+      \item La SVM è un algoritmo supervisionato di classificazione binaria.
     \end{itemize}
       \begin{figure}
-            \includegraphics[width=0.7\textwidth]{images/classicaldata.png}
+            \includegraphics[width=0.7\textwidth]{images/classicalsvm.png}
        \end{figure}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Kernel Support Vector Machine}
+    \begin{columns}
+      \column{0.5\textwidth}
+    
+      \begin{itemize}
+        \item Nel caso in cui i dati non siano linearmente separabili?\\\,
+        \item È possibile applicare una feature map $\phi(\mathbf{x})$.\\\,
+        \item $K_{ij}=\langle \phi(\mathbf{x}_i), \phi(\mathbf{x}_j)\rangle$. \\\,\\\,
+      \end{itemize}
+      
+      \column{0.5\textwidth}
+   
+  
+      \begin{minipage}{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/circles.png}
+    \end{minipage}
+    \begin{minipage}{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/circles3d.png}
+    \end{minipage}
+  
+      
+      \end{columns}
+  
   \end{frame}
 
 
 
-  \begin{frame}
-    \frametitle{Support Vector Machine}
-      \begin{itemize}
-        \item L'algoritmo trova il massimo margine separatore tra le classi. 
-      \end{itemize}
-        \begin{figure}
-              \includegraphics[width=0.7\textwidth]{images/classicalsvm.png}
-         \end{figure}
-    \end{frame}
-
-
-    \begin{frame}
-      \frametitle{Support Vector Machine}
-        \begin{itemize}
-          \item Per farlo utilizza solo i prodotti scalari tra i dati $\langle \mathbf{x}_i, \mathbf{x}_j\rangle$.  
-        \end{itemize}
-          \begin{figure}
-                \includegraphics[width=0.7\textwidth]{images/classicalsvm.png}
-           \end{figure}
-      \end{frame}
-
 
 \begin{frame}
-  \frametitle{Kernel Support Vector Machine}
-  
-  \begin{itemize}
-    \item Nel caso in cui i dati non siano linearmente separabili?
-  \end{itemize}
-     
-        \begin{figure}
-          \includegraphics[width=0.7\textwidth]{images/circles.png}
-        \end{figure}
-        
-\end{frame}
-
-\begin{frame}
-  \frametitle{Kernel Support Vector Machine}
-  
-  \begin{itemize}
-    \item È possibile applicare una feature map $\phi(\mathbf{x})$.
-  \end{itemize}
-     
-        \begin{figure}
-          \includegraphics[width=0.6\textwidth]{images/circles3d.png}
-        \end{figure}
-        
-\end{frame}
-
-\begin{frame}
-  \frametitle{Kernel Support Vector Machine}
-  
-  \begin{itemize}
-    \item L'algoritmo è interessato solo a $K_{ij}=\langle \phi(\mathbf{x}_i), \phi(\mathbf{x}_j) \rangle$.
-
-  \end{itemize}
-     
-        \begin{figure}
-          \includegraphics[width=0.7\textwidth]{images/separatedcircle.png}
-        \end{figure}
-        
-\end{frame}
-
-
-
-
-
-
-
-
-\begin{frame}
-
   \frametitle{Quantum Support Vector Machine}
-  
   \begin{columns}
     \column{0.5\textwidth}
   
     \begin{itemize}
-      \item<1-> La feature map diventa un circuito quantistico parametrizzato. \\\,
-          \item<2-> $|\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}$.\\\,
-          \item<3->  $K_{ij}=\langle \phi(\mathbf{x}_i)| \phi(\mathbf{x}_j) \rangle.$
+      \item La feature map diventa un circuito quantistico parametrizzato. \\\,
+          \item $|\phi(\mathbf{x})\rangle=U(\mathbf{x})|0\rangle^{\otimes n}$.\\\,
+          \item$K_{ij}=\langle \phi(\mathbf{x}_i)| \phi(\mathbf{x}_j) \rangle.$\\\,\\\,
           \end{itemize}
     
     \column{0.5\textwidth}
-    \only{\begin{figure}
+    \begin{figure}
           \includegraphics[width=0.7\textwidth]{images/Pasted image.png}
-     \end{figure}}<1>
-     \only{\begin{figure}
-      \includegraphics[width=0.7\textwidth]{images/Pasted image.png}
- \end{figure}}<2>
-     \only{\begin{figure}
-      \includegraphics[width=\textwidth]{images/Pasted image (2).png}
- \end{figure}}<3>
+     \end{figure}
 
 
     
@@ -150,77 +113,57 @@
   \frametitle{Quantum Kernels}
   
   \begin{itemize}
-    \item Un esempio possibile: la ZZ Feature Map. \\\,
+    \item Un esempio: la ZZ Feature Map.
+    \item  Ottime performance su dataset complessi.  
   \end{itemize}
      
-        \begin{figure}
+\vspace{0.8cm}
+       \begin{minipage}{0.5\textwidth}
+          \centering
           \includegraphics[width=\textwidth]{images/ZZ.png}
-        \end{figure}
-        
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Quantum Kernels}
-  
-  \begin{itemize}
-    \item Ottime performance su dataset complessi. 
-  \end{itemize}
-        \begin{figure}
-          \includegraphics[width=0.7\textwidth]{images/adhoc.png}
-        \end{figure}
+      \end{minipage}%
+      \begin{minipage}{0.5\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{images/adhoczz.png}
+      \end{minipage}
         
 \end{frame}
 
 \begin{frame}
   \frametitle{Quantum Kernels}
-  
   \begin{itemize}
-    \item Ottime performance su dataset complessi.  
+    \item I metodi classici falliscono.
   \end{itemize}
-        \begin{figure}
-          \includegraphics[width=0.7\textwidth]{images/adhoczz.png}
-        \end{figure}
-        
+    \vspace{0.8cm}
+    \begin{minipage}{0.5\textwidth}
+       \centering
+       \includegraphics[width=\textwidth]{images/adhocpoly.png}
+   \end{minipage}%
+   \begin{minipage}{0.5\textwidth}
+       \centering
+       \includegraphics[width=\textwidth]{images/adhocrbf.png}
+   \end{minipage}
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{Quantum Kernels}
+  \frametitle{Quantum Kernel}
   \begin{itemize}
-    \item I metodi classici falliscono.  
+    \item Tuttavia la scelta del kernel risulta spesso problematica. 
   \end{itemize}
-        \begin{figure}
-          \includegraphics[width=0.7\textwidth]{images/adhocrbf.png}
-        \end{figure}
-        
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Scelta del Quantum Kernel}
-  \begin{itemize}
-    \item La scelta del kernel risulta spesso problematica. 
-  \end{itemize}
-        \begin{figure}
-          \includegraphics[width=0.7\textwidth]{images/failcircle.png}
-        \end{figure}
+  \vspace{0.8cm}
+  \begin{minipage}{0.5\textwidth}
+     \centering
+     \includegraphics[width=\textwidth]{images/failcircle.png}
+ \end{minipage}%
+ \begin{minipage}{0.5\textwidth}
+     \centering
+     \includegraphics[width=\textwidth]{images/failmoon.png}
+ \end{minipage}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Scelta del Quantum Kernel}
-  \begin{itemize}
-    \item Manca una guida per effettuare la scelta.
-  \end{itemize}
-        \begin{figure}
-          \includegraphics[width=0.7\textwidth]{images/failcircle.png}
-        \end{figure}
-\end{frame}
-
-
-
-\begin{frame}
-  \frametitle{Algoritmo genetico}
+  \frametitle{Genetic algorithm}
   \begin{itemize}
     \item Un algoritmo genetico può scegliere la miglior feature map.\\\,
   \end{itemize}
@@ -232,40 +175,26 @@
 
 
 \begin{frame}
-  \frametitle{Algoritmo genetico}
+  \frametitle{Genetic algorithm}
   \begin{itemize}
-    \item Gli individui sono formati da gate scelti da un set completo.\\\,
+    \item Gli individui sono formati da gate scelti da un set completo.
+    \item La prima generazione è generata in maniera casuale. 
   \end{itemize}
-  \begin{figure}
+  \vspace{0.5cm}
+  \begin{minipage}{0.5\textwidth}
+    \centering
     \includegraphics[width=\textwidth]{images/fenotip.png}
-  \end{figure} 
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/badresult.png}
+\end{minipage}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Algoritmo genetico}
+  \frametitle{Genetic algorithm}
   \begin{itemize}
     \item La fitness di un individuo si calcola a partire dalla sua accuratezza.
-  \end{itemize}
-
-  \begin{figure}
-    \includegraphics[width=0.7\textwidth]{images/sigmoid.png}
-  \end{figure} 
-\end{frame}
-
-\begin{frame}
-  \frametitle{Algoritmo genetico}
-  \begin{itemize}
-    \item La prima generazione è generata randomicamente. 
-  \end{itemize}
-
-  \begin{figure}
-    \includegraphics[width=0.7\textwidth]{images/badresult.png}
-  \end{figure} 
-\end{frame}
-
-\begin{frame}
-  \frametitle{Algoritmo genetico}
-  \begin{itemize}
     \item Gli individui sono passati alla seguente generazione con il crossover.
     \vspace{0.5cm}
 
@@ -295,7 +224,7 @@
 
 
 \begin{frame}
-  \frametitle{Algoritmo genetico}
+  \frametitle{Genetic algorithm}
   \begin{itemize}
     \item Inoltre subiscono una mutazione casuale.  
   \end{itemize}
@@ -309,24 +238,95 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Algoritmo genetico}
+  \frametitle{Genetic algorithm}
   \begin{itemize}
-    \item Con l'andare delle generazioni aumenta l'accuratezza media.  
+    \item Con l'andare delle generazioni aumenta l'accuratezza media e quella massima.
   \end{itemize}
+  \vspace{0.8cm}
 
-  \begin{figure}
-    \includegraphics[width=0.7\textwidth]{images/meanaccuracy.png}
-  \end{figure} 
-
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/meanaccuracy.png}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/maxaccuracy.png}
+\end{minipage}
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{Genetic algorithm}
+  \begin{itemize}
+    \item Otteniamo così un circuito ad alte prestazioni, impossibile da ottenere manualmente.
+  \end{itemize}
+  \vspace{0.8cm}
+
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/finalcircuit.png}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/awesomeresult.png}
+\end{minipage}
+\end{frame}
 
 
+\begin{frame}
+  \frametitle{Genetic algorithm}
+  \begin{itemize}
+    \item L'algoritmo si dimostra robusto al rumore e a variazioni della forma dei dati.
+  \end{itemize}
+  \vspace{0.8cm}
 
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/finalcircuit.png}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/noise.png}
+\end{minipage}
+\end{frame}
 
+\begin{frame}
+  \frametitle{Genetic algorithm}
+  \begin{itemize}
+    \item L'algoritmo si dimostra funzionante su vari tipi di dataset, sia artificiali che reali. 
+  \end{itemize}
+  \vspace{0.8cm}
 
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/moonsrbf.png}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/qsvm.png}
+\end{minipage}
+\end{frame}
 
+\begin{frame}
+  \frametitle{Directions for Future Work?}
+  \begin{itemize}
+    \item L'algoritmo andrebbe ora testato su dataset multidimensionali, e infine su un reale dispositivo quantistico scalabile.
+  \end{itemize}
+  \vspace{0.8cm}
 
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/multi.png}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{images/device.png}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\centering Grazie per l'attenzione!
+
+\end{frame}
 
 \end{document}
